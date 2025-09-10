@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes Cadastrados</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-inicio {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-inicio:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        h1 {
+            color: var(--dark);
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        h1 i {
+            color: var(--primary);
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            font-size: 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            background-color: white;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        #searchInput:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+
+        .card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: var(--border-radius);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            min-width: 1000px;
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 500;
+            position: relative;
+            border-bottom: 2px solid var(--primary-dark);
+        }
+
+        th:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 60%;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid var(--light-gray);
+            vertical-align: middle;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: rgba(67, 97, 238, 0.05);
+        }
+
+        .status {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background-color: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+        }
+
+        .status-inactive {
+            background-color: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--gray);
+            transition: var(--transition);
+            padding: 0.3rem;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .action-btn:hover {
+            background-color: var(--light-gray);
+            color: var(--primary);
+        }
+
+        .action-btn.view {
+            color: var(--primary);
+        }
+
+        .action-btn.edit {
+            color: #ffc107;
+        }
+
+        .action-btn.delete {
+            color: var(--secondary);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: white;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .pagination-info {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .pagination-controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .page-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--light-gray);
+            background-color: white;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .page-btn:hover {
+            background-color: var(--light-gray);
+        }
+
+        .page-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .empty-state {
+            padding: 3rem;
+            text-align: center;
+            color: var(--gray);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            color: var(--light-gray);
+            margin-bottom: 1rem;
+        }
+
+        .empty-state h3 {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .header-actions {
+                width: 100%;
+                justify-content: flex-end;
+            }
+            
+            .search-box {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <i class="fas fa-users"></i>
+                Clientes Cadastrados
+            </h1>
+            <div class="header-actions">
+                <a href="index.html" class="btn-inicio">
+                    <i class="fas fa-home"></i>
+                    Início
+                </a>
+            </div>
+        </div>
+        
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Pesquisar Cliente...">
+        </div>
+        
+        <div class="card">
+            <div class="table-container">
+                <table id="clientesTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Idade</th>
+                            <th>Email</th>
+                            <th>Telefone</th>
+                            <th>Endereço</th>
+                            <th>Gênero</th>
+                            <th>CPF</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Os dados serão inseridos aqui via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="pagination">
+                <div class="pagination-info">Mostrando <span id="showingCount">0</span> de <span id="totalCount">0</span> Clientes</div>
+                <div class="pagination-controls">
+                    <button class="page-btn" id="prevPage"><i class="fas fa-chevron-left"></i></button>
+                    <div id="pageNumbers"></div>
+                    <button class="page-btn" id="nextPage"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Variáveis para paginação
+        let currentPage = 1;
+        const rowsPerPage = 10;
+        let allClientes = [];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulação de dados - na prática, você faria uma requisição ao seu backend
+            fetch('/clientes_json')
+                .then(response => response.json())
+                .then(data => {
+                    allClientes = data;
+                    updateTable();
+                    updatePagination();
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar dados:', error);
+                    // Caso ocorra erro, mostra mensagem
+                    document.getElementById('tableBody').innerHTML = `
+                        <tr>
+                            <td colspan="10" class="empty-state">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <h3>Erro ao carregar clientes</h3>
+                                <p>Não foi possível carregar os dados dos clientes.</p>
+                            </td>
+                        </tr>
+                    `;
+                });
+        });
+
+        function updateTable() {
+            const tableBody = document.getElementById('tableBody');
+            const startIndex = (currentPage - 1) * rowsPerPage;
+            const endIndex = startIndex + rowsPerPage;
+            const paginatedClientes = allClientes.slice(startIndex, endIndex);
+            
+            if (paginatedClientes.length === 0) {
+                tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="10" class="empty-state">
+                            <i class="fas fa-user-slash"></i>
+                            <h3>Nenhum cliente encontrado</h3>
+                            <p>Não há clientes cadastrados ou sua pesquisa não retornou resultados.</p>
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+            
+            tableBody.innerHTML = '';
+            
+            paginatedClientes.forEach(cliente => {
+                const row = document.createElement('tr');
+                
+                // Gerar status aleatório para exemplo (você pode remover isso se tiver status real)
+                const status = Math.random() > 0.3 ? 'active' : 'inactive';
+                
+                row.innerHTML = `
+                    <td>${cliente.id || ''}</td>
+                    <td>${cliente.nome || ''}</td>
+                    <td>${cliente.idade || ''}</td>
+                    <td>${cliente.email || ''}</td>
+                    <td>${formatTelefone(cliente.telefone)}</td>
+                    <td>${cliente.endereco || ''}</td>
+                    <td>${cliente.genero || ''}</td>
+                    <td>${formatCPF(cliente.cpf)}</td>
+                    <td><span class="status status-${status}">${status === 'active' ? 'Ativo' : 'Inativo'}</span></td>
+                    <td>
+                        <button class="action-btn view" title="Visualizar" onclick="viewCliente(${cliente.id})"><i class="fas fa-eye"></i></button>
+                        <button class="action-btn edit" title="Editar" onclick="editCliente(${cliente.id})"><i class="fas fa-edit"></i></button>
+                        <button class="action-btn delete" title="Excluir" onclick="deleteCliente(${cliente.id})"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+            
+            // Atualiza contagem
+            document.getElementById('showingCount').textContent = paginatedClientes.length;
+            document.getElementById('totalCount').textContent = allClientes.length;
+        }
+
+        function formatCPF(cpf) {
+            if (!cpf) return '';
+            // Remove caracteres não numéricos
+            cpf = cpf.replace(/\D/g, '');
+            
+            // Formata CPF: XXX.XXX.XXX-XX
+            return cpf.replace(
+                /^(\d{3})(\d{3})(\d{3})(\d{2})$/,
+                '$1.$2.$3-$4'
+            );
+        }
+
+        function formatTelefone(telefone) {
+            if (!telefone) return '';
+            // Remove caracteres não numéricos
+            telefone = telefone.replace(/\D/g, '');
+            
+            // Formata telefone: (XX) XXXX-XXXX ou (XX) XXXXX-XXXX
+            if (telefone.length === 11) {
+                return telefone.replace(
+                    /^(\d{2})(\d{5})(\d{4})$/,
+                    '($1) $2-$3'
+                );
+            } else {
+                return telefone.replace(
+                    /^(\d{2})(\d{4})(\d{4})$/,
+                    '($1) $2-$3'
+                );
+            }
+        }
+
+        function searchTable() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toUpperCase();
+            const table = document.getElementById('clientesTable');
+            const tr = table.getElementsByTagName('tr');
+            
+            for (let i = 1; i < tr.length; i++) {
+                let found = false;
+                const td = tr[i].getElementsByTagName('td');
+                
+                for (let j = 0; j < td.length; j++) {
+                    if (td[j]) {
+                        const txtValue = td[j].textContent || td[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                
+                tr[i].style.display = found ? '' : 'none';
+            }
+        }
+
+        function updatePagination() {
+            const pageCount = Math.ceil(allClientes.length / rowsPerPage);
+            const pageNumbersDiv = document.getElementById('pageNumbers');
+            pageNumbersDiv.innerHTML = '';
+            
+            for (let i = 1; i <= pageCount; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = `page-btn ${i === currentPage ? 'active' : ''}`;
+                pageBtn.textContent = i;
+                pageBtn.onclick = () => {
+                    currentPage = i;
+                    updateTable();
+                    updatePagination();
+                };
+                pageNumbersDiv.appendChild(pageBtn);
+            }
+            
+            document.getElementById('prevPage').onclick = () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updateTable();
+                    updatePagination();
+                }
+            };
+            
+            document.getElementById('nextPage').onclick = () => {
+                if (currentPage < pageCount) {
+                    currentPage++;
+                    updateTable();
+                    updatePagination();
+                }
+            };
+        }
+
+        // Funções para ações (você precisará implementar conforme sua necessidade)
+        function viewCliente(id) {
+            console.log('Visualizar cliente:', id);
+            // Implemente a lógica para visualizar o cliente
+        }
+
+        function editCliente(id) {
+            console.log('Editar cliente:', id);
+            // Implemente a lógica para editar o cliente
+        }
+
+        function deleteCliente(id) {
+            console.log('Excluir cliente:', id);
+            // Implemente a lógica para excluir o cliente
+            if (confirm('Tem certeza que deseja excluir este cliente?')) {
+                // Faça uma requisição para excluir o cliente
+                fetch(`/delete_cliente/${id}`, { method: 'DELETE' })
+                    .then(response => {
+                        if (response.ok) {
+                            // Recarregar a tabela após exclusão
+                            location.reload();
+                        }
+                    });
+            }
+        }
+    </script>
+</body>
+</html>

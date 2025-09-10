@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar de Categorias</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+ <div class="top-header">
+    <a href="index.html" class="botao-inicio">Início</a>
+    <a href="cadastro.html" class="botao-cadastro">cadastro</a>
+    <a href="login.html" class="botao-login">login</a>
+    <div class="site-name">TechSuppliers</div>
+  </div>
+  <nav class="sidebar" aria-label="Categorias">
+    <h2>Categorias</h2>
+    <ul class="nav-links">
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="computadores-link" aria-expanded="false" aria-controls="computadores-submenu">Computadores e Periféricos</a>
+        <ul class="submenu" id="computadores-submenu" aria-label="Subcategoria Computadores e Periféricos">
+          <li><a href="./Notebooks.html">Notebooks</a></li>
+          <li><a href="./Desktops.html">Desktops</a></li>
+          <li><a href="./Monitores.html">Monitores</a></li>
+          <li><a href="./Teclados mecanicos.html">Teclados mecânicos</a></li>
+          <li><a href="./Teclados ergonomicos.html">Teclados ergonômicos</a></li>
+          <li><a href="./Mouses gamers.html">Mouses gamers</a></li>
+          <li><a href="./Impressoras multifuncionais.html">Impressoras multifuncionais</a></li>
+          <li><a href="./Webcams Full HD.html">Webcams Full HD</a></li>
+          <li><a href="./Scanners.html">Scanners</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="hardware-link" aria-expanded="false" aria-controls="hardware-submenu">Componentes de Hardware</a>
+        <ul class="submenu" id="hardware-submenu" aria-label="Subcategoria Componentes de Hardware">
+          <li><a href="./CPUs (Intel-AMD).html">CPUs (Intel/AMD)</a></li>
+          <li><a href="./GPUs (NVIDIA-AMD).html">GPUs (NVIDIA/AMD)</a></li>
+          <li><a href="./Placas-mãe ATX-Micro ATX.html">Placas-mãe ATX/Micro ATX</a></li>
+          <li><a href="./Memórias RAM DDR4-DDR5.html">Memórias RAM DDR4/DDR5</a></li>
+          <li><a href="./SSD M.2-SATA.html">SSD M.2/SATA</a></li>
+          <li><a href="./HD 2.5-3.5.html">HD 2.5&quot;/3.5&quot;</a></li>
+          <li><a href="./Water Coolers.html">Water Coolers</a></li>
+          <li><a href="./Fontes 80 Plus.html">Fontes 80 Plus</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="acessorios-link" aria-expanded="false" aria-controls="acessorios-submenu">Acessórios</a>
+        <ul class="submenu" id="acessorios-submenu" aria-label="Subcategoria Acessórios">
+          <li><a href="./Headsets com microfone.html">Headsets com microfone</a></li>
+          <li><a href="./Hubs USB-C.html">Hubs USB-C</a></li>
+          <li><a href="./Suportes ergonomicos.html">Suportes ergonômicos</a></li>
+          <li><a href="./Bolsas para notebook.html">Bolsas para notebook</a></li>
+          <li><a href="./Dock stations.html">Dock stations</a></li>
+          <li><a href="./Mouses verticais.html">Mouses verticais</a></li>
+          <li><a href="./Teclados Bluetooth.html">Teclados Bluetooth</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="redes-link" aria-expanded="false" aria-controls="redes-submenu">Redes e Conectividade</a>
+        <ul class="submenu" id="redes-submenu" aria-label="Subcategoria Redes e Conectividade">
+          <li><a href="./Roteadores Wi-Fi 6.html">Roteadores Wi-Fi 6</a></li>
+          <li><a href="./Adaptadores USB Wi-Fi.html">Adaptadores USB Wi-Fi</a></li>
+          <li><a href="./Powerlines.html">Powerlines</a></li>
+          <li><a href="./Switches gerenciáveis.html">Switches gerenciáveis</a></li>
+          <li><a href="./Cabos CAT6.html">Cabos CAT6</a></li>
+          <li><a href="./Antenas Wi-Fi.html">Antenas Wi-Fi</a></li>
+          <li><a href="./Repetidores de sinal.html">Repetidores de sinal</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="armazenamento-link" aria-expanded="false" aria-controls="armazenamento-submenu">Armazenamento</a>
+        <ul class="submenu" id="armazenamento-submenu" aria-label="Subcategoria Armazenamento">
+          <li><a href="./Pendrives 128GB.html">Pendrives 128GB</a></li>
+          <li><a href="./Cartões microSD UHS-I.html">Cartões microSD UHS-I</a></li>
+          <li><a href="./HDs externos de 2TB.html">HDs externos de 2TB</a></li>
+          <li><a href="./SSDs NVMe.html">SSDs NVMe</a></li>
+          <li><a href="./Cases para HD-SSD.html">Cases para HD/SSD</a></li>
+          <li><a href="./Servidores NAS.html">Servidores NAS</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="software-link" aria-expanded="false" aria-controls="software-submenu">Softwares</a>
+        <ul class="submenu" id="software-submenu" aria-label="Subcategoria Softwares">
+          <li><a href="./Windows 10-11.html">Windows 10/11</a></li>
+          <li><a href="./Linux (Ubuntu, Mint).html">Linux (Ubuntu, Mint)</a></li>
+          <li><a href="./Microsoft Office.html">Microsoft Office</a></li>
+          <li><a href="./Adobe Creative Cloud.html">Adobe Creative Cloud</a></li>
+          <li><a href="./Antivírus (Norton, Avast, Kaspersky).html">Antivírus (Norton, Avast, Kaspersky)</a></li>
+          <li><a href="./IDEs (VS Code, IntelliJ, NetBeans).html">IDEs (VS Code, IntelliJ, NetBeans)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="dispositivos-moveis-link" aria-expanded="false" aria-controls="dispositivos-moveis-submenu">Dispositivos Móveis e Wearables</a>
+        <ul class="submenu" id="dispositivos-moveis-submenu" aria-label="Subcategoria Dispositivos Móveis e Wearables">
+          <li><a href="./Smartphones Android-iOS.html">Smartphones Android/iOS</a></li>
+          <li><a href="./Tablets com caneta.html">Tablets com caneta</a></li>
+          <li><a href="./Smartwatches.html">Smartwatches</a></li>
+          <li><a href="./Pulseiras fitness.html">Pulseiras fitness</a></li>
+          <li><a href="./Fones Bluetooth com IA.html">Fones Bluetooth com IA</a></li>
+          <li><a href="./Leitores de eBook (Kindle, Kobo).html">Leitores de eBook (Kindle, Kobo)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="tecnologia-casa-link" aria-expanded="false" aria-controls="tecnologia-casa-submenu">Tecnologia para Casa</a>
+        <ul class="submenu" id="tecnologia-casa-submenu" aria-label="Subcategoria Tecnologia para Casa">
+          <li><a href="./Smart TVs 4K.html">Smart TVs 4K</a></li>
+          <li><a href="./Assistentes virtuais (Alexa, Google Nest).html">Assistentes virtuais (Alexa, Google Nest)</a></li>
+          <li><a href="./Lâmpadas Wi-Fi RGB.html">Lâmpadas Wi-Fi RGB</a></li>
+          <li><a href="./Interruptores inteligentes.html">Interruptores inteligentes</a></li>
+          <li><a href="./Tomadas Wi-Fi.html">Tomadas Wi-Fi</a></li>
+          <li><a href="./Robôs aspiradores.html">Robôs aspiradores</a></li>
+          <li><a href="./Câmeras IP.html">Câmeras IP</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="games-link" aria-expanded="false" aria-controls="games-submenu">Games</a>
+        <ul class="submenu" id="games-submenu" aria-label="Subcategoria Games">
+          <li><a href="./Consoles (PS5, Xbox Series X, Nintendo Switch).html">Consoles (PS5, Xbox Series X, Nintendo Switch)</a></li>
+          <li><a href="./Controles personalizados.html">Controles personalizados</a></li>
+          <li><a href="./Headsets com som 7.1.html">Headsets com som 7.1</a></li>
+          <li><a href="./Cadeiras gamers.html">Cadeiras gamers</a></li>
+          <li><a href="./Placas de captura.html">Placas de captura</a></li>
+          <li><a href="./Volantes e pedais.html">Volantes e pedais</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="educacao-link" aria-expanded="false" aria-controls="educacao-submenu">Educação e Programação</a>
+        <ul class="submenu" id="educacao-submenu" aria-label="Subcategoria Educação e Programação">
+          <li><a href="./Kits Arduino e sensores.html">Kits Arduino e sensores</a></li>
+          <li><a href="./Raspberry Pi.html">Raspberry Pi</a></li>
+          <li><a href="./Robótica com Lego Mindstorms.html">Robótica com Lego Mindstorms</a></li>
+          <li><a href="./Micro-bit.html">Micro:bit</a></li>
+          <li><a href="./Livros técnicos.html">Livros técnicos</a></li>
+          <li><a href="./Cursos de TI online.html">Cursos de TI online</a></li>
+          <li><a href="./Emuladores de laboratório virtual.html">Emuladores de laboratório virtual</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+<main class="content" tabindex="-1">
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Pesquisar produtos..." class="search-bar">
+  </div>
+  
+  <script>
+    // Lista de produtos - Assistente Virtuais mais vendidos no Brasil
+    const produtos = [
+      {
+        nome: "Echo Dot (4ª Geração)",
+        descricao: "O Echo Dot com Alexa é o smart speaker de maior sucesso. Controle com sua voz e use como smart home hub.",
+        preco: "379,00",
+        imagem: "data:image/jpeg;base64,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",
+        fornecedores: [
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" }
+        ]
+      },
+      {
+        nome: "Echo Show 5 (2ª Geração)",
+        descricao: "Smart display com Alexa e tela de 5,5''. Faça videochamadas, veja receitas e controle sua casa inteligente.",
+        preco: "699,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJRVtb_EsK8P1H8wcJltPzrX31FXl7G-P-QAaSFroUAPY5g3si9GuTm2eH&s=10",
+        fornecedores: [
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" }
+        ]
+      },
+      {
+        nome: "Google Nest Mini (2ª Geração)",
+        descricao: "O assistente do Google em um design compacto. Controle dispositivos, ouça música e muito mais.",
+        preco: "299,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu0cSFgrY6N-8x08vmXQ7QYH7LkBHDXcHChGLT_Cx_40XdyTPflnyzCbQ&s=10",
+        fornecedores: [
+          { nome: "Google Store", link: "https://store.google.com/br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" }
+        ]
+      },
+      {
+        nome: "Echo Studio | Smart Speaker de alta qualidade",
+        descricao: "Som premium com Dolby Atmos e Alexa integrada. O melhor som da categoria Echo.",
+        preco: "1.799,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Rt7iZEdT3_YcxL3K_lXoaJcc5ETTpC1_ZA&s",
+        fornecedores: [
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" }
+        ]
+      },
+      {
+        nome: "Google Nest Audio",
+        descricao: "Smart speaker com som potente e assistente Google. 75% mais potente que o Google Home.",
+        preco: "899,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7xgdc4dI83CCJX9JV_cFdlXtPaGrF45O9ToQp7Bcr7mmdi-Y7nF2IHRBg&s=10",
+        fornecedores: [
+          { nome: "Google Store", link: "https://store.google.com/br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" }
+        ]
+      },
+      {
+        nome: "Echo Show 8 (2ª Geração)",
+        descricao: "Smart display com tela HD de 8'', som estéreo e câmera de 13 MP. Ideal para videochamadas.",
+        preco: "1.299,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8dnFol23EEDqMUHXQOOOlD6maKQbGx7OMJxOVT-Ex6SN0KhOwzGu4itVv&s=10",
+        fornecedores: [
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" }
+        ]
+      },
+      {
+        nome: "Xiaomi Smart Speaker",
+        descricao: "Assistente virtual da Xiaomi com Xiao AI, compatível com Alexa e Google Assistant.",
+        preco: "349,00",
+        imagem: "data:image/jpeg;base64,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",
+        fornecedores: [
+          { nome: "Xiaomi Store", link: "https://www.mi.com/br/" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "AliExpress", link: "https://pt.aliexpress.com" }
+        ]
+      },
+      {
+        nome: "Echo Dot com Relógio (3ª Geração)",
+        descricao: "Echo Dot com display LED integrado que mostra hora, temperatura e notificações.",
+        preco: "429,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR76j-AUlHXAMvZxu7_S43E8XnL1EhBVMJbHQ&s",
+        fornecedores: [
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" }
+        ]
+      },
+      {
+        nome: "Google Nest Hub (2ª Geração)",
+        descricao: "Smart display com tela de 7'' e assistente Google. Controle sua casa inteligente sem câmera.",
+        preco: "999,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1xDdf9_VM569hBhTNeHpgE2GKZ_CLE-MQzw&s",
+        fornecedores: [
+          { nome: "Google Store", link: "https://store.google.com/br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" }
+        ]
+      },
+      {
+        nome: "Echo (4ª Geração)",
+        descricao: "Smart speaker premium com Alexa, som de alta qualidade e hub de casa inteligente integrado.",
+        preco: "899,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd198h8ftgWGAsonvR6topPsRmi59kPr31Ig&s",
+        fornecedores: [
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" }
+        ]
+      }
+    ];
+
+    const main = document.querySelector("main");
+    const searchInput = document.getElementById("search-input");
+
+    // Função para renderizar os produtos
+    function renderProducts(productsToRender) {
+      // Limpa o conteúdo atual
+      const existingProducts = document.querySelectorAll('.produto-card');
+      existingProducts.forEach(product => product.remove());
+
+      // Adiciona os produtos filtrados
+      productsToRender.forEach((produto, index) => {
+        const card = document.createElement("div");
+        card.className = "produto-card";
+
+        const fornecedoresHTML = produto.fornecedores.map(f =>
+          `<li><a href="${f.link}" target="_blank">${f.nome}</a></li>`
+        ).join("");
+
+        card.innerHTML = `
+          <img src="${produto.imagem}" alt="${produto.nome}" class="produto-img">
+          <h3>${produto.nome}</h3>
+          <div class="produto-detalhes">
+            <p class="descricao">${produto.descricao}</p>
+            <p class="preco">Média de preço: R$ ${produto.preco}</p>
+            <div class="dropdown">
+              <button class="btn-toggle">Fornecedores</button>
+              <ul class="fornecedores-lista hidden">
+                ${fornecedoresHTML}
+              </ul>
+            </div>
+          </div>
+        `;
+
+        main.appendChild(card);
+      });
+
+      // Reaplica os event listeners para os dropdowns
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        const btn = drop.querySelector(".btn-toggle");
+        const list = drop.querySelector(".fornecedores-lista");
+
+        btn.addEventListener("click", () => {
+          list.classList.toggle("hidden");
+        });
+      });
+    }
+
+    // Renderiza todos os produtos inicialmente
+    renderProducts(produtos);
+
+    // Adiciona o evento de pesquisa
+    searchInput.addEventListener("input", (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      const filteredProducts = produtos.filter(produto => 
+        produto.nome.toLowerCase().includes(searchTerm) || 
+        produto.descricao.toLowerCase().includes(searchTerm)
+      );
+      renderProducts(filteredProducts);
+    });
+
+    // Fecha os dropdowns quando clicar fora
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        const list = drop.querySelector(".fornecedores-lista");
+        if (!drop.contains(e.target)) {
+          list.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+</main>
+</body>
+</html>

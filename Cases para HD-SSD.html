@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar de Categorias</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+ <div class="top-header">
+    <a href="index.html" class="botao-inicio">Início</a>
+    <a href="cadastro.html" class="botao-cadastro">cadastro</a>
+    <a href="login.html" class="botao-login">login</a>
+    <div class="site-name">TechSuppliers</div>
+  </div>
+  <nav class="sidebar" aria-label="Categorias">
+    <h2>Categorias</h2>
+    <ul class="nav-links">
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="computadores-link" aria-expanded="false" aria-controls="computadores-submenu">Computadores e Periféricos</a>
+        <ul class="submenu" id="computadores-submenu" aria-label="Subcategoria Computadores e Periféricos">
+          <li><a href="./Notebooks.html">Notebooks</a></li>
+          <li><a href="./Desktops.html">Desktops</a></li>
+          <li><a href="./Monitores.html">Monitores</a></li>
+          <li><a href="./Teclados mecanicos.html">Teclados mecânicos</a></li>
+          <li><a href="./Teclados ergonomicos.html">Teclados ergonômicos</a></li>
+          <li><a href="./Mouses gamers.html">Mouses gamers</a></li>
+          <li><a href="./Impressoras multifuncionais.html">Impressoras multifuncionais</a></li>
+          <li><a href="./Webcams Full HD.html">Webcams Full HD</a></li>
+          <li><a href="./Scanners.html">Scanners</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="hardware-link" aria-expanded="false" aria-controls="hardware-submenu">Componentes de Hardware</a>
+        <ul class="submenu" id="hardware-submenu" aria-label="Subcategoria Componentes de Hardware">
+          <li><a href="./CPUs (Intel-AMD).html">CPUs (Intel/AMD)</a></li>
+          <li><a href="./GPUs (NVIDIA-AMD).html">GPUs (NVIDIA/AMD)</a></li>
+          <li><a href="./Placas-mãe ATX-Micro ATX.html">Placas-mãe ATX/Micro ATX</a></li>
+          <li><a href="./Memórias RAM DDR4-DDR5.html">Memórias RAM DDR4/DDR5</a></li>
+          <li><a href="./SSD M.2-SATA.html">SSD M.2/SATA</a></li>
+          <li><a href="./HD 2.5-3.5.html">HD 2.5&quot;/3.5&quot;</a></li>
+          <li><a href="./Water Coolers.html">Water Coolers</a></li>
+          <li><a href="./Fontes 80 Plus.html">Fontes 80 Plus</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="acessorios-link" aria-expanded="false" aria-controls="acessorios-submenu">Acessórios</a>
+        <ul class="submenu" id="acessorios-submenu" aria-label="Subcategoria Acessórios">
+          <li><a href="./Headsets com microfone.html">Headsets com microfone</a></li>
+          <li><a href="./Hubs USB-C.html">Hubs USB-C</a></li>
+          <li><a href="./Suportes ergonomicos.html">Suportes ergonômicos</a></li>
+          <li><a href="./Bolsas para notebook.html">Bolsas para notebook</a></li>
+          <li><a href="./Dock stations.html">Dock stations</a></li>
+          <li><a href="./Mouses verticais.html">Mouses verticais</a></li>
+          <li><a href="./Teclados Bluetooth.html">Teclados Bluetooth</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="redes-link" aria-expanded="false" aria-controls="redes-submenu">Redes e Conectividade</a>
+        <ul class="submenu" id="redes-submenu" aria-label="Subcategoria Redes e Conectividade">
+          <li><a href="./Roteadores Wi-Fi 6.html">Roteadores Wi-Fi 6</a></li>
+          <li><a href="./Adaptadores USB Wi-Fi.html">Adaptadores USB Wi-Fi</a></li>
+          <li><a href="./Powerlines.html">Powerlines</a></li>
+          <li><a href="./Switches gerenciáveis.html">Switches gerenciáveis</a></li>
+          <li><a href="./Cabos CAT6.html">Cabos CAT6</a></li>
+          <li><a href="./Antenas Wi-Fi.html">Antenas Wi-Fi</a></li>
+          <li><a href="./Repetidores de sinal.html">Repetidores de sinal</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="armazenamento-link" aria-expanded="false" aria-controls="armazenamento-submenu">Armazenamento</a>
+        <ul class="submenu" id="armazenamento-submenu" aria-label="Subcategoria Armazenamento">
+          <li><a href="./Pendrives 128GB.html">Pendrives 128GB</a></li>
+          <li><a href="./Cartões microSD UHS-I.html">Cartões microSD UHS-I</a></li>
+          <li><a href="./HDs externos de 2TB.html">HDs externos de 2TB</a></li>
+          <li><a href="./SSDs NVMe.html">SSDs NVMe</a></li>
+          <li><a href="./Cases para HD-SSD.html">Cases para HD/SSD</a></li>
+          <li><a href="./Servidores NAS.html">Servidores NAS</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="software-link" aria-expanded="false" aria-controls="software-submenu">Softwares</a>
+        <ul class="submenu" id="software-submenu" aria-label="Subcategoria Softwares">
+          <li><a href="./Windows 10-11.html">Windows 10/11</a></li>
+          <li><a href="./Linux (Ubuntu, Mint).html">Linux (Ubuntu, Mint)</a></li>
+          <li><a href="./Microsoft Office.html">Microsoft Office</a></li>
+          <li><a href="./Adobe Creative Cloud.html">Adobe Creative Cloud</a></li>
+          <li><a href="./Antivírus (Norton, Avast, Kaspersky).html">Antivírus (Norton, Avast, Kaspersky)</a></li>
+          <li><a href="./IDEs (VS Code, IntelliJ, NetBeans).html">IDEs (VS Code, IntelliJ, NetBeans)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="dispositivos-moveis-link" aria-expanded="false" aria-controls="dispositivos-moveis-submenu">Dispositivos Móveis e Wearables</a>
+        <ul class="submenu" id="dispositivos-moveis-submenu" aria-label="Subcategoria Dispositivos Móveis e Wearables">
+          <li><a href="./Smartphones Android-iOS.html">Smartphones Android/iOS</a></li>
+          <li><a href="./Tablets com caneta.html">Tablets com caneta</a></li>
+          <li><a href="./Smartwatches.html">Smartwatches</a></li>
+          <li><a href="./Pulseiras fitness.html">Pulseiras fitness</a></li>
+          <li><a href="./Fones Bluetooth com IA.html">Fones Bluetooth com IA</a></li>
+          <li><a href="./Leitores de eBook (Kindle, Kobo).html">Leitores de eBook (Kindle, Kobo)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="tecnologia-casa-link" aria-expanded="false" aria-controls="tecnologia-casa-submenu">Tecnologia para Casa</a>
+        <ul class="submenu" id="tecnologia-casa-submenu" aria-label="Subcategoria Tecnologia para Casa">
+          <li><a href="./Smart TVs 4K.html">Smart TVs 4K</a></li>
+          <li><a href="./Assistentes virtuais (Alexa, Google Nest).html">Assistentes virtuais (Alexa, Google Nest)</a></li>
+          <li><a href="./Lâmpadas Wi-Fi RGB.html">Lâmpadas Wi-Fi RGB</a></li>
+          <li><a href="./Interruptores inteligentes.html">Interruptores inteligentes</a></li>
+          <li><a href="./Tomadas Wi-Fi.html">Tomadas Wi-Fi</a></li>
+          <li><a href="./Robôs aspiradores.html">Robôs aspiradores</a></li>
+          <li><a href="./Câmeras IP.html">Câmeras IP</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="games-link" aria-expanded="false" aria-controls="games-submenu">Games</a>
+        <ul class="submenu" id="games-submenu" aria-label="Subcategoria Games">
+          <li><a href="./Consoles (PS5, Xbox Series X, Nintendo Switch).html">Consoles (PS5, Xbox Series X, Nintendo Switch)</a></li>
+          <li><a href="./Controles personalizados.html">Controles personalizados</a></li>
+          <li><a href="./Headsets com som 7.1.html">Headsets com som 7.1</a></li>
+          <li><a href="./Cadeiras gamers.html">Cadeiras gamers</a></li>
+          <li><a href="./Placas de captura.html">Placas de captura</a></li>
+          <li><a href="./Volantes e pedais.html">Volantes e pedais</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="educacao-link" aria-expanded="false" aria-controls="educacao-submenu">Educação e Programação</a>
+        <ul class="submenu" id="educacao-submenu" aria-label="Subcategoria Educação e Programação">
+          <li><a href="./Kits Arduino e sensores.html">Kits Arduino e sensores</a></li>
+          <li><a href="./Raspberry Pi.html">Raspberry Pi</a></li>
+          <li><a href="./Robótica com Lego Mindstorms.html">Robótica com Lego Mindstorms</a></li>
+          <li><a href="./Micro-bit.html">Micro:bit</a></li>
+          <li><a href="./Livros técnicos.html">Livros técnicos</a></li>
+          <li><a href="./Cursos de TI online.html">Cursos de TI online</a></li>
+          <li><a href="./Emuladores de laboratório virtual.html">Emuladores de laboratório virtual</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+<main class="content" tabindex="-1">  
+  <div class="search-container">  
+    <input type="text" id="search-input" placeholder="Pesquisar produtos..." class="search-bar">  
+  </div>  
+  <script>  
+    const produtos = [  
+      {
+        nome: "Case para HD/SSD USB 3.0",
+        descricao: "Case externo para HD/SSD 2.5 polegadas com conexão USB 3.0.",
+        preco: "129,90",
+        imagem: "https://m.media-amazon.com/images/I/61ruDP8+rqL._UF1000,1000_QL80_.jpg",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Terabyte", link: "https://www.terabyteshop.com.br" }
+        ]
+      },
+      {
+        nome: "Case Orico 2.5 Polegadas USB 3.0",
+        descricao: "Case externo para HD/SSD com interface USB 3.0, design compacto e leve.",
+        preco: "89,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsPkdbeeHdB0OIhmu1zqAoa4rUzDUcU890Yqw00BNuiv5GEjvprTEmX9Y&s=10",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Pichau", link: "https://www.pichau.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "TerabyteShop", link: "https://www.terabyteshop.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" }
+        ]
+      },
+      {
+        nome: "Case para SSD Kingston Nucleum",
+        descricao: "Case com design elegante e conexão USB-C, compatível com SSDs NVMe.",
+        preco: "159,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-XjVdsNT86HvzEbNw462hGn5IvqkboxAfLpp1uvsZv01irwPFrpMeLxHZ&s=10",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Pichau", link: "https://www.pichau.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" }
+        ]
+      },
+      {
+        nome: "Case para HD/SSD Sabrent USB 3.1",
+        descricao: "Case externo com alta velocidade de transferência (5Gbps) e design resistente.",
+        preco: "149,90",
+        imagem: "data:image/jpeg;base64,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",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Pichau", link: "https://www.pichau.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" }
+        ]
+      },
+      {
+        nome: "Case para HD/SSD USB 3.0",
+        descricao: "Case externo com design slim e proteção contra quedas, compatível com HDs 2.5''.",
+        preco: "99,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIFIEfZztS37ACdUwI56E79ZaO9r6a6pxyO3FlEM8jbUqOVDxUu1GWoXUm&s=10",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Pichau", link: "https://www.pichau.com.br" },
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" }
+        ]
+      },
+      {
+        nome: "Case para NVMe SSD Orico M2PV-C3",
+        descricao: "Case para SSD M.2 NVMe com interface USB 3.1 Gen2 (10Gbps) e dissipador de calor.",
+        preco: "219,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFbzkjgtPfYu-qv6_S6ft8XA9SRLAwIQCs7g&s",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Pichau", link: "https://www.pichau.com.br" },
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "TerabyteShop", link: "https://www.terabyteshop.com.br" }
+        ]
+      },
+      {
+        nome: "Case para HD/SSD Transcend StoreJet",
+        descricao: "Case resistente a impactos com proteção de silicone e conexão USB 3.0.",
+        preco: "139,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVkAttgyWY9YQ48ATqmsYdB8tzjqXJI7_5luBS6WjLcL4SH46jO4aYwZg&s=10",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },
+          { nome: "Pichau", link: "https://www.pichau.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "TerabyteShop", link: "https://www.terabyteshop.com.br" }
+        ]
+      },
+      {
+        nome: "Case para HD/SSD Startech USB 3.1",
+        descricao: "Case profissional com chipset ASMedia e suporte a UASP para máxima performance.",
+        preco: "179,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnZs5qkUJS9ueJo0OdKVWQMZ5OuGWg0wnugg6-6UDHfixrmKZLmp9LgIau&s=10",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Pichau", link: "https://www.pichau.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" }
+        ]
+      },
+      {
+        nome: "Case para HD/SSD T7 Shield Samsung",
+        descricao: "Case resistente a água, poeira e quedas com USB 3.2 Gen2 e velocidades até 1.050MB/s.",
+        preco: "399,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKbBhpETnE41DPOfUcZ-AnBoWbW9zvBVo0pTR59UXHqX8ubQa7p8fCHxPn&s=10",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Pichau", link: "https://www.pichau.com.br" },
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" }
+        ]
+      },
+      {
+        nome: "Case para HD/SSD Sandisk Extreme",
+        descricao: "Case robusto com proteção IP55 contra água e poeira, velocidades até 550MB/s.",
+        preco: "349,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTEyGpYOLlN5lSr0GZFG5Qy88LKxAUK1UFPw&s",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },
+          { nome: "Pichau", link: "https://www.pichau.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "TerabyteShop", link: "https://www.terabyteshop.com.br" }
+        ]
+      }
+    ];
+
+    const main = document.querySelector("main");
+    const searchInput = document.getElementById("search-input");
+
+    // Função para renderizar os produtos
+    function renderProducts(productsToRender) {
+      // Limpa o conteúdo atual
+      const existingProducts = document.querySelectorAll('.produto-card');
+      existingProducts.forEach(product => product.remove());
+
+      // Adiciona os produtos filtrados
+      productsToRender.forEach((produto, index) => {
+        const card = document.createElement("div");
+        card.className = "produto-card";
+
+        const fornecedoresHTML = produto.fornecedores.map(f =>
+          `<li><a href="${f.link}" target="_blank">${f.nome}</a></li>`
+        ).join("");
+
+        card.innerHTML = `
+          <img src="${produto.imagem}" alt="${produto.nome}" class="produto-img">
+          <div class="produto-detalhes">
+            <h3>${produto.nome}</h3>
+            <p class="descricao">${produto.descricao}</p>
+            <p class="preco">Média de preço: R$ ${produto.preco}</p>
+            <div class="dropdown">
+              <button class="btn-toggle">Fornecedores</button>
+              <ul class="fornecedores-lista hidden">
+                ${fornecedoresHTML}
+              </ul>
+            </div>
+          </div>
+        `;
+
+        main.appendChild(card);
+      });
+
+      // Reaplica os event listeners para os dropdowns
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        const btn = drop.querySelector(".btn-toggle");
+        const list = drop.querySelector(".fornecedores-lista");
+
+        btn.addEventListener("click", () => {
+          list.classList.toggle("hidden");
+        });
+      });
+    }
+
+    // Renderiza todos os produtos inicialmente
+    renderProducts(produtos);
+
+    // Adiciona o evento de pesquisa
+    searchInput.addEventListener("input", (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      const filteredProducts = produtos.filter(produto => 
+        produto.nome.toLowerCase().includes(searchTerm) || 
+        produto.descricao.toLowerCase().includes(searchTerm)
+      );
+      renderProducts(filteredProducts);
+    });
+
+    // Fecha os dropdowns quando clicar fora
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        const list = drop.querySelector(".fornecedores-lista");
+        if (!drop.contains(e.target)) {
+          list.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+</main>
+</body>
+</html>

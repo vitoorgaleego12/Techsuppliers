@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar de Categorias</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+ <div class="top-header">
+    <a href="index.html" class="botao-inicio">Início</a>
+    <a href="cadastro.html" class="botao-cadastro">cadastro</a>
+    <a href="login.html" class="botao-login">login</a>
+    <div class="site-name">TechSuppliers</div>
+  </div>
+  <nav class="sidebar" aria-label="Categorias">
+    <h2>Categorias</h2>
+    <ul class="nav-links">
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="computadores-link" aria-expanded="false" aria-controls="computadores-submenu">Computadores e Periféricos</a>
+        <ul class="submenu" id="computadores-submenu" aria-label="Subcategoria Computadores e Periféricos">
+          <li><a href="./Notebooks.html">Notebooks</a></li>
+          <li><a href="./Desktops.html">Desktops</a></li>
+          <li><a href="./Monitores.html">Monitores</a></li>
+          <li><a href="./Teclados mecanicos.html">Teclados mecânicos</a></li>
+          <li><a href="./Teclados ergonomicos.html">Teclados ergonômicos</a></li>
+          <li><a href="./Mouses gamers.html">Mouses gamers</a></li>
+          <li><a href="./Impressoras multifuncionais.html">Impressoras multifuncionais</a></li>
+          <li><a href="./Webcams Full HD.html">Webcams Full HD</a></li>
+          <li><a href="./Scanners.html">Scanners</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="hardware-link" aria-expanded="false" aria-controls="hardware-submenu">Componentes de Hardware</a>
+        <ul class="submenu" id="hardware-submenu" aria-label="Subcategoria Componentes de Hardware">
+          <li><a href="./CPUs (Intel-AMD).html">CPUs (Intel/AMD)</a></li>
+          <li><a href="./GPUs (NVIDIA-AMD).html">GPUs (NVIDIA/AMD)</a></li>
+          <li><a href="./Placas-mãe ATX-Micro ATX.html">Placas-mãe ATX/Micro ATX</a></li>
+          <li><a href="./Memórias RAM DDR4-DDR5.html">Memórias RAM DDR4/DDR5</a></li>
+          <li><a href="./SSD M.2-SATA.html">SSD M.2/SATA</a></li>
+          <li><a href="./HD 2.5-3.5.html">HD 2.5&quot;/3.5&quot;</a></li>
+          <li><a href="./Water Coolers.html">Water Coolers</a></li>
+          <li><a href="./Fontes 80 Plus.html">Fontes 80 Plus</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="acessorios-link" aria-expanded="false" aria-controls="acessorios-submenu">Acessórios</a>
+        <ul class="submenu" id="acessorios-submenu" aria-label="Subcategoria Acessórios">
+          <li><a href="./Headsets com microfone.html">Headsets com microfone</a></li>
+          <li><a href="./Hubs USB-C.html">Hubs USB-C</a></li>
+          <li><a href="./Suportes ergonomicos.html">Suportes ergonômicos</a></li>
+          <li><a href="./Bolsas para notebook.html">Bolsas para notebook</a></li>
+          <li><a href="./Dock stations.html">Dock stations</a></li>
+          <li><a href="./Mouses verticais.html">Mouses verticais</a></li>
+          <li><a href="./Teclados Bluetooth.html">Teclados Bluetooth</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="redes-link" aria-expanded="false" aria-controls="redes-submenu">Redes e Conectividade</a>
+        <ul class="submenu" id="redes-submenu" aria-label="Subcategoria Redes e Conectividade">
+          <li><a href="./Roteadores Wi-Fi 6.html">Roteadores Wi-Fi 6</a></li>
+          <li><a href="./Adaptadores USB Wi-Fi.html">Adaptadores USB Wi-Fi</a></li>
+          <li><a href="./Powerlines.html">Powerlines</a></li>
+          <li><a href="./Switches gerenciáveis.html">Switches gerenciáveis</a></li>
+          <li><a href="./Cabos CAT6.html">Cabos CAT6</a></li>
+          <li><a href="./Antenas Wi-Fi.html">Antenas Wi-Fi</a></li>
+          <li><a href="./Repetidores de sinal.html">Repetidores de sinal</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="armazenamento-link" aria-expanded="false" aria-controls="armazenamento-submenu">Armazenamento</a>
+        <ul class="submenu" id="armazenamento-submenu" aria-label="Subcategoria Armazenamento">
+          <li><a href="./Pendrives 128GB.html">Pendrives 128GB</a></li>
+          <li><a href="./Cartões microSD UHS-I.html">Cartões microSD UHS-I</a></li>
+          <li><a href="./HDs externos de 2TB.html">HDs externos de 2TB</a></li>
+          <li><a href="./SSDs NVMe.html">SSDs NVMe</a></li>
+          <li><a href="./Cases para HD-SSD.html">Cases para HD/SSD</a></li>
+          <li><a href="./Servidores NAS.html">Servidores NAS</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="software-link" aria-expanded="false" aria-controls="software-submenu">Softwares</a>
+        <ul class="submenu" id="software-submenu" aria-label="Subcategoria Softwares">
+          <li><a href="./Windows 10-11.html">Windows 10/11</a></li>
+          <li><a href="./Linux (Ubuntu, Mint).html">Linux (Ubuntu, Mint)</a></li>
+          <li><a href="./Microsoft Office.html">Microsoft Office</a></li>
+          <li><a href="./Adobe Creative Cloud.html">Adobe Creative Cloud</a></li>
+          <li><a href="./Antivírus (Norton, Avast, Kaspersky).html">Antivírus (Norton, Avast, Kaspersky)</a></li>
+          <li><a href="./IDEs (VS Code, IntelliJ, NetBeans).html">IDEs (VS Code, IntelliJ, NetBeans)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="dispositivos-moveis-link" aria-expanded="false" aria-controls="dispositivos-moveis-submenu">Dispositivos Móveis e Wearables</a>
+        <ul class="submenu" id="dispositivos-moveis-submenu" aria-label="Subcategoria Dispositivos Móveis e Wearables">
+          <li><a href="./Smartphones Android-iOS.html">Smartphones Android/iOS</a></li>
+          <li><a href="./Tablets com caneta.html">Tablets com caneta</a></li>
+          <li><a href="./Smartwatches.html">Smartwatches</a></li>
+          <li><a href="./Pulseiras fitness.html">Pulseiras fitness</a></li>
+          <li><a href="./Fones Bluetooth com IA.html">Fones Bluetooth com IA</a></li>
+          <li><a href="./Leitores de eBook (Kindle, Kobo).html">Leitores de eBook (Kindle, Kobo)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="tecnologia-casa-link" aria-expanded="false" aria-controls="tecnologia-casa-submenu">Tecnologia para Casa</a>
+        <ul class="submenu" id="tecnologia-casa-submenu" aria-label="Subcategoria Tecnologia para Casa">
+          <li><a href="./Smart TVs 4K.html">Smart TVs 4K</a></li>
+          <li><a href="./Assistentes virtuais (Alexa, Google Nest).html">Assistentes virtuais (Alexa, Google Nest)</a></li>
+          <li><a href="./Lâmpadas Wi-Fi RGB.html">Lâmpadas Wi-Fi RGB</a></li>
+          <li><a href="./Interruptores inteligentes.html">Interruptores inteligentes</a></li>
+          <li><a href="./Tomadas Wi-Fi.html">Tomadas Wi-Fi</a></li>
+          <li><a href="./Robôs aspiradores.html">Robôs aspiradores</a></li>
+          <li><a href="./Câmeras IP.html">Câmeras IP</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="games-link" aria-expanded="false" aria-controls="games-submenu">Games</a>
+        <ul class="submenu" id="games-submenu" aria-label="Subcategoria Games">
+          <li><a href="./Consoles (PS5, Xbox Series X, Nintendo Switch).html">Consoles (PS5, Xbox Series X, Nintendo Switch)</a></li>
+          <li><a href="./Controles personalizados.html">Controles personalizados</a></li>
+          <li><a href="./Headsets com som 7.1.html">Headsets com som 7.1</a></li>
+          <li><a href="./Cadeiras gamers.html">Cadeiras gamers</a></li>
+          <li><a href="./Placas de captura.html">Placas de captura</a></li>
+          <li><a href="./Volantes e pedais.html">Volantes e pedais</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="educacao-link" aria-expanded="false" aria-controls="educacao-submenu">Educação e Programação</a>
+        <ul class="submenu" id="educacao-submenu" aria-label="Subcategoria Educação e Programação">
+          <li><a href="./Kits Arduino e sensores.html">Kits Arduino e sensores</a></li>
+          <li><a href="./Raspberry Pi.html">Raspberry Pi</a></li>
+          <li><a href="./Robótica com Lego Mindstorms.html">Robótica com Lego Mindstorms</a></li>
+          <li><a href="./Micro-bit.html">Micro:bit</a></li>
+          <li><a href="./Livros técnicos.html">Livros técnicos</a></li>
+          <li><a href="./Cursos de TI online.html">Cursos de TI online</a></li>
+          <li><a href="./Emuladores de laboratório virtual.html">Emuladores de laboratório virtual</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+<main class="content" tabindex="-1">    
+  <div class="search-container">    
+    <input type="text" id="search-input" placeholder="Pesquisar produtos..." class="search-bar">    
+  </div>    
+  <script>    
+    const produtos = [    
+      {
+        nome: "Samsung Galaxy Tab S9",
+        descricao: "Tablet Samsung Galaxy Tab S9, 11'', S-Pen incluída, 256GB, 8GB RAM, Snapdragon 8 Gen 2, Android.",
+        preco: "R$ 4.599,90",
+        imagem: "https://images.samsung.com/is/image/samsung/p6pim/br/sm-x710nzahzto/gallery/br-galaxy-tab-s-sm-x710nzahzto-front-graphite-538051520?$684_547_PNG$",
+        fornecedores: [
+          { nome: "Samsung", link: "https://www.samsung.com/br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" }
+        ]
+      },
+      {
+        nome: "iPad Pro 12.9'' (6ª geração)",
+        descricao: "Tablet Apple iPad Pro 12.9'' 6ª geração, Apple Pencil 2 compatível, 256GB, Wi-Fi, Chip M2.",
+        preco: "R$ 9.999,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS454j2cPhR_-wQzLAu_3FffN_xraFtveciyXnAUW5V5j0e7tliqqgCl3A&s=10",
+        fornecedores: [
+          { nome: "Apple", link: "https://www.apple.com/br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "iPlace", link: "https://www.iplace.com.br" }
+        ]
+      },
+      {
+        nome: "iPad Air (5ª geração)",
+        descricao: "Tablet Apple iPad Air 5ª geração, 10.9'', Apple Pencil 2 compatível, 64GB, Wi-Fi, Chip M1.",
+        preco: "R$ 5.499,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkS9E1MMSwDtPTdMHGSk8xAlYN4bVVDCq-AmPrYTYEt2SVA6QnPTOnE4cz&s=10",
+        fornecedores: [
+          { nome: "Apple", link: "https://www.apple.com/br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "iPlace", link: "https://www.iplace.com.br" }
+        ]
+      },
+      {
+        nome: "Samsung Galaxy Tab S7 FE",
+        descricao: "Tablet Samsung Galaxy Tab S7 FE, 12.4'', S-Pen incluída, 128GB, 4GB RAM, Android.",
+        preco: "R$ 3.299,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwtWolclvRpEWAyWQETP2PGVGuwZtXwgf-_aoJs9UW3AwK-DBIfr4yhIU&s=10",
+        fornecedores: [
+          { nome: "Samsung", link: "https://www.samsung.com/br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" }
+        ]
+      },
+      {
+        nome: "Lenovo Tab P11 Pro (2ª geração)",
+        descricao: "Tablet Lenovo Tab P11 Pro (2ª geração), 11.2'', Precision Pen 3 incluída, 128GB, 6GB RAM, Android.",
+        preco: "R$ 2.799,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFxG81AJapC1871VbO8d8yDNPsgJZRE3Ih-1tI0yWpTD6FpPgQILqVGJA&s=10",
+        fornecedores: [
+          { nome: "Lenovo", link: "https://www.lenovo.com/br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" }
+        ]
+      },
+      {
+        nome: "Xiaomi Pad 6",
+        descricao: "Tablet Xiaomi Pad 6, 11'', Xiaomi Smart Pen incluída, 256GB, 8GB RAM, Snapdragon 870, Android.",
+        preco: "R$ 2.999,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTFTO6F6ghRRMhknTxQnH_npKowi6jMlCtifa8uitQcmJ1RdxI-MVpJEK5&s=10",
+        fornecedores: [
+          { nome: "Xiaomi", link: "https://www.mi.com/br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" }
+        ]
+      },
+      {
+        nome: "Microsoft Surface Pro 9",
+        descricao: "Tablet Microsoft Surface Pro 9, 13'', Surface Pen compatível, 256GB, 8GB RAM, Intel Core i5, Windows 11.",
+        preco: "R$ 8.999,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvrVecOmnWbNYY0jDMC2R3AhX_KCyQdOGVnbyzh2-rB8VdEIhbovF0qVs&s=10",
+        fornecedores: [
+          { nome: "Microsoft", link: "https://www.microsoft.com/pt-br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" }
+        ]
+      },
+      {
+        nome: "Huawei MatePad Pro 12.6",
+        descricao: "Tablet Huawei MatePad Pro 12.6'', M-Pencil (2ª geração) incluída, 256GB, 8GB RAM, HarmonyOS.",
+        preco: "R$ 4.299,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp0-rmOB-0ypUxWGgYYZWgC2dOAQtPtGNWBJ5BsqHorW3YKTmE3JLj6Cs&s=10",
+        fornecedores: [
+          { nome: "Huawei", link: "https://consumer.huawei.com/br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" }
+        ]
+      },
+      {
+        nome: "iPad 10ª geração",
+        descricao: "Tablet Apple iPad 10ª geração, 10.9'', Apple Pencil (1ª geração) compatível, 64GB, Wi-Fi, Chip A14 Bionic.",
+        preco: "R$ 3.999,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnHuu21ttYaIRjFlI5ED3-UZfEnwpKU_Io55Z529Ocdcp8LGUrdkrdxdg&s=10",
+        fornecedores: [
+          { nome: "Apple", link: "https://www.apple.com/br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "iPlace", link: "https://www.iplace.com.br" }
+        ]
+      },
+      {
+        nome: "Wacom One 12",
+        descricao: "Tablet digitalizador Wacom One 12, caneta digital sem bateria, área ativa de 11.6'', compatível com PC/Mac/Android.",
+        preco: "R$ 1.899,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgjYgvNJcX1coeKDdQr-wQH5UTGpehTjRooBEQakgbJfpc6RG5V5pjbAxO&s=10",
+        fornecedores: [
+          { nome: "Wacom", link: "https://www.wacom.com/pt-br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" }
+        ]
+      }
+    ];  
+    
+    const main = document.querySelector("main");  
+    const searchInput = document.getElementById("search-input");  
+
+    // Função para renderizar os produtos  
+    function renderProducts(productsToRender) {  
+      // Limpa o conteúdo atual  
+      const existingProducts = document.querySelectorAll('.produto-card');  
+      existingProducts.forEach(product => product.remove());  
+
+      // Adiciona os produtos filtrados  
+      productsToRender.forEach((produto, index) => {  
+        const card = document.createElement("div");  
+        card.className = "produto-card";  
+
+        const fornecedoresHTML = produto.fornecedores.map(f =>  
+          `<li><a href="${f.link}" target="_blank">${f.nome}</a></li>`  
+        ).join("");  
+
+        card.innerHTML = `  
+          <img src="${produto.imagem}" alt="${produto.nome}" class="produto-img">  
+          <div class="produto-detalhes">  
+            <h3>${produto.nome}</h3>  
+            <p class="descricao">${produto.descricao}</p>  
+            <p class="preco">Média de preço: ${produto.preco}</p>  
+            <div class="dropdown">  
+              <button class="btn-toggle">Fornecedores</button>  
+              <ul class="fornecedores-lista hidden">  
+                ${fornecedoresHTML}  
+              </ul>  
+            </div>  
+          </div>  
+        `;  
+
+        main.appendChild(card);  
+      });  
+
+      // Reaplica os event listeners para os dropdowns  
+      document.querySelectorAll(".dropdown").forEach(drop => {  
+        const btn = drop.querySelector(".btn-toggle");  
+        const list = drop.querySelector(".fornecedores-lista");  
+
+        btn.addEventListener("click", () => {  
+          list.classList.toggle("hidden");  
+        });  
+      });  
+    }  
+
+    // Renderiza todos os produtos inicialmente  
+    renderProducts(produtos);  
+
+    // Adiciona o evento de pesquisa  
+    searchInput.addEventListener("input", (e) => {  
+      const searchTerm = e.target.value.toLowerCase();  
+      const filteredProducts = produtos.filter(produto =>   
+        produto.nome.toLowerCase().includes(searchTerm) ||   
+        produto.descricao.toLowerCase().includes(searchTerm)  
+      );  
+      renderProducts(filteredProducts);  
+    });  
+
+    // Fecha os dropdowns quando clicar fora  
+    document.addEventListener("click", function (e) {  
+      document.querySelectorAll(".dropdown").forEach(drop => {  
+        const list = drop.querySelector(".fornecedores-lista");  
+        if (!drop.contains(e.target)) {  
+          list.classList.add("hidden");  
+        }  
+      });  
+    });
+  </script>  
+</main>  
+</body>
+</html>

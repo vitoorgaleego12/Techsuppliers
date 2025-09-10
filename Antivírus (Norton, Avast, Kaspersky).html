@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar de Categorias</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+   <div class="top-header">
+    <a href="index.html" class="botao-inicio">Início</a>
+    <a href="cadastro.html" class="botao-cadastro">cadastro</a>
+    <a href="login.html" class="botao-login">login</a>
+    <div class="site-name">TechSuppliers</div>
+  </div>
+  <nav class="sidebar" aria-label="Categorias">
+    <h2>Categorias</h2>
+    <ul class="nav-links">
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="computadores-link" aria-expanded="false" aria-controls="computadores-submenu">Computadores e Periféricos</a>
+        <ul class="submenu" id="computadores-submenu" aria-label="Subcategoria Computadores e Periféricos">
+          <li><a href="./Notebooks.html">Notebooks</a></li>
+          <li><a href="./Desktops.html">Desktops</a></li>
+          <li><a href="./Monitores.html">Monitores</a></li>
+          <li><a href="./Teclados mecanicos.html">Teclados mecânicos</a></li>
+          <li><a href="./Teclados ergonomicos.html">Teclados ergonômicos</a></li>
+          <li><a href="./Mouses gamers.html">Mouses gamers</a></li>
+          <li><a href="./Impressoras multifuncionais.html">Impressoras multifuncionais</a></li>
+          <li><a href="./Webcams Full HD.html">Webcams Full HD</a></li>
+          <li><a href="./Scanners.html">Scanners</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="hardware-link" aria-expanded="false" aria-controls="hardware-submenu">Componentes de Hardware</a>
+        <ul class="submenu" id="hardware-submenu" aria-label="Subcategoria Componentes de Hardware">
+          <li><a href="./CPUs (Intel-AMD).html">CPUs (Intel/AMD)</a></li>
+          <li><a href="./GPUs (NVIDIA-AMD).html">GPUs (NVIDIA/AMD)</a></li>
+          <li><a href="./Placas-mãe ATX-Micro ATX.html">Placas-mãe ATX/Micro ATX</a></li>
+          <li><a href="./Memórias RAM DDR4-DDR5.html">Memórias RAM DDR4/DDR5</a></li>
+          <li><a href="./SSD M.2-SATA.html">SSD M.2/SATA</a></li>
+          <li><a href="./HD 2.5-3.5.html">HD 2.5&quot;/3.5&quot;</a></li>
+          <li><a href="./Water Coolers.html">Water Coolers</a></li>
+          <li><a href="./Fontes 80 Plus.html">Fontes 80 Plus</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="acessorios-link" aria-expanded="false" aria-controls="acessorios-submenu">Acessórios</a>
+        <ul class="submenu" id="acessorios-submenu" aria-label="Subcategoria Acessórios">
+          <li><a href="./Headsets com microfone.html">Headsets com microfone</a></li>
+          <li><a href="./Hubs USB-C.html">Hubs USB-C</a></li>
+          <li><a href="./Suportes ergonomicos.html">Suportes ergonômicos</a></li>
+          <li><a href="./Bolsas para notebook.html">Bolsas para notebook</a></li>
+          <li><a href="./Dock stations.html">Dock stations</a></li>
+          <li><a href="./Mouses verticais.html">Mouses verticais</a></li>
+          <li><a href="./Teclados Bluetooth.html">Teclados Bluetooth</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="redes-link" aria-expanded="false" aria-controls="redes-submenu">Redes e Conectividade</a>
+        <ul class="submenu" id="redes-submenu" aria-label="Subcategoria Redes e Conectividade">
+          <li><a href="./Roteadores Wi-Fi 6.html">Roteadores Wi-Fi 6</a></li>
+          <li><a href="./Adaptadores USB Wi-Fi.html">Adaptadores USB Wi-Fi</a></li>
+          <li><a href="./Powerlines.html">Powerlines</a></li>
+          <li><a href="./Switches gerenciáveis.html">Switches gerenciáveis</a></li>
+          <li><a href="./Cabos CAT6.html">Cabos CAT6</a></li>
+          <li><a href="./Antenas Wi-Fi.html">Antenas Wi-Fi</a></li>
+          <li><a href="./Repetidores de sinal.html">Repetidores de sinal</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="armazenamento-link" aria-expanded="false" aria-controls="armazenamento-submenu">Armazenamento</a>
+        <ul class="submenu" id="armazenamento-submenu" aria-label="Subcategoria Armazenamento">
+          <li><a href="./Pendrives 128GB.html">Pendrives 128GB</a></li>
+          <li><a href="./Cartões microSD UHS-I.html">Cartões microSD UHS-I</a></li>
+          <li><a href="./HDs externos de 2TB.html">HDs externos de 2TB</a></li>
+          <li><a href="./SSDs NVMe.html">SSDs NVMe</a></li>
+          <li><a href="./Cases para HD-SSD.html">Cases para HD/SSD</a></li>
+          <li><a href="./Servidores NAS.html">Servidores NAS</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="software-link" aria-expanded="false" aria-controls="software-submenu">Softwares</a>
+        <ul class="submenu" id="software-submenu" aria-label="Subcategoria Softwares">
+          <li><a href="./Windows 10-11.html">Windows 10/11</a></li>
+          <li><a href="./Linux (Ubuntu, Mint).html">Linux (Ubuntu, Mint)</a></li>
+          <li><a href="./Microsoft Office.html">Microsoft Office</a></li>
+          <li><a href="./Adobe Creative Cloud.html">Adobe Creative Cloud</a></li>
+          <li><a href="./Antivírus (Norton, Avast, Kaspersky).html">Antivírus (Norton, Avast, Kaspersky)</a></li>
+          <li><a href="./IDEs (VS Code, IntelliJ, NetBeans).html">IDEs (VS Code, IntelliJ, NetBeans)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="dispositivos-moveis-link" aria-expanded="false" aria-controls="dispositivos-moveis-submenu">Dispositivos Móveis e Wearables</a>
+        <ul class="submenu" id="dispositivos-moveis-submenu" aria-label="Subcategoria Dispositivos Móveis e Wearables">
+          <li><a href="./Smartphones Android-iOS.html">Smartphones Android/iOS</a></li>
+          <li><a href="./Tablets com caneta.html">Tablets com caneta</a></li>
+          <li><a href="./Smartwatches.html">Smartwatches</a></li>
+          <li><a href="./Pulseiras fitness.html">Pulseiras fitness</a></li>
+          <li><a href="./Fones Bluetooth com IA.html">Fones Bluetooth com IA</a></li>
+          <li><a href="./Leitores de eBook (Kindle, Kobo).html">Leitores de eBook (Kindle, Kobo)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="tecnologia-casa-link" aria-expanded="false" aria-controls="tecnologia-casa-submenu">Tecnologia para Casa</a>
+        <ul class="submenu" id="tecnologia-casa-submenu" aria-label="Subcategoria Tecnologia para Casa">
+          <li><a href="./Smart TVs 4K.html">Smart TVs 4K</a></li>
+          <li><a href="./Assistentes virtuais (Alexa, Google Nest).html">Assistentes virtuais (Alexa, Google Nest)</a></li>
+          <li><a href="./Lâmpadas Wi-Fi RGB.html">Lâmpadas Wi-Fi RGB</a></li>
+          <li><a href="./Interruptores inteligentes.html">Interruptores inteligentes</a></li>
+          <li><a href="./Tomadas Wi-Fi.html">Tomadas Wi-Fi</a></li>
+          <li><a href="./Robôs aspiradores.html">Robôs aspiradores</a></li>
+          <li><a href="./Câmeras IP.html">Câmeras IP</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="games-link" aria-expanded="false" aria-controls="games-submenu">Games</a>
+        <ul class="submenu" id="games-submenu" aria-label="Subcategoria Games">
+          <li><a href="./Consoles (PS5, Xbox Series X, Nintendo Switch).html">Consoles (PS5, Xbox Series X, Nintendo Switch)</a></li>
+          <li><a href="./Controles personalizados.html">Controles personalizados</a></li>
+          <li><a href="./Headsets com som 7.1.html">Headsets com som 7.1</a></li>
+          <li><a href="./Cadeiras gamers.html">Cadeiras gamers</a></li>
+          <li><a href="./Placas de captura.html">Placas de captura</a></li>
+          <li><a href="./Volantes e pedais.html">Volantes e pedais</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="educacao-link" aria-expanded="false" aria-controls="educacao-submenu">Educação e Programação</a>
+        <ul class="submenu" id="educacao-submenu" aria-label="Subcategoria Educação e Programação">
+          <li><a href="./Kits Arduino e sensores.html">Kits Arduino e sensores</a></li>
+          <li><a href="./Raspberry Pi.html">Raspberry Pi</a></li>
+          <li><a href="./Robótica com Lego Mindstorms.html">Robótica com Lego Mindstorms</a></li>
+          <li><a href="./Micro-bit.html">Micro:bit</a></li>
+          <li><a href="./Livros técnicos.html">Livros técnicos</a></li>
+          <li><a href="./Cursos de TI online.html">Cursos de TI online</a></li>
+          <li><a href="./Emuladores de laboratório virtual.html">Emuladores de laboratório virtual</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <main class="content" tabindex="-1">
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Pesquisar produtos..." class="search-bar">
+  </div>
+  
+  <script>
+   const produtos = [
+  {
+    nome: "Norton 360 Deluxe - 1 Ano - 5 Dispositivos",
+    imagem: "data:image/jpeg;base64,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",
+    descricao: "Proteção avançada com VPN, backup em nuvem e controle parental.",
+    preco: "129.90",
+    fornecedores: [
+      { nome: "Kabum", link: "https://www.kabum.com.br" },
+      { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+      { nome: "Submarino", link: "https://www.submarino.com.br" },
+      { nome: "Americanas", link: "https://www.americanas.com.br" },
+      { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+      { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+      { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+      { nome: "OLX Brasil", link: "https://www.olx.com.br" },
+      { nome: "Extra", link: "https://www.extra.com.br" },
+      { nome: "Carrefour", link: "https://www.carrefour.com.br" }
+    ]
+  },
+  {
+    nome: "Kaspersky Internet Security - 1 Ano - 3 PCs",
+    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCBtboDM8QjZj94xbRQng34b8euviYq4GTmw&s",
+    descricao: "Proteção contra vírus, ransomware e ameaças online.",
+    preco: "99.00",
+    fornecedores: [
+      { nome: "Kaspersky Store", link: "https://www.kaspersky.com.br" },
+      { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+      { nome: "Kabum", link: "https://www.kabum.com.br" },
+      { nome: "TerabyteShop", link: "https://www.terabyteshop.com.br" },
+      { nome: "Pichau", link: "https://www.pichau.com.br" },
+      { nome: "Submarino", link: "https://www.submarino.com.br" },
+      { nome: "Americanas", link: "https://www.americanas.com.br" },
+      { nome: "OLX", link: "https://www.olx.com.br" },
+      { nome: "Extra", link: "https://www.extra.com.br" },
+      { nome: "Carrefour", link: "https://www.carrefour.com.br" }
+    ]
+  },
+  {
+    nome: "Avast Premium Security - 1 Ano",
+    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGZ9hBP1DGg0Pk6JFG8v2bo2sIMvYpWeEuEA&s",
+    descricao: "Proteção contra phishing, ransomware e sites falsos.",
+    preco: "89.90",
+    fornecedores: [
+      { nome: "Avast Brasil", link: "https://www.avast.com/pt-br" },
+      { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+      { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+      { nome: "Kabum", link: "https://www.kabum.com.br" },
+      { nome: "Americanas", link: "https://www.americanas.com.br" },
+      { nome: "Submarino", link: "https://www.submarino.com.br" },
+      { nome: "OLX", link: "https://www.olx.com.br" },
+      { nome: "Shopinfo", link: "https://www.shopinfo.com.br" },
+      { nome: "TerabyteShop", link: "https://www.terabyteshop.com.br" },
+      { nome: "Pichau", link: "https://www.pichau.com.br" }
+    ]
+  },
+  {
+    nome: "Bitdefender Total Security - 5 Dispositivos",
+    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXsDyaQ1Mw3fzO6RfSaROKBsvmoJ7zfgVYGQ&s",
+    descricao: "Inclui proteção multi-plataforma, VPN e controle parental.",
+    preco: "149.90",
+    fornecedores: [
+      { nome: "Bitdefender Brasil", link: "https://www.bitdefender.com.br" },
+      { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+      { nome: "Kabum", link: "https://www.kabum.com.br" },
+      { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+      { nome: "Submarino", link: "https://www.submarino.com.br" },
+      { nome: "Americanas", link: "https://www.americanas.com.br" },
+      { nome: "Pichau", link: "https://www.pichau.com.br" },
+      { nome: "Extra", link: "https://www.extra.com.br" },
+      { nome: "Shopinfo", link: "https://www.shopinfo.com.br" },
+      { nome: "OLX", link: "https://www.olx.com.br" }
+    ]
+  },
+  {
+    nome: "McAfee Total Protection - 1 Ano - 3 Dispositivos",
+    imagem: "https://images1.kabum.com.br/produtos/fotos/508321/mcafee-protecao-para-3-dispositivo-1-ano-mtp31bam3raad_1701700360_m.jpg",
+    descricao: "Segurança completa com gerenciador de senhas e VPN.",
+    preco: "109.90",
+    fornecedores: [
+      { nome: "McAfee Brasil", link: "https://www.mcafee.com" },
+      { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+      { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+      { nome: "Kabum", link: "https://www.kabum.com.br" },
+      { nome: "Submarino", link: "https://www.submarino.com.br" },
+      { nome: "Americanas", link: "https://www.americanas.com.br" },
+      { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+      { nome: "OLX", link: "https://www.olx.com.br" },
+      { nome: "Shopinfo", link: "https://www.shopinfo.com.br" },
+      { nome: "Extra", link: "https://www.extra.com.br" }
+    ]
+  },
+  {
+    nome: "ESET Internet Security - 1 Ano",
+    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReEGAIljV8j6aYCndSzqvUvp5GgWMYGcjpSQ&s",
+    descricao: "Proteção contra spyware, vírus, malware e ransomware.",
+    preco: "89.90",
+    fornecedores: [
+      { nome: "ESET Brasil", link: "https://www.eset.com/br" },
+      { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+      { nome: "Kabum", link: "https://www.kabum.com.br" },
+      { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+      { nome: "Submarino", link: "https://www.submarino.com.br" },
+      { nome: "OLX", link: "https://www.olx.com.br" },
+      { nome: "Americanas", link: "https://www.americanas.com.br" },
+      { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+      { nome: "Shopinfo", link: "https://www.shopinfo.com.br" },
+      { nome: "Carrefour", link: "https://www.carrefour.com.br" }
+    ]
+  },
+  {
+    nome: "Panda Dome Advanced - 1 Ano",
+    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Zo4nM0H6PkAVlFmZsfWF-DY6f6s3u55IGw&s",
+    descricao: "Proteção avançada contra ameaças, com firewall e controle parental.",
+    preco: "84.90",
+    fornecedores: [
+      { nome: "Panda Security", link: "https://www.pandasecurity.com" },
+      { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+      { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+      { nome: "Kabum", link: "https://www.kabum.com.br" },
+      { nome: "Americanas", link: "https://www.americanas.com.br" },
+      { nome: "Submarino", link: "https://www.submarino.com.br" },
+      { nome: "OLX", link: "https://www.olx.com.br" },
+      { nome: "Shopinfo", link: "https://www.shopinfo.com.br" },
+      { nome: "Extra", link: "https://www.extra.com.br" },
+      { nome: "Carrefour", link: "https://www.carrefour.com.br" }
+    ]
+  },
+  {
+    nome: "AVG Internet Security - 1 Ano",
+    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX7A3pSiNA7d7RzAHnlbwHiNKsQ6ACz2Bk2Q&s",
+    descricao: "Proteção contra links inseguros, downloads e e-mails maliciosos.",
+    preco: "79.90",
+    fornecedores: [
+      { nome: "AVG Brasil", link: "https://www.avg.com/pt-br" },
+      { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+      { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+      { nome: "Kabum", link: "https://www.kabum.com.br" },
+      { nome: "Submarino", link: "https://www.submarino.com.br" },
+      { nome: "Americanas", link: "https://www.americanas.com.br" },
+      { nome: "OLX", link: "https://www.olx.com.br" },
+      { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+      { nome: "Carrefour", link: "https://www.carrefour.com.br" },
+      { nome: "Shopinfo", link: "https://www.shopinfo.com.br" }
+    ]
+  },
+  {
+    nome: "Avira Internet Security Suite",
+    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT66NerOGcqoKJqMt1xKqllX5WKEweap_uBFw&s",
+    descricao: "Proteção com atualização em tempo real, firewall e scanner inteligente.",
+    preco: "59.90",
+    fornecedores: [
+      { nome: "Avira Brasil", link: "https://www.avira.com/pt-br" },
+      { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+      { nome: "Kabum", link: "https://www.kabum.com.br" },
+      { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+      { nome: "Submarino", link: "https://www.submarino.com.br" },
+      { nome: "Americanas", link: "https://www.americanas.com.br" },
+      { nome: "OLX", link: "https://www.olx.com.br" },
+      { nome: "Shopinfo", link: "https://www.shopinfo.com.br" },
+      { nome: "Extra", link: "https://www.extra.com.br" },
+      { nome: "Pichau", link: "https://www.pichau.com.br" }
+    ]
+  },
+  {
+    nome: "Trend Micro Maximum Security - 1 Ano",
+    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMearfl6paQ08QU_qr8bG1DadJbkWTyhOkDA&s",
+    descricao: "Antivírus avançado com proteção de identidade e redes sociais.",
+    preco: "109.90",
+    fornecedores: [
+      { nome: "Trend Micro Brasil", link: "https://www.trendmicro.com" },
+      { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+      { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+      { nome: "Kabum", link: "https://www.kabum.com.br" },
+      { nome: "Submarino", link: "https://www.submarino.com.br" },
+      { nome: "Americanas", link: "https://www.americanas.com.br" },
+      { nome: "Shopinfo", link: "https://www.shopinfo.com.br" },
+      { nome: "OLX", link: "https://www.olx.com.br" },
+      { nome: "Extra", link: "https://www.extra.com.br" },
+      { nome: "Pichau", link: "https://www.pichau.com.br" }
+    ]
+  }
+];
+      // ... (todos os outros produtos permanecem exatamente iguais)
+
+    const main = document.querySelector("main");
+    const searchInput = document.getElementById("search-input");
+
+    // Função para renderizar os produtos
+    function renderProducts(productsToRender) {
+      // Limpa o conteúdo atual
+      const existingProducts = document.querySelectorAll('.produto-card');
+      existingProducts.forEach(product => product.remove());
+
+      // Adiciona os produtos filtrados
+      productsToRender.forEach((produto, index) => {
+        const card = document.createElement("div");
+        card.className = "produto-card";
+
+        const fornecedoresHTML = produto.fornecedores.map(f =>
+          `<li><a href="${f.link}" target="_blank">${f.nome}</a></li>`
+        ).join("");
+
+        card.innerHTML = `
+          <img src="${produto.imagem}" alt="${produto.nome}" class="produto-img">
+          <div class="produto-detalhes">
+            <h3>${produto.nome}</h3>
+            <p class="descricao">${produto.descricao}</p>
+            <p class="preco">Média de preço: R$ ${produto.preco}</p>
+            <div class="dropdown">
+              <button class="btn-toggle">Fornecedores</button>
+              <ul class="fornecedores-lista hidden">
+                ${fornecedoresHTML}
+              </ul>
+            </div>
+          </div>
+        `;
+
+        main.appendChild(card);
+      });
+
+      // Reaplica os event listeners para os dropdowns
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        const btn = drop.querySelector(".btn-toggle");
+        const list = drop.querySelector(".fornecedores-lista");
+
+        btn.addEventListener("click", () => {
+          list.classList.toggle("hidden");
+        });
+      });
+    }
+
+    // Renderiza todos os produtos inicialmente
+    renderProducts(produtos);
+
+    // Adiciona o evento de pesquisa
+    searchInput.addEventListener("input", (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      const filteredProducts = produtos.filter(produto => 
+        produto.nome.toLowerCase().includes(searchTerm) || 
+        produto.descricao.toLowerCase().includes(searchTerm)
+      );
+      renderProducts(filteredProducts);
+    });
+
+    // Fecha os dropdowns quando clicar fora
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        const list = drop.querySelector(".fornecedores-lista");
+        if (!drop.contains(e.target)) {
+          list.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+</main>
+</body>
+</html>

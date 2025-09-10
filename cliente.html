@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Cliente</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      background-color: #1e293b;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 14px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+    }
+
+    input:focus, select:focus {
+      outline: 2px solid #5dade2;
+      background-color: white;
+      color: #000;
+    }
+
+    .dica {
+      font-size: 14px;
+      margin-top: 4px;
+      color: #cccccc;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 30px;
+      padding: 16px;
+      background-color: #1e293b;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1e293b;
+    }
+
+    .voltar {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .voltar a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .voltar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Estilos para mensagens de alerta */
+    .alert {
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .alert-success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .alert-danger {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="voltar">
+      <a href="index.html">← Voltar para a página inicial</a>
+    </div>
+
+    <h2>Cadastro de Cliente</h2>
+
+    <!-- Div para mostrar mensagens -->
+    <div id="mensagem"></div>
+
+    <form id="formCliente" autocomplete="off">
+      <label>Nome Completo:</label>
+      <input type="text" name="nome" required>
+      <div class="dica">Digite seu nome completo.</div>
+
+      <label>Idade:</label>
+      <input type="number" name="idade" min="0" max="120" required>
+      <div class="dica">Idade entre 0 e 120 anos.</div>
+
+      <label>Email:</label>
+      <input type="email" name="email" required>
+      <div class="dica">Exemplo: nome@email.com</div>
+
+      <label>Telefone:</label>
+      <input type="tel" name="telefone" placeholder="(11) 91234-5678" required>
+      <div class="dica">Formato: (99) 99999-9999</div>
+
+      <label>Endereço:</label>
+      <input type="text" name="endereco" required>
+
+      <label>Gênero:</label>
+      <select name="genero" required>
+        <option value="">Selecione</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Feminino">Feminino</option>
+        <option value="Outro">Outro</option>
+      </select>
+
+      <label>CPF:</label>
+      <input type="text" name="cpf" placeholder="000.000.000-00" required>
+      <div class="dica">Formato: 000.000.000-00</div>
+
+      <label>Senha:</label>
+      <input type="password" name="senha" minlength="6" required>
+
+      <label>Confirme a Senha:</label>
+      <input type="password" name="confirmarSenha" minlength="6" required>
+      <div class="dica">Mínimo 6 caracteres. Confirmação obrigatória.</div>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('formCliente');
+      const mensagemDiv = document.getElementById('mensagem');
+      
+      if (form) {
+          form.addEventListener('submit', async function(e) {
+              e.preventDefault();
+              
+              const formData = new FormData(form);
+              const submitBtn = form.querySelector('button[type="submit"]');
+              
+              // Limpar mensagens anteriores
+              if (mensagemDiv) {
+                  mensagemDiv.innerHTML = '';
+              }
+              
+              // Validar se as senhas coincidem
+              const senha = form.senha.value;
+              const confirmarSenha = form.confirmarSenha.value;
+              
+              if (senha !== confirmarSenha) {
+                  if (mensagemDiv) {
+                      mensagemDiv.innerHTML = `
+                          <div class="alert alert-danger">
+                              As senhas não coincidem!
+                          </div>
+                      `;
+                  }
+                  return;
+              }
+              
+              // Mostrar loading
+              submitBtn.disabled = true;
+              submitBtn.innerHTML = 'Cadastrando...';
+              
+              try {
+                  const response = await fetch('/cadastrar_cliente', {
+                      method: 'POST',
+                      body: formData
+                  });
+                  
+                  const data = await response.json();
+                  
+                  if (data.status === 'ok') {
+                      // Mostrar mensagem de sucesso
+                      if (mensagemDiv) {
+                          mensagemDiv.innerHTML = `
+                              <div class="alert alert-success">
+                                  ✅ ${data.mensagem} Redirecionando para a página inicial...
+                              </div>
+                          `;
+                      }
+                      
+                      // Redirecionar após 2 segundos
+                      setTimeout(() => {
+                          window.location.href = '/';
+                      }, 2000);
+                      
+                  } else {
+                      // Mostrar mensagem de erro
+                      if (mensagemDiv) {
+                          mensagemDiv.innerHTML = `
+                              <div class="alert alert-danger">
+                                  ❌ ${data.mensagem}
+                              </div>
+                          `;
+                      }
+                      submitBtn.disabled = false;
+                      submitBtn.innerHTML = 'Cadastrar';
+                  }
+                  
+              } catch (error) {
+                  console.error('Erro:', error);
+                  if (mensagemDiv) {
+                      mensagemDiv.innerHTML = `
+                          <div class="alert alert-danger">
+                              ❌ Erro ao conectar com o servidor. Tente novamente.
+                          </div>
+                      `;
+                  }
+                  submitBtn.disabled = false;
+                  submitBtn.innerHTML = 'Cadastrar';
+              }
+          });
+      }
+  });
+  </script>
+</body>
+</html>

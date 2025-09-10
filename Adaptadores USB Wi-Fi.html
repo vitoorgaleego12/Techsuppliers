@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar de Categorias</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="top-header">
+    <a href="index.html" class="botao-inicio">Início</a>
+    <a href="cadastro.html" class="botao-cadastro">cadastro</a>
+    <a href="login.html" class="botao-login">login</a>
+    <div class="site-name">TechSuppliers</div>
+  </div>
+  <nav class="sidebar" aria-label="Categorias">
+    <h2>Categorias</h2>
+    <ul class="nav-links">
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="computadores-link" aria-expanded="false" aria-controls="computadores-submenu">Computadores e Periféricos</a>
+        <ul class="submenu" id="computadores-submenu" aria-label="Subcategoria Computadores e Periféricos">
+          <li><a href="./Notebooks.html">Notebooks</a></li>
+          <li><a href="./Desktops.html">Desktops</a></li>
+          <li><a href="./Monitores.html">Monitores</a></li>
+          <li><a href="./Teclados mecanicos.html">Teclados mecânicos</a></li>
+          <li><a href="./Teclados ergonomicos.html">Teclados ergonômicos</a></li>
+          <li><a href="./Mouses gamers.html">Mouses gamers</a></li>
+          <li><a href="./Impressoras multifuncionais.html">Impressoras multifuncionais</a></li>
+          <li><a href="./Webcams Full HD.html">Webcams Full HD</a></li>
+          <li><a href="./Scanners.html">Scanners</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="hardware-link" aria-expanded="false" aria-controls="hardware-submenu">Componentes de Hardware</a>
+        <ul class="submenu" id="hardware-submenu" aria-label="Subcategoria Componentes de Hardware">
+          <li><a href="./CPUs (Intel-AMD).html">CPUs (Intel/AMD)</a></li>
+          <li><a href="./GPUs (NVIDIA-AMD).html">GPUs (NVIDIA/AMD)</a></li>
+          <li><a href="./Placas-mãe ATX-Micro ATX.html">Placas-mãe ATX/Micro ATX</a></li>
+          <li><a href="./Memórias RAM DDR4-DDR5.html">Memórias RAM DDR4/DDR5</a></li>
+          <li><a href="./SSD M.2-SATA.html">SSD M.2/SATA</a></li>
+          <li><a href="./HD 2.5-3.5.html">HD 2.5&quot;/3.5&quot;</a></li>
+          <li><a href="./Water Coolers.html">Water Coolers</a></li>
+          <li><a href="./Fontes 80 Plus.html">Fontes 80 Plus</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="acessorios-link" aria-expanded="false" aria-controls="acessorios-submenu">Acessórios</a>
+        <ul class="submenu" id="acessorios-submenu" aria-label="Subcategoria Acessórios">
+          <li><a href="./Headsets com microfone.html">Headsets com microfone</a></li>
+          <li><a href="./Hubs USB-C.html">Hubs USB-C</a></li>
+          <li><a href="./Suportes ergonomicos.html">Suportes ergonômicos</a></li>
+          <li><a href="./Bolsas para notebook.html">Bolsas para notebook</a></li>
+          <li><a href="./Dock stations.html">Dock stations</a></li>
+          <li><a href="./Mouses verticais.html">Mouses verticais</a></li>
+          <li><a href="./Teclados Bluetooth.html">Teclados Bluetooth</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="redes-link" aria-expanded="false" aria-controls="redes-submenu">Redes e Conectividade</a>
+        <ul class="submenu" id="redes-submenu" aria-label="Subcategoria Redes e Conectividade">
+          <li><a href="./Roteadores Wi-Fi 6.html">Roteadores Wi-Fi 6</a></li>
+          <li><a href="./Adaptadores USB Wi-Fi.html">Adaptadores USB Wi-Fi</a></li>
+          <li><a href="./Powerlines.html">Powerlines</a></li>
+          <li><a href="./Switches gerenciáveis.html">Switches gerenciáveis</a></li>
+          <li><a href="./Cabos CAT6.html">Cabos CAT6</a></li>
+          <li><a href="./Antenas Wi-Fi.html">Antenas Wi-Fi</a></li>
+          <li><a href="./Repetidores de sinal.html">Repetidores de sinal</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="armazenamento-link" aria-expanded="false" aria-controls="armazenamento-submenu">Armazenamento</a>
+        <ul class="submenu" id="armazenamento-submenu" aria-label="Subcategoria Armazenamento">
+          <li><a href="./Pendrives 128GB.html">Pendrives 128GB</a></li>
+          <li><a href="./Cartões microSD UHS-I.html">Cartões microSD UHS-I</a></li>
+          <li><a href="./HDs externos de 2TB.html">HDs externos de 2TB</a></li>
+          <li><a href="./SSDs NVMe.html">SSDs NVMe</a></li>
+          <li><a href="./Cases para HD-SSD.html">Cases para HD/SSD</a></li>
+          <li><a href="./Servidores NAS.html">Servidores NAS</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="software-link" aria-expanded="false" aria-controls="software-submenu">Softwares</a>
+        <ul class="submenu" id="software-submenu" aria-label="Subcategoria Softwares">
+          <li><a href="./Windows 10-11.html">Windows 10/11</a></li>
+          <li><a href="./Linux (Ubuntu, Mint).html">Linux (Ubuntu, Mint)</a></li>
+          <li><a href="./Microsoft Office.html">Microsoft Office</a></li>
+          <li><a href="./Adobe Creative Cloud.html">Adobe Creative Cloud</a></li>
+          <li><a href="./Antivírus (Norton, Avast, Kaspersky).html">Antivírus (Norton, Avast, Kaspersky)</a></li>
+          <li><a href="./IDEs (VS Code, IntelliJ, NetBeans).html">IDEs (VS Code, IntelliJ, NetBeans)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="dispositivos-moveis-link" aria-expanded="false" aria-controls="dispositivos-moveis-submenu">Dispositivos Móveis e Wearables</a>
+        <ul class="submenu" id="dispositivos-moveis-submenu" aria-label="Subcategoria Dispositivos Móveis e Wearables">
+          <li><a href="./Smartphones Android-iOS.html">Smartphones Android/iOS</a></li>
+          <li><a href="./Tablets com caneta.html">Tablets com caneta</a></li>
+          <li><a href="./Smartwatches.html">Smartwatches</a></li>
+          <li><a href="./Pulseiras fitness.html">Pulseiras fitness</a></li>
+          <li><a href="./Fones Bluetooth com IA.html">Fones Bluetooth com IA</a></li>
+          <li><a href="./Leitores de eBook (Kindle, Kobo).html">Leitores de eBook (Kindle, Kobo)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="tecnologia-casa-link" aria-expanded="false" aria-controls="tecnologia-casa-submenu">Tecnologia para Casa</a>
+        <ul class="submenu" id="tecnologia-casa-submenu" aria-label="Subcategoria Tecnologia para Casa">
+          <li><a href="./Smart TVs 4K.html">Smart TVs 4K</a></li>
+          <li><a href="./Assistentes virtuais (Alexa, Google Nest).html">Assistentes virtuais (Alexa, Google Nest)</a></li>
+          <li><a href="./Lâmpadas Wi-Fi RGB.html">Lâmpadas Wi-Fi RGB</a></li>
+          <li><a href="./Interruptores inteligentes.html">Interruptores inteligentes</a></li>
+          <li><a href="./Tomadas Wi-Fi.html">Tomadas Wi-Fi</a></li>
+          <li><a href="./Robôs aspiradores.html">Robôs aspiradores</a></li>
+          <li><a href="./Câmeras IP.html">Câmeras IP</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="games-link" aria-expanded="false" aria-controls="games-submenu">Games</a>
+        <ul class="submenu" id="games-submenu" aria-label="Subcategoria Games">
+          <li><a href="./Consoles (PS5, Xbox Series X, Nintendo Switch).html">Consoles (PS5, Xbox Series X, Nintendo Switch)</a></li>
+          <li><a href="./Controles personalizados.html">Controles personalizados</a></li>
+          <li><a href="./Headsets com som 7.1.html">Headsets com som 7.1</a></li>
+          <li><a href="./Cadeiras gamers.html">Cadeiras gamers</a></li>
+          <li><a href="./Placas de captura.html">Placas de captura</a></li>
+          <li><a href="./Volantes e pedais.html">Volantes e pedais</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="educacao-link" aria-expanded="false" aria-controls="educacao-submenu">Educação e Programação</a>
+        <ul class="submenu" id="educacao-submenu" aria-label="Subcategoria Educação e Programação">
+          <li><a href="./Kits Arduino e sensores.html">Kits Arduino e sensores</a></li>
+          <li><a href="./Raspberry Pi.html">Raspberry Pi</a></li>
+          <li><a href="./Robótica com Lego Mindstorms.html">Robótica com Lego Mindstorms</a></li>
+          <li><a href="./Micro-bit.html">Micro:bit</a></li>
+          <li><a href="./Livros técnicos.html">Livros técnicos</a></li>
+          <li><a href="./Cursos de TI online.html">Cursos de TI online</a></li>
+          <li><a href="./Emuladores de laboratório virtual.html">Emuladores de laboratório virtual</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <main class="content" tabindex="-1">
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Pesquisar produtos..." class="search-bar">
+  </div>
+  
+  <script>
+    const produtos = [
+      {
+        nome: "TP-Link Archer T3U AC1300",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador1.jpeg",
+        descricao: "Adaptador USB 3.0 Mini TP-Link Archer T3U Wireless AC1300 Dual Band 2.4/5 GHz MU-MIMO, Preto",
+        preco: "139,90",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br/Adaptador-wireless-TP-Link-T3U-Pequeno/dp/B07M69276N/ref=mp_s_a_1_1?adgrpid=117911574137&dib=eyJ2IjoiMSJ9.TAua2vfc-O24b6u006PFXZAafZ4iuBktaifRmo1wBGGy5GzAmZhqfiAcojBsjAqZbqda43NuVdRAqg1xYh60bVJCC7btCKRUwXYYkKF946M8wTvmDYNP4Arspk4DutPmPE-0USnU9qWs4mE9m-CChc-UMp8X4i_lY2PmPm2t6jU2r03-lGifNhY5V0PTurvbAjvraEyyGN5ERnwM_gcLJw.otb_tvBMTstrsJWMfiI6tTcnFwNbQweEQn4mnOuGLKk&dib_tag=se&hvadid=593252456840&hvdev=m&hvlocphy=9216076&hvnetw=g&hvqmt=e&hvrand=9011828011245584812&hvtargid=kwd-867152495237&hydadcr=28017_14542167&keywords=tp+link+archer+t3u+ac1300&mcid=9d75de368da133e88dc9e5cdfda7a294&qid=1748535624&sr=8-1&ufe=app_do%3Aamzn1.fos.a492fd4a-f54d-4e8d-8c31-35e0a04ce61e" },
+          { nome: "Tp-link", link: "https://www.tp-link.com/br/home-networking/adapter/archer-t3u/" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/698432/adaptador-wifi-tp-link-t3u-nano-ac1300-2-4-5ghz-dual-band?srsltid=AfmBOopRB3xfiqnH7Qk2zMs6tsYbTKDh9NGja6rv2N6GQRJv9oeQ8YilLfc" },
+          { nome: "Shopee", link: "https://shopee.com.br/product/349858790/16380169990?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkVHQ3ZkZSUTMrR3pBWmZZNzdrcnRBMGxSNlR2R3psMWhocFBRMlV4WTZJWTd1Tmx6a3NlcEMvRVpDNmk3UldSTjhvcTRLUEllekNQeDVCV1FaU2htQmZ4bjJqVHBzY2JPZDRqZ21GK2JIK0lVWlpUbWhEKzd5dE9WV01OMU9qazV3PT0&gQT=2" },
+          { nome: "Magazine Luiza", link: "https://m.magazineluiza.com.br/adaptador-wireless-wi-fi-usb-sem-fio-300mbps-2-4ghz-tp-link-tl-wn-823n-tp-link/p/cac5k1fe88/in/apwf/?seller_id=mlsshop&srsltid=AfmBOorOYVVo0BA49E_Va7B2dI0GSXwEEX5J0Jk44xGwWyD8cthopmebjKw&gQT=2" },
+          { nome: "Hd Store", link: "https://www.hdstore.com.br/adaptador-wireless-tp-link-usb-archer-t3u-mini-mu-mimo-ac1300?srsltid=AfmBOoovKvxf2qgP231jv4IqodHvV4UYKQJ1czYWXr76hDvygkkD_b7IZiM&gQT=2" },
+          { nome: "Info Peças", link: "https://www.infopecas.com.br/adaptador-usb-wireless-tp-link-t3u-dual-band-ac1300?srsltid=AfmBOoq0g2b5oXN48DTNX4T1GRHZuSIaXJwsISmVx7EpsfJT7xwrKJ05b18&gQT=2" },
+          { nome: "Abacaxi Importados", link: "https://www.abacaxiimportados.com.br/informatica/rede-e-wireless/adaptador-wireless-usb-dual-band-t3u-tp-link-1300mbps?srsltid=AfmBOoqrQ5Tk7mKYrDYyurq-aRasXGngCsqsElH9YRo7zUFfUaovFwC8CYc&gQT=2" },
+          { nome: "Online Shopping", link: "https://www.onlineshopping.com.br/adaptador-wireless-tp-link-usb-30-ac1300-archer-t3u/p?srsltid=AfmBOooG8DWh7GtRRUBTKZmh-9Up6LNz6fspKDVCON7rh9bEB2QruEEUdDw&gQT=2" },
+          { nome: "Syma Solutions", link: "https://www.syma.com.br/adaptador-tplink-wireless-ac1300-mini-dual-band-archer-t3u.html?srsltid=AfmBOorZzVw-iFCHjiJWac-Y9cGKfqnVTFfUoi6qmzj1QtFT9B2gsKlADKA&gQT=2" }
+        ]
+      },
+      {
+        nome: "TP-Link TL-WN821N",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador2.jpeg",
+        descricao: "Usb Adaptador, Wi-fi Tp-link Tl-wn821n - 300mbps",
+        preco: "94,90",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br/Adaptador-Wireless-Mbps-Tl-Wn821n-Tp-Link/dp/B00KIMXKGG?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AKGJRNNFH6JAW&gQT=2" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/291845/usb-adaptador-wi-fi-tp-link-tl-wn821n-300mbps-?srsltid=AfmBOor6bFi-PAI6pFgqhfZqHdcZLhnO0I4JTZFdA456XreUgvJzd3Z_CHY&gQT=2" },
+          { nome: "Enjoei", link: "https://www.enjoei.com.br/p/adaptador-usb-wireless-n-tl-wn821n-tp-link-57352600?vid=757b1a5b-ee63-456b-9d98-626b88bc01f0&gQT=2" },
+          { nome: "Trocafone", link: "https://www.trocafone.com.br/adaptador-wireless-tp-link-tl-wn821n-300mbps-83375/p?idsku=56127&gQT=2" },
+          { nome: "Shopee", link: "https://shopee.com.br/product/390163759/7291309622?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkWVp3RFo3Mkw5czd4Z0hzdEF1WVFibUJiUzRBQ3FlbmpEaDc3Zms4NUlXK0dwdkR2Z0JLZWxHZ0EwL2VkNFZpMkkxclpwaHBkMWE2VGJoU3F5YmMvNFVNclRpQVRoeGN4c2lhYkkyOHh3bVI&gQT=2" },
+          { nome: "Magazine Luiza", link: "https://m.magazineluiza.com.br/adaptador-usb-wireless-tp-link-tl-wn821n-300mbps/p/keefk6813j/in/apwf/?seller_id=milenio&srsltid=AfmBOoo65u3i5vzacJQwi3-2FyAp69YNKqvypzB7yDzACE-CyzfIabpGIhk&gQT=2" },
+          { nome: "Americanas", link: "https://www.americanas.com.br/usb-adaptador-wi-fi-tp-link-tl-wn821n-300mbps-7211457879/p?idsku=135978&srsltid=AfmBOopO0gCOFz_WitBsOFhKyHB2pBHddt41tVrZkROjLnsx7YjSlYnQQYc&gQT=2" },
+          { nome: "JCcabos", link: "https://www.jccabos.com.br/adaptador-usb-wireless-n-300mbps-821n-tp-link?utm_source=Site&utm_medium=GoogleMerchant&utm_campaign=GoogleMerchant&srsltid=AfmBOoppOMErz8ENdoImNVbK5J1Hrbmcuelih3Xf6VelUVxcndgieNZz5dw&gQT=2" },
+          { nome: "Confiança Informática", link: "https://www.confiancainformatica.com.br/adaptador-usb-high-power-wireless-n300mbps-tl-wn821n-tp-lik" },
+          { nome: "Scarcom", link: "https://www.scarcom.com.br/tp-link-tl-wn821n/p?idsku=54&srsltid=AfmBOopnPpSfBwdqDDS7un4a25cMV-UskjBgKUe4LkesA7zoxtR4F4VchWE&gQT=2" }
+        ]
+      },
+    {
+        nome: "TP-Link TL-WN823N",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador3.jpeg",
+        descricao: "Adaptador Wifi USB TL-WN823N 300Mbps TP Link",
+        preco: "69,90",
+        fornecedores: [
+          { nome: "TNT Distribuidor", link: "https://www.tntdistribuidor.com.br/adaptador-wifi-usb-tl-wn823n-300mbps-tp-link?utm_source=Site&utm_medium=GoogleMerchant&utm_campaign=GoogleMerchant&srsltid=AfmBOoqGxhQheHTXuQ8WSHJUyxBkMEBWCOzzDspYEkHxhtMK1c-gTvJIYQw&gQT=2" },
+          { nome: "Kalunga", link: "https://www.kalunga.com.br/prod/adaptador-wireless-n-300-mbps-usb-mini-tl-wn823n-tp-link-cx-1-un/610426?srsltid=AfmBOoqRy5V39xC78x3D4X_TiQT6IjvgM-BVV_vxseo0ajDcJsYPNanxhBs&gStoreCode=kalunga141&gQT=2" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/173577/mini-adaptador-tp-link-usb-wireless-n300mbps-tl-wn823n?srsltid=AfmBOoqQnwpGiAzhSrQ04wkkjkKX9b8o0knYS7FgN87_5lakXNpQsn9HndM&gQT=2" },
+          { nome: "Terabyte E-Shop", link: "https://www.terabyteshop.com.br/produto/10834/mini-adaptador-tp-link-wireless-n300mpbs-tl-wn823n-usb?srsltid=AfmBOor4jpQ9gqKfXlPGPwGIflVmtfqXTXZixzXQOXDJSwu0Pte7dKiH1aU&gQT=2" },
+          { nome: "Pichau", link: "https://www.pichau.com.br/adaptador-wireless-tp-link-300mbps-usb-mini-tl-wn823n?srsltid=AfmBOopML-0hDRbEWXQpqYOEedy-MauRadmIhpZjmkSRKFu0OSVr0350UM8&gQT=2" },
+          { nome: "Amazon", link: "https://www.amazon.com.br/TP-LINK-TL-WN823N-300MBPS-MINI-ADAPTADOR/dp/B01FAL3QE0?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AKGJRNNFH6JAW&gQT=2" },
+          { nome: "Shopee", link: "https://shopee.com.br/product/421926745/16211979502?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkVHQ3ZkZSUTMrR3pBWmZZNzdrcnRBM25iRzd6cDVSYmJIek9kRC91SVQ5WURSdUJyM0wrSkQxSGd5dmlEeEJWMndXK25RMjBsdFFhNjY0N0tBek9zcDRXSHlPeWZ0dWhKbmxSZ2E0SiswSWFNTzFlaEJpQ29QL1F2NjJPRFFwZTd3PT0&gQT=2" },
+          { nome: "Paulista Best Buy", link: "https://www.paulistabestbuy.com.br/product-page/adaptador-wireless-tp-link-usb-300mbps-tl-wn823n-ver-3-0?gQT=2" },
+          { nome: "Americanas", link: "https://www.americanas.com.br/usb-adaptador-wi-fi-tp-link-tl-wn823n-300mbps-modo-soft-ap-botao-wi-fi-protected-setup-wps-172821921/p?idsku=3146930&srsltid=AfmBOoqoES9UoB9ecyLpTAbQ1p8R7vOJCya3pyxCDq13hNhRyqWzMw0Coxs&gQT=2" },
+          { nome: "Leroy Merlin", link: "https://www.leroymerlin.com.br/adaptador-tp-link-wireless-tl-wn823n-usb-300mbps-tpl0416_1567053077?region=outros&srsltid=AfmBOorB49Tcf0jaB7apTlecnFvtqV7XZzovMHzT4dYuSCLu-FSbFoOr2B4" }
+        ]
+      },
+      {
+        nome: "TP-Link Archer T2U Plus AC600",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador4.jpeg",
+        descricao: "Adaptador Wireless, Tp-Link Archer T2u Plus, Ac600, USB, Dual Band",
+        preco: "129,90",
+        fornecedores: [
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/173198/adaptador-wireless-tp-link-archer-t2u-plus-ac600-usb-dual-band?srsltid=AfmBOop5Hwdb9mYUPhJtjK1rJ7qlAS-4_7QmJ0ZeSGRkigp9QQI_VRQc6qU&gQT=2" },
+          { nome: "TNT Distribuidor", link: "https://www.tntdistribuidor.com.br/adaptador-wifi-usb-archer-t2u-plus-ac600-dual-band?utm_source=Site&utm_medium=GoogleMerchant&utm_campaign=GoogleMerchant&srsltid=AfmBOoodKMxjFXxRNvxiqZ84kNzRHGkQ2zzPNYAlY9DMbxZVjGUE1iYfoVE&gQT=2" },
+          { nome: "Pichau", link: "https://www.pichau.com.br/adaptador-wi-fi-tp-link-ac600-usb-dual-band-2-4-5ghz-alto-ganho-archer-t2u-plus?srsltid=AfmBOorkFhik8rfcDncPPEdv4dUwzExoGOrm2INOt304LylIyT-BrhD-PZ0&gQT=2" },
+          { nome: "Amazon", link: "https://www.amazon.com.br/Adaptador-TP-Link-Archer-T2U-Wireless/dp/B07P681N66?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1SSLLDYVWUCY7&gQT=2" },
+          { nome: "Terabyte E-Shop", link: "https://www.terabyteshop.com.br/produto/23760/adaptador-wireless-tp-link-usb-dual-band-ac600-archer-t2u-plus?srsltid=AfmBOoq8yY0S0WnGz6ABujUWbw8VcrGERjBO8ifAi7ccga1t0n7YN58lyCU&gQT=2" },
+          { nome: "Shopee", link: "https://shopee.com.br/product/481909365/23096586440?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkVHQ3ZkZSUTMrR3pBWmZZNzdrcnRBMmpiY1A0eGlYbkY1bkp4MGZuN2lOVVlXNjE1Mi90WVF1d2FEQmxTeCtaNGV1czFNSTRHNVZlWSt3WUN0NHF5YXpkQ2tGc1Y0NFVtVjBsMHd4dS9GSkk3R1N1amk4T3ZyWDNwVmxRSjZQRDdRPT0&gQT=2" },
+          { nome: "Americanas", link: "https://www.americanas.com.br/adaptador-usb-tp-link-archer-t2u-plus-ac600-dual-band-wifi-3380733310/p?idsku=737061&srsltid=AfmBOoqd8X0sOdCQSZVBEyv0rPnTDcNBUxV6on6gc5Sk4dv8ntngDuV7xpY&gQT=2" },
+          { nome: "DGtech", link: "https://www.dgtec.com.br/rede-wireless/modens-routers-repetidor/adaptador-pci-usb-wifi/adaptador-wireless-tp-link-usb-2-0-ac600-archer-t2u-plus?gQT=2" },
+          { nome: "Part Number", link: "https://www.pndistribuidora.com.br/adaptador-wifi-usb-archer-t2u-plus-ac600-dual-band?utm_source=Site&utm_medium=GoogleMerchant&utm_campaign=GoogleMerchant&srsltid=AfmBOooWtoco4Tbbs9VQ2W1HorD3outrmJXsmiFmoMXKsOXNUSMNuWnOWLk&gQT=2" },
+          { nome: "Magazine Luiza", link: "https://m.magazineluiza.com.br/usb-adaptador-wi-fi-tp-link-archer-t2u-plus-ac600-dual-band-2-4-ghz-e-5-ghz-antena-de-5dbi/p/jd8a4baj8d/in/eqrw/?seller_id=oficinadosbits2&srsltid=AfmBOopvSOtGHBTvmQfLH91xaBoeqqOMqTeL1dEh84SCuefFjeFMAyZOetY" }
+        ]
+      },
+    {
+        nome: "TP-Link Archer T9UH AC1900",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador5.jpeg",
+        descricao: "Adaptador Wireless Tp-link Archer T9uh Ac1900 1300mbps",
+        preco: "349,90",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br/TP-Link-Archer-T9UH-AC1900-Archer_T9UH/dp/B01MT7D9Q9?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A2RUK2QQFH70OW&gQT=2" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/587122/adaptador-wireless-tp-link-archer-t9uh-ac1900-1300mbps?srsltid=AfmBOoro0Ampq71gTLknnEhHwH690MsjpUZroiv6IqQXhDcSTbTPoTS6igA&gQT=2" },
+          { nome: "Paulista Best Buy", link: "https://www.paulistabestbuy.com.br/product-page/adaptador-sem-fio-usb-tp-link-archer-t9uh-ac1900-dual-band?gQT=2" },
+          { nome: "Bios Tech Conecta", link: "https://www.biostechconecta.com.br/produto/adaptador-usb-tp-link-archer-t9uh-ac1900-dual-band-wi-fi.html?utm_source=Site&utm_medium=GoogleShopping&utm_campaign=IntegracaoGoogle&srsltid=AfmBOoqJp5ZbV_J1K6w02WAOpJiLeCyGEEvdX8LxTAwM8DVv8r8-WvDOAzk&gQT=2" },
+          { nome: "Magazine Luiza", link: "https://m.magazineluiza.com.br/adaptador-wireless-tp-link-archer-t9uh-ac1900-1300mbps/p/ef0fa6g0ff/in/eqrw/?seller_id=robohardwareltda&srsltid=AfmBOorVNIMB31OISE-zEzWgEjIeiI50xaDoaiWX2pH-LBAi6S_Ioh0QYK0&gQT=2" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/adaptador-usb-wi-fi-tp-link-archer-t9uh-de-600-1300mbps/p/1560720061?utm_medium=Cpc&utm_source=google_freelisting&IdSku=1560720061&idLojista=74943&tipoLojista=3P&srsltid=AfmBOoraP3xnY2dgSKytu6BXaqhzVD-EPoySHMR1Ry5ZgmZnvn2ZcXgMbnY&gQT=2" },
+          { nome: "Carrefour", link: "https://www.carrefour.com.br/adaptador-wireless-tp-link-archer-t9uh-ac1900-1300mbps-mp939029018/p?gQT=2" },
+          { nome: "Ampla Network", link: "https://www.amplanetwork.com.br/adaptador-usb-tp-link-ac1900-archer-t9uh?utm_source=Site&utm_medium=GoogleMerchant&utm_campaign=GoogleMerchant&srsltid=AfmBOorvHGF22hLgh_kg0PU5CbD5ChJNGSF_wKyN-5TQmKHbSKMSo0u2fIM&gQT=2" },
+          { nome: "Az Tech", link: "https://www.aztech.com.br/adaptador-usb-dual-band-sem-fio-ac1900-archer-t9uh-tp-link?utm_source=Site&utm_medium=GoogleMerchant&utm_campaign=GoogleMerchant&srsltid=AfmBOoq1RBy6owAEZXUI2PmdlIovIgrc_-4VTMulb0Y2qtKVZySla6UUE6s&gQT=2" },
+          { nome: "Shopee", link: "https://shopee.com.br/Archer-T9UH-AC1900-High-Gain-Wireless-Dual-Band-USB-Adaptador-i.266639525.23798200735" }
+        ]
+      },
+      {
+        nome: "TP-Link TL-WN725N",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador6.jpeg",
+        descricao: "Adaptador Wifi Usb TL-WN725N 150Mbps Nano",
+        preco: "56,90",
+        fornecedores: [
+          { nome: "TNT Distribuidor", link: "https://www.tntdistribuidor.com.br/adaptador-wifi-usb-tl-wn725n-150mbps-nano?utm_source=Site&utm_medium=GoogleMerchant&utm_campaign=GoogleMerchant&srsltid=AfmBOor3wVtcnuvW7EXt5kCCmUwUFNv7sL8U1uii31Rt63BGiiraMrwzZWc&gQT=2" },
+          { nome: "Kalunga", link: "https://www.kalunga.com.br/prod/adaptador-wireless-150-mbps-802-11n-usb-nano-tl-wn725n-tp-link-cx-1-un/610296?srsltid=AfmBOorphqRApo9x3wqrYCm-OX6bRbDze90P-d1NOqjn7xn-SIL66-Y60K0&gStoreCode=kalunga135&gQT=2" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/188095/adaptador-usb-tp-link-tl-wn725n-wireless-150mbps-nano-preto?srsltid=AfmBOor1B6CA2R3xyEFyi8zYD6Jlx_2M-T6iWZ-TFQZk6bTgBK51AhrmOyg&gQT=2" },
+          { nome: "Amazon", link: "https://www.amazon.com.br/Adaptador-Wireless-TP-Link-TL-WN725N-Adaptadores/dp/B008IFXQFU?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AKGJRNNFH6JAW&gQT=2" },
+          { nome: "Magazine Luiza", link: "https://m.magazineluiza.com.br/nano-adaptador-usb-wireless-150mbps-tl-wn725n-tp-link/p/bd29j26keh/in/apwf/?seller_id=thomazinformatica&srsltid=AfmBOoria8YpncpiC1JBPduibzV6AKSmxHERZqDMR5Rb1RUP8nlFXkU5WOo&gQT=2" },
+          { nome: "Shopee", link: "https://shopee.com.br/product/342261220/7767974067?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkWVp3RFo3Mkw5czd4Z0hzdEF1WVFia3gyK3dRWHNKeURnUUhqTjEzNDA1OWMwWFg0UFBSa2VOOWVCZ2VyeW5QZDZyblBoTXQrRDY0S0VmZHh6dGVwWWorakRqV3BEbTFoMFBpRzRmRnROREQ&gQT=2" },
+          { nome: "Terabyte E-Shop", link: "https://www.terabyteshop.com.br/produto/13166/nano-adaptador-wireless-n-usb-tp-link-150mbps-tl-wn725n?srsltid=AfmBOoqweC-nB8tXKa1r1Dyo9bleUU5zcWvNMDW4JNCuF_2Eh_9E7l_7iaE&gQT=2" },
+          { nome: "Trocafone", link: "https://www.trocafone.com.br/adaptador-tp-link-tl-wn725n-wireless-usb-n-nano-150mbps---tpl0095-79416/p?idsku=50028&gQT=2" },
+          { nome: "Gigantec", link: "https://www.gigantec.com.br/adaptador-usb-nano-tp-link-tl-wn725n-wireless-n-150mbps.html?srsltid=AfmBOooNSB7cxNkjhzyd0VjRtgFTxQVKU9fNAF7uAWIJsTDtX0JOzBDTgN0" },
+          { nome: "Carrefour", link: "https://www.carrefour.com.br/adaptador-tplink-tlwn725n-wireless-usb-n-nano-150mbps-tpl0095-mp933256117/p" }
+        ]
+      },
+    {
+        nome: "Intelbras Action A1200",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador7.jpeg",
+        descricao: "Adaptador USB Wireless Dual Band ACtion A1200 Branco Intelbras",
+        preco: "129,90",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br/Wireless-Action-Intelbras-Adaptadores-Branca/dp/B07BRB5VRB?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1ZZFT5FULY4LN&gQT=2" },
+          { nome: "Kalunga", link: "https://www.kalunga.com.br/prod/adaptador-wireless-dual-band-ac-1200-mbps-a1200-intelbras-cx-1-un/610471?srsltid=AfmBOoq04zI4A7ql2POMCEobT-V_RdQlvh_Wr4otorhbnRbWrAnaCDNQJkk&gStoreCode=kalunga105&gQT=2" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/213056/adaptador-intelbras-wi-fi-usb-inet-action-a1200-3-0-dual-band-1200mbps-branco?srsltid=AfmBOoqEpWzWGRRMTaDNDbho1XEou_FYRx3q9DxHwGLNgOpST5OTJmyKiys&gQT=2" },
+          { nome: "Pichau", link: "https://www.pichau.com.br/adaptador-intelbras-wi-fi-5-dual-band-usb-branco-action-a1200?srsltid=AfmBOorE6oLgeGO--qQqtttcMXLZqeCLY9H8_GlUrBmgF-zqdkPe0BM3vpY&gQT=2" },
+          { nome: "Intelbras", link: "https://loja.intelbras.com.br/adaptador-action-1200/p?idsku=4710018&srsltid=AfmBOor2qher0KC6vMyZoVkq7juZ7k-Uqq12evy2a2JVgSmtcoasDWeOlZU&gQT=2" },
+          { nome: "Shopee", link: "https://shopee.com.br/product/384505073/8814877421?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkWVp3RFo3Mkw5czd4Z0hzdEF1WVFibGtkY1p5QXRIVTdOaDBYVkNoKzNYVG4yL2RDT2RNVUlSWDRGeXhtMVFGNHZyVXpBL2I0K0hDZzdUeUk3aExWNHA2TXN4K1Y2WW1KeHQ1VFBZL3JTY3U&gQT=2" },
+          { nome: "Americanas", link: "https://www.americanas.com.br/adaptador-de-internet-usb-intelbras-action-a1200-wireless-40522080/p?idsku=2924089&srsltid=AfmBOoqQ4Qxlf3QySU8czxSXj31GgV8bKcw9LU8jUGAOuQKH85qd40FIB3A&gQT=2" },
+          { nome: "Magazine Luiza", link: "https://m.magazineluiza.com.br/adaptador-de-rede-wifi-usb-action-a1200mbps-4710018-intelbras/p/jej6a4g3dj/in/plcr/?seller_id=infostore&srsltid=AfmBOoou7Fycdo55z2ITPkwJczlIv_HTZFEirA39tl-wAnAAyPTRQJGyZEc&gQT=2" },
+          { nome: "Gazin", link: "https://www.gazin.com.br/produto/adaptador-wireless-usb-action-a1200-intelbras-dual-band-usb-30/4482/sem-cor/sem-voltagem?utm_source=google&utm_medium=google-ads&srsltid=AfmBOorKyumcjIHzLs3jBXrjy4SEY6pgq84-643-7D4h-B3Zl8JILwWMHCY&gQT=2" },
+          { nome: "Trocafone", link: "https://www.trocafone.com.br/adaptador-wireless-usb-intelbras-inet-4710018-action-a1200-70048/p?idsku=39041" }
+        ]
+      },
+      {
+        nome: "Intelbras IWA 3001",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador8.jpeg",
+        descricao: "Adaptador Intelbras USB Wireless - IWA 3001",
+        preco: "84,90",
+        fornecedores: [
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/96888/adaptador-intelbras-usb-wireless-iwa-3001?srsltid=AfmBOor4GMm1r3X-oevlH4iwqUzB_IRxbDUqLz6XpfZPQxmlhqb6fyH1WmE&gQT=2" },
+          { nome: "Atacado Zona Leste", link: "https://www.zonaleste.com.br/adaptador-wireless-intelbras-iwa-3001-n300-com-antena.23351.html?srsltid=AfmBOopmp4D5-noqULmNjrkQjAWfncXcia6NR1iJU0SryR1yyGQwbWWwjgk&gStoreCode=1&gQT=2" },
+          { nome: "Amazon", link: "https://www.amazon.com.br/Wireless-IWA-3001-Intelbras-Adaptadores/dp/B07D1JNM9R?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1ZZFT5FULY4LN&gQT=2" },
+          { nome: "Pichau", link: "https://www.pichau.com.br/adaptador-usb-intelbras-wireless-iwa-3001?srsltid=AfmBOorDN52il-yDXNHQP6r-MOJRoBufMtQnXBcG2RK1qi1Mj6nXWcWp7-0&gQT=2" },
+          { nome: "Intelbras", link: "https://loja.intelbras.com.br/adaptador-iwa-3001/p?idsku=4710016&srsltid=AfmBOorn3Hmaoaxd5DYec0_gJu1hRgcOoqaSYW3JkE_Ub1QGkEjM0KjJUWQ&gQT=2" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br/adaptador-usb-wireless-iwa-3001-intelbras/p/hh7f1h7bch/in/apwf/?seller_id=olistplus&srsltid=AfmBOoqU1TD-A9-QPFFZD393Qi1VxAs0tb5BoCM-qQldreEYpvvNrwxxfKo&gQT=2" },
+          { nome: "Americanas", link: "https://www.americanas.com.br/adaptador-wi-fi-wireless-usb-rede-sem-fio-intelbras-iwa-3001-7514126667/p?idsku=1844082&srsltid=AfmBOopGBK4gJ-3Uoe9_YfEAPaC4c3cKidZLczxczZBsLFC4ThVZYbBAPE4&gQT=2" },
+          { nome: "Upperseg Segurança", link: "https://www.upperseg.com.br/informatica/roteadores-wireless/adaptadores-e-repetidores/adaptador-usb-wireless-com-antena-externa-iwa-3001-intelbras/?srsltid=AfmBOoo1Vpflej4-DSMCsH_mnaABd4pyvPF4OwcXfePwFzJnGo2fBWFijQM&gQT=2" },
+          { nome: "Trocafone", link: "https://www.trocafone.com.br/adaptador-wireless-usb-intelbras-inet-4710016-iwa3001-70049/p?idsku=39042&gQT=2" },
+          { nome: "Shopee", link: "https://shopee.com.br/product/372026917/20797656052?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkVHQ3ZkZSUTMrR3pBWmZZNzdrcnRBMjZBdFhtZmVMRW5PNkxZVFN6aEpRN25ZT3F2Z2hQS2g5cWtLZWtRb2dvWHNxbkFUWTVMZDJHN09UbHdxNlJHSGR5QkpUUmkzc1RyNE8vV0JWRGxETU8xZHNBZEpkTTllNEpjd09mbTg3L3JnPT0" }
+        ]
+      },
+    {
+        nome: "D-Link DWA-171 AC600",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador9.jpeg",
+        descricao: "Adaptador Wireless USB AC600",
+        preco: "109,90",
+        fornecedores: [
+          { nome: "D-Link", link: "https://www.dlink.com.br/produto/adaptador-wireless-usb-ac600-dwa-171-d1/" },
+          { nome: "Kalunga", link: "https://www.kalunga.com.br/prod/adaptador-wireless-dual-band-usb-ac-600mbps-dwa-171-d-link-cx-1-un/610453?gQT=2" },
+          { nome: "Uti do Micro", link: "https://www.utidomicro.com/MLB-745520258-adaptador-wireless-usb-d-link-11ac-dual-band-5-ghz-envio-24h-_JM?gQT=2" },
+          { nome: "Terabyte", link: "https://www.terabyteshop.com.br/produto/21480/adaptador-d-link-wireless-usb-ac-600mbps-dwa-171?gQT=2" },
+          { nome: "Mundo Max", link: "https://www.mundomax.com.br/adaptador-wireless-usb-ac600-dwa-171-dlink?gQT=2" },
+          { nome: "Mirão", link: "https://www.mirao.com.br/adaptador-wireless-11ac-d-link-nano-dual-band-usb-dwa-171.html?gQT=2" },
+          { nome: "Scarcom", link: "https://www.scarcom.com.br/d-link-dwa-171/p?skuId=47&srsltid=AfmBOorPh9tMaedAXsoqDh6veo5LB9I8eX2aHeSgChsy-J2htzbrJ_FjXpQ&gQT=2" },
+          { nome: "PortoSoft", link: "https://www.portosoft.com.br/adaptador-usb-s-fio-d-link-ac600-433-mbps-dwa-171.html?srsltid=AfmBOoqfFtwz8cLZTtMsKapFloJNWeA6tmCsjG0zBi8OoldoK8GQeQu6nNY&gQT=2" },
+          { nome: "DHCP Informática", link: "https://www.dhcp.com.br/nano-adaptador-wireless-usb-d-link-dwa-171-ac600-dual-band-150mbps-2-4ghz-433mbps-5ghz.html?srsltid=AfmBOoq6a6dAEUbM7fB93FvJ4c6aOVLoLFnxD3xwIvNW1VcgJOUdbhNpnQA" },
+          { nome: "Oficina dos Bits", link: "https://www.oficinadosbits.com.br/produto/usb-adaptador-wi-fi-d-link-dwa-171-ac600-nano-dual-band-2-4-ghz-e-5-ghz-tecnologia-mu-mimo-botao-wi-fi-protected-setup-wps/?r=googleshop7430&utm_source=google&utm_medium=cpc&srsltid=AfmBOooiAuLVWIuKxSnibhE2atQSQNFH3GkrAj2xO63JkqqlRriPuhQi3e4" }
+        ]
+      },
+      {
+        nome: "D-Link DWA-123",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador10.jpeg",
+        descricao: "Adaptador D-Link DWA-123 Wireless N 150Mbps USB",
+        preco: "49,90",
+        fornecedores: [
+          { nome: "Hardstore", link: "https://www.hardstore.com.br/shop/products/adaptador-d-link-dwa-123-wireless-n-150mbps-usb?srsltid=AfmBOorWTy5xd7UJvwdynCfQ0Rv43a_3woio55OnUiXV2ya8skQblTC1ZUU&gQT=2" },
+          { nome: "ChipByte", link: "https://www.chipbyte.com.br/adaptador-usb/adaptador-wireless-usb-d-link-dwa-123-150mbps/297?gQT=2" },
+          { nome: "Ponto Digital", link: "https://www.pontodigitalinfo.com.br/adaptador-usb-wireless-150mbps-d-link-dwa-123?srsltid=AfmBOor_sU3SXPz0aZH8iLkFJGCZZ38lSXT9l3HCzaBoH_SV8elGC2XDPd8&gQT=2" },
+          { nome: "StarHouse", link: "https://www.starhouse.com.br/adaptador-usb-d-link-wireless-n-150mbps-dwa-123?srsltid=AfmBOopHSC_HaK_6PfMQBIMQmbWib7txGG2jj9dwCsrCeB4dx-isY1ohqac&gQT=2" },
+          { nome: "Glacon", link: "https://www.glacon.com.br/rede-wireless/adaptador-wireless-dwa-123-150mbps-usb-802-11n-d-link?srsltid=AfmBOoruadXIu11FtF6-rHBc2dMKSIJTDtyoAsQcHg_E1QMoyChdLOfw0Rk&gQT=2" },
+          { nome: "NetShop Informática", link: "https://netshopinformatica.com.br/produto/cabos-adaptadores/adaptadores-de-videoaudiorede/133/adaptador-wireless-150mbps-d-link-dwa-123?gQT=2" },
+          { nome: "Premium", link: "https://www.premium.com.br/produto/adaptador-wireless-n-usb-150mbps-dwa-123-d-link/?srsltid=AfmBOoo_4Pf_ebXSb2jIYWGOTRSIOOI4SVNq5JARB_wpSJTNO6B98WURAcc&gQT=2" },
+          { nome: "Amazon", link: "https://www.amazon.com.br/Adaptador-Wireless-150Mbs-D-Link-Adaptadores/dp/B0754MC8Q2" },
+          { nome: "MadeiraMadeira", link: "https://www.madeiramadeira.com.br/adaptador-wireless-usb-150mbps-dwa-123-preto-d-link-2892037.html?origem=pla-2892037&seller=914&gQT=2" },
+          { nome: "D-Link", link: "https://www.dlink.com.br/produto/adaptador-wireless-usb-n150-dwa-123/" }
+        ]
+      },
+    {
+        nome: "D-Link DWA-182",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador11.jpeg",
+        descricao: "D-Link Adaptador USB WiFi AC1200 Mini Internet Sem Fio Banda Dupla 3.0 Wi-Fi Netowrk Desktop Laptop (DWA-182), Preto",
+        preco: "259,90",
+        fornecedores: [
+          { nome: "Mundo Max", link: "https://www.mundomax.com.br/adaptador-wireless-usb-ac1200-dwa-182-dlink" },
+          { nome: "Amazon", link: "https://www.amazon.com.br/D-Link-Systems-AC1900-Adaptador-DWA-192/dp/B0099XFRIY?gQT=2" },
+          { nome: "Loja Constelação", link: "https://www.lojaconstelacao.com.br/adaptador-wireless-usb-ac1200-dwa-182-dlink?utm_source=Site&utm_medium=GoogleShopping&utm_campaign=IntegracaoGoogle&srsltid=AfmBOoo0wNge-vjKWUUBn8TJxCtlegMKJ7Q1HWG6WW8zssYAsUWxXAPCKyQ&gQT=2" },
+          { nome: "AZtech", link: "https://www.aztech.com.br/adaptador-usb-d-link-wireless-ac1200-dual-band-dwa-182?srsltid=AfmBOopUD9jcGVfSMG326eDD4tMPIo28okug_fseOTjP5hkjcPSDwX_jlO8&gQT=2" },
+          { nome: "StarHouse", link: "https://www.starhouse.com.br/rede-wireless/adaptadores/adaptador-d-link-dwa-182-wireless-usb-11ac-dualband-867mbps-ou-300mbps?srsltid=AfmBOooOTtu19cHkk_GbNwEe1NfwTYcpeZEKszNbtoAWyqAcN5N-vfyUH-Q" },
+          { nome: "Glacon", link: "https://www.glacon.com.br/rede-wireless/adaptador-usb-wireless-ac1200-dual-band-11ac-dwa-182-d-link?srsltid=AfmBOoorpjlYBw47-W5JIjrV1KienvBmqm7Mudn-YybYpQDlmMzp0mSC9QA" },
+          { nome: "Sales", link: "https://www.distribuidoradecftv.com.br/adaptador-usb/adaptador-usb-wireless-d-link-ac1200-dual-band-5ghz-p?srsltid=AfmBOopbjScvWP0RMdl4ArPZeh5jxHaFJuoVZdfolCWBTzuz0jG3yrPUwio&gQT=2" },
+          { nome: "Oficina dos Bits", link: "https://www.oficinadosbits.com.br/produto/usb-adaptador-wi-fi-d-link-dwa-182-ac1300-usb-3-0-dual-band-2-4-ghz-e-5-ghz-mu-mimo-botao-wi-fi-protected-wpa-e-wpa2/?r=googleshop7430&utm_source=google&utm_medium=cpc&srsltid=AfmBOoqIPC9tqCGT2nxMkGr1RS_63xYwBenItFDjB9epFixs7qglZtjYHeI&gQT=2" },
+          { nome: "Net Computadores", link: "https://netcomputadores.com.br/p/dwa182ac1200-dlink-adaptador-usbd-wireless/96943?srsltid=AfmBOorc_0VA05oyVurLBX8e3BLfmh6Z82woTaBoVTtDiOq_QedopAvLhU8" },
+          { nome: "Premium", link: "https://www.premium.com.br/produto/adaptador-d-link-wireless-ac1300-dual-band-usb-dwa-182/?srsltid=AfmBOor7FHXLDBxkIRDfaK-zAPzBJknHmyortwU_QF5fiaPOBasRHWDjRkU" }
+        ]
+      },
+      {
+        nome: "Multilaser RE034",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador12.jpeg",
+        descricao: "Adaptador Wireless High Power Usb 150mbps Multilaser Re034",
+        preco: "74,90",
+        fornecedores: [
+          { nome: "Magazine Luiza", link: "https://m.magazineluiza.com.br/adaptador-wireless-high-power-usb-150mbps-multilaser-re034/p/aeed920d11/in/apwf/?seller_id=aliancaeletro&srsltid=AfmBOopdyDzjLOorE_84LtgDO03fxQt0CHE1IuDkfpDIZZA43RCG0frhTJQ&gQT=2" },
+          { nome: "MTZ Store", link: "https://www.mtzstore.com.br/p-adaptador-wireless-high-power-150mbps-antena-3dbi?gQT=2" },
+          { nome: "Head Informática", link: "https://www.headinformatica.com.br/rede/adaptador-wireless-high-power-150mbs-antena-destacavel-re034?gQT=2" },
+          { nome: "Pichau", link: "https://www.pichau.com.br/adaptador-wireless-multi-150-mbps-usb-2-0-antena-3dbi-2-4ghz-re034?gQT=2" },
+          { nome: "Mirão", link: "https://www.mirao.com.br/adaptador-wireless-multilaser-high-power-150mbps-antena-3dbi-preto-re034.html?gQT=2" },
+          { nome: "Atera", link: "https://www.atera.com.br/produto/re034/Adaptador+USB+WiFi+Multilaser+RE034+150Mbps+3dBi?srsltid=AfmBOoo9y0tVpYxpn9DjGdUsE31t_TKVlhTKMYbQFO4SEAAWKglQjnc9sUw&gQT=2" },
+          { nome: "D&D eletronica", link: "https://www.dedcomponentes.com.br/adaptador-wireless-wi-fi-usb-20-150-mbps-re-034-multilaser?srsltid=AfmBOoqVBC0YB9RKhVhbxvel5WMQVp1o_Z3adYKLKfOgD9NUQUCKuYqVxnU&gQT=2" },
+          { nome: "Amazon", link: "https://www.amazon.com.br/Adaptador-RE034-Multilaser-Acess%C3%B3rios-Notebooks/dp/B0754GLWC5" },
+          { nome: "MegaByte", link: "https://www.megabytecomputadores.com.br/MLB-2085058138-adaptador-wirelles-high-power-150mbps-3dbi-re034-multilaser-_JM?srsltid=AfmBOoo4E_Y2xsxV1MBwIOJ0unTDHuweAKPCYfaZg_1SfFCYxqSnpIpr" },
+          { nome: "Leitura", link: "https://leitura.com.br/adaptador-wireless-multilaser-high-power-150mbps-antena-3dbi-preto---re034-L023-7898506457151?srsltid=AfmBOooLn65m2VeghBYHD7unbZrzcXuxNNAfAXT3q6jxVvsdL2huFrQ3" }
+        ]
+      },
+    {
+        nome: "Multilaser RE035",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador13.jpeg",
+        descricao: "Adaptador Usb Wireless Multilaser 150Mbps - RE035, white",
+        preco: "39,90",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br/Adaptador-RE035-Multilaser-Acess%C3%B3rios-Notebooks/dp/B0754LBNF4?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A326BVZ4TY8H5C&gQT=2" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/170703/adaptador-usb-wireless-multi-re035-150mbps-padrao?srsltid=AfmBOopVh0ZgykKLrmFx4aY1zs1Miw0RFuqNYhdGCR1hsa-EeKWN8JAFa9U&gQT=2" },
+          { nome: "Shopee", link: "https://shopee.com.br/Adaptador-Wireless-Nano-Usb-150-mbps-Dongle-RE035-Pc-Desktop-i.353773461.14824038062?gQT=2" },
+          { nome: "Americanas", link: "https://www.americanas.com.br/adaptador-wireless-usb-nano-150mbps-re035-multilaser-122618781/p?idsku=5680756&srsltid=AfmBOopTAj2ztgnibz_6tEnKP8zPafbS96jPmWuJgNeFwE7H4qIz4gux_IY&gQT=2" },
+          { nome: "Suprinform", link: "https://www.suprinform.com.br/adaptador-usb-wireless-150-mbps-multilaser/p?srsltid=AfmBOoo1vK8HKWhj5CTisolpV02jxvTv1g_30FauanpPGyPU5LbENrIPBvo&gQT=2" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br/adaptador-wireless-usb-nano-150mbps-re035-multilaser/p/bdh4b02dj8/in/eqrw/?seller_id=oliststore&srsltid=AfmBOoqYQmETY-LxUZD56gpG9nuZbAasHq7amvsCXZAsrvbQ2NIqq8h55wY&gQT=2" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/usb-adaptador-wi-fi-multilaser-re035-nano-150mbps-mu-mimo/p/1527083356?utm_medium=Cpc&utm_source=google_freelisting&IdSku=1527083356&idLojista=14201&tipoLojista=3P&srsltid=AfmBOoobMMhiOX_PZdYzVU8q0gVQSX5gr_Djm9DAb4tnorJV6dUQQMoMNNc&gQT=2" },
+          { nome: "InfoClub", link: "https://www.infoclub.com.br/MLB-5287328298-usb-adaptador-wi-fi-multilaser-re035-nano-150mbps-mu-mimo-_JM?gQT=2" },
+          { nome: "Bigz", link: "https://www.bigz.com.br/produtos/adaptador-wireless-usb-nano-150mbps-re035-multilaser/?variant=365248194&pf=mc&srsltid=AfmBOoqndXx_8RXKdZCgPVsWeEkz9M1-y_Vl0UD7ROApc5KGTjEQXAp90oA&gQT=2" },
+          { nome: "Extra", link: "https://www.extra.com.br/usb-adaptador-wi-fi-multilaser-re035-nano-150mbps-mu-mimo/p/1527083356?utm_medium=cpc&utm_source=google_freelisting&IdSku=1527083356&idLojista=14201&tipoLojista=3P" }
+        ]
+      },
+      {
+        nome: "Tenda U1 Wireless N",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador14.jpeg",
+        descricao: "Adaptador Wifi Usb 300Mbps Tenda U1, Tenda, Roteadores",
+        preco: "79,90",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br/ADAPTADOR-USB-TENDA-U1-WIRELESS/dp/B01ID8RVM0?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A17A3SJ3MUVGJT" },
+          { nome: "Web Pontual", link: "https://www.webpontual.com.br/adaptador-usb-wireless-801-11n-300mbps-antena-externa-u1?utm_source=google&utm_medium=Shopping&utm_campaign=adaptador-usb-wireless-801-11n-300mbps-antena-externa-u1&inStock&srsltid=AfmBOop3tvCCm2z7GxRFPxix8565_BWTuKUpvu9Hq7M8bYKwHOVgl2Mxb90#derivacao=8" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/252605/adaptador-rede-usb-wireless-300mbps-tenda-u1-antena-externa?srsltid=AfmBOorXXVqE_6A7-uUNXtpa3liUlQquTAeyxy0mC9i3FTw2LVtG_6Kiqy8" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br/adaptador-usb-sem-fio-e-ultrarrapido-de-300mbps-u1-tenda/p/jf9gk43b12/in/apwf/?seller_id=tendadobrasil&srsltid=AfmBOooPm5seuZGs7VAl2Rcw0kk-4NVHMg09rS-tbvTJNUAqbXM0N89iMVo" },
+          { nome: "Shopee", link: "https://shopee.com.br/product/857411989/21642619645?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkVHQ3ZkZSUTMrR3pBWmZZNzdrcnRBMkV0TGVkRDJZbUJRd3YxVXl2dGY0U1ZOc0Z4V2Z6b085a2x5ZUxFcVFkWTBlakxUa1RPMDNETEpBSVVlNFVjSmhxRHd2eGJjMkM3SmU3L3lCWDNyNlI1WmdrUmJmZDFQTDVwZTVYU0JNNFpnPT0" },
+          { nome: "Americanas", link: "https://www.americanas.com.br/adaptador-usb-wireless-801-11n-300mbps-antena-externa-u1-7493281652/p?idsku=2333608&srsltid=AfmBOorZdo4ubmP7n13dhv__2Xfua9on4u6TKnq6TFlbHB7lO-l2n6mo7Ow" },
+          { nome: "Tenda", link: "https://www.tendadobrasil.com.br/pra-voce/adaptador-de-rede/adaptador-usb-sem-fio-e-ultrarrapido-de-300mbps-u1-tenda" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/adaptador-usb-300m-u1-tenda-35-dbi-wireless/p/14170727?utm_medium=Cpc&utm_source=google_freelisting&IdSku=14170727&idLojista=12231&tipoLojista=3P&srsltid=AfmBOooEds1-cX7jk5Rhfjqz8rNij2gM7jzjzj1UffNxjzv__w21m67E61g" },
+          { nome: "Supera Solutions", link: "https://loja.superasolution.com/informatica/telefonia-e-redes/adaptador-wifi-usb-tenda?utm_source=Site&utm_medium=GoogleMerchant&utm_campaign=GoogleMerchant" },
+          { nome: "Mosdesto Distribuidora", link: "https://modestodistribuidora.com.br/adaptador-wi-fi-wireless-usb-tenda-ultra-rapido-300mbps-com-antena-3-5dbi-destacavel-u1?srsltid=AfmBOopJlzNFb9A_yoOHs6bINwvBGQqsXTRL7uzageO-h_TxpcnwT7oUi28" }
+        ]
+      },
+    {
+        nome: "UGREEN AC650",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador15.jpeg",
+        descricao: "UGREEN Adaptador WiFi USB AC650 para PC de mesa 5G 2.4G Dongle WiFi de banda dupla Mini adaptador de rede de computador USB sem fio compatível com Windows 11 10 8.1 8 7",
+        preco: "114,90",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br/UGREEN-Adaptador-Desktop-Computador-Windows/dp/B08M9FX4G3?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A3K6NP3RJC0OH7&gQT=2" },
+          { nome: "InfoStore", link: "https://www.infostore.com.br/adaptador-de-rede-wifi-usb-650mbps-11ac--cm448-20204---ugreen/p?idsku=6157&srsltid=AfmBOopKNiD3QM82E6PcLncgGlpHJGIzue1TZQ3HpswnfbkW7P5qE-1AwIg&gQT=2" },
+          { nome: "Ugreen", link: "https://ugreendobrasil.com.br/produto/ugreen-adaptador-de-rede-wifi-ac650-11ac-dual-band-preto/?srsltid=AfmBOoroexxOVC-gRdAk2AQLaEO_VaI4VJXWwr5x0uRdrLipZ-JQPhmupwQ&gQT=2" },
+          { nome: "Shopee", link: "https://shopee.com.br/product/714151019/23293249806?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkVHQ3ZkZSUTMrR3pBWmZZNzdrcnRBM3g3Uzh5ZXNJaGJ5b0xONUhNbjhJUFlycWhWQzBiUzgzblhKcjNWVXJJSjVTUkx6d1RVN1pFUUdqTHlTRTIwUFNWbmlZS0dWTUlOeHdBWkJIUEloQXI3TzNLWFI4QzhVSmRlYUxFT1NUcUl3PT0&gQT=2" },
+          { nome: "Zhiyun", link: "https://zhiyundobrasil.com.br/produto/ugreen-adaptador-de-rede-wifi-ac650-11ac-dual-band-preto/?srsltid=AfmBOoqvbmLCQUkFbtpDrtfu1xhUR6QUY-QolGIKkZ7gkmm6pTer9cF6jpc&gQT=2" },
+          { nome: "Haylou", link: "https://hayloubrasil.com.br/produto/ugreen-adaptador-de-rede-wifi-ac650-11ac-dual-band-preto/?srsltid=AfmBOopmBXCWYDN61LTnvp7ooNF0I3Ighs_XGhVhjEHYQJ72QzuoxVnC-_0&gQT=2" },
+          { nome: "Americanas", link: "https://www.americanas.com.br/ugreen-adaptador-de-rede-wifi-ac650-11ac-dual-band-preto-7390966379/p?pfm_index=NaN&pfm_page=lojista&pfm_pos=grid&pfm_type=lojista_page&offerId=6476517faa1c4cb7f283a117&sellerId=36852478000197&offerId=6476517faa1c4cb7f283a117&pfm_index=NaN&pfm_page=lojista&pfm_pos=grid&pfm_type=lojista_page&sellerId=36852478000197" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/713459/adaptador-sem-fio-usb-ugreen-ac650-11ac-dual-band-mod-20204?utm_id=21434223541&gad_source=1&gad_campaignid=21423803016&gbraid=0AAAAADx-HyFA7RMrA27pClM3eJMUmuZUU&gclid=Cj0KCQjwlrvBBhDnARIsAHEQgOTtGmV_4CvQxOPTK5hz6LKon_5V8ubQz7BpEbP_A20syWz4MOwSwcwaAp7PEALw_wcB" },
+          { nome: "AliExpress", link: "https://pt.aliexpress.com/item/1005004585407254.html?src=google&pdp_npi=4%40dis!BRL!114.59!114.59!!!!!%40!12000029725010947!ppc!!!&src=google&albch=shopping&acnt=548-301-0399&isdl=y&slnk=&plac=&mtctp=&albbt=Google_7_shopping&aff_platform=google&aff_short_key=UneMJZVf&gclsrc=aw.ds&&albagn=888888&&ds_e_adid=&ds_e_matchtype=&ds_e_device=m&ds_e_network=x&ds_e_product_group_id=&ds_e_product_id=pt1005004585407254&ds_e_product_merchant_id=605287156&ds_e_product_country=BR&ds_e_product_language=pt&ds_e_product_channel=online&ds_e_product_store_id=&ds_url_v=2&albcp=20758697517&albag=&isSmbAutoCall=false&needSmbHouyi=false&gad_source=4&gad_campaignid=20758707111&gbraid=0AAAAADC-j-Xmybc2Agq9E9sx7Bf6e-7jB&gclid=Cj0KCQjwlrvBBhDnARIsAHEQgOSoXK4MLjGRbstrMH4uSqnksEQV3qBJ7UUCwrpTLhf3_7EMmwFMW_AaAqXGEALw_wcB" },
+          { nome: "Ebay", link: "https://www.ebay.com/itm/305303766334?chn=ps&_trkparms=ispr%3D1&amdata=enc%3A12gduYuzEQomr1Z8dNR-kdg48&norover=1&mkevt=1&mkrid=21527-227144-2056-1&mkcid=2&itemid=305303766334&targetid=307075688052&device=m&mktype=pla&googleloc=9216076&poi=&campaignid=19723004616&mkgroupid=147765151153&rlsatarget=pla-307075688052&abcId=&merchantid=662077513&gad_source=4&gad_campaignid=19723004616&gbraid=0AAAAAD_QDh9LLRjJJAuIOTVCb6ZRAX1HW&gclid=Cj0KCQjwlrvBBhDnARIsAHEQgOQ8wZjoOW9NenX8kiwzXJ27Bo-iFPPEBIY9kpISpoWsG7O5_uKPQgIaAvRdEALw_wcB" }
+        ]
+      },
+      {
+        nome: "UGREEN AC1300",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador16.jpeg",
+        descricao: "UGREEN AC1300 Wireless Network Adapter 50340",
+        preco: "194,90",
+        fornecedores: [
+          { nome: "Ugreen", link: "https://ugreendobrasil.com.br/produto/ugreen-adaptador-de-rede-wifi-ac1300-usb-3-0-dual-band-preto/?srsltid=AfmBOorlxReBxDT9pMK7bD5WAXS4f_GGJ548BldoTbji9JVa7A74iSpPBGo&gQT=2" },
+          { nome: "Amazon", link: "https://www.amazon.com.br/UGREEN-Adaptador-Desktop-Computador-Compat%C3%ADvel/dp/B098QHYFGX?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1WV2HMPJE2Z23&gQT=2" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/514964/adaptador-de-rede-ugreen-ac1300-wi-fi-usb-3-0-dual-band-preto?srsltid=AfmBOooVucjWzdxpxmpE3rqzHfaqRXhKD9VbV72ZOvZJXqSS8Hru62xcnww&gQT=2" },
+          { nome: "Zhiyun", link: "https://zhiyundobrasil.com.br/produto/ugreen-adaptador-de-rede-wifi-ac1300-usb-3-0-dual-band-preto/?srsltid=AfmBOoot362jDXaOuPo7GXnt0YcOh0xdmVf9Ixynf_eyiVFRxOCPom6TjJI&gQT=2" },
+          { nome: "Haylou", link: "https://hayloubrasil.com.br/produto/ugreen-adaptador-de-rede-wifi-ac1300-usb-3-0-dual-band-preto/?srsltid=AfmBOorL3OWVP7Rli1ZcJ3NApmWQgWSLJ72KwzCYIhU1WTqIX48Cv2jjH0o&gQT=2" },
+          { nome: "AliExpress", link: "https://pt.aliexpress.com/item/1005004313687073.html?src=google&pdp_npi=4%40dis!BRL!178.25!108.69!!!!!%40!12000037806319418!ppc!!!&src=google&albch=shopping&acnt=548-301-0399&isdl=y&slnk=&plac=&mtctp=&albbt=Google_7_shopping&aff_platform=google&aff_short_key=UneMJZVf&gclsrc=aw.ds&&albagn=888888&&ds_e_adid=&ds_e_matchtype=&ds_e_device=m&ds_e_network=x&ds_e_product_group_id=&ds_e_product_id=pt1005004313687073&ds_e_product_merchant_id=107688807&ds_e_product_country=BR&ds_e_product_language=pt&ds_e_product_channel=online&ds_e_product_store_id=&ds_url_v=2&albcp=20758697517&albag=&isSmbAutoCall=false&needSmbHouyi=false&gad_source=4&gad_campaignid=20758707111&gbraid=0AAAAADC-j-Xmybc2Agq9E9sx7Bf6e-7jB&gclid=Cj0KCQjwlrvBBhDnARIsAHEQgOTe5M01VmIWJ1_iBZuMfoQqSs7i1T0tAdeX22sEc5RwqhmNn_caDN0aAllwEALw_wcB" },
+          { nome: "Carrefour", link: "https://www.carrefour.com.br/ugreen-adaptador-de-rede-wifi-ac1300-usb-30-dual-band-preto-mp933579359/p" },
+          { nome: "Leroy Merlin", link: "https://www.leroymerlin.com.br/ugreen-adaptador-de-rede-wifi-ac1300-usb-3-0-dual-band-preto_1571611477" },
+          { nome: "Shopee", link: "https://shopee.com.br/Adaptador-WiFi-UGREEN-USB3.0-AC1300Mbps-5.8G-E-2.4G-Dual-Band-USB-Para-PC-Desktop-Laptop-Antena-Placa-De-Rede-Ethernet-i.218996205.4281625767" },
+          { nome: "Americanas", link: "https://www.americanas.com.br/ugreen-adaptador-de-rede-wifi-ac1300-usb-3-0-dual-band-preto-7390966361/p" }
+        ]
+      },
+    {
+        nome: "WAVLINK WL-WN693A5",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador17.jpeg",
+        descricao: "WAVLINK Adaptador WiFi USB para PC de mesa, adaptador WiFi AC1900 Adaptador de rede sem fio de banda dupla com antenas de alto ganho de 2,4 GHz/5 GHz, MU-MIMO, compatível com Windows/Mac OS(Produto Importado)",
+        preco: "419,90",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br/Adaptador-desktop-antenas-suporta-Windows/dp/B094NB9RN6?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A35WFCG0801TUR" },
+          { nome: "Magazine luiza", link: "https://m.magazineluiza.com.br/adaptador-wifi-usb-wavlink-ac1900-dual-band-para-pc/p/baff00fg4e/in/apwf/?seller_id=nocnoceua&srsltid=AfmBOooZ-VQj8gavwiXWqjHFB-W0pn3_Gjc2uXbmSTtmji1NtpwkwlQqBwU" },
+          { nome: "Carrefour", link: "https://www.carrefour.com.br/adaptador-wifi-usb-wavlink-ac1900-de-banda-dupla-para-pc-desktop-mp950148334/p" },
+          { nome: "Wavlinkstore", link: "https://www.wavlinkstore.com/product-WL-WN693A5" },
+          { nome: "Desotopc", link: "https://www.desotopc.com/product/wifi-adapter-for-desktop-pc-ac1900/358" },
+          { nome: "Walmart", link: "https://www.walmart.com/ip/AC1900-Wireless-Dual-Band-USB3-0-Adapter-1900Mbps-WiFi-Adapter-2-4G-600Mbps-5G-1300Mbps-4X-5dBi-High-Gain-External-Antennas-MU-MIMO-Magnetic-Design-N/582415536" },
+          { nome: "Ebay", link: "https://www.ebay.ca/p/28048805762" },
+          { nome: "Coppel", link: "https://www.coppel.com/adaptador-wifi-usb-wavlink-ac1900-de-doble-banda-para-pc-de-escritorio-venta-internacional--mkp-38561090" },
+          { nome: "Ubuy", link: "https://www.ubuy.com.br/en/product/88DAD1EEA-1900mpbs-usb-wifi-adapter-dual-band-2-4ghz-5ghz-wireless-network-adapter-desktop?srsltid=AfmBOopjZx92-3NhaWMjNHOxKZgShv7RvEGAX9TlIdnBet7duS1hBsB5&ref=hm-google-redirect" },
+          { nome: "Whizz", link: "https://bahrain.whizzcart.com/product/14501167/usb-wifi-adapter-for-desktop-pc-ac1900-wifi-adapter-dual-band-wireless-network-adapter-with-2-4ghz-5ghz-high-gain-antennas-mu-mimo-supports-windows-11-10-8-1-8-7-xp-mac-os-10-7-10-15/" }
+        ]
+      },
+      {
+        nome: "Alfa AWUS036ACH",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador18.jpeg",
+        descricao: "Adaptador Wi-Fi sem fio AC1200 de banda dupla de longo alcance ALFA AWUS036ACH com 2 antenas externas 5dBi – 2,4 GHz 300 Mbps/5 GHz 867 Mbps – 802.11ac e A, B, G, N(Produto importado)",
+        preco: "649,90",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br/ALFA-AWUS036AXML-802-11axe-adaptador-velocidade/dp/B0BY8GMW32/ref=asc_df_B0BY8GMW32?mcid=a5ae1c2cd18539e89fd777c75060c515&tag=googleshopp06-20&linkCode=df0&hvadid=709883750143&hvpos=&hvnetw=g&hvrand=11545517326685655764&hvpone=&hvptwo=&hvqmt=&hvdev=m&hvdvcmdl=&hvlocint=&hvlocphy=9216076&hvtargid=pla-2186996051923&psc=1&language=pt_BR&gad_source=1" },
+          { nome: "Magazine Luiza", link: "https://m.magazineluiza.com.br/adaptador-wi-fi-alfa-ac1200-de-longo-alcance-banda-dupla-usb-3-0-e-tipo-c/p/ke3018bf6a/in/apwf/" },
+          { nome: "Ebay", link: "https://www.ebay.com/itm/111698207758?epid=24030640825&itmmeta=01JVVZRYGA8RX351BGSWGF444E&hash=item1a01bb640e:g:2x8AAOSwA5tguOjE&itmprp=enc%3AAQAKAAAA4MHg7L1Zz0LA5DYYmRTS30kCJ0WdTg03kMZwlKTG9InyUGorg3V349XzEewRJ0z2%2FLTcoWPvvG%2B7JGisJVBm0uUTJzWkhG7oOhICMjhRj4zNpwASgl1%2F15cOj7yN%2B%2FDFuoZpV5HIsUK0cZfDDqkYPPgCznlfXqEr57eEbqkRVf7Puokm9%2B0bhoohPHxlwzHAPESTYMT%2BmiBzLW%2FjiL2wwurHa7M14%2FcKDA6OQbw%2B7VY%2BZgMXGcDzbUJO770K2ESSvW29qKfFgOhlzBaLxUrzjvs%2FY4pV644Oo0eWws%2F348yX%7Ctkp%3ABFBMpujj_95l" },
+          { nome: "Americanas", link: "https://www.americanas.com.br/adaptador-wi-fi-alfa-de-banda-dupla-de-longo-alcance-ac1200-usb-3-0-tipo-c-7513786083/p" },
+          { nome: "Ubuy", link: "https://www.ubuy.com.br/pt/product/PWZHQU8-alfa-awus036ach-ac1200-ultra-wide-range-wifi-usb-3-0-adapter-kali-compatible?srsltid=AfmBOormUI32QL9NPvhVnmr_fgsVS_NDZL67Xw2hgjC6l6MxIt1VdhFS" },
+          { nome: "Aliexpress", link: "https://pt.aliexpress.com/item/1005007862742363.html?src=google&pdp_npi=4%40dis!BRL!713.33!299.60!!!!!%40!12000044028624867!ppc!!!&src=google&albch=shopping&acnt=768-202-3196&isdl=y&slnk=&plac=&mtctp=&albbt=Google_7_shopping&aff_platform=google&aff_short_key=UneMJZVf&gclsrc=aw.ds&&albagn=888888&&ds_e_adid=&ds_e_matchtype=&ds_e_device=m&ds_e_network=x&ds_e_product_group_id=&ds_e_product_id=pt1005007862742363&ds_e_product_merchant_id=5320985468&ds_e_product_country=BR&ds_e_product_language=pt&ds_e_product_channel=online&ds_e_product_store_id=&ds_url_v=2&albcp=21452222830&albag=&isSmbAutoCall=false&needSmbHouyi=false&gad_source=1&gad_campaignid=21448235942&gbraid=0AAAAAC_WlP-kX8yzD2fJRsoLoCB65Ls2i&gclid=Cj0KCQjwlrvBBhDnARIsAHEQgORtGcDtkf5McF2gh9LfE6srCdeMXDUEa5xzrDOuW4copub59_CORNcaAnOREALw_wcB" },
+          { nome: "Zsecurity", link: "https://zsecurity.org/product/alfa-awus036ach-2-4-5-ghz-usb-wireless-adapter/?gad_source=1&gad_campaignid=22473759010&gbraid=0AAAAAoJp1zffqn5fY6-CL4_45wgubcvVX&gclid=Cj0KCQjwlrvBBhDnARIsAHEQgORd0TkxPwvkQ-j9LLOL0k-VcHJryYR6001QqGyrIhw-_8QIi1G9cG8aAktCEALw_wcB" },
+          { nome: "Alfa", link: "https://alfa-network.eu/awus036ach-c?srsltid=AfmBOoqc-fyCpCtptTcigF9v0UB9Nqe4jaXzNs2BNfElKhBJAfjBBMGU" },
+          { nome: "Siliceo", link: "https://tienda.siliceo.es/pt/alfa-network/1383-alfa-awus036ach-c-v2-adaptador-wifi-usb.html" },
+          { nome: "Cdon", link: "https://cdon.dk/produkt/alfa-awus036ach-c-7b3fe3a398fb531f/" }
+        ]
+      },
+    {
+        nome: "Edimax EW-7811UAC",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador19.jpeg",
+        descricao: "Edimax Adaptador Wi-Fi 5 802.11ac AC600 de banda dupla de alto ganho (2,4 GHz/5 GHz) com antena ajustável +4/6dBi, adaptador USB sem fio, Win 11 Plug-n-Play, Mac OS 10.15, Linux, base USB, EW-7811UAC(Produto importado)",
+        preco: "169,90",
+        fornecedores: [
+          { nome: "Aliexpress", link: "https://pt.aliexpress.com/item/1005008136357454.html?src=google&pdp_npi=4%40dis!BRL!170.59!170.59!!!!!%40!12000043941171754!ppc!!!&src=google&albch=shopping&acnt=548-301-0399&isdl=y&slnk=&plac=&mtctp=&albbt=Google_7_shopping&aff_platform=google&aff_short_key=UneMJZVf&gclsrc=aw.ds&&albagn=888888&&ds_e_adid=&ds_e_matchtype=&ds_e_device=m&ds_e_network=x&ds_e_product_group_id=&ds_e_product_id=pt1005008136357454&ds_e_product_merchant_id=107897706&ds_e_product_country=BR&ds_e_product_language=pt&ds_e_product_channel=online&ds_e_product_store_id=&ds_url_v=2&albcp=20758697517&albag=&isSmbAutoCall=false&needSmbHouyi=false&gad_source=4&gad_campaignid=20758707111&gbraid=0AAAAADC-j-U2_Hss4r4FrkKG8z_hbs3zB&gclid=Cj0KCQjwucDBBhDxARIsANqFdr3fkqCvfxClxSIhi0nq1jUARElJXSo4ONxf4zPVKFfTD1HNAhEY2SsaArBlEALw_wcB" },
+          { nome: "Amazon", link: "https://www.amazon.com.br/Adaptador-EW-7811UAC-extens%C3%A3o-recep%C3%A7%C3%A3o-transmiss%C3%A3o/dp/B00LGN8I40" },
+          { nome: "Infortec", link: "https://infortecinfo.loja2.com.br/7371375-Edimax-EW-7811USC-AC600-Wi-Fi-Dual-Band-USB-2-4Ghz-e-5-8Ghz" },
+          { nome: "TradeInn", link: "https://www.tradeinn.com/techinn/pt/edimax-adaptador-usb-ac600-ew-7811uac/138242908/p?srsltid=AfmBOooP9Rl_Y3nEB3y2H2BlfUhtbFNFgqqKntkmAG9a7qZmFCiGU7Pc" },
+          { nome: "RS online", link: "https://pt.rs-online.com/web/p/adaptadores-wifi/2565296" },
+          { nome: "B&H", link: "https://www.bhphotovideo.com/c/product/1143249-REG/edimax_technology_ew_7811uac_11ac_dualband_usb_adapter.html" },
+          { nome: "Leroy Merlin", link: "https://www.leroymerlin.pt/produtos/ponto-de-acesso-edimax-ew-7811uac-ac600-1-x-6-dbi-preto-84978084.html" },
+          { nome: "Worten", link: "https://www.worten.pt/produtos/adaptador-usb-wi-fi-edimax-ew-7811uac-mrkean-4710700929865" },
+          { nome: "PB Tech", link: "https://www.pbtech.co.nz/product/NETEDM1086/Edimax-EW-7811UAC-AC600-Wi-Fi-Dual-Band-High-Gain?srsltid=AfmBOoowNwYYq9z25QvfcWtHRv4cNKtu_FgonyEi4IgOHdqam_7jqyF_" },
+          { nome: "Kuanto Kusta", link: "https://www.kuantokusta.pt/p/104412/edimax-ew-7811uac" }
+        ]
+      },
+      {
+        nome: "Panda Wireless PAU09 N600",
+        imagem: "./imagens/Adaptadores USB Wi-Fi/adaptador20.jpeg",
+        descricao: "Panda Wireless® PAU09 N600 Dual Band (2,4 GHz e 5 GHz) Adaptador USB sem fio N com antenas duplas de 5dBi - Windows 7/8/10/11, Zorin, Mint, Ubuntu, openSUSE, Fedora, Centos, Kali e Raspbian(Produto Importado)",
+        preco: "819,90",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br/Panda-Wireless-PAU09-Adaptador-antenas/dp/B01LY35HGO" },
+          { nome: "Ubuy", link: "https://www.ubuy.com.br/pt/product/6K9PWU-panda-wireless-pau09-n600-dual-band-2-4ghz-and-5ghz-wireless-n-usb-adapter-w-dual-5dbi-antennas-windows-xp-vista-7-8-8-1-10-mint-ubuntu-opensuse-fedor?srsltid=AfmBOopSHaS-sYFHJ1AuTp6aXrj7dTwpQd0mJ0MX0CApFIe_287p5WMH" },
+          { nome: "Walmart", link: "https://www.walmart.com/ip/Panda-Wireless-PAU09-N600-Dual-Band-2-4GHz-5GHz-Wireless-N-USB-Adapter-W-5dBi-Antennas-Windows-XP-Vista-7-8-8-1-10-11-Mint-Ubuntu-openSUSE-Fedora-Cen/869167772" },
+          { nome: "New egg", link: "https://www.newegg.com/p/3C6-015C-00001?srsltid=AfmBOoq0HwjUFbmUx7FzHivQOVn7Pa4q_69d5HVkryqYBEIRUkSTxikl&source=f" },
+          { nome: "Pacifiko", link: "https://www.pacifiko.com/compras-en-linea/panda-wireless-pau09-n600-dual-band-2-4ghz-and-5ghz-wireless-n-usb-adapter-w-dual-5dbi-antennas-windows-7-8-10-11-zorin-mint-ubuntu-opensuse-fedora-centos-kali-and-raspbian&pid=MjFlOWI0Mj?srsltid=AfmBOoqmNBIAF4-zJSnp0QXCbIVT_7QS3HzB8cvgZH39MbAi9EBeca1h" },
+          { nome: "Latinafy", link: "https://latinafy.com/products/panda-wireless-pau09-n600-dual-band-usb-wireless-adapter-9/" },
+          { nome: "Ebay", link: "https://www.ebay.com/p/20027696703?iid=195852406814" },
+          { nome: "BuhoStore", link: "https://www.buhostore.com/panda-wireless-pau09-n600-adaptador-usb-inalambrico-n-de-banda?srsltid=AfmBOoqup3F_FH3aTM-2fM3TQzWegRok3L7LC8LIbRkjT3RryZQu2Wqg" },
+          { nome: "Ria Muertos avan", link: "https://elnet.russiacut.beauty/index.php?main_page=product_info&products_id=1918314" },
+          { nome: "DirectGo", link: "https://directgo.tw/p/54442?product_id=81352" }
+        ]
+      },
+    
+      // ... (todos os outros produtos permanecem exatamente iguais)
+    ];
+
+    const main = document.querySelector("main");
+    const searchInput = document.getElementById("search-input");
+
+    // Função para renderizar os produtos
+    function renderProducts(productsToRender) {
+      // Limpa o conteúdo atual
+      const existingProducts = document.querySelectorAll('.produto-card');
+      existingProducts.forEach(product => product.remove());
+
+      // Adiciona os produtos filtrados
+      productsToRender.forEach((produto, index) => {
+        const card = document.createElement("div");
+        card.className = "produto-card";
+
+        const fornecedoresHTML = produto.fornecedores.map(f =>
+          `<li><a href="${f.link}" target="_blank">${f.nome}</a></li>`
+        ).join("");
+
+        card.innerHTML = `
+          <img src="${produto.imagem}" alt="${produto.nome}" class="produto-img">
+          <div class="produto-detalhes">
+            <h3>${produto.nome}</h3>
+            <p class="descricao">${produto.descricao}</p>
+            <p class="preco">Média de preço: R$ ${produto.preco}</p>
+            <div class="dropdown">
+              <button class="btn-toggle">Fornecedores</button>
+              <ul class="fornecedores-lista hidden">
+                ${fornecedoresHTML}
+              </ul>
+            </div>
+          </div>
+        `;
+
+        main.appendChild(card);
+      });
+
+      // Reaplica os event listeners para os dropdowns
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        const btn = drop.querySelector(".btn-toggle");
+        const list = drop.querySelector(".fornecedores-lista");
+
+        btn.addEventListener("click", () => {
+          list.classList.toggle("hidden");
+        });
+      });
+    }
+
+    // Renderiza todos os produtos inicialmente
+    renderProducts(produtos);
+
+    // Adiciona o evento de pesquisa
+    searchInput.addEventListener("input", (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      const filteredProducts = produtos.filter(produto => 
+        produto.nome.toLowerCase().includes(searchTerm) || 
+        produto.descricao.toLowerCase().includes(searchTerm)
+      );
+      renderProducts(filteredProducts);
+    });
+
+    // Fecha os dropdowns quando clicar fora
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        const list = drop.querySelector(".fornecedores-lista");
+        if (!drop.contains(e.target)) {
+          list.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+</main>
+</body>
+</html>

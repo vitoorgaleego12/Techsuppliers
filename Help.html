@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central de Ajuda - TechSuppliers</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-dark: #061a38;
+      --primary: #0a2a5c;
+      --primary-light: #1a3a6c;
+      --accent: #ff6f00;
+      --light-bg: #f0f5ff;
+      --card-bg: #ffffff;
+      --text: #222;
+      --text-light: #444;
+      --user-msg: #d4e4f7;
+      --ai-msg: #e8eff9;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px 20px;
+      background-color: rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 2.2rem;
+    }
+
+    .header-subtitle {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: var(--primary-light);
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .home-button:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .chat-container {
+      flex: 1;
+      max-width: 1000px;
+      margin: 20px auto;
+      width: 90%;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    #chat-messages {
+      height: 400px;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 15px;
+      border-radius: 15px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .message.user {
+      align-self: flex-end;
+      background-color: var(--primary-light);
+      border-bottom-right-radius: 5px;
+    }
+
+    .message.ai {
+      align-self: flex-start;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-bottom-left-radius: 5px;
+    }
+
+    .message-header {
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .message p {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .typing-indicator {
+      display: flex;
+      align-self: flex-start;
+      padding: 15px;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      border-bottom-left-radius: 5px;
+      gap: 5px;
+    }
+
+    .typing-dot {
+      width: 8px;
+      height: 8px;
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: typingAnimation 1.4s infinite ease-in-out;
+    }
+
+    .typing-dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .typing-dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .quick-actions {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      background: rgba(0, 0, 0, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .action-btn {
+      background: var(--primary-light);
+      color: white;
+      border: none;
+      padding: 12px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: left;
+    }
+
+    .action-btn:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.3);
+      margin-top: auto;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes typingAnimation {
+      0%, 100% { transform: scale(0.8); opacity: 0.6; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .quick-actions {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .home-button {
+        top: 15px;
+        left: 15px;
+        padding: 8px 12px;
+        font-size: 14px;
+      }
+      
+      h1 {
+        margin-top: 40px;
+        font-size: 1.8rem;
+      }
+      
+      .quick-actions {
+        grid-template-columns: 1fr;
+      }
+      
+      .message {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="home-button">
+      <i class="fas fa-home"></i> Início
+    </a>
+    <h1><i class="fas fa-robot"></i> Central de Ajuda - TechSuppliers</h1>
+    <p class="header-subtitle">Assistente virtual inteligente • Disponível 24 horas</p>
+  </header>
+
+  <div class="chat-container">
+    <div id="chat-messages">
+      <div class="message ai">
+        <div class="message-header"><i class="fas fa-robot"></i> TechAssist</div>
+        <p>Olá! Sou o TechAssist, seu assistente virtual. Como posso ajudar você hoje?</p>
+      </div>
+    </div>
+
+    <div class="quick-actions">
+      <button class="action-btn" onclick="quickAsk('Como me cadastrar como fornecedor?')">
+        <i class="fas fa-user-tie"></i> Cadastro Fornecedor
+      </button>
+      <button class="action-btn" onclick="quickAsk('Como me cadastrar como cliente?')">
+        <i class="fas fa-user"></i> Cadastro Cliente
+      </button>
+      <button class="action-btn" onclick="quickAsk('Quem são os fornecedores?')">
+        <i class="fas fa-store"></i> Nossos Fornecedores
+      </button>
+      <button class="action-btn" onclick="quickAsk('Vantagens de ser fornecedor')">
+        <i class="fas fa-star"></i> Vantagens
+      </button>
+      <button class="action-btn" onclick="quickAsk('Quais produtos encontro?')">
+        <i class="fas fa-box-open"></i> Produtos
+      </button>
+      <button class="action-btn" onclick="quickAsk('Como encontrar fornecedor?')">
+        <i class="fas fa-search"></i> Encontrar Fornecedor
+      </button>
+    </div>
+  </div>
+
+  <footer>
+    <p>TechSuppliers &copy; 2025 - Conectando fornecedores e clientes no mundo da tecnologia</p>
+  </footer>
+
+  <script>
+    const faq = {
+      cadastro: {
+        "fornecedor": "👤 <b>Cadastro de Fornecedor:</b> Para se cadastrar como fornecedor, acesse 'Cadastro > Fornecedor' em nosso site. Você precisará fornecer:<br><br>" +
+                     "• Dados da empresa (CNPJ, razão social, segmento)<br>" +
+                     "• Produtos ou serviços oferecidos<br>" +
+                     "• Certificações de qualidade (opcional)<br>" +
+                     "• Histórico de atuação no mercado<br><br>" +
+                     "Após a análise, seu perfil será publicado em nossa vitrine de fornecedores, visível para grandes clientes.<br><br>" +
+                     "<i>💡 Processo leva em média 2-3 dias úteis para conclusão.</i>",
+        "cliente": "🛒 <b>Cadastro de Cliente:</b> Para acessar nossos fornecedores, registre-se em 'Cadastro > Cliente'. Você precisará informar:<br><br>" +
+                  "• Dados pessoais ou empresariais<br>" +
+                  "• Interesses em produtos/serviços<br>" +
+                  "• Preferências de contato<br><br>" +
+                  "Como cliente, você receberá alertas sobre novos fornecedores e poderá favoritar seus fornecedores preferidos.<br><br>" +
+                  "<i>💡 Cadastro gratuito e imediato!</i>"
+      },
+      fornecedores: {
+        "quem": "🏢 <b>Nossos Fornecedores:</b> Trabalhamos com empresas renomadas e fornecedores especializados nacionais e internacionais. Temos desde grandes corporações até pequenas empresas especializadas, todas devidamente verificadas quanto à qualidade de produtos e serviços.<br><br>" +
+                "<i>🔍 fornecedores ativos na plataforma.</i>",
+        "vantagens": "⭐ <b>Vantagens de ser Fornecedor:</b> Ao se cadastrar em nossa plataforma, você terá:<br><br>" +
+                    "• Visibilidade para grandes empresas<br>" +
+                    "• Dashboard analítico de performance<br>" +
+                    "• Ferramentas para gestão de portfólio<br>" +
+                    "• Relatórios de mercado setorial<br>" +
+                    "• Conexões com potenciais clientes<br>" +
+                    "• Sistema de avaliação transparente<br>" +
+                    "• Análises de tendências de mercado<br><br>" +
+                    "Nosso sistema de matchmaking conecta você aos clientes ideais para seu negócio!<br><br>" +
+                    "<i>📈 fornecedores aumentaram suas conexões em até 6 meses.</i>"
+      },
+      produtos: {
+        "quais": "💻 <b>Nossos Produtos:</b> Em nossa vitrine você encontra diversas categorias, incluindo:<br><br>" +
+                "• <i class='fas fa-laptop'></i> <b>Hardware:</b> Notebooks, desktops, servidores, componentes<br>" +
+                "• <i class='fas fa-headphones'></i> <b>Periféricos:</b> Teclados, mouses, headsets, monitores<br>" +
+                "• <i class='fas fa-network-wired'></i> <b>Redes:</b> Roteadores, switches, equipamentos de infraestrutura<br>" +
+                "• <i class='fas fa-code'></i> <b>Software:</b> Licenças, soluções empresariais, desenvolvimento<br>" +
+                "• <i class='fas fa-cloud'></i> <b>Serviços de TI:</b> Cloud computing, consultoria, suporte técnico<br>" +
+                "• <i class='fas fa-mobile-alt'></i> <b>Dispositivos Móveis:</b> Tablets, smartphones, acessórios<br>" +
+                "• <i class='fas fa-server'></i> <b>Data Center:</b> Armazenamento, virtualização, segurança<br><br>" +
+                "Todos os produtos passam por verificação de qualidade antes de serem disponibilizados.<br><br>" +
+                "<i>📊 Mais de 700 produtos disponíveis atualmente.</i>"
+      },
+      encontrar: {
+        "fornecedor": "🔍 <b>Como encontrar fornecedores:</b> Nossa plataforma foi projetada para facilitar a conexão entre clientes e fornecedores de tecnologia!<br><br>" +
+                     "• Use nosso sistema de busca avançada por categoria, localização ou especialidade<br>" +
+                     "• Receba recomendações personalizadas com base no seu perfil<br>" +
+                     "• Compare fornecedores por avaliações, tempo de mercado e especialização<br>" +
+                     "• Utilize filtros para encontrar exatamente o que precisa<br><br>" +
+                     "<i>💡 Esta é a principal vantagem do TechSuppliers: conectar você aos melhores fornecedores do mercado!</i>"
+      },
+      politicas: {
+        "privacidade": "🔒 <b>Política de Privacidade:</b> Sua segurança é nossa prioridade! Todos os dados fornecidos são criptografados e protegidos conforme a LGPD. Utilizamos suas informações apenas para:<br><br>" +
+                      "• Melhorar sua experiência na plataforma<br>" +
+                      "• Conectar você a fornecedores/clientes relevantes<br>" +
+                      "• Personalizar recomendações e conteúdo<br>" +
+                      "• Gerar relatórios agregados (nunca individuais)<br><br>" +
+                      "Você pode gerir suas preferências de privacidade a qualquer momento em seu painel de usuário.<br><br>" +
+                      "<i>📝 Nossa política completa está disponível no rodapé do site.</i>"
+      },
+      estrategias: {
+        "negocios": "📈 <b>Estratégias de Negócios:</b> Nossa plataforma foi desenvolvida para criar conexões inteligentes entre fornecedores e clientes, utilizando:<br><br>" +
+                   "• Algoritmos de matching baseados em necessidades específicas<br>" +
+                   "• Sistema de avaliação e feedback transparente<br>" +
+                   "• Ferramentas de análise de mercado em tempo real<br>" +
+                   "• Promoção de competitividade saudável com benefícios para todos<br><br>" +
+                   "<i>🎯 92% de satisfação em nossas conexões business-to-business.</i>"
+      },
+      sustentabilidade: {
+        "sobre": "🌱 <b>Sustentabilidade:</b> Incentivamos práticas sustentáveis em nossa cadeia de valor, priorizando fornecedores que adotam:<br><br>" +
+                "• Eficiência energética em produtos<br>" +
+                "• Programas de reciclagem e logística reversa<br>" +
+                "• Embalagens ecologicamente corretas<br>" +
+                "• Logística verde com reduzida pegada de carbono<br>" +
+                "• Materiais reciclados em produtos<br>" +
+                "• Políticas de responsabilidade social<br><br>" +
+                "Temos um selo verde para destacar empresas com melhores práticas ambientais.<br><br>" +
+                "<i>♻️ 43% dos nossos fornecedores possuem certificação ambiental.</i>"
+      },
+      suporte: {
+        "contato": "🎧 <b>Suporte ao Cliente:</b> Estamos disponíveis através de múltiplos canais:<br><br>" +
+                  "• <b>Chat online:</b> 24/7 em nosso site<br>" +
+                  "• <b>E-mail:</b> suporte@techsuppliers.com.br<br>" +
+                  "• <b>Telefone:</b> (11) 3000-6000 (Seg-Sex, 8h-18h)<br>" +
+                  "• <b>WhatsApp:</b> (11) 99999-8888 (Seg-Sex, 9h-17h)<br>" +
+                  "• <b>Centro de ajuda:</b> Documentação completa e tutoriais<br><br>" +
+                  "Tempo médio de resposta: 15 minutos (chat), 2 horas (e-mail).<br><br>" +
+                  "<i>⭐ Avaliação média do suporte: 4.8/5 estrelas</i>"
+      },
+      curiosidades: {
+        "sobre": "🤔 <b>Curiosidade:</b> Sabia que a TechSuppliers nasceu como um projeto acadêmico e em 2 anos já conectou mais de 500 fornecedores a milhares de clientes? Nosso algoritmo de recomendação tem 92% de satisfação entre usuários!<br><br>" +
+                "<i>🚀 Crescemos 240% no último ano!</i>"
+      }
+    };
+
+    // Mensagens iniciais com delay
+    setTimeout(() => {
+      addMessage('ai', "💡 <b>Dica rápida:</b> Clique em qualquer um dos botões abaixo para fazer perguntas frequentes!");
+    }, 1500);
+    
+    setTimeout(() => {
+      addMessage('ai', "🌟 Estou aqui para ajudar com informações sobre cadastro, produtos, fornecedores e como encontrar a conexão perfeita para seu negócio!");
+    }, 3500);
+
+    function quickAsk(question) {
+      let response = getResponse(question);
+      addMessage('user', question);
+      showTypingIndicator(response);
+    }
+
+    function getResponse(text) {
+      if (text.includes("fornecedor") && (text.includes("cadastr") || text.includes("como"))) return faq.cadastro.fornecedor;
+      if (text.includes("cliente") && (text.includes("cadastr") || text.includes("como"))) return faq.cadastro.cliente;
+      if (text.includes("vantagem") && text.includes("fornecedor")) return faq.fornecedores.vantagens;
+      if (text.includes("quem são os fornecedores") || text.includes("fornecedores")) return faq.fornecedores.quem;
+      if (text.includes("produtos") || text.includes("quais produtos") || text.includes("o que vocês oferecem")) return faq.produtos.quais;
+      if (text.includes("encontrar") && text.includes("fornecedor")) return faq.encontrar.fornecedor;
+      if (text.includes("política") || text.includes("privacidade") || text.includes("segurança")) return faq.politicas.privacidade;
+      if (text.includes("estratégia") || text.includes("negócio")) return faq.estrategias.negocios;
+      if (text.includes("sustentabilidade") || text.includes("meio ambiente") || text.includes("eco")) return faq.sustentabilidade.sobre;
+      if (text.includes("suporte") || text.includes("contato") || text.includes("ajuda")) return faq.suporte.contato;
+      if (text.includes("curiosidade") || text.includes("sabia")) return faq.curiosidades.sobre;
+      if (text.includes("ola") || text.includes("oi") || text.includes("olá")) return "Olá! 😊 Como posso ajudar você hoje?";
+      if (text.includes("obrigado") || text.includes("obrigada") || text.includes("valeu")) return "De nada! Fico feliz em ajudar. 💙 Se tiver mais alguma dúvida, estou aqui!";
+      
+      return "🤖 Hmm, não tenho informações precisas sobre isso ainda. Poderia selecionar uma das opções abaixo?<br><br>💡 <b>Sugestão:</b> Experimente perguntar sobre:<br>• Cadastro de fornecedores ou clientes<br>• Nossos produtos<br>• Fornecedores parceiros<br>• Como encontrar fornecedores<br>• Políticas de privacidade";
+    }
+
+    function addMessage(sender, text) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${sender}`;
+      
+      if (sender === 'user') {
+        messageDiv.innerHTML = `<div class="message-header"><i class="fas fa-user"></i> Você</div><p>${text}</p>`;
+      } else {
+        messageDiv.innerHTML = `<div class="message-header"><i class="fas fa-robot"></i> TechAssist</div><p>${text}</p>`;
+      }
+      
+      document.getElementById('chat-messages').appendChild(messageDiv);
+      scrollToBottom();
+    }
+
+    function showTypingIndicator(response) {
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'typing-indicator';
+      typingDiv.innerHTML = `
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+      `;
+      document.getElementById('chat-messages').appendChild(typingDiv);
+      scrollToBottom();
+      
+      // Simula tempo de digitação baseado no tamanho da resposta
+      const typingTime = Math.max(1000, Math.min(3000, response.length * 30));
+      
+      setTimeout(() => {
+        typingDiv.remove();
+        addMessage('ai', response);
+      }, typingTime);
+    }
+
+    function scrollToBottom() {
+      const chatMessages = document.getElementById('chat-messages');
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  </script>
+  <script>
+  // Adicionando funcionalidades extras ao chatbot
+  document.addEventListener('DOMContentLoaded', function() {
+    // Adicionar campo de entrada de mensagem manual
+    const quickActions = document.querySelector('.quick-actions');
+    const inputContainer = document.createElement('div');
+    inputContainer.style.gridColumn = '1 / -1';
+    inputContainer.style.display = 'flex';
+    inputContainer.style.gap = '10px';
+    inputContainer.style.marginTop = '15px';
+    
+    const messageInput = document.createElement('input');
+    messageInput.type = 'text';
+    messageInput.placeholder = 'Digite sua pergunta aqui...';
+    messageInput.style.flex = '1';
+    messageInput.style.padding = '12px 15px';
+    messageInput.style.borderRadius = '10px';
+    messageInput.style.border = 'none';
+    messageInput.style.background = 'rgba(255, 255, 255, 0.9)';
+    messageInput.style.color = 'var(--primary)';
+    
+    const sendButton = document.createElement('button');
+    sendButton.innerHTML = '<i class="fas fa-paper-plane"></i>';
+    sendButton.classList.add('action-btn');
+    sendButton.style.margin = '0';
+    
+    sendButton.addEventListener('click', function() {
+      if (messageInput.value.trim() !== '') {
+        const userQuestion = messageInput.value.trim();
+        addMessage('user', userQuestion);
+        messageInput.value = '';
+        
+        const response = getResponse(userQuestion);
+        showTypingIndicator(response);
+      }
+    });
+    
+    messageInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        sendButton.click();
+      }
+    });
+    
+    inputContainer.appendChild(messageInput);
+    inputContainer.appendChild(sendButton);
+    quickActions.parentNode.insertBefore(inputContainer, quickActions);
+    
+    // Adicionar mais FAQs ao objeto existente - focado em exibição e conhecimento
+    const additionalFAQ = {
+      intermediacao: {
+        "como-funciona": "🔍 <b>Como Funcionamos:</b> Somos uma plataforma intermediária que conecta fornecedores e clientes de produtos de TI. Não realizamos vendas diretamente, mas facilitamos o contato entre as partes.<br><br>" +
+                        "• Fornecedores exibem seus produtos em nossa vitrine<br>" +
+                        "• Clientes encontram produtos e entram em contato diretamente com fornecedores<br>" +
+                        "• Oferecemos informações técnicas detalhadas para auxiliar na decisão<br>" +
+                        "• Não intermediamos pagamentos ou entregas<br><br>" +
+                        "<i>💡 Somos o elo de conexão no ecossistema de tecnologia!</i>"
+      },
+      ti: {
+        "curiosidades": "🤖 <b>Curiosidades de TI:</b> Sabia que...<br><br>" +
+                       "• O primeiro computador pessoal foi o IBM 5100, lançado em 1975<br>" +
+                       "• A linguagem de programação Python foi nomeada em homenagem ao grupo de comédia Monty Python<br>" +
+                       "• 90% de todos os dados do mundo foram gerados nos últimos 2 anos<br>" +
+                       "• O primeiro mouse foi feito de madeira em 1964 por Douglas Engelbart<br>" +
+                       "• A palavra 'robot' vem do tcheco 'robota', que significa trabalho forçado<br><br>" +
+                       "<i>📚 A tecnologia está cheia de histórias fascinantes!</i>",
+        "tendencias": "🚀 <b>Tendências de TI para 2025:</b><br><br>" +
+                     "• Inteligência Artificial Generativa<br>" +
+                     "• Computação Quântica prática<br>" +
+                     "• Segurança Zero-Trust<br>" +
+                     "• Plataformas de Hyperautomação<br>" +
+                     "• Realidade Aumentada no varejo<br>" +
+                     "• Edge Computing em expansão<br>" +
+                     "• Sustentabilidade tecnológica<br><br>" +
+                     "<i>🔮 O futuro da tecnologia é emocionante!</i>"
+      },
+      administracao: {
+        "dicas": "📊 <b>Dicas de Administração:</b><br><br>" +
+                "• Mantenha um fluxo de caixa detalhado e atualizado<br>" +
+                "• Diversifique seu portfólio de produtos regularmente<br>" +
+                "• Invista em relacionamento com clientes - é mais barato reter que conquistar<br>" +
+                "• Adote métricas de desempenho claras (KPIs)<br>" +
+                "• Esteja sempre atento às mudanças do mercado de tecnologia<br>" +
+                "• Automatize processos repetitivos sempre que possível<br><br>" +
+                "<i>💼 Boas práticas administrativas fazem a diferença!</i>"
+      },
+      financas: {
+        "gestao": "💰 <b>Gestão Financeira para Empresas de TI:</b><br><br>" +
+                 "• Estabeleça uma reserva de emergência para flutuações do mercado<br>" +
+                 "• Negocie prazos alongados com fornecedores e curtos com clientes<br>" +
+                 "• Aproveite incentivos fiscais para empresas de tecnologia<br>" +
+                 "• Considere leasing para equipamentos de alto valor<br>" +
+                 "• Monitore seu custo de aquisição de clientes (CAC)<br>" +
+                 "• Inviga em software de gestão financeira especializado<br><br>" +
+                 "<i>📈 Empresas com boa gestão financeira têm 30% mais chances de sucesso!</i>"
+      },
+      logistica: {
+        "otimizacao": "📦 <b>Otimização Logística para TI:</b><br><br>" +
+                     "• Estabeleça parcerias com múltiplas transportadoras<br>" +
+                     "• Utilize embalagens adequadas para equipamentos eletrônicos<br>" +
+                     "• Implemente sistema de rastreamento em tempo real<br>" +
+                     "• Mantenha estoque estratégico em diferentes regiões<br>" +
+                     "• Estabeleça políticas claras de troca e devolução<br>" +
+                     "• Treine sua equipe em manuseio de produtos tecnológicos<br><br>" +
+                     "<i>🚚 A logística eficiente é um diferencial competitivo!</i>"
+      },
+      sustentabilidade: {
+        "praticas": "🌱 <b>Práticas Sustentáveis no Setor de TI:</b><br><br>" +
+                   "• Programas de reciclagem de equipamentos eletrônicos<br>" +
+                   "• Utilização de embalagens biodegradáveis<br>" +
+                   "• Logística reversa para produtos defeituosos<br>" +
+                   "• Incentivo ao trabalho remoto para reduzir deslocamentos<br>" +
+                   "• Seleção de fornecedores com certificações ambientais<br>" +
+                   "• Uso de energia renovável em data centers e escritórios<br><br>" +
+                   "<i>♻️ 67% dos consumidores preferem marcas sustentáveis!</i>"
+      },
+      contato: {
+        "fornecedor": "📞 <b>Contato com Fornecedores:</b><br><br>" +
+                     "Cada produto em nossa vitrine exibe as informações de contato do fornecedor responsável. Você pode:<br><br>" +
+                     "• Enviar mensagem diretamente através do perfil do fornecedor<br>" +
+                     "• Solicitar orçamento personalizado<br>" +
+                     "• Agendar demonstrações de produtos<br>" +
+                     "• Negociar prazos e condições diretamente<br><br>" +
+                     "<i>💬 Facilitamos o contato direto entre clientes e fornecedores!</i>"
+      },
+      vantagens: {
+        "plataforma": "⭐ <b>Vantagens de Nossa Plataforma:</b><br><br>" +
+                     "Para <b>Fornecedores</b>:<br>" +
+                     "• Vitrine digital para seus produtos<br>" +
+                     "• Acesso a clientes qualificados<br>" +
+                     "• Perfil personalizável da empresa<br>" +
+                     "• Ferramentas de análise de desempenho<br><br>" +
+                     "Para <b>Clientes</b>:<br>" +
+                     "• Catálogo diversificado de produtos<br>" +
+                     "• Informações técnicas detalhadas<br>" +
+                     "• Comparação entre fornecedores<br>" +
+                     "• Contato direto sem intermediários<br><br>" +
+                     "<i>🏆 Melhoramos o ecossistema de TI para todos!</i>"
+      }
+    };
+    
+    // Mesclar os novos FAQs com os existentes
+    Object.assign(faq, additionalFAQ);
+    
+    // Adicionar botões extras de quick actions
+    const newQuickActions = [
+      {icon: "fas fa-info-circle", text: "Como funciona", question: "Como funciona a plataforma?"},
+      {icon: "fas fa-lightbulb", text: "Curiosidades TI", question: "Curiosidades de tecnologia"},
+      {icon: "fas fa-chart-line", text: "Tendências TI", question: "Quais as tendências de TI?"},
+      {icon: "fas fa-book", text: "Dicas Administração", question: "Dicas de administração"},
+      {icon: "fas fa-coins", text: "Gestão Financeira", question: "Gestão financeira para TI"},
+      {icon: "fas fa-truck", text: "Otimização Logística", question: "Otimização logística"},
+      {icon: "fas fa-leaf", text: "Sustentabilidade", question: "Práticas sustentáveis TI"},
+      {icon: "fas fa-star", text: "Vantagens", question: "Vantagens da plataforma"}
+    ];
+    
+    newQuickActions.forEach(action => {
+      const newButton = document.createElement('button');
+      newButton.classList.add('action-btn');
+      newButton.innerHTML = `<i class="${action.icon}"></i> ${action.text}`;
+      newButton.onclick = function() {
+        quickAsk(action.question);
+      };
+      quickActions.appendChild(newButton);
+    });
+    
+    // Ajustar o grid para mais botões
+    quickActions.style.gridTemplateColumns = 'repeat(auto-fill, minmax(180px, 1fr))';
+  });
+
+  // Expandir a função getResponse para incluir as novas FAQs
+  const originalGetResponse = getResponse;
+  
+  getResponse = function(text) {
+    // Primeiro verifica as respostas originais
+    const originalResponse = originalGetResponse(text);
+    if (!originalResponse.includes("não tenho informações precisas")) {
+      return originalResponse;
+    }
+    
+    // Novas respostas baseadas nas FAQs adicionadas
+    text = text.toLowerCase();
+    
+    if (text.includes("como funciona") && (text.includes("plataforma") || text.includes("site"))) return faq.intermediacao["como-funciona"];
+    if (text.includes("curiosidad") && text.includes("tecnologia")) return faq.ti.curiosidades;
+    if (text.includes("tendência") || text.includes("futuro")) return faq.ti.tendencias;
+    if (text.includes("dica") && text.includes("administração")) return faq.administracao.dicas;
+    if (text.includes("gestão financeira") || text.includes("finança")) return faq.financas.gestao;
+    if (text.includes("otimização logística") || text.includes("logística")) return faq.logistica.otimizacao;
+    if (text.includes("prática sustentável") || text.includes("sustentabilidade")) return faq.sustentabilidade.praticas;
+    if (text.includes("vantagem") && text.includes("plataforma")) return faq.vantagens.plataforma;
+    if (text.includes("contato") && text.includes("fornecedor")) return faq.contato.fornecedor;
+    
+    return originalResponse;
+  };
+  
+  // Adicionar mensagem de boas-vindas expandida
+  setTimeout(() => {
+    addMessage('ai', "💡 Além de conectar fornecedores e clientes, compartilhamos conhecimentos valiosos sobre TI, administração, finanças, logística e sustentabilidade! Experimente perguntar sobre esses temas.");
+  }, 5500);
+</script>
+
+<style>
+  /* Ajustes para os novos elementos */
+  #chat-messages {
+    height: 450px;
+  }
+  
+  @media (max-width: 768px) {
+    .quick-actions {
+      grid-template-columns: 1fr 1fr !important;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .quick-actions {
+      grid-template-columns: 1fr !important;
+    }
+    
+    .action-btn {
+      font-size: 14px;
+    }
+  }
+</style>
+</body>
+</html>

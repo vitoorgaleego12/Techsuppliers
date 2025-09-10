@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar de Categorias</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+ <div class="top-header">
+    <a href="index.html" class="botao-inicio">Início</a>
+    <a href="cadastro.html" class="botao-cadastro">cadastro</a>
+    <a href="login.html" class="botao-login">login</a>
+    <div class="site-name">TechSuppliers</div>
+  </div>
+  <nav class="sidebar" aria-label="Categorias">
+    <h2>Categorias</h2>
+    <ul class="nav-links">
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="computadores-link" aria-expanded="false" aria-controls="computadores-submenu">Computadores e Periféricos</a>
+        <ul class="submenu" id="computadores-submenu" aria-label="Subcategoria Computadores e Periféricos">
+          <li><a href="./Notebooks.html">Notebooks</a></li>
+          <li><a href="./Desktops.html">Desktops</a></li>
+          <li><a href="./Monitores.html">Monitores</a></li>
+          <li><a href="./Teclados mecanicos.html">Teclados mecânicos</a></li>
+          <li><a href="./Teclados ergonomicos.html">Teclados ergonômicos</a></li>
+          <li><a href="./Mouses gamers.html">Mouses gamers</a></li>
+          <li><a href="./Impressoras multifuncionais.html">Impressoras multifuncionais</a></li>
+          <li><a href="./Webcams Full HD.html">Webcams Full HD</a></li>
+          <li><a href="./Scanners.html">Scanners</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="hardware-link" aria-expanded="false" aria-controls="hardware-submenu">Componentes de Hardware</a>
+        <ul class="submenu" id="hardware-submenu" aria-label="Subcategoria Componentes de Hardware">
+          <li><a href="./CPUs (Intel-AMD).html">CPUs (Intel/AMD)</a></li>
+          <li><a href="./GPUs (NVIDIA-AMD).html">GPUs (NVIDIA/AMD)</a></li>
+          <li><a href="./Placas-mãe ATX-Micro ATX.html">Placas-mãe ATX/Micro ATX</a></li>
+          <li><a href="./Memórias RAM DDR4-DDR5.html">Memórias RAM DDR4/DDR5</a></li>
+          <li><a href="./SSD M.2-SATA.html">SSD M.2/SATA</a></li>
+          <li><a href="./HD 2.5-3.5.html">HD 2.5&quot;/3.5&quot;</a></li>
+          <li><a href="./Water Coolers.html">Water Coolers</a></li>
+          <li><a href="./Fontes 80 Plus.html">Fontes 80 Plus</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="acessorios-link" aria-expanded="false" aria-controls="acessorios-submenu">Acessórios</a>
+        <ul class="submenu" id="acessorios-submenu" aria-label="Subcategoria Acessórios">
+          <li><a href="./Headsets com microfone.html">Headsets com microfone</a></li>
+          <li><a href="./Hubs USB-C.html">Hubs USB-C</a></li>
+          <li><a href="./Suportes ergonomicos.html">Suportes ergonômicos</a></li>
+          <li><a href="./Bolsas para notebook.html">Bolsas para notebook</a></li>
+          <li><a href="./Dock stations.html">Dock stations</a></li>
+          <li><a href="./Mouses verticais.html">Mouses verticais</a></li>
+          <li><a href="./Teclados Bluetooth.html">Teclados Bluetooth</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="redes-link" aria-expanded="false" aria-controls="redes-submenu">Redes e Conectividade</a>
+        <ul class="submenu" id="redes-submenu" aria-label="Subcategoria Redes e Conectividade">
+          <li><a href="./Roteadores Wi-Fi 6.html">Roteadores Wi-Fi 6</a></li>
+          <li><a href="./Adaptadores USB Wi-Fi.html">Adaptadores USB Wi-Fi</a></li>
+          <li><a href="./Powerlines.html">Powerlines</a></li>
+          <li><a href="./Switches gerenciáveis.html">Switches gerenciáveis</a></li>
+          <li><a href="./Cabos CAT6.html">Cabos CAT6</a></li>
+          <li><a href="./Antenas Wi-Fi.html">Antenas Wi-Fi</a></li>
+          <li><a href="./Repetidores de sinal.html">Repetidores de sinal</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="armazenamento-link" aria-expanded="false" aria-controls="armazenamento-submenu">Armazenamento</a>
+        <ul class="submenu" id="armazenamento-submenu" aria-label="Subcategoria Armazenamento">
+          <li><a href="./Pendrives 128GB.html">Pendrives 128GB</a></li>
+          <li><a href="./Cartões microSD UHS-I.html">Cartões microSD UHS-I</a></li>
+          <li><a href="./HDs externos de 2TB.html">HDs externos de 2TB</a></li>
+          <li><a href="./SSDs NVMe.html">SSDs NVMe</a></li>
+          <li><a href="./Cases para HD-SSD.html">Cases para HD/SSD</a></li>
+          <li><a href="./Servidores NAS.html">Servidores NAS</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="software-link" aria-expanded="false" aria-controls="software-submenu">Softwares</a>
+        <ul class="submenu" id="software-submenu" aria-label="Subcategoria Softwares">
+          <li><a href="./Windows 10-11.html">Windows 10/11</a></li>
+          <li><a href="./Linux (Ubuntu, Mint).html">Linux (Ubuntu, Mint)</a></li>
+          <li><a href="./Microsoft Office.html">Microsoft Office</a></li>
+          <li><a href="./Adobe Creative Cloud.html">Adobe Creative Cloud</a></li>
+          <li><a href="./Antivírus (Norton, Avast, Kaspersky).html">Antivírus (Norton, Avast, Kaspersky)</a></li>
+          <li><a href="./IDEs (VS Code, IntelliJ, NetBeans).html">IDEs (VS Code, IntelliJ, NetBeans)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="dispositivos-moveis-link" aria-expanded="false" aria-controls="dispositivos-moveis-submenu">Dispositivos Móveis e Wearables</a>
+        <ul class="submenu" id="dispositivos-moveis-submenu" aria-label="Subcategoria Dispositivos Móveis e Wearables">
+          <li><a href="./Smartphones Android-iOS.html">Smartphones Android/iOS</a></li>
+          <li><a href="./Tablets com caneta.html">Tablets com caneta</a></li>
+          <li><a href="./Smartwatches.html">Smartwatches</a></li>
+          <li><a href="./Pulseiras fitness.html">Pulseiras fitness</a></li>
+          <li><a href="./Fones Bluetooth com IA.html">Fones Bluetooth com IA</a></li>
+          <li><a href="./Leitores de eBook (Kindle, Kobo).html">Leitores de eBook (Kindle, Kobo)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="tecnologia-casa-link" aria-expanded="false" aria-controls="tecnologia-casa-submenu">Tecnologia para Casa</a>
+        <ul class="submenu" id="tecnologia-casa-submenu" aria-label="Subcategoria Tecnologia para Casa">
+          <li><a href="./Smart TVs 4K.html">Smart TVs 4K</a></li>
+          <li><a href="./Assistentes virtuais (Alexa, Google Nest).html">Assistentes virtuais (Alexa, Google Nest)</a></li>
+          <li><a href="./Lâmpadas Wi-Fi RGB.html">Lâmpadas Wi-Fi RGB</a></li>
+          <li><a href="./Interruptores inteligentes.html">Interruptores inteligentes</a></li>
+          <li><a href="./Tomadas Wi-Fi.html">Tomadas Wi-Fi</a></li>
+          <li><a href="./Robôs aspiradores.html">Robôs aspiradores</a></li>
+          <li><a href="./Câmeras IP.html">Câmeras IP</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="games-link" aria-expanded="false" aria-controls="games-submenu">Games</a>
+        <ul class="submenu" id="games-submenu" aria-label="Subcategoria Games">
+          <li><a href="./Consoles (PS5, Xbox Series X, Nintendo Switch).html">Consoles (PS5, Xbox Series X, Nintendo Switch)</a></li>
+          <li><a href="./Controles personalizados.html">Controles personalizados</a></li>
+          <li><a href="./Headsets com som 7.1.html">Headsets com som 7.1</a></li>
+          <li><a href="./Cadeiras gamers.html">Cadeiras gamers</a></li>
+          <li><a href="./Placas de captura.html">Placas de captura</a></li>
+          <li><a href="./Volantes e pedais.html">Volantes e pedais</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="educacao-link" aria-expanded="false" aria-controls="educacao-submenu">Educação e Programação</a>
+        <ul class="submenu" id="educacao-submenu" aria-label="Subcategoria Educação e Programação">
+          <li><a href="./Kits Arduino e sensores.html">Kits Arduino e sensores</a></li>
+          <li><a href="./Raspberry Pi.html">Raspberry Pi</a></li>
+          <li><a href="./Robótica com Lego Mindstorms.html">Robótica com Lego Mindstorms</a></li>
+          <li><a href="./Micro-bit.html">Micro:bit</a></li>
+          <li><a href="./Livros técnicos.html">Livros técnicos</a></li>
+          <li><a href="./Cursos de TI online.html">Cursos de TI online</a></li>
+          <li><a href="./Emuladores de laboratório virtual.html">Emuladores de laboratório virtual</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+<main class="content" tabindex="-1">
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Pesquisar produtos..." class="search-bar">
+  </div>
+  
+  <script>
+    // Lista de produtos - Bolsas para Notebook mais vendidas no Brasil
+    const produtos = [
+      {
+        nome: "Mochila Targus Drifter II para Notebook 17''",
+        descricao: "Mochila resistente com compartimento acolchoado para notebook até 17'', bolsos organizadores e alças ergonômicas.",
+        preco: "349,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0nRJ2Lh2VB-q4KdE2gKG8gvnhJy8AG0yxdg&s",
+        fornecedores: [
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" }
+        ]
+      },
+      {
+        nome: "Case Logic QPB-213 Notebook 15.6''",
+        descricao: "Bolsa acolchoada para notebook com alça de mão e bolso frontal para acessórios. Proteção contra impactos.",
+        preco: "129,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCuHwUbyLJbg-GekZwyPgvSLszs5017s3V9Y8UsLKPQCig0-o93w7Zv4k7&s=10",
+        fornecedores: [
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" }
+        ]
+      },
+      {
+        nome: "Mochila Dell Premium 15.6''",
+        descricao: "Mochila profissional com compartimento para notebook, tablet e organização para cabos e acessórios.",
+        preco: "279,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCg8CclyWx50mgu3FEmX1EsQpiDf8gqyPWcPHoKfK1hPs7syeU3N1EQp4&s=10",
+        fornecedores: [
+          { nome: "Dell Store", link: "https://www.dell.com" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" }
+        ]
+      },
+      {
+        nome: "Bolsa Térmica Lenovo para Notebook 14''",
+        descricao: "Bolsa com proteção térmica e acolchoamento reforçado. Ideal para viagens e transporte seguro.",
+        preco: "189,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmD07YlkzHZmhNm1QJ9Ac0YaLqKue-CwsMcg&s",
+        fornecedores: [
+          { nome: "Lenovo Store", link: "https://www.lenovo.com/br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" }
+        ]
+      },
+      {
+        nome: "Mochila HP Elite 15.6''",
+        descricao: "Mochila executiva com design moderno, compartimento acolchoado e organização para acessórios.",
+        preco: "299,00",
+        imagem: "https://br-media.hptiendaenlinea.com/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/6/B/6B8U6AA-1_T1729786758.png",
+        fornecedores: [
+          { nome: "HP Store", link: "https://store.hp.com/br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" }
+        ]
+      },
+      {
+        nome: "Bolsa Executiva Samsung 15.6''",
+        descricao: "Bolsa profissional com divisórias organizadoras e proteção anti-impacto para notebooks.",
+        preco: "219,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGTK2rBpb2RTOkOF67EniGrh626heLviaLUw&s",
+        fornecedores: [
+          { nome: "Samsung Store", link: "https://www.samsung.com/br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" }
+        ]
+      },
+      {
+        nome: "Mochila Asus ROG Ranger BP1503 15.6''",
+        descricao: "Mochila gamer com design agressivo, compartimento acolchoado e organização para periféricos.",
+        preco: "399,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu_vDz3wD2rKBGvFAi92LoWhU9caz52KYLHBQmTiDyTiZEiXzfYb2wHUE&s=10",
+        fornecedores: [
+          { nome: "Asus Store", link: "https://www.asus.com/br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" }
+        ]
+      },
+      {
+        nome: "Bolsa Targus CityLite para Notebook 14''",
+        descricao: "Bolsa leve e compacta com proteção básica e design minimalista para notebooks pequenos.",
+        preco: "159,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5A8f4wG_M814rpe-NkVs9LZx9Xvk7xt8jSA&s",
+        fornecedores: [
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" }
+        ]
+      },
+      {
+        nome: "Mochila Lenovo Legion Recon 15.6''",
+        descricao: "Mochila gamer com compartimento térmico, USB charging port e organização para equipamentos.",
+        preco: "459,00",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqa7LuMJdKQ3SQyVejN55l3KrFpmCSR49lKFZXDFNrsuEytr3o3BRA-W4&s=10",
+        fornecedores: [
+          { nome: "Lenovo Store", link: "https://www.lenovo.com/br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" }
+        ]
+      },
+      {
+        nome: "Bolsa Executiva Dell 13.3''",
+        descricao: "Bolsa profissional slim com proteção anti-choque e design elegante para notebooks ultrafinos.",
+        preco: "239,90",
+        imagem: "https://m.media-amazon.com/images/I/91pr0IljnsL._UF1000,1000_QL80_.jpg",
+        fornecedores: [
+          { nome: "Dell Store", link: "https://www.dell.com" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Amazon Brasil", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" }
+        ]
+      }
+    ];
+
+    const main = document.querySelector("main");
+    const searchInput = document.getElementById("search-input");
+
+    // Função para renderizar os produtos
+    function renderProducts(productsToRender) {
+      // Limpa o conteúdo atual
+      const existingProducts = document.querySelectorAll('.produto-card');
+      existingProducts.forEach(product => product.remove());
+
+      // Adiciona os produtos filtrados
+      productsToRender.forEach((produto, index) => {
+        const card = document.createElement("div");
+        card.className = "produto-card";
+
+        const fornecedoresHTML = produto.fornecedores.map(f =>
+          `<li><a href="${f.link}" target="_blank">${f.nome}</a></li>`
+        ).join("");
+
+        card.innerHTML = `
+          <img src="${produto.imagem}" alt="${produto.nome}" class="produto-img">
+          <h3>${produto.nome}</h3>
+          <div class="produto-detalhes">
+            <p class="descricao">${produto.descricao}</p>
+            <p class="preco">Média de preço: R$ ${produto.preco}</p>
+            <div class="dropdown">
+              <button class="btn-toggle">Fornecedores</button>
+              <ul class="fornecedores-lista hidden">
+                ${fornecedoresHTML}
+              </ul>
+            </div>
+          </div>
+        `;
+
+        main.appendChild(card);
+      });
+
+      // Reaplica os event listeners para os dropdowns
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        const btn = drop.querySelector(".btn-toggle");
+        const list = drop.querySelector(".fornecedores-lista");
+
+        btn.addEventListener("click", () => {
+          list.classList.toggle("hidden");
+        });
+      });
+    }
+
+    // Renderiza todos os produtos inicialmente
+    renderProducts(produtos);
+
+    // Adiciona o evento de pesquisa
+    searchInput.addEventListener("input", (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      const filteredProducts = produtos.filter(produto => 
+        produto.nome.toLowerCase().includes(searchTerm) || 
+        produto.descricao.toLowerCase().includes(searchTerm)
+      );
+      renderProducts(filteredProducts);
+    });
+
+    // Fecha os dropdowns quando clicar fora
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        const list = drop.querySelector(".fornecedores-lista");
+        if (!drop.contains(e.target)) {
+          list.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+</main>
+</body>
+</html>

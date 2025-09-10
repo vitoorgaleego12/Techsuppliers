@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar de Categorias</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+ <div class="top-header">
+    <a href="index.html" class="botao-inicio">Início</a>
+    <a href="cadastro.html" class="botao-cadastro">cadastro</a>
+    <a href="login.html" class="botao-login">login</a>
+    <div class="site-name">TechSuppliers</div>
+  </div>
+  <nav class="sidebar" aria-label="Categorias">
+    <h2>Categorias</h2>
+    <ul class="nav-links">
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="computadores-link" aria-expanded="false" aria-controls="computadores-submenu">Computadores e Periféricos</a>
+        <ul class="submenu" id="computadores-submenu" aria-label="Subcategoria Computadores e Periféricos">
+          <li><a href="./Notebooks.html">Notebooks</a></li>
+          <li><a href="./Desktops.html">Desktops</a></li>
+          <li><a href="./Monitores.html">Monitores</a></li>
+          <li><a href="./Teclados mecanicos.html">Teclados mecânicos</a></li>
+          <li><a href="./Teclados ergonomicos.html">Teclados ergonômicos</a></li>
+          <li><a href="./Mouses gamers.html">Mouses gamers</a></li>
+          <li><a href="./Impressoras multifuncionais.html">Impressoras multifuncionais</a></li>
+          <li><a href="./Webcams Full HD.html">Webcams Full HD</a></li>
+          <li><a href="./Scanners.html">Scanners</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="hardware-link" aria-expanded="false" aria-controls="hardware-submenu">Componentes de Hardware</a>
+        <ul class="submenu" id="hardware-submenu" aria-label="Subcategoria Componentes de Hardware">
+          <li><a href="./CPUs (Intel-AMD).html">CPUs (Intel/AMD)</a></li>
+          <li><a href="./GPUs (NVIDIA-AMD).html">GPUs (NVIDIA/AMD)</a></li>
+          <li><a href="./Placas-mãe ATX-Micro ATX.html">Placas-mãe ATX/Micro ATX</a></li>
+          <li><a href="./Memórias RAM DDR4-DDR5.html">Memórias RAM DDR4/DDR5</a></li>
+          <li><a href="./SSD M.2-SATA.html">SSD M.2/SATA</a></li>
+          <li><a href="./HD 2.5-3.5.html">HD 2.5&quot;/3.5&quot;</a></li>
+          <li><a href="./Water Coolers.html">Water Coolers</a></li>
+          <li><a href="./Fontes 80 Plus.html">Fontes 80 Plus</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="acessorios-link" aria-expanded="false" aria-controls="acessorios-submenu">Acessórios</a>
+        <ul class="submenu" id="acessorios-submenu" aria-label="Subcategoria Acessórios">
+          <li><a href="./Headsets com microfone.html">Headsets com microfone</a></li>
+          <li><a href="./Hubs USB-C.html">Hubs USB-C</a></li>
+          <li><a href="./Suportes ergonomicos.html">Suportes ergonômicos</a></li>
+          <li><a href="./Bolsas para notebook.html">Bolsas para notebook</a></li>
+          <li><a href="./Dock stations.html">Dock stations</a></li>
+          <li><a href="./Mouses verticais.html">Mouses verticais</a></li>
+          <li><a href="./Teclados Bluetooth.html">Teclados Bluetooth</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="redes-link" aria-expanded="false" aria-controls="redes-submenu">Redes e Conectividade</a>
+        <ul class="submenu" id="redes-submenu" aria-label="Subcategoria Redes e Conectividade">
+          <li><a href="./Roteadores Wi-Fi 6.html">Roteadores Wi-Fi 6</a></li>
+          <li><a href="./Adaptadores USB Wi-Fi.html">Adaptadores USB Wi-Fi</a></li>
+          <li><a href="./Powerlines.html">Powerlines</a></li>
+          <li><a href="./Switches gerenciáveis.html">Switches gerenciáveis</a></li>
+          <li><a href="./Cabos CAT6.html">Cabos CAT6</a></li>
+          <li><a href="./Antenas Wi-Fi.html">Antenas Wi-Fi</a></li>
+          <li><a href="./Repetidores de sinal.html">Repetidores de sinal</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="armazenamento-link" aria-expanded="false" aria-controls="armazenamento-submenu">Armazenamento</a>
+        <ul class="submenu" id="armazenamento-submenu" aria-label="Subcategoria Armazenamento">
+          <li><a href="./Pendrives 128GB.html">Pendrives 128GB</a></li>
+          <li><a href="./Cartões microSD UHS-I.html">Cartões microSD UHS-I</a></li>
+          <li><a href="./HDs externos de 2TB.html">HDs externos de 2TB</a></li>
+          <li><a href="./SSDs NVMe.html">SSDs NVMe</a></li>
+          <li><a href="./Cases para HD-SSD.html">Cases para HD/SSD</a></li>
+          <li><a href="./Servidores NAS.html">Servidores NAS</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="software-link" aria-expanded="false" aria-controls="software-submenu">Softwares</a>
+        <ul class="submenu" id="software-submenu" aria-label="Subcategoria Softwares">
+          <li><a href="./Windows 10-11.html">Windows 10/11</a></li>
+          <li><a href="./Linux (Ubuntu, Mint).html">Linux (Ubuntu, Mint)</a></li>
+          <li><a href="./Microsoft Office.html">Microsoft Office</a></li>
+          <li><a href="./Adobe Creative Cloud.html">Adobe Creative Cloud</a></li>
+          <li><a href="./Antivírus (Norton, Avast, Kaspersky).html">Antivírus (Norton, Avast, Kaspersky)</a></li>
+          <li><a href="./IDEs (VS Code, IntelliJ, NetBeans).html">IDEs (VS Code, IntelliJ, NetBeans)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="dispositivos-moveis-link" aria-expanded="false" aria-controls="dispositivos-moveis-submenu">Dispositivos Móveis e Wearables</a>
+        <ul class="submenu" id="dispositivos-moveis-submenu" aria-label="Subcategoria Dispositivos Móveis e Wearables">
+          <li><a href="./Smartphones Android-iOS.html">Smartphones Android/iOS</a></li>
+          <li><a href="./Tablets com caneta.html">Tablets com caneta</a></li>
+          <li><a href="./Smartwatches.html">Smartwatches</a></li>
+          <li><a href="./Pulseiras fitness.html">Pulseiras fitness</a></li>
+          <li><a href="./Fones Bluetooth com IA.html">Fones Bluetooth com IA</a></li>
+          <li><a href="./Leitores de eBook (Kindle, Kobo).html">Leitores de eBook (Kindle, Kobo)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="tecnologia-casa-link" aria-expanded="false" aria-controls="tecnologia-casa-submenu">Tecnologia para Casa</a>
+        <ul class="submenu" id="tecnologia-casa-submenu" aria-label="Subcategoria Tecnologia para Casa">
+          <li><a href="./Smart TVs 4K.html">Smart TVs 4K</a></li>
+          <li><a href="./Assistentes virtuais (Alexa, Google Nest).html">Assistentes virtuais (Alexa, Google Nest)</a></li>
+          <li><a href="./Lâmpadas Wi-Fi RGB.html">Lâmpadas Wi-Fi RGB</a></li>
+          <li><a href="./Interruptores inteligentes.html">Interruptores inteligentes</a></li>
+          <li><a href="./Tomadas Wi-Fi.html">Tomadas Wi-Fi</a></li>
+          <li><a href="./Robôs aspiradores.html">Robôs aspiradores</a></li>
+          <li><a href="./Câmeras IP.html">Câmeras IP</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="games-link" aria-expanded="false" aria-controls="games-submenu">Games</a>
+        <ul class="submenu" id="games-submenu" aria-label="Subcategoria Games">
+          <li><a href="./Consoles (PS5, Xbox Series X, Nintendo Switch).html">Consoles (PS5, Xbox Series X, Nintendo Switch)</a></li>
+          <li><a href="./Controles personalizados.html">Controles personalizados</a></li>
+          <li><a href="./Headsets com som 7.1.html">Headsets com som 7.1</a></li>
+          <li><a href="./Cadeiras gamers.html">Cadeiras gamers</a></li>
+          <li><a href="./Placas de captura.html">Placas de captura</a></li>
+          <li><a href="./Volantes e pedais.html">Volantes e pedais</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="educacao-link" aria-expanded="false" aria-controls="educacao-submenu">Educação e Programação</a>
+        <ul class="submenu" id="educacao-submenu" aria-label="Subcategoria Educação e Programação">
+          <li><a href="./Kits Arduino e sensores.html">Kits Arduino e sensores</a></li>
+          <li><a href="./Raspberry Pi.html">Raspberry Pi</a></li>
+          <li><a href="./Robótica com Lego Mindstorms.html">Robótica com Lego Mindstorms</a></li>
+          <li><a href="./Micro-bit.html">Micro:bit</a></li>
+          <li><a href="./Livros técnicos.html">Livros técnicos</a></li>
+          <li><a href="./Cursos de TI online.html">Cursos de TI online</a></li>
+          <li><a href="./Emuladores de laboratório virtual.html">Emuladores de laboratório virtual</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+<main class="content" tabindex="-1">    
+  <div class="search-container">    
+    <input type="text" id="search-input" placeholder="Pesquisar produtos..." class="search-bar">    
+  </div>    
+  <script>    
+    const produtos = [    
+      {  
+        nome: "Hub USB-C 7 em 1 da Baseus",  
+        descricao: "Hub USB-C com 3 portas USB 3.0, HDMI 4K, SD/TF card reader e PD 100W.",  
+        preco: "249,90",  
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Ef4Ngcc3aqKRpDfxGjl6CnrhjjYF9KvI3nzWdbD3PNUqAVA2A5Y7rAQ&s=10",  
+        fornecedores: [  
+          { nome: "Amazon", link: "https://www.amazon.com.br" },  
+          { nome: "Kabum", link: "https://www.kabum.com.br" },  
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },  
+          { nome: "Submarino", link: "https://www.submarino.com.br" },  
+          { nome: "Americanas", link: "https://www.americanas.com.br" },  
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },  
+          { nome: "Extra", link: "https://www.extra.com.br" },  
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },  
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },  
+          { nome: "Terabyte", link: "https://www.terabyteshop.com.br" }  
+        ]  
+      },  
+      {  
+        nome: "Hub USB-C Anker 8 em 1",  
+        descricao: "Hub premium com 4K HDMI, Ethernet Gigabit, 2 USB 3.0, USB-C PD e leitor de cartões.",  
+        preco: "399,90",  
+        imagem: "https://m.media-amazon.com/images/I/51-2FIPoMyL._UF1000,1000_QL80_.jpg",  
+        fornecedores: [  
+          { nome: "Amazon", link: "https://www.amazon.com.br" },  
+          { nome: "Kabum", link: "https://www.kabum.com.br" },  
+          { nome: "Submarino", link: "https://www.submarino.com.br" },  
+          { nome: "Americanas", link: "https://www.americanas.com.br" },  
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },  
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },  
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },  
+          { nome: "Extra", link: "https://www.extra.com.br" },  
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },  
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" }  
+        ]  
+      },  
+      {  
+        nome: "Hub USB-C Dell DA305",  
+        descricao: "Hub profissional com HDMI, VGA, Ethernet, 3 USB 3.0 e saída USB-C PD.",  
+        preco: "599,90",  
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttDNTZHiko1tOOntnJhnOAHgsrInOLTQO3MunAAGQYAhuFDqVdE843yY&s=10",  
+        fornecedores: [  
+          { nome: "Dell Brasil", link: "https://www.dell.com" },  
+          { nome: "Amazon", link: "https://www.amazon.com.br" },  
+          { nome: "Kabum", link: "https://www.kabum.com.br" },  
+          { nome: "Submarino", link: "https://www.submarino.com.br" },  
+          { nome: "Americanas", link: "https://www.americanas.com.br" },  
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },  
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },  
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },  
+          { nome: "Extra", link: "https://www.extra.com.br" },  
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" }  
+        ]  
+      },  
+      {  
+        nome: "Hub USB-C Samsung 6 em 1",  
+        descricao: "Hub compacto com HDMI 4K, 2 USB 3.0, USB-C PD e leitor de cartões microSD/SD.",  
+        preco: "279,90",  
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfLljlMhmWsNJNJ5SFIofvHidMSpLfy-C6ahsX0ZWn36VetkVO2wZFc6M3&s=10",  
+        fornecedores: [  
+          { nome: "Samsung Brasil", link: "https://www.samsung.com/br" },  
+          { nome: "Amazon", link: "https://www.amazon.com.br" },  
+          { nome: "Kabum", link: "https://www.kabum.com.br" },  
+          { nome: "Submarino", link: "https://www.submarino.com.br" },  
+          { nome: "Americanas", link: "https://www.americanas.com.br" },  
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },  
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },  
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },  
+          { nome: "Extra", link: "https://www.extra.com.br" },  
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" }  
+        ]  
+      },  
+      {  
+        nome: "Hub USB-C HyperDrive 7 em 1",  
+        descricao: "Hub premium com HDMI 4K, 2 USB 3.0, USB-C PD, leitor de cartões e saída áudio.",  
+        preco: "459,90",  
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMcFExkcH8Cn5ep78bSEHgoq4V5rmoRxRvT8ZsvKW7v0okniunY8OWDPuQ&s=10",  
+        fornecedores: [  
+          { nome: "Amazon", link: "https://www.amazon.com.br" },  
+          { nome: "Kabum", link: "https://www.kabum.com.br" },  
+          { nome: "Submarino", link: "https://www.submarino.com.br" },  
+          { nome: "Americanas", link: "https://www.americanas.com.br" },  
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },  
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },  
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },  
+          { nome: "Extra", link: "https://www.extra.com.br" },  
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },  
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" }  
+        ]  
+      },  
+      {  
+        nome: "Hub USB-C Orico 6 em 1",  
+        descricao: "Hub com HDMI 4K, 3 portas USB 3.0, leitor de cartões e design compacto.",  
+        preco: "199,90",  
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQreqyQcT45_enbPDT-fDMeRTIVqxrZdJZoh4m3T7DY_HNU0mhaxGvR0AU&s=10",  
+        fornecedores: [  
+          { nome: "Amazon", link: "https://www.amazon.com.br" },  
+          { nome: "Kabum", link: "https://www.kabum.com.br" },  
+          { nome: "Submarino", link: "https://www.submarino.com.br" },  
+          { nome: "Americanas", link: "https://www.americanas.com.br" },  
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },  
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },  
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },  
+          { nome: "Extra", link: "https://www.extra.com.br" },  
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },  
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" }  
+        ]  
+      },  
+      {  
+        nome: "Hub USB-C Logitech 4 em 1",  
+        descricao: "Hub compacto com 3 portas USB 3.0 e 1 porta USB-C para carregamento.",  
+        preco: "179,90",  
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiqW8NFwp0Ru7dmSuaLdwFqkefNKAi0RozTGapCSeHjlvBmGHIbATw4Lrh&s=10",  
+        fornecedores: [  
+          { nome: "Logitech Brasil", link: "https://www.logitech.com" },  
+          { nome: "Amazon", link: "https://www.amazon.com.br" },  
+          { nome: "Kabum", link: "https://www.kabum.com.br" },  
+          { nome: "Submarino", link: "https://www.submarino.com.br" },  
+          { nome: "Americanas", link: "https://www.americanas.com.br" },  
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },  
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },  
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },  
+          { nome: "Extra", link: "https://www.extra.com.br" },  
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" }  
+        ]  
+      },  
+      {  
+        nome: "Hub USB-C Xiaomi 4 em 1",  
+        descricao: "Hub minimalista com 3 portas USB 3.0 e 1 porta HDMI 4K, compatível com MacBook.",  
+        preco: "159,90",  
+        imagem: "https://http2.mlstatic.com/D_NQ_NP_958874-MLA79693283993_102024-O.webp",  
+        fornecedores: [  
+          { nome: "Xiaomi Brasil", link: "https://www.mi.com/br" },  
+          { nome: "Amazon", link: "https://www.amazon.com.br" },  
+          { nome: "Kabum", link: "https://www.kabum.com.br" },  
+          { nome: "Submarino", link: "https://www.submarino.com.br" },  
+          { nome: "Americanas", link: "https://www.americanas.com.br" },  
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },  
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },  
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },  
+          { nome: "Extra", link: "https://www.extra.com.br" },  
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" }  
+        ]  
+      },  
+      {  
+        nome: "Hub USB-C Belkin 7 em 1",  
+        descricao: "Hub premium com HDMI 4K, Ethernet, 2 USB 3.0, USB-C PD e leitor de cartões.",  
+        preco: "499,90",  
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgjsnQZoAnVm_cwUo6yK11B_UrHmDDnl_k4Xx7vIb3tceYfb4_A7BMlMt1&s=10",  
+        fornecedores: [  
+          { nome: "Belkin Brasil", link: "https://www.belkin.com/br" },  
+          { nome: "Amazon", link: "https://www.amazon.com.br" },  
+          { nome: "Kabum", link: "https://www.kabum.com.br" },  
+          { nome: "Submarino", link: "https://www.submarino.com.br" },  
+          { nome: "Americanas", link: "https://www.americanas.com.br" },  
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },  
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },  
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },  
+          { nome: "Extra", link: "https://www.extra.com.br" },  
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" }  
+        ]  
+      },  
+      {  
+        nome: "Hub USB-C Multilaser 4 em 1",  
+        descricao: "Hub econômico com 3 portas USB 3.0 e 1 porta HDMI 1080p, compatível com Windows/Mac.",  
+        preco: "129,90",  
+        imagem: "https://images.kabum.com.br/produtos/fotos/sync_mirakl/186832/xlarge/Ac-Hub-Usb-Cables-2-0-4-Portas-Multi-Preto-AC042_1747774278.jpg",  
+        fornecedores: [  
+          { nome: "Multilaser", link: "https://www.multilaser.com.br" },  
+          { nome: "Amazon", link: "https://www.amazon.com.br" },  
+          { nome: "Kabum", link: "https://www.kabum.com.br" },  
+          { nome: "Submarino", link: "https://www.submarino.com.br" },  
+          { nome: "Americanas", link: "https://www.americanas.com.br" },  
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },  
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },  
+          { nome: "Kalunga", link: "https://www.kalunga.com.br" },  
+          { nome: "Extra", link: "https://www.extra.com.br" },  
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" }  
+        ]  
+      }  
+    ];  
+
+    const main = document.querySelector("main");  
+    const searchInput = document.getElementById("search-input");  
+
+    // Função para renderizar os produtos  
+    function renderProducts(productsToRender) {  
+      // Limpa o conteúdo atual  
+      const existingProducts = document.querySelectorAll('.produto-card');  
+      existingProducts.forEach(product => product.remove());  
+
+      // Adiciona os produtos filtrados  
+      productsToRender.forEach((produto, index) => {  
+        const card = document.createElement("div");  
+        card.className = "produto-card";  
+
+        const fornecedoresHTML = produto.fornecedores.map(f =>  
+          `<li><a href="${f.link}" target="_blank">${f.nome}</a></li>`  
+        ).join("");  
+
+        card.innerHTML = `  
+          <img src="${produto.imagem}" alt="${produto.nome}" class="produto-img">  
+          <div class="produto-detalhes">  
+            <h3>${produto.nome}</h3>  
+            <p class="descricao">${produto.descricao}</p>  
+            <p class="preco">Média de preço: R$ ${produto.preco}</p>  
+            <div class="dropdown">  
+              <button class="btn-toggle">Fornecedores</button>  
+              <ul class="fornecedores-lista hidden">  
+                ${fornecedoresHTML}  
+              </ul>  
+            </div>  
+          </div>  
+        `;  
+
+        main.appendChild(card);  
+      });  
+
+      // Reaplica os event listeners para os dropdowns  
+      document.querySelectorAll(".dropdown").forEach(drop => {  
+        const btn = drop.querySelector(".btn-toggle");  
+        const list = drop.querySelector(".fornecedores-lista");  
+
+        btn.addEventListener("click", () => {  
+          list.classList.toggle("hidden");  
+        });  
+      });  
+    }  
+
+    // Renderiza todos os produtos inicialmente  
+    renderProducts(produtos);  
+
+    // Adiciona o evento de pesquisa  
+    searchInput.addEventListener("input", (e) => {  
+      const searchTerm = e.target.value.toLowerCase();  
+      const filteredProducts = produtos.filter(produto =>   
+        produto.nome.toLowerCase().includes(searchTerm) ||   
+        produto.descricao.toLowerCase().includes(searchTerm)  
+      );  
+      renderProducts(filteredProducts);  
+    });  
+
+    // Fecha os dropdowns quando clicar fora  
+    document.addEventListener("click", function (e) {  
+      document.querySelectorAll(".dropdown").forEach(drop => {  
+        const list = drop.querySelector(".fornecedores-lista");  
+        if (!drop.contains(e.target)) {  
+          list.classList.add("hidden");  
+        }  
+      });  
+    });
+  </script>  
+</main>  
+</body>
+</html>

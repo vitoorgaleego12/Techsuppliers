@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar de Categorias</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+ <div class="top-header">
+    <a href="index.html" class="botao-inicio">Início</a>
+    <a href="cadastro.html" class="botao-cadastro">cadastro</a>
+    <a href="login.html" class="botao-login">login</a>
+    <div class="site-name">TechSuppliers</div>
+  </div>
+  <nav class="sidebar" aria-label="Categorias">
+    <h2>Categorias</h2>
+    <ul class="nav-links">
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="computadores-link" aria-expanded="false" aria-controls="computadores-submenu">Computadores e Periféricos</a>
+        <ul class="submenu" id="computadores-submenu" aria-label="Subcategoria Computadores e Periféricos">
+          <li><a href="./Notebooks.html">Notebooks</a></li>
+          <li><a href="./Desktops.html">Desktops</a></li>
+          <li><a href="./Monitores.html">Monitores</a></li>
+          <li><a href="./Teclados mecanicos.html">Teclados mecânicos</a></li>
+          <li><a href="./Teclados ergonomicos.html">Teclados ergonômicos</a></li>
+          <li><a href="./Mouses gamers.html">Mouses gamers</a></li>
+          <li><a href="./Impressoras multifuncionais.html">Impressoras multifuncionais</a></li>
+          <li><a href="./Webcams Full HD.html">Webcams Full HD</a></li>
+          <li><a href="./Scanners.html">Scanners</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="hardware-link" aria-expanded="false" aria-controls="hardware-submenu">Componentes de Hardware</a>
+        <ul class="submenu" id="hardware-submenu" aria-label="Subcategoria Componentes de Hardware">
+          <li><a href="./CPUs (Intel-AMD).html">CPUs (Intel/AMD)</a></li>
+          <li><a href="./GPUs (NVIDIA-AMD).html">GPUs (NVIDIA/AMD)</a></li>
+          <li><a href="./Placas-mãe ATX-Micro ATX.html">Placas-mãe ATX/Micro ATX</a></li>
+          <li><a href="./Memórias RAM DDR4-DDR5.html">Memórias RAM DDR4/DDR5</a></li>
+          <li><a href="./SSD M.2-SATA.html">SSD M.2/SATA</a></li>
+          <li><a href="./HD 2.5-3.5.html">HD 2.5&quot;/3.5&quot;</a></li>
+          <li><a href="./Water Coolers.html">Water Coolers</a></li>
+          <li><a href="./Fontes 80 Plus.html">Fontes 80 Plus</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="acessorios-link" aria-expanded="false" aria-controls="acessorios-submenu">Acessórios</a>
+        <ul class="submenu" id="acessorios-submenu" aria-label="Subcategoria Acessórios">
+          <li><a href="./Headsets com microfone.html">Headsets com microfone</a></li>
+          <li><a href="./Hubs USB-C.html">Hubs USB-C</a></li>
+          <li><a href="./Suportes ergonomicos.html">Suportes ergonômicos</a></li>
+          <li><a href="./Bolsas para notebook.html">Bolsas para notebook</a></li>
+          <li><a href="./Dock stations.html">Dock stations</a></li>
+          <li><a href="./Mouses verticais.html">Mouses verticais</a></li>
+          <li><a href="./Teclados Bluetooth.html">Teclados Bluetooth</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="redes-link" aria-expanded="false" aria-controls="redes-submenu">Redes e Conectividade</a>
+        <ul class="submenu" id="redes-submenu" aria-label="Subcategoria Redes e Conectividade">
+          <li><a href="./Roteadores Wi-Fi 6.html">Roteadores Wi-Fi 6</a></li>
+          <li><a href="./Adaptadores USB Wi-Fi.html">Adaptadores USB Wi-Fi</a></li>
+          <li><a href="./Powerlines.html">Powerlines</a></li>
+          <li><a href="./Switches gerenciáveis.html">Switches gerenciáveis</a></li>
+          <li><a href="./Cabos CAT6.html">Cabos CAT6</a></li>
+          <li><a href="./Antenas Wi-Fi.html">Antenas Wi-Fi</a></li>
+          <li><a href="./Repetidores de sinal.html">Repetidores de sinal</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="armazenamento-link" aria-expanded="false" aria-controls="armazenamento-submenu">Armazenamento</a>
+        <ul class="submenu" id="armazenamento-submenu" aria-label="Subcategoria Armazenamento">
+          <li><a href="./Pendrives 128GB.html">Pendrives 128GB</a></li>
+          <li><a href="./Cartões microSD UHS-I.html">Cartões microSD UHS-I</a></li>
+          <li><a href="./HDs externos de 2TB.html">HDs externos de 2TB</a></li>
+          <li><a href="./SSDs NVMe.html">SSDs NVMe</a></li>
+          <li><a href="./Cases para HD-SSD.html">Cases para HD/SSD</a></li>
+          <li><a href="./Servidores NAS.html">Servidores NAS</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="software-link" aria-expanded="false" aria-controls="software-submenu">Softwares</a>
+        <ul class="submenu" id="software-submenu" aria-label="Subcategoria Softwares">
+          <li><a href="./Windows 10-11.html">Windows 10/11</a></li>
+          <li><a href="./Linux (Ubuntu, Mint).html">Linux (Ubuntu, Mint)</a></li>
+          <li><a href="./Microsoft Office.html">Microsoft Office</a></li>
+          <li><a href="./Adobe Creative Cloud.html">Adobe Creative Cloud</a></li>
+          <li><a href="./Antivírus (Norton, Avast, Kaspersky).html">Antivírus (Norton, Avast, Kaspersky)</a></li>
+          <li><a href="./IDEs (VS Code, IntelliJ, NetBeans).html">IDEs (VS Code, IntelliJ, NetBeans)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="dispositivos-moveis-link" aria-expanded="false" aria-controls="dispositivos-moveis-submenu">Dispositivos Móveis e Wearables</a>
+        <ul class="submenu" id="dispositivos-moveis-submenu" aria-label="Subcategoria Dispositivos Móveis e Wearables">
+          <li><a href="./Smartphones Android-iOS.html">Smartphones Android/iOS</a></li>
+          <li><a href="./Tablets com caneta.html">Tablets com caneta</a></li>
+          <li><a href="./Smartwatches.html">Smartwatches</a></li>
+          <li><a href="./Pulseiras fitness.html">Pulseiras fitness</a></li>
+          <li><a href="./Fones Bluetooth com IA.html">Fones Bluetooth com IA</a></li>
+          <li><a href="./Leitores de eBook (Kindle, Kobo).html">Leitores de eBook (Kindle, Kobo)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="tecnologia-casa-link" aria-expanded="false" aria-controls="tecnologia-casa-submenu">Tecnologia para Casa</a>
+        <ul class="submenu" id="tecnologia-casa-submenu" aria-label="Subcategoria Tecnologia para Casa">
+          <li><a href="./Smart TVs 4K.html">Smart TVs 4K</a></li>
+          <li><a href="./Assistentes virtuais (Alexa, Google Nest).html">Assistentes virtuais (Alexa, Google Nest)</a></li>
+          <li><a href="./Lâmpadas Wi-Fi RGB.html">Lâmpadas Wi-Fi RGB</a></li>
+          <li><a href="./Interruptores inteligentes.html">Interruptores inteligentes</a></li>
+          <li><a href="./Tomadas Wi-Fi.html">Tomadas Wi-Fi</a></li>
+          <li><a href="./Robôs aspiradores.html">Robôs aspiradores</a></li>
+          <li><a href="./Câmeras IP.html">Câmeras IP</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="games-link" aria-expanded="false" aria-controls="games-submenu">Games</a>
+        <ul class="submenu" id="games-submenu" aria-label="Subcategoria Games">
+          <li><a href="./Consoles (PS5, Xbox Series X, Nintendo Switch).html">Consoles (PS5, Xbox Series X, Nintendo Switch)</a></li>
+          <li><a href="./Controles personalizados.html">Controles personalizados</a></li>
+          <li><a href="./Headsets com som 7.1.html">Headsets com som 7.1</a></li>
+          <li><a href="./Cadeiras gamers.html">Cadeiras gamers</a></li>
+          <li><a href="./Placas de captura.html">Placas de captura</a></li>
+          <li><a href="./Volantes e pedais.html">Volantes e pedais</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="educacao-link" aria-expanded="false" aria-controls="educacao-submenu">Educação e Programação</a>
+        <ul class="submenu" id="educacao-submenu" aria-label="Subcategoria Educação e Programação">
+          <li><a href="./Kits Arduino e sensores.html">Kits Arduino e sensores</a></li>
+          <li><a href="./Raspberry Pi.html">Raspberry Pi</a></li>
+          <li><a href="./Robótica com Lego Mindstorms.html">Robótica com Lego Mindstorms</a></li>
+          <li><a href="./Micro-bit.html">Micro:bit</a></li>
+          <li><a href="./Livros técnicos.html">Livros técnicos</a></li>
+          <li><a href="./Cursos de TI online.html">Cursos de TI online</a></li>
+          <li><a href="./Emuladores de laboratório virtual.html">Emuladores de laboratório virtual</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <main class="content" tabindex="-1">
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Pesquisar produtos..." class="search-bar">
+  </div>
+  
+  <script>
+    const produtos = [
+      {
+        nome: "Lenovo LOQ",
+        imagem: "./imagens/Notebooks/notebook1.jpeg",
+        descricao: "Notebook Gamer Lenovo LOQ E Core i5-12450HX, 8GB, 512GB SSD, RTX 3050 6GB, 15.6 144Hz, Linux 83MES00100",
+        preco: "4.999,90",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br/Notebook-Gamer-Lenovo-i5-12450HX-83MES00100/dp/B0DYL44KXR/ref=asc_df_B0DYL44KXR?mcid=a78376b136eb3657a8a9aa64e0b78460&tag=googleshopp06-20&linkCode=df0&hvadid=709883750080&hvpos=&hvnetw=g&hvrand=16141984346580476789&hvpone=&hvptwo=&hvqmt=&hvdev=m&hvdvcmdl=&hvlocint=&hvlocphy=9216076&hvtargid=pla-2419337397589&psc=1&language=pt_BR&gad_source=1" },
+          { nome: "Lenovo", link: "https://www.lenovo.com/br/pt/p/laptops/loq-laptops/lenovo-loq-essential-gen-9-15-intel/83mes00000?cid=br:sem|se|google|j-b2c-best-sellers-convers-google-performancemax|||83MES00000|20776494637|||pmax||consumer&gad_source=1&gad_campaignid=20776498066&gbraid=0AAAAADtpWiCVnCwarxScwNdfA9q-db07E&gclid=Cj0KCQjwucDBBhDxARIsANqFdr22gIhfyzBHj80ccbY6obdpFl7ekI8NEeYtIoBnq7NSRRkbwJ2gIhoaArtTEALw_wcB" },
+          { nome: "Magazine Luiza", link: "https://m.magazineluiza.com.br/busca/notebook+lenovo+loq/?partner_id=9812&gad_source=1&gad_campaignid=1551339817&gbraid=0AAAAAD4zZmQK491wD3QBl06WTcuDVkqIU&gclid=Cj0KCQjwucDBBhDxARIsANqFdr3XYXyPdQpXG04SAlb5T8T11ZSCJh3U4GuLjJHD7mrlFOHtwILGAHIaAq-EEALw_wcB&gclsrc=aw.ds" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/728904/notebook-lenovo-loq-e-core-i5-12450hx-rtx-3050-16gb-512gb-ssd-15-6-fhd-ips-144hz-win-11-luna-cinza-83me0007br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/notebook-gamer-lenovo-loq-15iax9e-essential-intel-core-i5-12450hx-fhd-156-quot-wva-nvidia-geforce-rtx3050-6gb-gddr6-512gb-ssd-16gb-ram-windows-11/p/1571632650?utm_medium=Cpc&utm_source=GP_PLA&IdSku=1571632650&idLojista=24338&tipoLojista=3P&gclsrc=aw.ds&&utm_campaign=cb_mkp_gg_shopping_core_info_c&gad_source=1&gad_campaignid=22441701311&gbraid=0AAAAADtAamgEKKxk0KJw6sHvABnCzs9iX&gclid=Cj0KCQjwucDBBhDxARIsANqFdr0QP9tcUncNibqqEubgyQj_W0PDZXAzrzx2nMIgfWmfoqHBh9xEtUQaAqEtEALw_wcB" },
+          { nome: "Carrefour", link: "https://www.carrefour.com.br/notebook-gamer-lenovo-loq-e-83me0007br-intel-core-i5-12450h-16gb-512-gb-ssd-tela-15-6-fhd-rtx-3050-windows-11-home-3638529/p?utm_medium=sem&utm_source=google_pmax_1p&utm_campaign=1p_performancemax_todos_os_produtos&gad_source=1&gad_campaignid=20605569042&gbraid=0AAAAADjinonNc_BGBGb69MIT2e0lnbEXi&gclid=Cj0KCQjwucDBBhDxARIsANqFdr3BYjt7y0QXXsMCUFrUV1XngeIuxS38EgCQcgp1n_pHGaKtPPhlk1AaAqn8EALw_wcB" },
+          { nome: "Extra", link: "https://www.extra.com.br/notebook-gamer-lenovo-loq-e-intel-core-i5-12-geracao-16gb-ram-512gb-ssd-geforce-rtx-3050-6gb-tela-full-hd-15-6-144hz-e-windows-11-83me0007br/p/55068976?utm_medium=cpc&utm_source=GP_PLA&IdSku=55068976&idLojista=15&tipoLojista=1P&&utm_campaign=ex_b2c_gg_pmax_core_tudo&gad_source=1&gad_campaignid=17550514278&gbraid=0AAAAADzqgd_nk7J-7a6i-0ZMvSw8LYH0p&gclid=Cj0KCQjwucDBBhDxARIsANqFdr34hxyJR56w--mrOsTLdaFtl6thaRBr8sUrInPlcHC6bE6RLV4OQqIaAhFbEALw_wcB&gclsrc=aw.ds" },
+          { nome: "Zoom", link: "https://www.zoom.com.br/offer?oid=1461551202&sortorder=-1&index=&searchterm=null&pagesize=-1&channel=&pla=2025-05-23T09:14:00.316200&og=19221&gad_source=1&gad_campaignid=18720829090&gbraid=0AAAAADlBCe4xfdJoQZ5g21_VwqlZEYdGb&gclid=Cj0KCQjwucDBBhDxARIsANqFdr0_pHG0UkQToqfTncZMVMsKIA7AoqHCI9cJ0qorBnCA2DN7uzYyW2QaAtw7EALw_wcB" },
+          { nome: "Bench Promos", link: "https://benchpromos.com.br/notebooks/notebook-lenovo-loqe-15iax9e-i512450hx-rtx-3050-6gb-16gb-ram-512gb-ssd-win11" },
+          { nome: "IByte", link: "https://www.ibyte.com.br/notebook-gamer-lenovo-loq-i5-16gb-512gb-rtx-2050/p?srsltid=AfmBOorn-qVbshKSwZzt4RUhvWtVorFojxVlwYtL0ykNYKGxlJTsUz8Q" }
+        ]
+      },
+      {
+        nome: "VAIO FE15",
+        imagem: "./imagens/Notebooks/notebook2.jpeg",
+        descricao: "Notebook VAIO FE15 - Intel Core i5 ou i7 12th, 8GB ou 16GB 512GB SSD, Tela 15,6'' Full HD Antirreflexo, Windows 11 Home - Cinza Grafite, VJFE54F11X-B2621H",
+        preco: "3499,90",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br/Notebook-VAIO-Intel-mem%C3%B3ria-Windows/dp/B0B9HV1VRX/ref=asc_df_B0B9HV1VRX?mcid=b8330026bcb53d4db026655ebdac61a6&tag=googleshopp06-20&linkCode=df0&hvadid=709883750080&hvpos=&hvnetw=g&hvrand=2386398991600039163&hvpone=&hvptwo=&hvqmt=&hvdev=m&hvdvcmdl=&hvlocint=&hvlocphy=9216076&hvtargid=pla-1968551786328&psc=1&language=pt_BR&gad_source=1" },
+          { nome: "Magazine Luiza", link: "https://m.magazineluiza.com.br/notebook-vaio-fe15-vjfe54f11x-b0321h-intel-core-i7-8gb-ram-ssd-512gb-156-full-hd-linux-3343845/p/237257900/in/fe15/?&seller_id=magazineluiza&utm_source=google&utm_medium=cpc&utm_term=79700&utm_campaign=google_eco_per_ven_pla_tc_apo_1p_in-csp&utm_content=&partner_id=79700&gclsrc=aw.ds&gad_source=1&gad_campaignid=22554876393&gbraid=0AAAAAD4zZmREpDTdharJJTVvk2Ty2BzYY&gclid=Cj0KCQjwotDBBhCQARIsAG5pinPhu-a8NWCLi9pw4GaAe8gEAeuLYcarF89XqRNDoKCI8yM8s7jrfDUaAsx0EALw_wcB" },
+          { nome: "VAIO", link: "https://www.br.vaio.com/notebook-vaio-fe16-amd-ryzen-5-5625u-linux-16gb-ram-512gb-ssd-16-wuxga-cinza-grafite-3344395/p?idsku=60705&gad_source=1&gad_campaignid=20389406869&gbraid=0AAAAABxx0spS5gwJpNtXfnUJbIgTz_nqY&gclid=Cj0KCQjwotDBBhCQARIsAG5pinOI6CHptPFQwi9CDfWEa67HB6G8oCT_RaSMR-EeOmOXy1U13nbKumgaAsqcEALw_wcB" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/529127/notebook-vaio-fe15-intel-core-i5-1235u-16gb-ram-ssd-512gb-15-6-full-hd-windows-11-cinza-grafite-vjfe54f11x-b2621h?utm_id=21434223550&gad_source=1&gad_campaignid=21430282493&gbraid=0AAAAADx-HyHUh3Ykfaw4QObxvd-3tBDO-&gclid=Cj0KCQjwotDBBhCQARIsAG5pinPyHcpZA4FnJUu_s58zu_v1--EwfeBNmEgOkh-1uiiLCs5NfRio1mgaAsQnEALw_wcB" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/notebook-vaio-fe15-156-fhd-i5-1235u-16gb-ssd-512gb-windows-11-home-cinza-escuro-vjfe54f11x-b2621h/p/1570740382?utm_medium=Cpc&utm_source=GP_PLA&IdSku=1570740382&idLojista=112169&tipoLojista=3P&gclsrc=aw.ds&&utm_campaign=cb_mkp_gg_shopping_core_info_c&gad_source=1&gad_campaignid=22441701311&gbraid=0AAAAADtAamjUX9OpJ2CEdbboStOKvadWY&gclid=Cj0KCQjwotDBBhCQARIsAG5pinNIkIePjrSs-jXcGjcl6V492EVqpcUDkuRqtbp9hoFl4BgaXBqFOAUaAulnEALw_wcB" },
+          { nome: "Shopee", link: "https://shopee.com.br/Notebook-VAIO%C2%AE-FE15-Intel%C2%AE-Core%E2%84%A2-i7-1255U-Linux-32GB-RAM-512GB-SSD-15-6-Full-HD-%E2%80%93-Cinza-Grafite-i.688161501.22493564259" },
+          { nome: "Positivo Empresas", link: "https://loja.positivoempresas.com.br/produto/notebook-vaio-fe15-intel-core-i5-1235u-windows-11-home-16gb-ram-512gb-ssd-15-6-full-hd-cinza-grafite-185?gQT=2" },
+          { nome: "Fast Shop", link: "https://site.fastshop.com.br/notebook-vaio%C2%AE-fe15-intel%C2%AE-core%E2%84%A2-i7-1255u-linux-32gb-ram-512gb-ssd-156--full-hd-%E2%80%93-cinza-grafite-85100/p?gQT=2" },
+          { nome: "Loja do Mecanico", link: "https://www.lojadomecanico.com.br/produto/612488/66/880/notebook--fe15-intel-core-i7-1255u-linux-32gb-ram-512gb-ssd-156-full-hd--cinza-grafite-vaio-612488?gQT=2" },
+          { nome: "QuickTronics", link: "https://www.quicktronics.com.br/notebook-vaio-fe15-intel-core-i5-12gen-8gb-512gb-ssd-tela-156-full-hd-antirreflexo-windows-11?utm_source=Site&utm_medium=GoogleMerchant&utm_campaign=GoogleMerchant&srsltid=AfmBOorFZCgPEUZWRejQ6lB2JRhWjjlj_r7uBLu_ewu3o1S6zI9SHktfzto&gQT=2" }
+        ]
+      },
+    {
+        nome: "Acer Nitro V15",
+        imagem: "./imagens/Notebooks/notebook_3.jpeg",
+        descricao: "Notebook Gamer Acer NitroV ANV15-51-57WS Intel Core i5 13ª G. Linux Gutta 8GB 512SSD RTX3050 15.6",
+        preco: "4790,90",
+        fornecedores: [
+          { nome: "Magazine Luiza", link: "https://m.magazineluiza.com.br/notebook-gamer-acer-nitrov-anv15-51-57ws-intel-core-i5-13a-g-linux-gutta-8gb-512ssd-rtx3050-15-6/p/fegb69b0ah/in/note/?&seller_id=aceroficial&utm_source=google&utm_medium=cpc&utm_term=79706&utm_campaign=google_eco_per_ven_pla_tc_apo_3p_in-csp&utm_content=&partner_id=79706&gclsrc=aw.ds&gad_source=1&gad_campaignid=22564818412&gbraid=0AAAAAD4zZmRvYFTUgO7cgqHunBx3Dcuc9&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGX8kRg7zVC96sdmHphCQ1HDNodCp403m_pd8lWqRE7bCjZ9EJiCHnBoCMrsQAvD_BwE" },
+          { nome: "Amazon", link: "https://www.amazon.com.br/Notebook-ANV15-51-58AZ-Gera%C3%A7%C3%A3o-i5-13420H-Retroiluminado/dp/B0D1VV6NXS/ref=asc_df_B0D1VV6NXS?mcid=a018d209cede33d7b39a9d1d9cd5f810&tag=googleshopp06-20&linkCode=df0&hvadid=709883750080&hvpos=&hvnetw=g&hvrand=16545377541177162569&hvpone=&hvptwo=&hvqmt=&hvdev=m&hvdvcmdl=&hvlocint=&hvlocphy=9216076&hvtargid=pla-2324956596394&psc=1&language=pt_BR&gad_source=1" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/notebook-gamer-acer-nitro-v15-anv15-51-57ws-i5-13gen-linux-gutta-8gb-512gb-ssd-rtx3050-156-fhd/p/1566858643?utm_medium=Cpc&utm_source=GP_PLA&IdSku=1566858643&idLojista=16746&tipoLojista=3P&gclsrc=aw.ds&&utm_campaign=cb_mkp_gg_shopping_core_info_c&gad_source=1&gad_campaignid=22441701311&gbraid=0AAAAADtAamgYkHHl18FpY5Ikeo0RlyGvd&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGd8aDf6IUAFBAqaIgaIA3pu1FGFQAf-8tyuDcVr_7Gu7Art7YOQ_eBoCNWoQAvD_BwE" },
+          { nome: "Saldão da informática", link: "https://www.saldaodainformatica.com.br/notebook/notebook-acer-nitro-v15-anv15-51-58ql-intel-core-i5-13420h-ram-8gb-ssd-512gb-rtx-2050-4gb-tela-156-fhd-windows-11?gad_source=1&gad_campaignid=22501097702&gbraid=0AAAAADv7KWQpXmwD7DaRqXaVaL1ToTf5g&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGf5g9Y12McKEL87S0LX7gk_xuLMfoEMxBWZFFhgmt-fklroC7-6uahoC3hMQAvD_BwE" },
+          { nome: "Eshop", link: "https://www.eshop.com.br/notebook-gamer-acer-nitro-v15-i5-13420h-8gb-512gb-ssd-rtx-3050-windows-11-home-tela-15-6-anv15-51-58az?parceiro=3802&gad_source=1&gad_campaignid=22609528016&gbraid=0AAAAAoO1ysMEdxcjOcOyrlGa6dv2vQ8OP&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGWqibnkrW6nly4H5xhhV6xn1vb6AO17DNbN0U1NTywn0bJeUAzwOMRoCY0cQAvD_BwE" },
+          { nome: "Carrefour", link: "https://www.carrefour.com.br/notebook-gamer-acer-nitro-v15-anv15-51-57ws-i5-13a-gen-linux-gutta-8gb-512gb-ssd-rtx3050-15-6-fhd-mp937200491/p?utm_medium=sem&utm_source=google_pmax_3p&utm_campaign=3p_performancemax_Eletro_Apostas3p&gad_source=1&gad_campaignid=21012471034&gbraid=0AAAAADjinokPdDXvqjHuwJhA-5j7yIogE&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGZRP-KtBPYycFnE66RzogYlba9oZKp9ALeq7Bg2pkMZNNWZ7G4tFQRoCf7YQAvD_BwE" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/564916/notebook-gamer-acer-nitro-v15-intel-core-i5-13420h-8gb-ram-geforce-rtx-3050-ssd-512gb-15-6-fhd-ips-144hz-windows-11-preto-anv15-51-58az?utm_id=22422868251&gad_source=1&gad_campaignid=22422868251&gbraid=0AAAAADx-HyFBuzJknDdm6nATcTgG6Wqv-&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGYAi8l9GrAfTXeTP0sceq6llU6B-8zKe62nEuT2nTT8RYwIEdMZGhhoCjAMQAvD_BwE" },
+          { nome: "Shopee", link: "https://shopee.com.br/Notebook-Gamer-Acer-Nitro-V15-I5-13420H-8gb-512gb-SSD-RTX-3050-Windows-11-Home-Tela-15.6-ANV15-51-58AZ-i.301983687.22894040728" },
+          { nome: "Colombo", link: "https://www.colombo.com.br/produto/Informatica/Notebook-Gamer-Acer-NitroV15-15-6-512-GB-SSD-8-GB-RAM-DDR5-ANV15-51-58QL?adtype=pla&portal=94E1821971F41D59A7A158C8ABEDE886&utm_source=google&utm_medium=cpc&utm_campaign=pmax_1p_tecnologia&gad_source=4&gad_campaignid=21967133960&gbraid=0AAAAADt5Emzis4wNpR0OeOqXvWLVQhxYu&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGSJs4PL_vxGVUPZ6izuLWl0-MtDfsW8uub48NWdfJOw87k8JcUMt9hoCDWIQAvD_BwE&cor=Preto&espec=Bivolt-seller-1" },
+          { nome: "Extra", link: "https://www.extra.com.br/notebook-gamer-acer-nitro-v15-anv15-51-57ws-i5-13gen-linux-gutta-8gb-512gb-ssd-rtx3050-156-fhd/p/1566858643?utm_medium=cpc&utm_source=GP_PLA&IdSku=1566858643&idLojista=16746&tipoLojista=3P&&utm_campaign=ex_mkp_gg_pmax_core_tudo&gad_source=4&gad_campaignid=17672209375&gbraid=0AAAAADzqgd8ABMxYwMxncZ7MbdmftQ70i&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGSvIsuu0v5nzHxeCpm-ANh4J5mVF4K0JAcKbAqtnHfVCwBSUr9c2pBoCHWwQAvD_BwE&gclsrc=aw.ds" }
+        ]
+      },
+      {
+        nome: "Dell Inspiron I15",
+        imagem: "./imagens/Notebooks/notebook4.jpeg",
+        descricao: "Notebook de 15,6 polegadas com opções de processador Intel® Core™ de 12ª e 13ª geração, em um design elegante e sustentável, com recursos essenciais para o uso diário.",
+        preco: "3290,90",
+        fornecedores: [
+          { nome: "Dell", link: "https://www.dell.com/pt-br/shop/cty/pdp/spd/inspiron-15-3520-laptop/i3520wadl2009w?tfcid=31768715&gacd=9657105-15015-5761040-275878141-0&dgc=ST&cid=71700000114503090&gad_source=4&gad_campaignid=19671794593&gbraid=0AAAAAD2GwMRvoxo71T6T3HRfxOIDEmFdE&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGWi2Y_4pfE2VBolToss46RBY0pEKAyLWXlAe1aNUwvMcbaMk6ddV5hoCLVcQAvD_BwE&gclsrc=aw.ds" },
+          { nome: "Amazon", link: "https://www.amazon.com.br/Notebook-Dell-Inspiron-I15-I120K-A15P-Gera%C3%A7%C3%A3o/dp/B0DCLBBWLV/ref=asc_df_B0DCLBBWLV?mcid=55f10ad0431933d3ad02cfc37162b8a0&tag=googleshopp06-20&linkCode=df0&hvadid=709883750080&hvpos=&hvnetw=g&hvrand=15965427939969492885&hvpone=&hvptwo=&hvqmt=&hvdev=m&hvdvcmdl=&hvlocint=&hvlocphy=9216076&hvtargid=pla-2560869315552&psc=1&language=pt_BR&gad_source=4" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/notebook-dell-inspiron-15-com-processador-intel-core-i5-de-12-geracao-8gb-ram-512gb-ssd-tela-full-hd-156-e-windows-11-i120k-a25p/p/55066981?utm_medium=cpc&utm_source=GP_PLA&IdSku=55066981&idLojista=10037&tipoLojista=1P&gclsrc=aw.ds&&utm_campaign=cb_b2c_gg_shopping_core_info&gad_source=4&gad_campaignid=22440831734&gbraid=0AAAAADtAamj70i1f0ty-hiAGBpdMB2Sr0&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGag5FnC_NjuxV26dB49Z-b0JMVGvmGBJTagONjFsK34Xc2ES8vMUYRoCXg0QAvD_BwE" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/614878/notebook-dell-inspiron-15-intel-core-i5-1235u-8gb-ram-ssd-512gb-15-6-full-hd-120hz-windows-11-home-preto-i15-i120k-a25p?utm_id=22422868251&gad_source=4&gad_campaignid=22422868251&gbraid=0AAAAADx-HyEHRCt1knNNNbj9AfOCNjI1z&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGQtskj1Z6Sodk7KkBEK0kLBfdRc1S2g_70Azi2w43BwigmSlZYjmvhoCQnoQAvD_BwE" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br/notebook-dell-inspiron-15-com-processador-intel-core-i5-de-12-geracao-8gb-ram-512gb-ssd-tela-full-hd-156-e-windows-11-i120k-a25p/p/55066981?utm_medium=cpc&utm_source=GP_PLA&IdSku=55066981&idLojista=16&tipoLojista=1P&gclsrc=aw.ds&&utm_campaign=pf_b2c_gg_pmax_core_info&gad_source=4&gad_campaignid=17442396956&gbraid=0AAAAAD3aCdMb42gG9WZfYMy1-pK0ieRCM&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGQJHHhXTN0DW5OjgBqfwImKP-x7TvdF-eESiq2wwvixogLU3KiOlfBoCwF0QAvD_BwE" },
+          { nome: "Carrefour", link: "https://www.carrefour.com.br/notebook-dell-inspiron-15-com-processador-intel-core-i5-de-12-geracao-8gb-ram-512gb-ssd-tela-full-hd-156-e-windows-11-i120ka25p-mp950043703/p?utm_medium=sem&utm_source=google_pmax_3p&utm_campaign=3p_performancemax_Eletro_Apostas3p&gad_source=4&gad_campaignid=21012471034&gbraid=0AAAAADjinoknPc1LeGUw7wyUsqTv_2dGP&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGarWQfnGAZbRQV-O4Fd16eoYrJYyi1W-rU2BmzI2TnOa4RgMgGtJ6xoCblMQAvD_BwE" },
+          { nome: "Patrika Ferragens", link: "https://pratikaferragens.shop/products/notebook-dell-inspiron-i15-i1100-a40p-intel-core-i5-8gb-256gb-ssd-w11-15-6-preto?variant=46916121985238&country=BR&currency=BRL&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gad_source=4&gad_campaignid=22547829751&gbraid=0AAAAA_aR0hYeIGdWNnSYqvbplKsmTI9l1&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGVp1RtVfqi_8klkYVI5qoS8AoSVqdJxMiQDQwWxISwKUT7HEq-kLHRoCA00QAvD_BwE" },
+          { nome: "Extra", link: "https://www.extra.com.br/notebook-dell-inspiron-15-com-processador-intel-core-i5-de-12-geracao-8gb-ram-512gb-ssd-tela-full-hd-156-e-windows-11-i120k-a25p/p/55066981?utm_medium=comparadorpreco&af_dp=https%3A%2F%2Fwww.extra.com.br%2Fnotebook-dell-inspiron-15-com-processador-intel-core-i5-de-12-geracao-8gb-ram-512gb-ssd-tela-full-hd-156-e-windows-11-i120k-a25p%2Fp%2F55066981%3Futm_medium%3Dcomparadorpreco&cm_mmc=zoom_XML-_-INFO-_-Comparador-_-55066981&pid=zoom_int&is_retargeting=true&af_click_lookback=7d&utm_content=55066981&utm_source=zoom&utm_campaign=f46b9335c3764287801720db7ff8222e&clickid=f46b9335-c376-4287-8017-20db7ff8222e&af_siteid=2&c=zoom_CPA&tipoLojista=1P&idLojista=15&referrer=af_tranid%3DW6HJYugxwjZPz5oalRoNbA%26af_dp%3Dhttps%253A%252F%252Fwww.extra.com.br%252Fnotebook-dell-inspiron-15-com-processador-intel-core-i5-de-12-geracao-8gb-ram-512gb-ssd-tela-full-hd-156-e-windows-11-i120k-a25p%252Fp%252F55066981%253Futm_medium%253Dcomparadorpreco%26pid%3Dzoom_int%26af_ios_url%3Dhttps%3A%2F%2Fwww.extra.com.br%2Fnotebook-dell-inspiron-15-com-processador-intel-core-i5-de-12-geracao-8gb-ram-512gb-ssd-tela-full-hd-156-e-windows-11-i120k-a25p%2Fp%2F55066981%3Futm_medium%3Dcomparadorpreco%26utm_content%3D55066981%26utm_source%3Dzoom%26utm_campaign%3Df46b9335c3764287801720db7ff8222e%26af_siteid%3D2%26c%3Dzoom_CPA%26af_android_url%3Dhttps%3A%2F%2Fwww.extra.com.br%2Fnotebook-dell-inspiron-15-com-processador-intel-core-i5-de-12-geracao-8gb-ram-512gb-ssd-tela-full-hd-156-e-windows-11-i120k-a25p%2Fp%2F55066981%3Futm_medium%3Dcomparadorpreco" },
+          { nome: "Buscapé", link: "https://www.buscape.com.br/offer?oid=1356829540&sortorder=-1&index=&searchterm=null&pagesize=-1&channel=&pla=2025-05-29T12:14:46.649219&og=19221&gad_source=4&gad_campaignid=22548403373&gbraid=0AAAAAD-OhXbwvdUbzmoNAcltGsRx6FuCC&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGcgn8qW7gmqt_w_-UWUWxp9ANppMSTWwtEovNXt0IjvL10wqRm-24hoCN1AQAvD_BwE" },
+          { nome: "Zoom", link: "https://www.zoom.com.br/offer?oid=1356854528&sortorder=-1&index=&searchterm=null&pagesize=-1&channel=&pla=2025-05-29T12:12:46.480594&og=19221&gad_source=4&gad_campaignid=18938975996&gbraid=0AAAAADlBCe6D-pJ1_SLvgEcQG5GYHY0KR&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGfL3wB49tApBhnEe-A7bEBt0zUEAxVSnbo2luebQLLwj6G_pM_loChoCnBkQAvD_BwE" }
+        ]
+      },
+    {
+        nome: "Acer Aspire 3 A315",
+        imagem: "./imagens/Notebooks/notebook_5.jpeg",
+        descricao: "Notebook Acer Aspire 3 A315-510P-35D2 Intel Core i3, 8GB RAM, 512GB SSD, 15.6” LED FULL HD, Windows 11",
+        preco: "2999,90",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br/Notebook-Aspire-A315-510P-35D2-Intel-Windows/dp/B0CP9VMV61/ref=asc_df_B0CP9VMV61?mcid=56883b7382fb320cbf1dd2b3c866800b&tag=googleshopp06-20&linkCode=df0&hvadid=709883750080&hvpos=&hvnetw=g&hvrand=17361060633001765834&hvpone=&hvptwo=&hvqmt=&hvdev=m&hvdvcmdl=&hvlocint=&hvlocphy=9216076&hvtargid=pla-2275855406320&psc=1&language=pt_BR&gad_source=4" },
+          { nome: "Carrefour", link: "https://www.carrefour.com.br/notebook-acer-aspire-3-a315510p34xc-intel-core-i3-8gb-256-gb-ssd-tela-156-polegadas-full-hd-windows-11-home-prata-3345050/p?utm_medium=sem&utm_source=google_pmax_1p&utm_campaign=1p_performancemax_todos_os_produtos&gad_source=4&gad_campaignid=20605569042&gbraid=0AAAAADjinon6n916JtFhdpQxeVvspVvwo&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGS5Quxkw8ko9kbD0Hr5HKe1qDdoFuujZp74y-ybNCIvBoXNZsXv9-BoCs1EQAvD_BwE" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/notebook-acer-aspire-3-a315-510p-320b-intel-core-i3-tela-156-quot-fhd-256gb-sdd-8gb-ram-debian-64-bits-prata/p/1569832403?utm_medium=Cpc&utm_source=GP_PLA&IdSku=1569832403&idLojista=24338&tipoLojista=3P&gclsrc=aw.ds&&utm_campaign=cb_mkp_gg_shopping_core_info_c&gad_source=4&gad_campaignid=22441701311&gbraid=0AAAAADtAamg3SyzGnSBDgxsKVxC5ox0qD&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGc8p6xNM2wK5ij7nCqKgU3jqjL00rstTwNtjZtt7yyXwsWOf-Om90hoCdZoQAvD_BwE" },
+          { nome: "Kalunga", link: "https://www.kalunga.com.br/prod/notebook-aspire-3-a315-510p-34xc-processador-intel-core-i3-windows-11-home-8gb-de-memoria-256gb-ssd-de-armazenamento-tela-de-15-6-acer-cx-1-un-cx-1-un/222681?cq_src=google_ads&cq_cmp=20350725264&cq_con=&cq_term=&cq_med=pla&cq_plac=&cq_net=x&cq_pos=&cq_plt=gp&pcID=3923&gad_source=4&gad_campaignid=20350726011&gbraid=0AAAAADj1B65TO8YDVyeprAums5_jOK27Q&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGW5_LdasZR75kas8UcFLk0xMsU7CvPY0sdLEEtvq6l_PmY4GjdHlkxoCe8cQAvD_BwE" },
+          { nome: "eFacil", link: "https://www.efacil.com.br/loja/produto/notebook-acer-aspire-3-intel-a315-510p-34-nxkmdal001-156p-core-i3-8gb-256gb-windows-11-2311202/?canal=ca_9784&gad_source=4&gad_campaignid=17427501488&gbraid=0AAAAAD9_Gotr1xwdpDXUN69d4vC8sVE9d&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGUFFKnSySvkHBEP3aP0a1e3VdcrnigoIwlUtOUzhIsyqKJbrfakSwhoClkUQAvD_BwE" },
+          { nome: "Shopee", link: "https://shopee.com.br/Notebook-Acer-Aspire-3-A315-510P-34XC-Tela-15.6-Intel-Core-i3N305-256GB-SSD-8GB-RAM-Windows-11-Prata-i.822103155.23998106900" },
+          { nome: "Havan", link: "https://www.havan.com.br/notebook-acer-intel-core-i3-8gb-ram-256gb-tela-de-15-6-w11-bivolt/p?utm_source=google&utm_medium=cpc&utm_campaign=aon-lia-geral&utm_content=pmax-aon-lia&gad_source=4&gad_campaignid=20838338079&gbraid=0AAAAADq2I2j7qEkD0ujcTk2mKJvSTUql3&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGaxVSnTOwVRH2_aKu_HLwZJvuiivpsjTIYk2zF1Q95cvwRQY78u-CRoCHg0QAvD_BwE" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/586806/usado-notebook-acer-aspire-3-amd-ryzen-5-8gb-ssd-256gb-a315-24p-r611-recertificado?srsltid=AfmBOoqC82-OeKZQANutP25WfCdCBgtAcezlyAAvypHW7e-m6oLRo_CZTX0" },
+          { nome: "Agile supri", link: "https://www.agilesupri.com.br/produto/notebook-acer-aspire-3-a315-24p-r611-amd-ryzen-5-7520u-8gb-ram-256gb-ssd-156-w11h-nxkhqal004-f030?srsltid=AfmBOopqaIRzsOIsVJHbVar3ItKpEjlDAkVwqccWme5w1hxJ7pf0--91_RY" },
+          { nome: "Saldão da Informática", link: "https://www.saldaodainformatica.com.br/notebook/notebook-acer-aspire-3-a315-24p-r611-amd-ryzen-5-7520u-ram-8gb-ssd-256gb-tela-156-windows-11-home?srsltid=AfmBOorlmMd5Ry9ppzXIkqu7w0u4QvTTnNxPRClfc63hEQfcl5BVyAjpK7A" }
+        ]
+      },
+      {
+        nome: "ASUS VivoBook Go 15",
+        imagem: "./imagens/Notebooks/notebook6.jpeg",
+        descricao: "Notebook ASUS VivoBook Go 15, AMD RYZEN 5 7520U, 8GB, 256GB SSD, KeepOS, Tela 15,6 FHD, Mixed Black - E1504FA-NJ731",
+        preco: "2499,90",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br/Notebook-ASUS-VivoBook-RYZEN-KeepOS/dp/B0CYVVRSSZ/ref=asc_df_B0CYVVRSSZ?mcid=32818b4564233668856f5b08a1bf627c&tag=googleshopp06-20&linkCode=df0&hvadid=709883750080&hvpos=&hvnetw=g&hvrand=2797019444969827909&hvpone=&hvptwo=&hvqmt=&hvdev=m&hvdvcmdl=&hvlocint=&hvlocphy=9216076&hvtargid=pla-2305465505988&psc=1&language=pt_BR&gad_source=4" },
+          { nome: "Magazine Luiza", link: "https://m.magazineluiza.com.br/notebook-asus-vivobook-go-15-e1504fa-amd-ryzen-5-7520u-16gb-ram-512gb-ssd-linux-keepos-tela-156-fhd-black-nj1288/p/aebhcg3bch/in/note/?&seller_id=asus&utm_source=google&utm_medium=cpc&utm_term=79706&utm_campaign=google_eco_per_ven_pla_tc_apo_3p_in-csp&utm_content=&partner_id=79706&gclsrc=aw.ds&gad_source=4&gad_campaignid=22564818412&gbraid=0AAAAAD4zZmTohX1Zl08c1P4qgILVQDxV5&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGZxl5JVXgf91s-se60QxncU8loFKAcdBPTggLRzSD9XDuanB9vZK5BoCOL8QAvD_BwE" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/621102/notebook-asus-vivobook-go-15-e1504fa-amd-ryzen-5-7520u-8gb-ram-512gb-ssd-tela-15-6-fhd-keepos-preto-e1504fa-nj732?utm_id=22422868251&gad_source=4&gad_campaignid=22422868251&gbraid=0AAAAADx-HyEHRCt1knNNNbj9AfOCNjI1z&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGcrQlyUUe_1RyzrXs__J_cv6J71uG_YMeYs2YI2XVyg_zd1VUIdxyhoCcE8QAvD_BwE" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/notebook-asus-vivobook-go-e1504fa-amd-ryzen-5-7520u-8gb-ram-256gb-ssd-linux-keepos-tela-156-quot-fhd-black-nj731/p/1566372096?utm_medium=Cpc&utm_source=GP_PLA&IdSku=1566372096&idLojista=13702&tipoLojista=3P&gclsrc=aw.ds&&utm_campaign=cb_mkp_gg_shopping_core_info_c&gad_source=4&gad_campaignid=22441701311&gbraid=0AAAAADtAamg3SyzGnSBDgxsKVxC5ox0qD&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGbuEmQ0_ythiYLiHGKwhblUYJJ8cUjhUUsgsdj7lqBwrQvQpTGClwRoCtioQAvD_BwE" },
+          { nome: "Magazine Luiza", link: "https://m.magazineluiza.com.br/notebook-asus-vivobook-go-15-e1504fa-amd-ryzen-5-7520u-8gb-ram-512gb-ssd-tela-15-6-fhd-keepos-preto-e1504fa-nj732/p/gfhkjaag9d/in/note/?&seller_id=kabum&utm_source=google&utm_medium=cpc&utm_term=79706&utm_campaign=google_eco_per_ven_pla_tc_apo_3p_in-csp&utm_content=&partner_id=79706&gclsrc=aw.ds&gad_source=4&gad_campaignid=22564818412&gbraid=0AAAAAD4zZmTohX1Zl08c1P4qgILVQDxV5&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGYx_Ewt1-K_rdjlkSAllFHaeiymTSSYX8s8j06of1mzRUEhjn2XEfBoCgQQQAvD_BwE" },
+          { nome: "Fast Shop", link: "https://site.fastshop.com.br/notebook-asus-vivobook-go-15--intel-core-i3-n305--8gb-512-ssd-w11-home-tela-15-6--fhd--cool-silver---e1504ga-nj435w-uxe1504ganj_prd/p?utm_source=google&utm_medium=cpc&utm_term=pmax_1p&utm_campaign=18021215217&gad_source=4&gad_campaignid=17339284969&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGWXtbYTkW5X4U4fYa7fjFjNP5_onbGCiUjy_cuPiKzlz2ooCZMHBtBoCHmkQAvD_BwE" },
+          { nome: "Carrefour", link: "https://www.carrefour.com.br/notebook-asus-vivobook-go-15-e1504ganj434w-intel-core-i3-n305-8gb-256-gb-ssd-tela-156-full-hd-windows-11-home-3502821/p?utm_medium=sem&utm_source=google_pla_1p&utm_campaign=1p_performancemax_eletro_notebook&gad_source=4&gad_campaignid=22235068061&gbraid=0AAAAADjinokeylwq1elvGGviE2tMDM-Zz&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGUedG_jbC0Qh8nYULuOO3kpBBsojfepN2sY5Rc4mqYOump_VUBMjkhoC8aIQAvD_BwE" },
+          { nome: "ASUS Store Br", link: "https://br.store.asus.com/notebook-asus-vivobook-go-15-e1504fa-nj825w-mixed-black.html?utm_source=google&utm_medium=cpc&utm_campaign=sales_pmax_shopping&utm_content=2543&gad_source=4&gad_campaignid=20624081660&gbraid=0AAAAADAe2AB3YV78w9u85L5z8n2oYeT6r&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGRKyQFJWIBY5vVqOLkw-r7KO_dtkJ12V2Oxbgsn2ne7PGjKKA-XbWxoCCMMQAvD_BwE" },
+          { nome: "Extra", link: "https://www.extra.com.br/notebook-asus-vivobook-go-e1504fa-amd-ryzen-5-7520u-8gb-ram-256gb-ssd-linux-keepos-tela-156-quot-fhd-black-nj731/p/1566372096?utm_medium=cpc&utm_source=GP_PLA&IdSku=1566372096&idLojista=13702&tipoLojista=3P&&utm_campaign=ex_mkp_gg_pmax_core_tudo&gad_source=4&gad_campaignid=17672209375&gbraid=0AAAAADzqgd8ABMxYwMxncZ7MbdmftQ70i&gclid=CjwKCAjwi-DBBhA5EiwAXOHsGTun-YuPdx2_tfzX3lIHkZEuK3DxPJqLUix0e5aB2U-d8e8Wvcb3rRoCCFwQAvD_BwE&gclsrc=aw.ds" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br/notebook-asus-vivobook-go-15-intel-core-i3-n305-8gb-ram-256gb-ssd-tela-led-full-hd-156-windows-11-home-microsoft-365-personal-1tb/p/1001337573?utm_medium=cpc&utm_source=google_freelisting&IdSku=1001337573&idLojista=16&tipoLojista=1P" }
+        ]
+      },
+    {
+        nome: "Galaxy Book4 360",
+        imagem: "./imagens/Notebooks/notebook7.jpeg",
+        descricao: "Galaxy Book4 360 Intel® Core™ 5, Windows 11 Home, 16GB, 512GB SSD, 15.6'' Full HD AMOLED, 1.46 kg",
+        preco: "4999,90",
+        fornecedores: [
+          { nome: "Shopee", link: "https://shopee.com.br/lp/301983687/19999833885?__mobile__=1&gad_source=1&gad_campaignid=21900060165&gbraid=0AAAAACoEtRle4Z1Yp9yLnO9Prmw6cn7gI&gclid=CjwKCAjwg7PDBhBxEiwAf1CVu2TqLNuRgXmA9sKtlbSDnRmrzHn4AVNu4tuaAG_tbPnk9D3fOSay2RoCMSQQAvD_BwE" },
+          { nome: "Amazon", link: "https://www.amazon.com.br/Galaxy-Intel%C2%AE-CoreTM-Windows-AMOLED/dp/B0CZLPP17G" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/notebook-samsung-galaxy-book4-360-windows-11-home-intel-core-i7-16gb-1tb-ssd-156-full-hd-amoled-146-kg-grafite/p/1566004902" },
+          { nome: "Fast Shop", link: "https://site.fastshop.com.br/notebook-samsung-galaxy-book4-360--intel-core-i7-150u--16gb-1tb-ssd-%C2%A0-win-11--tela-touch-15-6---np750qgk-kg1br-sgnp750qgkkg1_prd/p" },
+          { nome: "Ibyte", link: "https://www.ibyteatacado.com.br/notebook-samsung-galaxy-book-4-i3-1315u/p" },
+          { nome: "Samsung", link: "https://shop.samsung.com/br/galaxy-book4-360-core-7/p" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br/notebook-samsung-galaxy-book4-windows-11-home-intel-core-7-16gb-512gb-ssd-nvidia-geforce-mx570-156-full-hd-led-fingerprint-grafite/p/1566767985" },
+          { nome: "eFacil", link: "https://www.efacil.com.br/loja/produto/notebook-samsung-np750xgj-kg5br-156-i3-1315u-256gb-8gb-ddr4-windows-11-grafite-p2311278/" },
+          { nome: "Gazin", link: "https://www.gazin.com.br/produto/notebook-samsung-galaxy-book4-i3-w11-8gb-256gb-ssd-156-np750xgj-kg5br/8660/cinza/bivolt" },
+          { nome: "Magazine luiza", link: "https://www.magazineluiza.com.br/notebook-samsung-galaxy-book4-np750xgj-kg6br-intel-core-i3-1315u-8gb-512-gb-ssd-tela-15-6-full-hd-led-windows-11-home/p/jheacjghe2/in/nsbo/" }
+        ]
+      },
+      {
+        nome: "Lenovo IdeaPad 1i",
+        imagem: "./imagens/Notebooks/notebook8.jpeg",
+        descricao: "Notebook Lenovo Ideapad 1i Intel Core i5-1235U 8GB 512GB SSD 15.6'' W11",
+        preco: "2499,90",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br/Notebook-Lenovo-Ideapad-i5-1235U-512GB/dp/B0CK3R8JYG" },
+          { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br/notebook-lenovo-ideapad-1i-i5-w11-8gb-512gb-ssd-15-6-polegadas-82vy000qbr/p/jefk965h79/in/leip/" },
+          { nome: "Lenovo", link: "https://www.lenovo.com/br/pt/p/laptops/ideapad/ideapad-100/ideapad-1i-gen-7-%2815-inch-intel%29/len101i0029" },
+          { nome: "Kabum", link: "https://www.kabum.com.br/produto/509699?skimoffer=2467721" },
+          { nome: "Extra", link: "https://www.extra.com.br/-notebook-lenovo-ideapad-1i-intel-core-i7-12-geracao-12gb-ram-512gb-ssd-tela-hd-156-windows-11-82vy000pbr/p/55065201" },
+          { nome: "Gazin", link: "https://www.gazin.com.br/produto/notebook-lenovo-ideapad-1-i3-w11-4gb-256gb-ssd-156-82vy000tbr/7561/cinza/bivolt" },
+          { nome: "Beta Informática", link: "https://www.betainformatica.com.br/notebooks/notebook-home-office/core-i7-ryzen-7/notebook-ultrafino-lenovo-ideapad-3i-intel-core-i7-10ag-8gb-ssd-256gb-nvme-placa-de-video-2gb-15-6-windows-11" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/-notebook-lenovo-ideapad-1i-intel-core-i5-12-geracao-8gb-ram-512gb-ssd-tela-hd-156-windows-11-82vy000qbr/p/55065200" },
+          { nome: "Havan", link: "https://www.havan.com.br/notebook-lenovo-intel-celeron-dual-core-4gb-ram-128gb-ssd-tela-de-15-6-w11-bivolt/p" },
+          { nome: "Terabyte", link: "https://www.terabyteshop.com.br/produto/34813/notebook-lenovo-ideapad-1i-intel-core-i3-1215u-8gb-ddr4-ssd-256gb-156-pol-hd-windows-11-cinza-82vy000sbr?srsltid=AfmBOorIUjajzQzCqI98NHLU2cFYNQQ4ZQjTqLEoYifGyA5uuad4knX_tT4" }
+        ]
+      },
+
+      // ... (todos os outros produtos permanecem exatamente iguais)
+    ];
+
+    const main = document.querySelector("main");
+    const searchInput = document.getElementById("search-input");
+
+    // Função para renderizar os produtos
+    function renderProducts(productsToRender) {
+      // Limpa o conteúdo atual
+      const existingProducts = document.querySelectorAll('.produto-card');
+      existingProducts.forEach(product => product.remove());
+
+      // Adiciona os produtos filtrados
+      productsToRender.forEach((produto, index) => {
+        const card = document.createElement("div");
+        card.className = "produto-card";
+
+        const fornecedoresHTML = produto.fornecedores.map(f =>
+          `<li><a href="${f.link}" target="_blank">${f.nome}</a></li>`
+        ).join("");
+
+        card.innerHTML = `
+          <img src="${produto.imagem}" alt="${produto.nome}" class="produto-img">
+          <div class="produto-detalhes">
+            <h3>${produto.nome}</h3>
+            <p class="descricao">${produto.descricao}</p>
+            <p class="preco">Média de preço: R$ ${produto.preco}</p>
+            <div class="dropdown">
+              <button class="btn-toggle">Fornecedores</button>
+              <ul class="fornecedores-lista hidden">
+                ${fornecedoresHTML}
+              </ul>
+            </div>
+          </div>
+        `;
+
+        main.appendChild(card);
+      });
+
+      // Reaplica os event listeners para os dropdowns
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        const btn = drop.querySelector(".btn-toggle");
+        const list = drop.querySelector(".fornecedores-lista");
+
+        btn.addEventListener("click", () => {
+          list.classList.toggle("hidden");
+        });
+      });
+    }
+
+    // Renderiza todos os produtos inicialmente
+    renderProducts(produtos);
+
+    // Adiciona o evento de pesquisa
+    searchInput.addEventListener("input", (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      const filteredProducts = produtos.filter(produto => 
+        produto.nome.toLowerCase().includes(searchTerm) || 
+        produto.descricao.toLowerCase().includes(searchTerm)
+      );
+      renderProducts(filteredProducts);
+    });
+
+    // Fecha os dropdowns quando clicar fora
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        const list = drop.querySelector(".fornecedores-lista");
+        if (!drop.contains(e.target)) {
+          list.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+</main>
+</body>
+</html>

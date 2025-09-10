@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pacote Office Online - Central de Acesso</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e293b;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background: #1e293b;
+      color: white;
+      padding: 20px;
+      font-size: 1.5em;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      margin: 10px 0;
+      color: #0078d7;
+    }
+
+    .card p {
+      font-size: 0.9em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #1e293b;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #1e293b;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 15px;
+      background: #1e293b;
+      font-size: 0.9em;
+      color: white;
+    }
+  .botao-inicio {
+    position: absolute;
+    left: 0rem;
+    background-color: #1e293b;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    top: 10px; /* Ajuste conforme necessário */
+    z-index: 1001;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    📚 Pacote Office Online
+  </header>
+    <a href="index.html" class="botao-inicio">Início</a>
+  <div class="container">
+    <div class="card">
+      <img src="data:image/png;base64,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" alt="Word Online">
+      <h2>Word Online</h2>
+      <p>Crie, edite e compartilhe documentos diretamente no navegador.</p>
+      <a href="https://www.office.com/launch/word" target="_blank" class="btn">Abrir Word</a>
+    </div>
+
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg" alt="Excel Online">
+      <h2>Excel Online</h2>
+      <p>Monte planilhas inteligentes e organize seus dados na nuvem.</p>
+      <a href="https://www.office.com/launch/excel" target="_blank" class="btn">Abrir Excel</a>
+    </div>
+
+    <div class="card">
+      <img src="data:image/jpeg;base64,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" alt="PowerPoint Online">
+      <h2>PowerPoint Online</h2>
+      <p>Crie apresentações incríveis e acesse em qualquer lugar.</p>
+      <a href="https://www.office.com/launch/powerpoint" target="_blank" class="btn">Abrir PowerPoint</a>
+    </div>
+  </div>
+
+  <footer>
+    🔒 Todos os links levam diretamente ao site oficial da Microsoft Office Online.
+  </footer>
+
+  <script>
+    // Efeito de clique nos botões
+    document.querySelectorAll(".btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        alert("Você será redirecionado para o site oficial da Microsoft.");
+      });
+    });
+  </script>
+</body>
+</html>

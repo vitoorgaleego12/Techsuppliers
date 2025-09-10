@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar de Categorias</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+ <div class="top-header">
+    <a href="index.html" class="botao-inicio">Início</a>
+    <a href="cadastro.html" class="botao-cadastro">cadastro</a>
+    <a href="login.html" class="botao-login">login</a>
+    <div class="site-name">TechSuppliers</div>
+  </div>
+  <nav class="sidebar" aria-label="Categorias">
+    <h2>Categorias</h2>
+    <ul class="nav-links">
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="computadores-link" aria-expanded="false" aria-controls="computadores-submenu">Computadores e Periféricos</a>
+        <ul class="submenu" id="computadores-submenu" aria-label="Subcategoria Computadores e Periféricos">
+          <li><a href="./Notebooks.html">Notebooks</a></li>
+          <li><a href="./Desktops.html">Desktops</a></li>
+          <li><a href="./Monitores.html">Monitores</a></li>
+          <li><a href="./Teclados mecanicos.html">Teclados mecânicos</a></li>
+          <li><a href="./Teclados ergonomicos.html">Teclados ergonômicos</a></li>
+          <li><a href="./Mouses gamers.html">Mouses gamers</a></li>
+          <li><a href="./Impressoras multifuncionais.html">Impressoras multifuncionais</a></li>
+          <li><a href="./Webcams Full HD.html">Webcams Full HD</a></li>
+          <li><a href="./Scanners.html">Scanners</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="hardware-link" aria-expanded="false" aria-controls="hardware-submenu">Componentes de Hardware</a>
+        <ul class="submenu" id="hardware-submenu" aria-label="Subcategoria Componentes de Hardware">
+          <li><a href="./CPUs (Intel-AMD).html">CPUs (Intel/AMD)</a></li>
+          <li><a href="./GPUs (NVIDIA-AMD).html">GPUs (NVIDIA/AMD)</a></li>
+          <li><a href="./Placas-mãe ATX-Micro ATX.html">Placas-mãe ATX/Micro ATX</a></li>
+          <li><a href="./Memórias RAM DDR4-DDR5.html">Memórias RAM DDR4/DDR5</a></li>
+          <li><a href="./SSD M.2-SATA.html">SSD M.2/SATA</a></li>
+          <li><a href="./HD 2.5-3.5.html">HD 2.5&quot;/3.5&quot;</a></li>
+          <li><a href="./Water Coolers.html">Water Coolers</a></li>
+          <li><a href="./Fontes 80 Plus.html">Fontes 80 Plus</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="acessorios-link" aria-expanded="false" aria-controls="acessorios-submenu">Acessórios</a>
+        <ul class="submenu" id="acessorios-submenu" aria-label="Subcategoria Acessórios">
+          <li><a href="./Headsets com microfone.html">Headsets com microfone</a></li>
+          <li><a href="./Hubs USB-C.html">Hubs USB-C</a></li>
+          <li><a href="./Suportes ergonomicos.html">Suportes ergonômicos</a></li>
+          <li><a href="./Bolsas para notebook.html">Bolsas para notebook</a></li>
+          <li><a href="./Dock stations.html">Dock stations</a></li>
+          <li><a href="./Mouses verticais.html">Mouses verticais</a></li>
+          <li><a href="./Teclados Bluetooth.html">Teclados Bluetooth</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="redes-link" aria-expanded="false" aria-controls="redes-submenu">Redes e Conectividade</a>
+        <ul class="submenu" id="redes-submenu" aria-label="Subcategoria Redes e Conectividade">
+          <li><a href="./Roteadores Wi-Fi 6.html">Roteadores Wi-Fi 6</a></li>
+          <li><a href="./Adaptadores USB Wi-Fi.html">Adaptadores USB Wi-Fi</a></li>
+          <li><a href="./Powerlines.html">Powerlines</a></li>
+          <li><a href="./Switches gerenciáveis.html">Switches gerenciáveis</a></li>
+          <li><a href="./Cabos CAT6.html">Cabos CAT6</a></li>
+          <li><a href="./Antenas Wi-Fi.html">Antenas Wi-Fi</a></li>
+          <li><a href="./Repetidores de sinal.html">Repetidores de sinal</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="armazenamento-link" aria-expanded="false" aria-controls="armazenamento-submenu">Armazenamento</a>
+        <ul class="submenu" id="armazenamento-submenu" aria-label="Subcategoria Armazenamento">
+          <li><a href="./Pendrives 128GB.html">Pendrives 128GB</a></li>
+          <li><a href="./Cartões microSD UHS-I.html">Cartões microSD UHS-I</a></li>
+          <li><a href="./HDs externos de 2TB.html">HDs externos de 2TB</a></li>
+          <li><a href="./SSDs NVMe.html">SSDs NVMe</a></li>
+          <li><a href="./Cases para HD-SSD.html">Cases para HD/SSD</a></li>
+          <li><a href="./Servidores NAS.html">Servidores NAS</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="software-link" aria-expanded="false" aria-controls="software-submenu">Softwares</a>
+        <ul class="submenu" id="software-submenu" aria-label="Subcategoria Softwares">
+          <li><a href="./Windows 10-11.html">Windows 10/11</a></li>
+          <li><a href="./Linux (Ubuntu, Mint).html">Linux (Ubuntu, Mint)</a></li>
+          <li><a href="./Microsoft Office.html">Microsoft Office</a></li>
+          <li><a href="./Adobe Creative Cloud.html">Adobe Creative Cloud</a></li>
+          <li><a href="./Antivírus (Norton, Avast, Kaspersky).html">Antivírus (Norton, Avast, Kaspersky)</a></li>
+          <li><a href="./IDEs (VS Code, IntelliJ, NetBeans).html">IDEs (VS Code, IntelliJ, NetBeans)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="dispositivos-moveis-link" aria-expanded="false" aria-controls="dispositivos-moveis-submenu">Dispositivos Móveis e Wearables</a>
+        <ul class="submenu" id="dispositivos-moveis-submenu" aria-label="Subcategoria Dispositivos Móveis e Wearables">
+          <li><a href="./Smartphones Android-iOS.html">Smartphones Android/iOS</a></li>
+          <li><a href="./Tablets com caneta.html">Tablets com caneta</a></li>
+          <li><a href="./Smartwatches.html">Smartwatches</a></li>
+          <li><a href="./Pulseiras fitness.html">Pulseiras fitness</a></li>
+          <li><a href="./Fones Bluetooth com IA.html">Fones Bluetooth com IA</a></li>
+          <li><a href="./Leitores de eBook (Kindle, Kobo).html">Leitores de eBook (Kindle, Kobo)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="tecnologia-casa-link" aria-expanded="false" aria-controls="tecnologia-casa-submenu">Tecnologia para Casa</a>
+        <ul class="submenu" id="tecnologia-casa-submenu" aria-label="Subcategoria Tecnologia para Casa">
+          <li><a href="./Smart TVs 4K.html">Smart TVs 4K</a></li>
+          <li><a href="./Assistentes virtuais (Alexa, Google Nest).html">Assistentes virtuais (Alexa, Google Nest)</a></li>
+          <li><a href="./Lâmpadas Wi-Fi RGB.html">Lâmpadas Wi-Fi RGB</a></li>
+          <li><a href="./Interruptores inteligentes.html">Interruptores inteligentes</a></li>
+          <li><a href="./Tomadas Wi-Fi.html">Tomadas Wi-Fi</a></li>
+          <li><a href="./Robôs aspiradores.html">Robôs aspiradores</a></li>
+          <li><a href="./Câmeras IP.html">Câmeras IP</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="games-link" aria-expanded="false" aria-controls="games-submenu">Games</a>
+        <ul class="submenu" id="games-submenu" aria-label="Subcategoria Games">
+          <li><a href="./Consoles (PS5, Xbox Series X, Nintendo Switch).html">Consoles (PS5, Xbox Series X, Nintendo Switch)</a></li>
+          <li><a href="./Controles personalizados.html">Controles personalizados</a></li>
+          <li><a href="./Headsets com som 7.1.html">Headsets com som 7.1</a></li>
+          <li><a href="./Cadeiras gamers.html">Cadeiras gamers</a></li>
+          <li><a href="./Placas de captura.html">Placas de captura</a></li>
+          <li><a href="./Volantes e pedais.html">Volantes e pedais</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="educacao-link" aria-expanded="false" aria-controls="educacao-submenu">Educação e Programação</a>
+        <ul class="submenu" id="educacao-submenu" aria-label="Subcategoria Educação e Programação">
+          <li><a href="./Kits Arduino e sensores.html">Kits Arduino e sensores</a></li>
+          <li><a href="./Raspberry Pi.html">Raspberry Pi</a></li>
+          <li><a href="./Robótica com Lego Mindstorms.html">Robótica com Lego Mindstorms</a></li>
+          <li><a href="./Micro-bit.html">Micro:bit</a></li>
+          <li><a href="./Livros técnicos.html">Livros técnicos</a></li>
+          <li><a href="./Cursos de TI online.html">Cursos de TI online</a></li>
+          <li><a href="./Emuladores de laboratório virtual.html">Emuladores de laboratório virtual</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+<main class="content" tabindex="-1">
+  <div class="hero-section">
+    <h1>TechSuppliers: Sua Plataforma Completa de Tecnologia</h1>
+    <p>Conectamos você aos melhores fornecedores de produtos de TI e oferecemos ferramentas para impulsionar seu negócio</p>
+  </div>
+
+  <div class="stats-container">
+    <div class="stat-item">
+      <span class="stat-number">700+</span>
+      <span class="stat-label">Produtos de TI</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">70+</span>
+      <span class="stat-label">Categorias</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">10</span>
+      <span class="stat-label">Fornecedores por produto</span>
+    </div>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <h3>🛒 Direcionamento para Marketplaces</h3>
+      <p>Acesse mais de 700 produtos de tecnologia de 70 categorias diferentes, cada um com até 10 fornecedores para você comparar preços e condições.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h3>👥 Cadastro Personalizado</h3>
+      <p>Cadastre-se como cliente ou fornecedor e tenha acesso a benefícios exclusivos, históricos de compras e ferramentas de gestão.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h3>📊 Dashboards em Power BI</h3>
+      <p>Acesse dashboards interativos para análise de gestão, logística, vendas e desempenho de fornecedores - tudo integrado em tempo real.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h3>💡 Empreendedorismo & Negócios</h3>
+      <p>Conteúdo exclusivo com dicas de negócios, tendências de TI e estratégias para crescer no mercado de tecnologia.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h3>🌱 Sustentabilidade & ODS</h3>
+      <p>Comprometidos com os 17 Objetivos de Desenvolvimento Sustentável da ONU. Conheça fornecedores sustentáveis e práticas eco-friendly.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h3>📈 Simulação de Investimentos</h3>
+      <p>Ferramentas para simular investimentos em tecnologia e calcular ROI para sua empresa com base em dados reais do mercado.</p>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h2>Pronto para transformar sua experiência em tecnologia?</h2>
+    <p>Junte-se a milhares de empresas e profissionais que já utilizam a TechSuppliers</p>
+    <div class="button-group">
+      <a href="cadastro.html" class="btn-primary">Cadastre-se Agora</a>
+      <a href="login.html" class="btn-secondary">Fazer Login</a>
+      <a href="Listar.html" class="btn-secondary">Ver Fornecedores</a>
+      <a href="listar_clientes.html" class="btn-secondary">Ver clientes</a>
+      <a href="Main.html" class="btn-secondary">Saiba Mais</a>
+      <a href="Privacidade.html" class="btn-secondary">Politica de Privacidade</a>
+    </div>
+  </div>
+
+  <div class="imagem-container">
+    <img src="./imagem1.jpeg" alt="Plataforma TechSuppliers com diversos recursos de tecnologia" />
+  </div>
+  
+  <div class="button-container">
+    <a href="https://odsartigocientifico.vercel.app/" class="styled-button">Conheça nosso compromisso com a conscientização sustentável</a>
+  </div>
+  <style>
+  /* CONTEÚDO PRINCIPAL - ESTILO SIMPLIFICADO */
+  .content {
+    margin-left: 250px;
+    padding: 2rem;
+    min-height: calc(100vh - 70px);
+    background-color: #f8f9fa;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+    color: white;
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-section h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .hero-section p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+
+  /* Stats Container - CORRIGIDO */
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    gap: 1.5rem;
+    max-width: 1200px;
+    padding: 0 1rem;
+  }
+
+  .stat-item {
+    text-align: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 180px;
+    max-width: 220px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.5s ease;
+  }
+
+  .stat-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    color: #7f8c8d;
+    font-weight: 500;
+  }
+
+  /* Features Grid */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+  }
+
+  .feature-card {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.5s ease;
+    border-left: 0px solid #3498db;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .feature-card p {
+    color: #34495e;
+    line-height: 1.6;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    background: #2c3e50;
+    border-radius: 8px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+  }
+
+  .cta-section h2 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+
+  .cta-section p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background: #2c3e50;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-primary:hover {
+    background: #2c3e50;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: #2c3e50;
+  }
+
+  .imagem-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .imagem-container img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .button-container {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+  }
+
+  .styled-button {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background: #2c3e50;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid #2c3e50;
+  }
+
+  .styled-button:hover {
+    background: white;
+    color: #2c3e50;
+  }
+
+  /* Responsividade */
+  @media (max-width: 1200px) {
+    .content {
+      margin-left: 0;
+    }
+    
+    .hero-section,
+    .stats-container,
+    .features-grid,
+    .cta-section,
+    .imagem-container,
+    .button-container {
+      max-width: 95%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      padding: 1.5rem;
+    }
+    
+    .hero-section {
+      padding: 2rem 1rem;
+    }
+    
+    .hero-section h1 {
+      font-size: 1.8rem;
+    }
+    
+    .stats-container {
+      align-items: center;
+    }
+    
+    .stat-item {
+      min-width: 100%;
+      max-width: 280px;
+    }
+    
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .button-group {
+      align-items: center;
+    }
+    
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+    }
+    
+    .cta-section {
+      padding: 2rem 1.5rem;
+    }
+    
+    .cta-section h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Contadores animados simples para as estatísticas
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    statNumbers.forEach(stat => {
+      const target = parseInt(stat.textContent);
+      let count = 0;
+      const duration = 1500;
+      const increment = target / (duration / 16);
+      
+      const updateCount = () => {
+        if (count < target) {
+          count += increment;
+          if (count > target) count = target;
+          stat.textContent = Math.round(count) + '+';
+          setTimeout(updateCount, 16);
+        }
+      };
+      
+      // Inicia a animação quando o elemento estiver visível
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            updateCount();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      observer.observe(stat);
+    });
+  });
+</script>
+  <script>
+// Função para criar o banner de cookies
+function createCookieBanner() {
+    // Verificar se o usuário já aceitou os cookies
+    if (getCookie('cookiesAccepted') === 'true') {
+        return; // Não mostrar banner se já aceitou
+    }
+    
+    // Criar elementos do banner
+    const banner = document.createElement('div');
+    banner.id = 'cookie-banner';
+    banner.style.position = 'fixed';
+    banner.style.top = '50%';
+    banner.style.left = '50%';
+    banner.style.transform = 'translate(-50%, -50%)';
+    banner.style.backgroundColor = '#2c3e50';
+    banner.style.color = 'white';
+    banner.style.padding = '30px';
+    banner.style.borderRadius = '10px';
+    banner.style.zIndex = '1000';
+    banner.style.boxShadow = '0 5px 25px rgba(0,0,0,0.3)';
+    banner.style.display = 'none';
+    banner.style.flexDirection = 'column';
+    banner.style.alignItems = 'center';
+    banner.style.gap = '20px';
+    banner.style.maxWidth = '500px';
+    banner.style.width = '90%';
+    banner.style.textAlign = 'center';
+    
+    // Criar mensagem
+    const message = document.createElement('div');
+    message.textContent = 'Nós utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa política de cookies.';
+    message.style.lineHeight = '1.6';
+    
+    // Criar botões
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.style.display = 'flex';
+    buttonsContainer.style.gap = '15px';
+    buttonsContainer.style.flexWrap = 'wrap';
+    buttonsContainer.style.justifyContent = 'center';
+    
+    const acceptButton = document.createElement('button');
+    acceptButton.textContent = 'Aceitar todos';
+    acceptButton.style.padding = '12px 25px';
+    acceptButton.style.backgroundColor = '#4CAF50';
+    acceptButton.style.color = 'white';
+    acceptButton.style.border = 'none';
+    acceptButton.style.borderRadius = '6px';
+    acceptButton.style.cursor = 'pointer';
+    acceptButton.style.fontWeight = 'bold';
+    acceptButton.style.transition = 'background-color 0.3s';
+    
+    acceptButton.onmouseover = function() {
+        this.style.backgroundColor = '#3e8e41';
+    };
+    acceptButton.onmouseout = function() {
+        this.style.backgroundColor = '#4CAF50';
+    };
+    
+    const settingsButton = document.createElement('button');
+    settingsButton.textContent = 'Preferências';
+    settingsButton.style.padding = '12px 25px';
+    settingsButton.style.backgroundColor = '#f0ad4e';
+    settingsButton.style.color = 'white';
+    settingsButton.style.border = 'none';
+    settingsButton.style.borderRadius = '6px';
+    settingsButton.style.cursor = 'pointer';
+    settingsButton.style.fontWeight = 'bold';
+    settingsButton.style.transition = 'background-color 0.3s';
+    
+    settingsButton.onmouseover = function() {
+        this.style.backgroundColor = '#ec971f';
+    };
+    settingsButton.onmouseout = function() {
+        this.style.backgroundColor = '#f0ad4e';
+    };
+    
+    const rejectButton = document.createElement('button');
+    rejectButton.textContent = 'Rejeitar todos';
+    rejectButton.style.padding = '12px 25px';
+    rejectButton.style.backgroundColor = '#d9534f';
+    rejectButton.style.color = 'white';
+    rejectButton.style.border = 'none';
+    rejectButton.style.borderRadius = '6px';
+    rejectButton.style.cursor = 'pointer';
+    rejectButton.style.fontWeight = 'bold';
+    rejectButton.style.transition = 'background-color 0.3s';
+    
+    rejectButton.onmouseover = function() {
+        this.style.backgroundColor = '#c9302c';
+    };
+    rejectButton.onmouseout = function() {
+        this.style.backgroundColor = '#d9534f';
+    };
+    
+    // Adicionar elementos ao banner
+    buttonsContainer.appendChild(acceptButton);
+    buttonsContainer.appendChild(settingsButton);
+    buttonsContainer.appendChild(rejectButton);
+    
+    banner.appendChild(message);
+    banner.appendChild(buttonsContainer);
+    
+    // Adicionar banner ao corpo do documento
+    document.body.appendChild(banner);
+    
+    // Mostrar o banner após 10 segundos (apenas se não tiver aceitado antes)
+    setTimeout(() => {
+        // Verificar novamente antes de mostrar (pode ter aceitado em outra aba)
+        if (getCookie('cookiesAccepted') !== 'true') {
+            banner.style.display = 'flex';
+        }
+    }, 1000);
+    
+    // Adicionar eventos aos botões
+    acceptButton.addEventListener('click', () => {
+        setCookie('cookiesAccepted', 'true', 365);
+        setCookie('cookiesSettings', 'all', 365);
+        banner.style.display = 'none';
+    });
+    
+    // EVENTO MODIFICADO - Agora redireciona para a página de privacidade
+    settingsButton.addEventListener('click', () => {
+        window.location.href = './Privacidade.html#cookies';
+    });
+    
+    rejectButton.addEventListener('click', () => {
+        setCookie('cookiesAccepted', 'true', 365); // Marcar como aceito para não mostrar novamente
+        setCookie('cookiesSettings', 'none', 365);
+        banner.style.display = 'none';
+    });
+}
+
+// Função para definir um cookie
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=Lax";
+}
+
+// Função para obter um cookie
+function getCookie(name) {
+    const cookieName = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookieArray = decodedCookie.split(';');
+    
+    for (let i = 0; i < cookieArray.length; i++) {
+        let cookie = cookieArray[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(cookieName) === 0) {
+            return cookie.substring(cookieName.length, cookie.length);
+        }
+    }
+    return "";
+}
+
+// Iniciar o banner de cookies quando a página carregar
+window.addEventListener('load', createCookieBanner);
+</script>
+</main>
+</body>
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar de Categorias</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+ <div class="top-header">
+    <a href="index.html" class="botao-inicio">Início</a>
+    <a href="cadastro.html" class="botao-cadastro">cadastro</a>
+    <a href="login.html" class="botao-login">login</a>
+    <div class="site-name">TechSuppliers</div>
+  </div>
+  <nav class="sidebar" aria-label="Categorias">
+    <h2>Categorias</h2>
+    <ul class="nav-links">
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="computadores-link" aria-expanded="false" aria-controls="computadores-submenu">Computadores e Periféricos</a>
+        <ul class="submenu" id="computadores-submenu" aria-label="Subcategoria Computadores e Periféricos">
+          <li><a href="./Notebooks.html">Notebooks</a></li>
+          <li><a href="./Desktops.html">Desktops</a></li>
+          <li><a href="./Monitores.html">Monitores</a></li>
+          <li><a href="./Teclados mecanicos.html">Teclados mecânicos</a></li>
+          <li><a href="./Teclados ergonomicos.html">Teclados ergonômicos</a></li>
+          <li><a href="./Mouses gamers.html">Mouses gamers</a></li>
+          <li><a href="./Impressoras multifuncionais.html">Impressoras multifuncionais</a></li>
+          <li><a href="./Webcams Full HD.html">Webcams Full HD</a></li>
+          <li><a href="./Scanners.html">Scanners</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="hardware-link" aria-expanded="false" aria-controls="hardware-submenu">Componentes de Hardware</a>
+        <ul class="submenu" id="hardware-submenu" aria-label="Subcategoria Componentes de Hardware">
+          <li><a href="./CPUs (Intel-AMD).html">CPUs (Intel/AMD)</a></li>
+          <li><a href="./GPUs (NVIDIA-AMD).html">GPUs (NVIDIA/AMD)</a></li>
+          <li><a href="./Placas-mãe ATX-Micro ATX.html">Placas-mãe ATX/Micro ATX</a></li>
+          <li><a href="./Memórias RAM DDR4-DDR5.html">Memórias RAM DDR4/DDR5</a></li>
+          <li><a href="./SSD M.2-SATA.html">SSD M.2/SATA</a></li>
+          <li><a href="./HD 2.5-3.5.html">HD 2.5&quot;/3.5&quot;</a></li>
+          <li><a href="./Water Coolers.html">Water Coolers</a></li>
+          <li><a href="./Fontes 80 Plus.html">Fontes 80 Plus</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="acessorios-link" aria-expanded="false" aria-controls="acessorios-submenu">Acessórios</a>
+        <ul class="submenu" id="acessorios-submenu" aria-label="Subcategoria Acessórios">
+          <li><a href="./Headsets com microfone.html">Headsets com microfone</a></li>
+          <li><a href="./Hubs USB-C.html">Hubs USB-C</a></li>
+          <li><a href="./Suportes ergonomicos.html">Suportes ergonômicos</a></li>
+          <li><a href="./Bolsas para notebook.html">Bolsas para notebook</a></li>
+          <li><a href="./Dock stations.html">Dock stations</a></li>
+          <li><a href="./Mouses verticais.html">Mouses verticais</a></li>
+          <li><a href="./Teclados Bluetooth.html">Teclados Bluetooth</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="redes-link" aria-expanded="false" aria-controls="redes-submenu">Redes e Conectividade</a>
+        <ul class="submenu" id="redes-submenu" aria-label="Subcategoria Redes e Conectividade">
+          <li><a href="./Roteadores Wi-Fi 6.html">Roteadores Wi-Fi 6</a></li>
+          <li><a href="./Adaptadores USB Wi-Fi.html">Adaptadores USB Wi-Fi</a></li>
+          <li><a href="./Powerlines.html">Powerlines</a></li>
+          <li><a href="./Switches gerenciáveis.html">Switches gerenciáveis</a></li>
+          <li><a href="./Cabos CAT6.html">Cabos CAT6</a></li>
+          <li><a href="./Antenas Wi-Fi.html">Antenas Wi-Fi</a></li>
+          <li><a href="./Repetidores de sinal.html">Repetidores de sinal</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="armazenamento-link" aria-expanded="false" aria-controls="armazenamento-submenu">Armazenamento</a>
+        <ul class="submenu" id="armazenamento-submenu" aria-label="Subcategoria Armazenamento">
+          <li><a href="./Pendrives 128GB.html">Pendrives 128GB</a></li>
+          <li><a href="./Cartões microSD UHS-I.html">Cartões microSD UHS-I</a></li>
+          <li><a href="./HDs externos de 2TB.html">HDs externos de 2TB</a></li>
+          <li><a href="./SSDs NVMe.html">SSDs NVMe</a></li>
+          <li><a href="./Cases para HD-SSD.html">Cases para HD/SSD</a></li>
+          <li><a href="./Servidores NAS.html">Servidores NAS</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="software-link" aria-expanded="false" aria-controls="software-submenu">Softwares</a>
+        <ul class="submenu" id="software-submenu" aria-label="Subcategoria Softwares">
+          <li><a href="./Windows 10-11.html">Windows 10/11</a></li>
+          <li><a href="./Linux (Ubuntu, Mint).html">Linux (Ubuntu, Mint)</a></li>
+          <li><a href="./Microsoft Office.html">Microsoft Office</a></li>
+          <li><a href="./Adobe Creative Cloud.html">Adobe Creative Cloud</a></li>
+          <li><a href="./Antivírus (Norton, Avast, Kaspersky).html">Antivírus (Norton, Avast, Kaspersky)</a></li>
+          <li><a href="./IDEs (VS Code, IntelliJ, NetBeans).html">IDEs (VS Code, IntelliJ, NetBeans)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="dispositivos-moveis-link" aria-expanded="false" aria-controls="dispositivos-moveis-submenu">Dispositivos Móveis e Wearables</a>
+        <ul class="submenu" id="dispositivos-moveis-submenu" aria-label="Subcategoria Dispositivos Móveis e Wearables">
+          <li><a href="./Smartphones Android-iOS.html">Smartphones Android/iOS</a></li>
+          <li><a href="./Tablets com caneta.html">Tablets com caneta</a></li>
+          <li><a href="./Smartwatches.html">Smartwatches</a></li>
+          <li><a href="./Pulseiras fitness.html">Pulseiras fitness</a></li>
+          <li><a href="./Fones Bluetooth com IA.html">Fones Bluetooth com IA</a></li>
+          <li><a href="./Leitores de eBook (Kindle, Kobo).html">Leitores de eBook (Kindle, Kobo)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="tecnologia-casa-link" aria-expanded="false" aria-controls="tecnologia-casa-submenu">Tecnologia para Casa</a>
+        <ul class="submenu" id="tecnologia-casa-submenu" aria-label="Subcategoria Tecnologia para Casa">
+          <li><a href="./Smart TVs 4K.html">Smart TVs 4K</a></li>
+          <li><a href="./Assistentes virtuais (Alexa, Google Nest).html">Assistentes virtuais (Alexa, Google Nest)</a></li>
+          <li><a href="./Lâmpadas Wi-Fi RGB.html">Lâmpadas Wi-Fi RGB</a></li>
+          <li><a href="./Interruptores inteligentes.html">Interruptores inteligentes</a></li>
+          <li><a href="./Tomadas Wi-Fi.html">Tomadas Wi-Fi</a></li>
+          <li><a href="./Robôs aspiradores.html">Robôs aspiradores</a></li>
+          <li><a href="./Câmeras IP.html">Câmeras IP</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="games-link" aria-expanded="false" aria-controls="games-submenu">Games</a>
+        <ul class="submenu" id="games-submenu" aria-label="Subcategoria Games">
+          <li><a href="./Consoles (PS5, Xbox Series X, Nintendo Switch).html">Consoles (PS5, Xbox Series X, Nintendo Switch)</a></li>
+          <li><a href="./Controles personalizados.html">Controles personalizados</a></li>
+          <li><a href="./Headsets com som 7.1.html">Headsets com som 7.1</a></li>
+          <li><a href="./Cadeiras gamers.html">Cadeiras gamers</a></li>
+          <li><a href="./Placas de captura.html">Placas de captura</a></li>
+          <li><a href="./Volantes e pedais.html">Volantes e pedais</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="educacao-link" aria-expanded="false" aria-controls="educacao-submenu">Educação e Programação</a>
+        <ul class="submenu" id="educacao-submenu" aria-label="Subcategoria Educação e Programação">
+          <li><a href="./Kits Arduino e sensores.html">Kits Arduino e sensores</a></li>
+          <li><a href="./Raspberry Pi.html">Raspberry Pi</a></li>
+          <li><a href="./Robótica com Lego Mindstorms.html">Robótica com Lego Mindstorms</a></li>
+          <li><a href="./Micro-bit.html">Micro:bit</a></li>
+          <li><a href="./Livros técnicos.html">Livros técnicos</a></li>
+          <li><a href="./Cursos de TI online.html">Cursos de TI online</a></li>
+          <li><a href="./Emuladores de laboratório virtual.html">Emuladores de laboratório virtual</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+<main class="content" tabindex="-1">    
+  <div class="search-container">    
+    <input type="text" id="search-input" placeholder="Pesquisar produtos..." class="search-bar">    
+  </div>    
+  <script>    
+    const produtos = [    
+      {
+        nome: "Microsoft Sculpt Ergonomic Desktop",
+        descricao: "Teclado ergonômico sem fio com design dividido, touchpad integrado e teclas com baixa resistência.",
+        preco: "R$ 699,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4pFFb1yCjnEHUMt5GJ7bd3v_1inTYmQq_WzIe7cCR1Z8J8ci-RQmTx0M&s=10",
+        fornecedores: [
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Amazon", link: "https://www.amazon.com.br" }
+        ]
+      },
+      {
+        nome: "Logitech ERGO K860",
+        descricao: "Teclado ergonômico sem fio com apoio de pulso, design curvado e conexão Bluetooth/Unifying.",
+        preco: "R$ 899,90",
+        imagem: "https://resource.logitech.com/w_800,c_lpad,ar_1:1,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/ergo-k860-business/gallery/ergo-k860-for-business-gallery-1-us-new.png?v=1",
+        fornecedores: [
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Amazon", link: "https://www.amazon.com.br" }
+        ]
+      },
+      {
+        nome: "Kinesis Freestyle2",
+        descricao: "Teclado ergonômico dividido em duas partes com cabo de conexão e apoio de pulso acolchoado.",
+        preco: "R$ 799,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl7dETcDR5rx8G4n9P9TDdQzpI0LHlTGC-htcK1kqkwGZR6O6nzq0UvQlk&s=10",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" }
+        ]
+      },
+      {
+        nome: "Perixx PERIBOARD-512",
+        descricao: "Teclado ergonômico com design em onda, teclas silenciosas e conexão USB.",
+        preco: "R$ 349,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRugw3cbcJWw-X0P6JwKFdntMt0VMWMW0XG4A73F7k0Q6Y-k8rM7ZX6ckAk&s=10",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" }
+        ]
+      },
+      {
+        nome: "Dell KM117 Wireless Keyboard and Mouse",
+        descricao: "Conjunto teclado e mouse sem fio com design ergonômico e conexão USB.",
+        preco: "R$ 259,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL5gXU8Xc4aR0n587B2H0yZe_758b1vf_9EJTfJGJr10vBFU543-5U-vE&s=10",
+        fornecedores: [
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Amazon", link: "https://www.amazon.com.br" }
+        ]
+      },
+      {
+        nome: "Trust Veza",
+        descricao: "Teclado ergonômico com design dividido, apoio de pulso removível e teclas de baixo impacto.",
+        preco: "R$ 429,90",
+        imagem: "https://d1gb7gicmr8iau.cloudfront.net/fit-in/1200x900/Media/Images/Product/Visual/20960_pictures_product_visual_1.png",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" }
+        ]
+      },
+      {
+        nome: "X-bows Nature Ergonomic Mechanical Keyboard",
+        descricao: "Teclado mecânico ergonômico com layout natural, switches Brown e keycaps PBT.",
+        preco: "R$ 1.199,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwFAQaSGkN4krvZosXrLEPdzjl1Cmn9dFaE01g1TpG9XXwgO3u7aZcPqw&s=10",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" }
+        ]
+      },
+      {
+        nome: "Matias Ergo Pro",
+        descricao: "Teclado ergonômico dividido com switches mecânicos silenciosos e conexão USB.",
+        preco: "R$ 1.099,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3VgdY0CzL1vfwGi9cfY_h0v3-31F4e13Bm4alQ7X2S0YvxrDlbFWQJnXM&s=10",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" }
+        ]
+      },
+      {
+        nome: "Goldtouch V2 Adjustable Keyboard",
+        descricao: "Teclado ergonômico ajustável com 5 posições diferentes de inclinação e teclas de baixo impacto.",
+        preco: "R$ 749,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfUzfu6W1QbxZe1R2oNTWd9r8Ce3B3ank6xcPuU_RD_03QpvGqcX6tEKz6&s=10",
+        fornecedores: [
+          { nome: "Amazon", link: "https://www.amazon.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" }
+        ]
+      },
+      {
+        nome: "Microsoft Natural Ergonomic Keyboard 4000",
+        descricao: "Teclado ergonômico com design curvado, apoio de pulso acolchoado e teclas de baixa resistência.",
+        preco: "R$ 499,90",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXzqI392p-vDbDPSsqDMfioForp8emVDK5i1PtxBz3OfCdZYR70UX5LwQh&s=10",
+        fornecedores: [
+          { nome: "Americanas", link: "https://www.americanas.com.br" },
+          { nome: "Submarino", link: "https://www.submarino.com.br" },
+          { nome: "Magalu", link: "https://www.magazineluiza.com.br" },
+          { nome: "Fast Shop", link: "https://www.fastshop.com.br" },
+          { nome: "Casas Bahia", link: "https://www.casasbahia.com.br" },
+          { nome: "Extra", link: "https://www.extra.com.br" },
+          { nome: "Ponto Frio", link: "https://www.pontofrio.com.br" },
+          { nome: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+          { nome: "Kabum", link: "https://www.kabum.com.br" },
+          { nome: "Amazon", link: "https://www.amazon.com.br" }
+        ]
+      }
+    ];  
+    
+    const main = document.querySelector("main");  
+    const searchInput = document.getElementById("search-input");  
+
+    // Função para renderizar os produtos  
+    function renderProducts(productsToRender) {  
+      // Limpa o conteúdo atual  
+      const existingProducts = document.querySelectorAll('.produto-card');  
+      existingProducts.forEach(product => product.remove());  
+
+      // Adiciona os produtos filtrados  
+      productsToRender.forEach((produto, index) => {  
+        const card = document.createElement("div");  
+        card.className = "produto-card";  
+
+        const fornecedoresHTML = produto.fornecedores.map(f =>  
+          `<li><a href="${f.link}" target="_blank">${f.nome}</a></li>`  
+        ).join("");  
+
+        card.innerHTML = `  
+          <img src="${produto.imagem}" alt="${produto.nome}" class="produto-img">  
+          <div class="produto-detalhes">  
+            <h3>${produto.nome}</h3>  
+            <p class="descricao">${produto.descricao}</p>  
+            <p class="preco">Média de preço: ${produto.preco}</p>  
+            <div class="dropdown">  
+              <button class="btn-toggle">Fornecedores</button>  
+              <ul class="fornecedores-lista hidden">  
+                ${fornecedoresHTML}  
+              </ul>  
+            </div>  
+          </div>  
+        `;  
+
+        main.appendChild(card);  
+      });  
+
+      // Reaplica os event listeners para os dropdowns  
+      document.querySelectorAll(".dropdown").forEach(drop => {  
+        const btn = drop.querySelector(".btn-toggle");  
+        const list = drop.querySelector(".fornecedores-lista");  
+
+        btn.addEventListener("click", () => {  
+          list.classList.toggle("hidden");  
+        });  
+      });  
+    }  
+
+    // Renderiza todos os produtos inicialmente  
+    renderProducts(produtos);  
+
+    // Adiciona o evento de pesquisa  
+    searchInput.addEventListener("input", (e) => {  
+      const searchTerm = e.target.value.toLowerCase();  
+      const filteredProducts = produtos.filter(produto =>   
+        produto.nome.toLowerCase().includes(searchTerm) ||   
+        produto.descricao.toLowerCase().includes(searchTerm)  
+      );  
+      renderProducts(filteredProducts);  
+    });  
+
+    // Fecha os dropdowns quando clicar fora  
+    document.addEventListener("click", function (e) {  
+      document.querySelectorAll(".dropdown").forEach(drop => {  
+        const list = drop.querySelector(".fornecedores-lista");  
+        if (!drop.contains(e.target)) {  
+          list.classList.add("hidden");  
+        }  
+      });  
+    });
+  </script>  
+</main>
+</body>
+</html>

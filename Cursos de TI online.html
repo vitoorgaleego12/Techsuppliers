@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar de Categorias</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+ <div class="top-header">
+    <a href="index.html" class="botao-inicio">Início</a>
+    <a href="cadastro.html" class="botao-cadastro">cadastro</a>
+    <a href="login.html" class="botao-login">login</a>
+    <div class="site-name">TechSuppliers</div>
+  </div>
+  <nav class="sidebar" aria-label="Categorias">
+    <h2>Categorias</h2>
+    <ul class="nav-links">
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="computadores-link" aria-expanded="false" aria-controls="computadores-submenu">Computadores e Periféricos</a>
+        <ul class="submenu" id="computadores-submenu" aria-label="Subcategoria Computadores e Periféricos">
+          <li><a href="./Notebooks.html">Notebooks</a></li>
+          <li><a href="./Desktops.html">Desktops</a></li>
+          <li><a href="./Monitores.html">Monitores</a></li>
+          <li><a href="./Teclados mecanicos.html">Teclados mecânicos</a></li>
+          <li><a href="./Teclados ergonomicos.html">Teclados ergonômicos</a></li>
+          <li><a href="./Mouses gamers.html">Mouses gamers</a></li>
+          <li><a href="./Impressoras multifuncionais.html">Impressoras multifuncionais</a></li>
+          <li><a href="./Webcams Full HD.html">Webcams Full HD</a></li>
+          <li><a href="./Scanners.html">Scanners</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="hardware-link" aria-expanded="false" aria-controls="hardware-submenu">Componentes de Hardware</a>
+        <ul class="submenu" id="hardware-submenu" aria-label="Subcategoria Componentes de Hardware">
+          <li><a href="./CPUs (Intel-AMD).html">CPUs (Intel/AMD)</a></li>
+          <li><a href="./GPUs (NVIDIA-AMD).html">GPUs (NVIDIA/AMD)</a></li>
+          <li><a href="./Placas-mãe ATX-Micro ATX.html">Placas-mãe ATX/Micro ATX</a></li>
+          <li><a href="./Memórias RAM DDR4-DDR5.html">Memórias RAM DDR4/DDR5</a></li>
+          <li><a href="./SSD M.2-SATA.html">SSD M.2/SATA</a></li>
+          <li><a href="./HD 2.5-3.5.html">HD 2.5&quot;/3.5&quot;</a></li>
+          <li><a href="./Water Coolers.html">Water Coolers</a></li>
+          <li><a href="./Fontes 80 Plus.html">Fontes 80 Plus</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="acessorios-link" aria-expanded="false" aria-controls="acessorios-submenu">Acessórios</a>
+        <ul class="submenu" id="acessorios-submenu" aria-label="Subcategoria Acessórios">
+          <li><a href="./Headsets com microfone.html">Headsets com microfone</a></li>
+          <li><a href="./Hubs USB-C.html">Hubs USB-C</a></li>
+          <li><a href="./Suportes ergonomicos.html">Suportes ergonômicos</a></li>
+          <li><a href="./Bolsas para notebook.html">Bolsas para notebook</a></li>
+          <li><a href="./Dock stations.html">Dock stations</a></li>
+          <li><a href="./Mouses verticais.html">Mouses verticais</a></li>
+          <li><a href="./Teclados Bluetooth.html">Teclados Bluetooth</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="redes-link" aria-expanded="false" aria-controls="redes-submenu">Redes e Conectividade</a>
+        <ul class="submenu" id="redes-submenu" aria-label="Subcategoria Redes e Conectividade">
+          <li><a href="./Roteadores Wi-Fi 6.html">Roteadores Wi-Fi 6</a></li>
+          <li><a href="./Adaptadores USB Wi-Fi.html">Adaptadores USB Wi-Fi</a></li>
+          <li><a href="./Powerlines.html">Powerlines</a></li>
+          <li><a href="./Switches gerenciáveis.html">Switches gerenciáveis</a></li>
+          <li><a href="./Cabos CAT6.html">Cabos CAT6</a></li>
+          <li><a href="./Antenas Wi-Fi.html">Antenas Wi-Fi</a></li>
+          <li><a href="./Repetidores de sinal.html">Repetidores de sinal</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="armazenamento-link" aria-expanded="false" aria-controls="armazenamento-submenu">Armazenamento</a>
+        <ul class="submenu" id="armazenamento-submenu" aria-label="Subcategoria Armazenamento">
+          <li><a href="./Pendrives 128GB.html">Pendrives 128GB</a></li>
+          <li><a href="./Cartões microSD UHS-I.html">Cartões microSD UHS-I</a></li>
+          <li><a href="./HDs externos de 2TB.html">HDs externos de 2TB</a></li>
+          <li><a href="./SSDs NVMe.html">SSDs NVMe</a></li>
+          <li><a href="./Cases para HD-SSD.html">Cases para HD/SSD</a></li>
+          <li><a href="./Servidores NAS.html">Servidores NAS</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="software-link" aria-expanded="false" aria-controls="software-submenu">Softwares</a>
+        <ul class="submenu" id="software-submenu" aria-label="Subcategoria Softwares">
+          <li><a href="./Windows 10-11.html">Windows 10/11</a></li>
+          <li><a href="./Linux (Ubuntu, Mint).html">Linux (Ubuntu, Mint)</a></li>
+          <li><a href="./Microsoft Office.html">Microsoft Office</a></li>
+          <li><a href="./Adobe Creative Cloud.html">Adobe Creative Cloud</a></li>
+          <li><a href="./Antivírus (Norton, Avast, Kaspersky).html">Antivírus (Norton, Avast, Kaspersky)</a></li>
+          <li><a href="./IDEs (VS Code, IntelliJ, NetBeans).html">IDEs (VS Code, IntelliJ, NetBeans)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="dispositivos-moveis-link" aria-expanded="false" aria-controls="dispositivos-moveis-submenu">Dispositivos Móveis e Wearables</a>
+        <ul class="submenu" id="dispositivos-moveis-submenu" aria-label="Subcategoria Dispositivos Móveis e Wearables">
+          <li><a href="./Smartphones Android-iOS.html">Smartphones Android/iOS</a></li>
+          <li><a href="./Tablets com caneta.html">Tablets com caneta</a></li>
+          <li><a href="./Smartwatches.html">Smartwatches</a></li>
+          <li><a href="./Pulseiras fitness.html">Pulseiras fitness</a></li>
+          <li><a href="./Fones Bluetooth com IA.html">Fones Bluetooth com IA</a></li>
+          <li><a href="./Leitores de eBook (Kindle, Kobo).html">Leitores de eBook (Kindle, Kobo)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="tecnologia-casa-link" aria-expanded="false" aria-controls="tecnologia-casa-submenu">Tecnologia para Casa</a>
+        <ul class="submenu" id="tecnologia-casa-submenu" aria-label="Subcategoria Tecnologia para Casa">
+          <li><a href="./Smart TVs 4K.html">Smart TVs 4K</a></li>
+          <li><a href="./Assistentes virtuais (Alexa, Google Nest).html">Assistentes virtuais (Alexa, Google Nest)</a></li>
+          <li><a href="./Lâmpadas Wi-Fi RGB.html">Lâmpadas Wi-Fi RGB</a></li>
+          <li><a href="./Interruptores inteligentes.html">Interruptores inteligentes</a></li>
+          <li><a href="./Tomadas Wi-Fi.html">Tomadas Wi-Fi</a></li>
+          <li><a href="./Robôs aspiradores.html">Robôs aspiradores</a></li>
+          <li><a href="./Câmeras IP.html">Câmeras IP</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="games-link" aria-expanded="false" aria-controls="games-submenu">Games</a>
+        <ul class="submenu" id="games-submenu" aria-label="Subcategoria Games">
+          <li><a href="./Consoles (PS5, Xbox Series X, Nintendo Switch).html">Consoles (PS5, Xbox Series X, Nintendo Switch)</a></li>
+          <li><a href="./Controles personalizados.html">Controles personalizados</a></li>
+          <li><a href="./Headsets com som 7.1.html">Headsets com som 7.1</a></li>
+          <li><a href="./Cadeiras gamers.html">Cadeiras gamers</a></li>
+          <li><a href="./Placas de captura.html">Placas de captura</a></li>
+          <li><a href="./Volantes e pedais.html">Volantes e pedais</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="educacao-link" aria-expanded="false" aria-controls="educacao-submenu">Educação e Programação</a>
+        <ul class="submenu" id="educacao-submenu" aria-label="Subcategoria Educação e Programação">
+          <li><a href="./Kits Arduino e sensores.html">Kits Arduino e sensores</a></li>
+          <li><a href="./Raspberry Pi.html">Raspberry Pi</a></li>
+          <li><a href="./Robótica com Lego Mindstorms.html">Robótica com Lego Mindstorms</a></li>
+          <li><a href="./Micro-bit.html">Micro:bit</a></li>
+          <li><a href="./Livros técnicos.html">Livros técnicos</a></li>
+          <li><a href="./Cursos de TI online.html">Cursos de TI online</a></li>
+          <li><a href="./Emuladores de laboratório virtual.html">Emuladores de laboratório virtual</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+<main class="content" tabindex="-1">    
+  <div class="search-container">    
+    <input type="text" id="search-input" placeholder="Pesquisar produtos..." class="search-bar">    
+  </div>    
+  <script>    
+    const produtos = [    
+      {  
+        nome: "Curso de Desenvolvimento Web Full Stack",  
+        descricao: "Aprenda HTML, CSS, JavaScript, React, Node.js e MongoDB para se tornar um desenvolvedor full stack.",  
+        preco: "1.299,90",  
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsHkScRVy6rIADnIYAO8UCFTcBqTTgVh8L2i7JX9dvKZzn9G5Rj9DXI9xo&s=10",  
+        fornecedores: [  
+          { nome: "Udemy", link: "https://www.udemy.com" },  
+          { nome: "Alura", link: "https://www.alura.com.br" },  
+          { nome: "Digital Innovation One", link: "https://www.dio.me" },  
+          { nome: "Rocketseat", link: "https://www.rocketseat.com.br" },  
+          { nome: "Trybe", link: "https://www.betrybe.com" },  
+          { nome: "Coursera", link: "https://www.coursera.org" },  
+          { nome: "Kenzie Academy", link: "https://kenzie.com.br" },  
+          { nome: "Gama Academy", link: "https://www.gama.academy" },  
+          { nome: "EBAC", link: "https://ebaconline.com.br" },  
+          { nome: "FIAP", link: "https://www.fiap.com.br" }  
+        ]  
+      },  
+      {  
+        nome: "Curso de Data Science e Machine Learning",  
+        descricao: "Domine Python, Pandas, NumPy, Matplotlib, Scikit-learn e TensorFlow para análise de dados e IA.",  
+        preco: "1.599,90",  
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNn6UU_YrRNfw5WhkLYzjN1l8SanRUMNX0oCjwfHqRaP26cFLcyqFx45M&s=10",  
+        fornecedores: [  
+          { nome: "Udemy", link: "https://www.udemy.com" },  
+          { nome: "Data Science Academy", link: "https://www.datascienceacademy.com.br" },  
+          { nome: "Alura", link: "https://www.alura.com.br" },  
+          { nome: "Coursera", link: "https://www.coursera.org" },  
+          { nome: "edX", link: "https://www.edx.org" },  
+          { nome: "Digital Innovation One", link: "https://www.dio.me" },  
+          { nome: "Kaggle", link: "https://www.kaggle.com" },  
+          { nome: "EBAC", link: "https://ebaconline.com.br" },  
+          { nome: "FIAP", link: "https://www.fiap.com.br" },  
+          { nome: "Udacity", link: "https://www.udacity.com" }  
+        ]  
+      },  
+      {  
+        nome: "Curso Completo de Python",  
+        descricao: "Do básico ao avançado com projetos reais: Django, Flask, automação, análise de dados e mais.",  
+        preco: "399,90",  
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgi6Z-anbe0iIgx1gSmhTrbKRyZ5br307YHdwUDD43ShyjZasofT2C96A&s=10",  
+        fornecedores: [  
+          { nome: "Udemy", link: "https://www.udemy.com" },  
+          { nome: "Alura", link: "https://www.alura.com.br" },  
+          { nome: "Coursera", link: "https://www.coursera.org" },  
+          { nome: "edX", link: "https://www.edx.org" },  
+          { nome: "Digital Innovation One", link: "https://www.dio.me" },  
+          { nome: "Rocketseat", link: "https://www.rocketseat.com.br" },  
+          { nome: "Hashtag Treinamentos", link: "https://www.hashtagtreinamentos.com" },  
+          { nome: "EBAC", link: "https://ebaconline.com.br" },  
+          { nome: "FIAP", link: "https://www.fiap.com.br" },  
+          { nome: "Codecademy", link: "https://www.codecademy.com" }  
+        ]  
+      },  
+      {  
+        nome: "Formação Front-end com React",  
+        descricao: "Aprenda React, Redux, Hooks, Context API, Styled Components e testes com Jest.",  
+        preco: "899,90",  
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiTl62Sqj6Zy9acwSGy-pO_0fB479wV5WXvSr91LwBizqvUEjeQQUxA6H-&s=10",  
+        fornecedores: [  
+          { nome: "Rocketseat", link: "https://www.rocketseat.com.br" },  
+          { nome: "Alura", link: "https://www.alura.com.br" },  
+          { nome: "Udemy", link: "https://www.udemy.com" },  
+          { nome: "Trybe", link: "https://www.betrybe.com" },  
+          { nome: "Digital Innovation One", link: "https://www.dio.me" },  
+          { nome: "Coursera", link: "https://www.coursera.org" },  
+          { nome: "Kenzie Academy", link: "https://kenzie.com.br" },  
+          { nome: "Gama Academy", link: "https://www.gama.academy" },  
+          { nome: "EBAC", link: "https://ebaconline.com.br" },  
+          { nome: "FIAP", link: "https://www.fiap.com.br" }  
+        ]  
+      },  
+      {  
+        nome: "Curso de Cybersecurity Essentials",  
+        descricao: "Fundamentos de segurança da informação, ethical hacking e proteção de sistemas.",  
+        preco: "1.199,90",  
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNZI6qvs0CebGzL-x4TwannOCcHraKRLcRwYqPyOWfP3BKDHmCAsH3gOHh&s=10",  
+        fornecedores: [  
+          { nome: "Cisco Networking Academy", link: "https://www.netacad.com" },  
+          { nome: "Alura", link: "https://www.alura.com.br" },  
+          { nome: "Udemy", link: "https://www.udemy.com" },  
+          { nome: "FIAP", link: "https://www.fiap.com.br" },  
+          { nome: "Coursera", link: "https://www.coursera.org" },  
+          { nome: "edX", link: "https://www.edx.org" },  
+          { nome: "Digital Innovation One", link: "https://www.dio.me" },  
+          { nome: "EBAC", link: "https://ebaconline.com.br" },  
+          { nome: "Try Hack Me", link: "https://tryhackme.com" },  
+          { nome: "Hack The Box", link: "https://www.hackthebox.com" }  
+        ]  
+      },  
+      {  
+        nome: "Formação em Cloud Computing AWS",  
+        descricao: "Prepare-se para certificações AWS com EC2, S3, Lambda, RDS, CloudFormation e mais.",  
+        preco: "1.499,90",  
+        imagem: "https://img-c.udemycdn.com/course/480x270/3142166_a637_3.jpg",  
+        fornecedores: [  
+          { nome: "AWS Training", link: "https://aws.amazon.com/pt/training/" },  
+          { nome: "Alura", link: "https://www.alura.com.br" },  
+          { nome: "Udemy", link: "https://www.udemy.com" },  
+          { nome: "Coursera", link: "https://www.coursera.org" },  
+          { nome: "Digital Innovation One", link: "https://www.dio.me" },  
+          { nome: "LinuxTips", link: "https://www.linuxtips.io" },  
+          { nome: "EBAC", link: "https://ebaconline.com.br" },  
+          { nome: "FIAP", link: "https://www.fiap.com.br" },  
+          { nome: "Gama Academy", link: "https://www.gama.academy" },  
+          { nome: "A Cloud Guru", link: "https://acloudguru.com" }  
+        ]  
+      },  
+      {  
+        nome: "Curso de Mobile com Flutter",  
+        descricao: "Desenvolva apps nativos para iOS e Android com um único código usando Flutter e Dart.",  
+        preco: "799,90",  
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZjIzZHhi7z5CKbEZy5S-XYogIvootgjYy523svATjHG9XM6CtwHz65DAH&s=10",  
+        fornecedores: [  
+          { nome: "Rocketseat", link: "https://www.rocketseat.com.br" },  
+          { nome: "Alura", link: "https://www.alura.com.br" },  
+          { nome: "Udemy", link: "https://www.udemy.com" },  
+          { nome: "Coursera", link: "https://www.coursera.org" },  
+          { nome: "Digital Innovation One", link: "https://www.dio.me" },  
+          { nome: "Balta.io", link: "https://balta.io" },  
+          { nome: "Cod3r", link: "https://www.cod3r.com.br" },  
+          { nome: "EBAC", link: "https://ebaconline.com.br" },  
+          { nome: "FIAP", link: "https://www.fiap.com.br" },  
+          { nome: "Gama Academy", link: "https://www.gama.academy" }  
+        ]  
+      },  
+      {  
+        nome: "Formação em UX/UI Design",  
+        descricao: "Aprenda design thinking, pesquisa com usuários, prototipação no Figma e UI avançado.",  
+        preco: "1.099,90",  
+        imagem: "https://www.chiefofdesign.com.br/wp-content/uploads/2022/01/curso-de-ux-design-1024x576.jpg",  
+        fornecedores: [  
+          { nome: "Interaction Design Foundation", link: "https://www.interaction-design.org" },  
+          { nome: "Alura", link: "https://www.alura.com.br" },  
+          { nome: "Udemy", link: "https://www.udemy.com" },  
+          { nome: "Coursera", link: "https://www.coursera.org" },  
+          { nome: "EBAC", link: "https://ebaconline.com.br" },  
+          { nome: "FIAP", link: "https://www.fiap.com.br" },  
+          { nome: "Gama Academy", link: "https://www.gama.academy" },  
+          { nome: "Digital House", link: "https://www.digitalhouse.com/br" },  
+          { nome: "Mergo", link: "https://www.mergo.com.br" },  
+          { nome: "Awari", link: "https://awari.com.br" }  
+        ]  
+      },  
+      {  
+        nome: "Curso de DevOps e Docker",  
+        descricao: "Domine Docker, Kubernetes, CI/CD, Terraform, Ansible e metodologias DevOps.",  
+        preco: "1.199,90",  
+        imagem: "https://events-fullcycle.s3.amazonaws.com/events-fullcycle/media/images/870b0c50d81d424e9980593876a0d455.jpg",  
+        fornecedores: [  
+          { nome: "LinuxTips", link: "https://www.linuxtips.io" },  
+          { nome: "Alura", link: "https://www.alura.com.br" },  
+          { nome: "Udemy", link: "https://www.udemy.com" },  
+          { nome: "Coursera", link: "https://www.coursera.org" },  
+          { nome: "Digital Innovation One", link: "https://www.dio.me" },  
+          { nome: "KodeKloud", link: "https://kodekloud.com" },  
+          { nome: "EBAC", link: "https://ebaconline.com.br" },  
+          { nome: "FIAP", link: "https://www.fiap.com.br" },  
+          { nome: "Gama Academy", link: "https://www.gama.academy" },  
+          { nome: "A Cloud Guru", link: "https://acloudguru.com" }  
+        ]  
+      },  
+      {  
+        nome: "Curso de SQL e Banco de Dados",  
+        descricao: "Aprenda MySQL, PostgreSQL, MongoDB, modelagem de dados e queries avançadas.",  
+        preco: "499,90",  
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXn3iW9OC9lsQb9eFHMYWFGPKJjyuNHh_rlcOCei6l_AxA3KpWZxxzt_Ru&s=10",  
+        fornecedores: [  
+          { nome: "Alura", link: "https://www.alura.com.br" },  
+          { nome: "Udemy", link: "https://www.udemy.com" },  
+          { nome: "Coursera", link: "https://www.coursera.org" },  
+          { nome: "Digital Innovation One", link: "https://www.dio.me" },  
+          { nome: "Hashtag Treinamentos", link: "https://www.hashtagtreinamentos.com" },  
+          { nome: "Data Science Academy", link: "https://www.datascienceacademy.com.br" },  
+          { nome: "EBAC", link: "https://ebaconline.com.br" },  
+          { nome: "FIAP", link: "https://www.fiap.com.br" },  
+          { nome: "Gama Academy", link: "https://www.gama.academy" },  
+          { nome: "Balta.io", link: "https://balta.io" }  
+        ]  
+      },  
+      {  
+        nome: "Curso de Inteligência Artificial para Iniciantes",  
+        descricao: "Introdução prática a machine learning, redes neurais e NLP com Python.",  
+        preco: "899,90",  
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnAhC6rOHm7JUeaBIYg5_W-KDj8uXnqXIzcyQRl5qKlM4crt3xvafSI8lG&s=10",  
+        fornecedores: [  
+          { nome: "Data Science Academy", link: "https://www.datascienceacademy.com.br" },  
+          { nome: "Alura", link: "https://www.alura.com.br" },  
+          { nome: "Udemy", link: "https://www.udemy.com" },  
+          { nome: "Coursera", link: "https://www.coursera.org" },  
+          { nome: "edX", link: "https://www.edx.org" },  
+          { nome: "Digital Innovation One", link: "https://www.dio.me" },  
+          { nome: "Kaggle", link: "https://www.kaggle.com" },  
+          { nome: "EBAC", link: "https://ebaconline.com.br" },  
+          { nome: "FIAP", link: "https://www.fiap.com.br" },  
+          { nome: "Udacity", link: "https://www.udacity.com" }  
+        ]  
+      }  
+    ];  
+
+    const main = document.querySelector("main");  
+    const searchInput = document.getElementById("search-input");  
+
+    // Função para renderizar os produtos  
+    function renderProducts(productsToRender) {  
+      // Limpa o conteúdo atual  
+      const existingProducts = document.querySelectorAll('.produto-card');  
+      existingProducts.forEach(product => product.remove());  
+
+      // Adiciona os produtos filtrados  
+      productsToRender.forEach((produto, index) => {  
+        const card = document.createElement("div");  
+        card.className = "produto-card";  
+
+        const fornecedoresHTML = produto.fornecedores.map(f =>  
+          `<li><a href="${f.link}" target="_blank">${f.nome}</a></li>`  
+        ).join("");  
+
+        card.innerHTML = `  
+          <img src="${produto.imagem}" alt="${produto.nome}" class="produto-img">  
+          <div class="produto-detalhes">  
+            <h3>${produto.nome}</h3>  
+            <p class="descricao">${produto.descricao}</p>  
+            <p class="preco">Média de preço: R$ ${produto.preco}</p>  
+            <div class="dropdown">  
+              <button class="btn-toggle">Fornecedores</button>  
+              <ul class="fornecedores-lista hidden">  
+                ${fornecedoresHTML}  
+              </ul>  
+            </div>  
+          </div>  
+        `;  
+
+        main.appendChild(card);  
+      });  
+
+      // Reaplica os event listeners para os dropdowns  
+      document.querySelectorAll(".dropdown").forEach(drop => {  
+        const btn = drop.querySelector(".btn-toggle");  
+        const list = drop.querySelector(".fornecedores-lista");  
+
+        btn.addEventListener("click", () => {  
+          list.classList.toggle("hidden");  
+        });  
+      });  
+    }  
+
+    // Renderiza todos os produtos inicialmente  
+    renderProducts(produtos);  
+
+    // Adiciona o evento de pesquisa  
+    searchInput.addEventListener("input", (e) => {  
+      const searchTerm = e.target.value.toLowerCase();  
+      const filteredProducts = produtos.filter(produto =>   
+        produto.nome.toLowerCase().includes(searchTerm) ||   
+        produto.descricao.toLowerCase().includes(searchTerm)  
+      );  
+      renderProducts(filteredProducts);  
+    });  
+
+    // Fecha os dropdowns quando clicar fora  
+    document.addEventListener("click", function (e) {  
+      document.querySelectorAll(".dropdown").forEach(drop => {  
+        const list = drop.querySelector(".fornecedores-lista");  
+        if (!drop.contains(e.target)) {  
+          list.classList.add("hidden");  
+        }  
+      });  
+    });
+  </script>  
+</main>  
+</body>  
+</html>
+</body>
+</html>

@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TechSuppliers - Plataforma de Fornecedores de Tecnologia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    /* Estilos gerais */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    
+/* Cabeçalho superior */
+
+/* Header fixo no topo */
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #1e293b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 0 1rem;
+}
+
+.botao-inicio {
+    position: absolute;
+    left: 1rem;
+    background-color: #1e293b;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    top: 10px; /* Ajuste conforme necessário */
+    z-index: 1001;
+}
+
+
+
+.site-name {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  white-space: nowrap;
+}
+    
+  .botao-cadastro {
+    position: absolute;
+    right: 1rem;
+    background-color: #1e293b;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    top: 10px; /* Ajuste conforme necessário */
+    z-index: 1001;
+}
+
+.botao-login {
+    position: absolute;
+    right: 6rem;
+    background-color: #1e293b;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    top: 10px; /* Ajuste conforme necessário */
+    z-index: 1001;
+}
+
+
+
+
+  
+  
+    /* Estilos específicos para o main */
+    .content {
+      margin-left: 0;
+      padding: 80px 20px 20px;
+      background-color: #f8f9fa;
+      min-height: 100vh;
+    }
+    
+    .hero {
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary, .btn-secondary {
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary {
+      background-color: #e74c3c;
+      color: white;
+      border: 2px solid #e74c3c;
+    }
+    
+    .btn-primary:hover {
+      background-color: #c0392b;
+      border-color: #c0392b;
+    }
+    
+    .btn-secondary {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+    
+    .btn-secondary:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+    
+    /* Seções */
+    section {
+      background-color: white;
+      border-radius: 8px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    section h2 {
+      color: #2c3e50;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #f1f1f1;
+      padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    /* Grids */
+    .featured-grid, .suppliers-grid, .articles-grid, .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    
+    /* Cards */
+    .product-card, .supplier-card, .article-card, .benefit-card {
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover, .supplier-card:hover, .article-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .product-card {
+      border: 1px solid #e0e0e0;
+      padding: 15px;
+    }
+    
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    
+    .product-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    
+    .price {
+      font-weight: bold;
+      color: #e74c3c;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+    
+    .supplier {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+    
+    .description {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+      color: #555;
+    }
+    
+    .btn-product {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    
+    .btn-product:hover {
+      background-color: #2980b9;
+    }
+    
+    /* Fornecedores */
+    .supplier-card {
+      padding: 20px;
+      border: 1px solid #e0e0e0;
+      text-align: center;
+    }
+    
+    .supplier-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 15px;
+      border: 3px solid #3498db;
+    }
+    
+    .rating {
+      color: #f39c12;
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .rating span {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+    }
+    
+    .btn-supplier {
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      margin-top: 10px;
+    }
+    
+    .btn-supplier:hover {
+      background-color: #27ae60;
+    }
+    
+    /* Artigos */
+    .article-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .article-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .article-content {
+      padding: 20px;
+    }
+    
+    .meta {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+    
+    .read-more {
+      color: #3498db;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 15px;
+    }
+    
+    .read-more:hover {
+      text-decoration: underline;
+    }
+    
+    /* Conteúdo expandido (inicialmente oculto) */
+    .expanded-content {
+      display: none;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+    
+    .expanded-content p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    
+    /* Benefícios */
+    .benefit-card {
+      text-align: center;
+      padding: 25px 15px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+    }
+    
+    .benefit-card i {
+      font-size: 2.5rem;
+      color: #3498db;
+      margin-bottom: 15px;
+    }
+    
+    .benefit-card h3 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    
+    /* Newsletter */
+    .newsletter-section {
+      background: linear-gradient(135deg, #3498db, #2c3e50);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 20px auto 0;
+    }
+    
+    .newsletter-form input {
+      flex: 1;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      font-size: 1rem;
+    }
+    
+    .btn-newsletter {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 0 20px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    
+    .btn-newsletter:hover {
+      background-color: #c0392b;
+    }
+    
+    .privacy-text {
+      font-size: 0.85rem;
+      margin-top: 15px;
+      opacity: 0.8;
+    }
+    
+    .privacy-text a {
+      color: white;
+      text-decoration: underline;
+    }
+    
+    /* Botão voltar ao topo */
+    .back-to-top {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      border: none;
+      outline: none;
+      background-color: #3498db;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+    
+    .back-to-top:hover {
+      background-color: #2980b9;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .content {
+        padding: 70px 15px 15px;
+      }
+      
+      .hero {
+        padding: 40px 15px;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+      }
+      
+      .featured-grid, .suppliers-grid, .articles-grid, .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .top-header {
+        flex-direction: column;
+        padding: 10px;
+      }
+      
+      .top-header a {
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+ <div class="top-header">
+    <a href="index.html" class="botao-inicio">Início</a>
+    <a href="cadastro.html" class="botao-cadastro">Cadastro</a>
+    <a href="login.html" class="botao-login">Login</a>
+    <div class="site-name">TechSuppliers</div>
+  </div>
+  
+<main class="content" tabindex="-1">
+  <!-- Seção Hero/Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Conectando você aos melhores fornecedores de tecnologia</h1>
+      <p>TechSuppliers é a plataforma líder em conexão entre empresas e fornecedores de produtos de tecnologia. Encontre os melhores preços, compare qualidade e estabeleça parcerias duradouras.</p>
+      <div class="hero-buttons">
+        <a href="cadastro.html" class="btn-primary">Cadastre-se como Fornecedor</a>
+        <a href="Notebooks.html" class="btn-secondary">Explorar Produtos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Destaques -->
+  <section id="destaques" class="featured-section">
+    <h2><i class="fas fa-star"></i> Produtos em Destaque</h2>
+    <div class="featured-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Notebook Gamer Avançado">
+        <h3>Notebook Dell Alienware m15 R7</h3>
+        <p class="price">R$ 12.999,90</p>
+        <p class="supplier">Fornecedor: Dell Technologies</p>
+        <p class="description">Processador Intel Core i9-12900H, 32GB RAM DDR5, GPU NVIDIA RTX 3080 Ti 16GB, SSD de 1TB, tela QHD 240Hz de 15.6". O melhor desempenho para gamers e profissionais criativos.</p>
+        <a href="https://www.dell.com/pt-br?gacd=9657105-15013-5761040-275878141-0&dgc=ST&cid=71700000068913393&gclsrc=aw.ds&gad_source=1&gad_campaignid=1612866167&gbraid=0AAAAADz5MFtbsXgdmXDCUtQwm3zjj7tYG&gclid=Cj0KCQjwqebEBhD9ARIsAFZMbfxaXNlSIRV4BvQBfzgv1J49EU-GJt3EdIAlb22MdLsQ6ET63psk3zsaAkApEALw_wcB" class="btn-product">Ver Detalhes</a>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Smartphone Top de Linha">
+        <h3>Smartphone Samsung Galaxy S23 Ultra</h3>
+        <p class="price">R$ 8.499,90</p>
+        <p class="supplier">Fornecedor: Samsung Brasil</p>
+        <p class="description">Câmera de 200MP, processador Snapdragon 8 Gen 2, 12GB RAM, 512GB armazenamento, bateria de 5000mAh com carregamento rápido de 45W e S Pen integrado.</p>
+        <a href="https://www.samsung.com/br/" class="btn-product">Ver Detalhes</a>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Monitor Profissional">
+        <h3>Monitor LG UltraFine 32UN880-B</h3>
+        <p class="price">R$ 4.999,90</p>
+        <p class="supplier">Fornecedor: LG Electronics</p>
+        <p class="description">Tela 4K UHD 32" IPS, 95% DCI-P3, HDR400, ajuste de altura e inclinação, USB-C com carregamento de 90W. Ideal para designers, editores de vídeo e profissionais criativos.</p>
+        <a href="https://www.lg.com/br/micro-ondas/todos-micro-ondas/?utm_source=google-ads&utm_medium=cpc&utm_campaign=HQ-HS-SEM_HS_MWO_BR_AO_NA_CNS_PSE_consideration_BRA_PT_lg.com_NA_BM_tCPA_BCL_google-ads_AO&utm_content=250214_Generic_NA_BCL&utm_term=NA&gad_source=1&gad_campaignid=22279767569&gbraid=0AAAAApU7wanIk96JlLhK2eVXaVRmJ_1xH&gclid=Cj0KCQjwqebEBhD9ARIsAFZMbfzXKApKQUjGz6lKM8iDul-HXjCOLdMOIMlVTT4xJlcw1R1rr7xug10aArEmEALw_wcB" class="btn-product">Ver Detalhes</a>
+      </div>
+      <div class="product-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_u5S5mNJJw4RgPiAW-EbnjqjqOxRt7N0aFA&s" alt="Servidor Dell PowerEdge">
+  <h3>Servidor Dell PowerEdge R750</h3>
+  <p class="price">R$ 45.899,00</p>
+  <p class="supplier">Fornecedor: Dell Technologies</p>
+  <p class="description">Servidor rack 2U com processador Intel Xeon Gold 6330, 64GB RAM DDR4, 4x SSD NVMe 1.9TB, RAID controller. Ideal para virtualização e aplicações enterprise.</p>
+  <a href="https://www.dell.com/pt-br" class="btn-product">Ver Detalhes</a>
+</div>
+
+<div class="product-card">
+  <img src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c05724974.png" alt="Workstation HP Z8">
+  <h3>Workstation HP Z8 G4</h3>
+  <p class="price">R$ 38.750,00</p>
+  <p class="supplier">Fornecedor: HP Brasil</p>
+  <p class="description">Duplo processador Xeon Silver 4210, 128GB RAM ECC, NVIDIA RTX A6000 48GB, SSD 2TB NVMe. Para renderização 3D, AI e engenharia pesada.</p>
+  <a href="https://www.hp.com/br-pt/home.html" class="btn-product">Ver Detalhes</a>
+</div>
+
+<div class="product-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvJk1nL5WHYmdDKIZnvBtk_4krHF4x8_S1Oxyw-bElB3PMXgtdLfChNFo&s=10" alt="Switch Cisco Catalyst">
+  <h3>Switch Cisco Catalyst 9200</h3>
+  <p class="price">R$ 8.499,00</p>
+  <p class="supplier">Fornecedor: Cisco Systems</p>
+  <p class="description">Switch gerenciável 48 portas Gigabit Ethernet, PoE+, Layer 3. Ideal para redes corporativas com alta disponibilidade e segurança integrada.</p>
+  <a href="https://www.cisco.com/c/pt_br/index.html" class="btn-product">Ver Detalhes</a>
+</div>
+
+<div class="product-card">
+  <img src="https://cdn.awsli.com.br/600x700/2722/2722712/produto/266731378/foto-1-7u7vzitleb.jpg" alt="Storage NAS Synology">
+  <h3>Storage NAS Synology RS3621RPxs</h3>
+  <p class="price">R$ 22.899,00</p>
+  <p class="supplier">Fornecedor: Synology</p>
+  <p class="description">NAS rack 12-baias, processador Intel Xeon D-1541, 16GB RAM, expansível até 36 drives. Suporte a SSD caching e virtualização.</p>
+  <a href="https://www.synology.com/pt-br" class="btn-product">Ver Detalhes</a>
+</div>
+
+<div class="product-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYQQG2_smQinluNiCtsyf_mFeKPInw14h_BBQ-5n_YN4r08s4mjKFz-N4&s=10" alt="Monitor Profissional Dell">
+  <h3>Monitor Dell UltraSharp 49"</h3>
+  <p class="price">R$ 9.999,00</p>
+  <p class="supplier">Fornecedor: Dell Technologies</p>
+  <p class="description">Monitor curvo 49" 5120x1440, IPS Black, 120Hz, USB-C com carregamento 90W. Ideal para multitarefa e profissionais criativos.</p>
+  <a href="https://www.dell.com/pt-br" class="btn-product">Ver Detalhes</a>
+</div>
+
+<div class="product-card">
+  <img src="https://www.danresa.com.br/fortinet/fortinet-portal/wp-content/uploads/2023/04/fortigate-600f-1024x295.png" alt="Firewall Fortinet">
+  <h3>Firewall FortiGate 600F</h3>
+  <p class="price">R$ 31.500,00</p>
+  <p class="supplier">Fornecedor: Fortinet</p>
+  <p class="description">Next-generation firewall com throughput de 10Gbps, proteção contra ameaças, VPN SSL e SD-WAN integrado. Para redes de médio porte.</p>
+  <a href="https://www.fortinet.com/br" class="btn-product">Ver Detalhes</a>
+</div>
+
+<div class="product-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhtHcYCHZYBTl-dG0WOWEmXe5Px09S_k7PAiKJfopuLwwweMCw9qL5i-g&s=10" alt="Access Point Ubiquiti">
+  <h3>Access Point Ubiquiti U6 Enterprise</h3>
+  <p class="price">R$ 2.899,00</p>
+  <p class="supplier">Fornecedor: Ubiquiti</p>
+  <p class="description">Wi-Fi 6E tri-band, 4x4 MIMO, throughput de 5.3Gbps. Suporte a 300+ clientes simultâneos. Ideal para ambientes corporativos de alta densidade.</p>
+  <a href="https://www.ui.com/br/" class="btn-product">Ver Detalhes</a>
+</div>
+    </div>
+  </section>
+
+  <!-- Seção de Fornecedores -->
+  <section class="suppliers-section">
+    <h2><i class="fas fa-store"></i> Fornecedores em Destaque</h2>
+    <div class="suppliers-grid">
+      <div class="supplier-card">
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dell Technologies">
+        <h3>Dell Technologies</h3>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <span>4.7 (1.240 avaliações)</span>
+        </div>
+        <p>Líder global em soluções de TI, oferecendo notebooks, desktops, servidores e equipamentos para data centers. Presente no Brasil há mais de 25 anos com centro de distribuição em Hortolândia/SP.</p>
+        <a href="https://www.dell.com/pt-br/lp/br-ecatalog" class="btn-product">Ver catálogo</a>
+      </div>
+      <div class="supplier-card">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Samsung Brasil">
+        <h3>Samsung Brasil</h3>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+          <span>4.2 (980 avaliações)</span>
+        </div>
+        <p>Fabricante coreana com operação completa no Brasil, oferecendo smartphones, tablets, monitores e soluções corporativas. Fábrica em Manaus e centro de distribuição em Campinas.</p>
+        <a href="https://www.samsung.com/br/watches/galaxy-watch/galaxy-watch8-40mm-silver-bluetooth-sm-l320nzspzto/?utm_campaign=br_pd_shop_goads-9gads_watch8_laun_mx-9lo-9ac-9sepma-9ssclick-9me-9watch-2025_pmax-pla_w-9con-9cpa-9cple-9g-9watch8-9kv-watch8-9pmax-9na-9na-9na-9na_3rd-pty-9na-9030-9bhv-9a1849&utm_medium=sepma&utm_source=goads-9gads&keeplink=true&cid=br_pd_shop_goads-9gads_watch8_laun_mx-9lo-9ac-9sepma-9ssclick-9me-9watch-2025_pmax-pla_w-9con-9cpa-9cple-9g-9watch8-9kv-watch8-9pmax-9na-9na-9na-9na_3rd-pty-9na-9030-9bhv-9a1849&gad_source=1&gad_campaignid=22821144168&gbraid=0AAAAADJayZ0dG1NJI6OoMJo7lGcxV5vbR&gclid=Cj0KCQjwqebEBhD9ARIsAFZMbfxEdeaKdSK6r-X-yY0MPhSwC9kJeOXMShSH3rPuT2-bzyyMyZQ6w0saAmpsEALw_wcB" class="btn-product">Ver catálogo</a>
+      </div>
+      <div class="supplier-card">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Positivo Tecnologia">
+        <h3>Positivo Tecnologia</h3>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <span>4.9 (720 avaliações)</span>
+        </div>
+        <p>Maior fabricante brasileira de computadores, com linhas para consumidores finais, educação e empresas. Fábricas em Curitiba e Manaus, com ampla rede de distribuição nacional.</p>
+        <a href="https://loja.positivoempresas.com.br/?utm_source=google&utm_medium=cpc&utm_campaign=b2b_search&utm_term=src&utm_content=brand&gad_source=1&gad_campaignid=22180727429&gbraid=0AAAAA-sJf2duHRwSsHCW-a5wD92ZLh-MP&gclid=Cj0KCQjwqebEBhD9ARIsAFZMbfzPxf2jR3CB3Y-aywise9T3O_govXJPrcuFYTTFM_uG1SCD2doh1vAaAk9-EALw_wcB" class="btn-product">Ver catálogo</a>
+      </div>
+      <div class="supplier-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdVDmNEyLR-zJko5seRt1T9afyfNY9JuNTj8bCqmjZXa3DtVcBRRfdu-e_&s=10" alt="TOTVS">
+  <h3>TOTVS</h3>
+  <div class="rating">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star-half-alt"></i>
+    <span>4.7 (1.240 avaliações)</span>
+  </div>
+  <p>Líder brasileira em software de gestão empresarial (ERP), com soluções para empresas de todos os portes. Presente em 41 países com mais de 30 mil clientes ativos.</p>
+  <a href="https://www.totvs.com/" class="btn-product">Ver catálogo</a>
+</div>
+
+<div class="supplier-card">
+  <img src="https://www.checkpoint.com/pt/wp-content/uploads/stefanini-logo.png" alt="Stefanini">
+  <h3>Stefanini</h3>
+  <div class="rating">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <span>4.8 (980 avaliações)</span>
+  </div>
+  <p>Multinacional brasileira de soluções em TI e terceirização, com presença em 41 países. Oferece consultoria, desenvolvimento de software e suporte técnico especializado.</p>
+  <a href="https://stefanini.com/pt-br/" class="btn-product">Ver catálogo</a>
+</div>
+
+<div class="supplier-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoZsjPGxmhDiWqFKIx88BPqZUC20BPSyj-BKdHEDLZ-1zj3YV7NqkHvKyv&s=10" alt="Linx">
+  <h3>Linx</h3>
+  <div class="rating">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <span>4.9 (1.560 avaliações)</span>
+  </div>
+  <p>Especialista em soluções de varejo e gestão empresarial. Líder no segmento de varejo no Brasil, atendendo mais de 100 mil pontos de venda em diversos segmentos.</p>
+  <a href="https://www.linx.com.br/" class="btn-product">Ver catálogo</a>
+</div>
+
+<div class="supplier-card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/CI%26T_Logo.png" alt="CI&T">
+  <h3>CI&T</h3>
+  <div class="rating">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <span>4.9 (890 avaliações)</span>
+  </div>
+  <p>Empresa global de transformação digital, especializada em estratégia digital, design e engenharia de software. Atende grandes empresas em mais de 15 países.</p>
+  <a href="https://ciandt.com/br" class="btn-product">Ver catálogo</a>
+</div>
+    </div>
+  </section>
+
+  <!-- Seção de Artigos/Notícias -->
+  <section class="articles-section">
+    <h2><i class="fas fa-newspaper"></i> Artigos e Curiosidades</h2>
+    <div class="articles-grid">
+      <article class="article-card">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Tendências de TI">
+        <div class="article-content">
+          <h3>5 Tendências de TI para 2024 que Todo Fornecedor Deve Conhecer</h3>
+          <p class="meta">Publicado em 15/10/2023 • 8 min de leitura</p>
+          <p>O mercado de tecnologia está em constante evolução. Neste artigo, exploramos as principais tendências que vão dominar o próximo ano, desde computação quântica até IA generativa, e como os fornecedores podem se preparar para atender essa demanda.</p>
+          <a href="#" class="read-more" onclick="toggleArticle(event, 'article1')">Ler mais →</a>
+          <div id="article1" class="expanded-content">
+            <p><strong>1. Inteligência Artificial Generativa:</strong> A IA que cria conteúdo original (texto, imagens, código) está revolucionando setores. Fornecedores devem oferecer soluções com suporte a ferramentas como ChatGPT, DALL-E e outras plataformas de IA criativa.</p>
+            <p><strong>2. Computação Quântica Aplicada:</strong> Embora ainda em estágio inicial, empresas como IBM e Google já oferecem acesso a computadores quânticos via cloud. Fornecedores devem se preparar para explicar o potencial desta tecnologia para resolver problemas complexos.</p>
+            <p><strong>3. Sustentabilidade Tecnológica:</strong> A pressão por produtos eco-friendly cresce. Fornecedores que oferecerem equipamentos com menor consumo energético, materiais reciclados e programas de logística reversa terão vantagem competitiva.</p>
+            <p><strong>4. Edge Computing:</strong> Com a explosão de IoT, processamento de dados está migrando para a "borda" da rede. Soluções locais com baixa latência serão cada vez mais demandadas, especialmente em indústrias.</p>
+            <p><strong>5. Realidade Aumentada Corporativa:</strong> AR está saindo dos games para aplicações empresariais. Fornecedores devem conhecer soluções para treinamento, manutenção remota e visualização de projetos em 3D.</p>
+          </div>
+        </div>
+      </article>
+      <article class="article-card">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Gestão de Fornecedores">
+        <div class="article-content">
+          <h3>Gestão Estratégica de Fornecedores: Como Maximizar Resultados</h3>
+          <p class="meta">Publicado em 05/10/2023 • 6 min de leitura</p>
+          <p>Descubra estratégias comprovadas para gerenciar relacionamentos com fornecedores de tecnologia, negociar melhores condições e criar parcerias que agregam valor real ao seu negócio de TI.</p>
+          <a href="#" class="read-more" onclick="toggleArticle(event, 'article2')">Ler mais →</a>
+          <div id="article2" class="expanded-content">
+            <p><strong>1. Mapeamento Completo da Cadeia:</strong> Conheça todos os elos da sua cadeia de suprimentos. Diversifique fornecedores para evitar dependência excessiva de um único parceiro, mas mantenha um núcleo estratégico de parcerias fortes.</p>
+            <p><strong>2. KPIs Claros e Mensuráveis:</strong> Defina indicadores como tempo de entrega, qualidade do produto, suporte pós-venda e flexibilidade. Monitore regularmente e compartilhe os resultados com os fornecedores.</p>
+            <p><strong>3. Negociação Baseada em Valor:</strong> Em vez de focar apenas no preço, busque acordos que criem valor mútuo. Exemplos: compras em volume com desconto progressivo, pagamentos antecipados com benefícios, ou parcerias em desenvolvimento de produtos.</p>
+            <p><strong>4. Tecnologia como Aliada:</strong> Utilize plataformas como a TechSuppliers para comparar fornecedores em tempo real. Sistemas de ERP integrados podem automatizar pedidos e acompanhar desempenho.</p>
+            <p><strong>5. Relacionamento de Longo Prazo:</strong> Fornecedores estratégicos devem ser tratados como parceiros. Compartilhe sua visão de futuro, envolva-os em projetos de inovação e reconheça bons desempenhos.</p>
+            <p>Um estudo da McKinsey mostra que empresas com gestão estratégica de fornecedores alcançam redução de 15-30% nos custos totais de aquisição e aumentam a qualidade dos produtos em até 40%.</p>
+          </div>
+        </div>
+      </article>
+      <article class="article-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2VdEdaWXtTIy7CDXEARr0VPjkAxbeLl6DizUxSQC1QUVnFz-t-qMkQn7n&s=10" alt="LGPD - Lei Geral de Proteção de Dados">
+  <div class="article-content">
+    <h3>LGPD: O que sua empresa precisa saber para evitar multas milionárias</h3>
+    <p class="meta">Publicado em 15/10/2023 • 12 min de leitura</p>
+    <p>Entenda os principais aspectos da Lei Geral de Proteção de Dados e como adequar seu negócio para evitar penalidades que podem chegar a R$ 50 milhões.</p>
+    <a href="#" class="read-more" onclick="toggleArticle(event, 'article-lgpd')">Ler mais →</a>
+    <div id="article-lgpd" class="expanded-content">
+      <p><strong>Princípios fundamentais da LGPD:</strong> A lei estabelece 10 princípios para o tratamento de dados pessoais, incluindo finalidade, adequação, necessidade e transparência. Conforme explicado pela <a href="https://www.gov.br/anpd/pt-br" target="_blank">ANPD (Autoridade Nacional de Proteção de Dados)</a>, órgão responsável pela fiscalização.</p>
+      
+      <p><strong>Multas e sanções:</strong> As penalidades podem chegar a R$ 50 milhões por infração, conforme estabelecido no art. 52 da Lei nº 13.709/2018. O <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank">texto oficial da lei</a> está disponível no portal do Planalto.</p>
+      
+      <p><strong>Direitos dos titulares:</strong> A LGPD garante aos cidadãos direitos como acesso, correção, eliminação e portabilidade de seus dados. O <a href="https://www.serpro.gov.br/lgpd/menu/a-lgpd/o-que-muda-para-o-cidadao" target="_blank">Serpro</a> detalha esses direitos em seu portal oficial.</p>
+      
+      <p><strong>Implementação prática:</strong> Estudo do <a href="https://www.camara.leg.br/noticias/807176-entenda-com-funciona-a-lei-geral-de-protecao-de-dados-lgpd/" target="_blank">Portal da Câmara dos Deputados</a> mostra que 67% das médias e grandes empresas já iniciaram seu processo de adequação à LGPD.</p>
+      
+      <p><strong>Cases de sucesso:</strong> Segundo a <a href="https://www.abranet.org.br/Noticias/Setor-de-tecnologia-tem-ate-outubro-para-se-adequar-a-LGPD-5266.html" target="_blank">Abranet (Associação Brasileira de Internet)</a>, empresas que se adequaram antecipadamente reportaram aumento de 22% na confiança dos clientes.</p>
+      
+      <p><strong>Futuro da LGPD:</strong> Especialistas da <a href="https://www.fgv.br/noticias/ultimas-noticias/2021/lei-geral-de-protecao-de-dados-lgpd-ja-esta-em-vigor-mas-adequacao" target="_blank">FGV (Fundação Getúlio Vargas)</a> projetam que a conformidade com a LGPD se tornará um diferencial competitivo essencial no mercado brasileiro.</p>
+    </div>
+  </div>
+</article>
+      <article class="article-card">
+  <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Gestão Financeira">
+  <div class="article-content">
+    <h3>Gestão Financeira para Pequenos Negócios: Guia Prático</h3>
+    <p class="meta">Publicado em 20/10/2023 • 8 min de leitura</p>
+    <p>Descubra estratégias comprovadas para organizar suas finanças, controlar fluxo de caixa e tomar decisões que impulsionam a lucratividade do seu negócio.</p>
+    <a href="#" class="read-more" onclick="toggleArticle(event, 'article-financas')">Ler mais →</a>
+    <div id="article-financas" class="expanded-content">
+      <p><strong>Controle de Fluxo de Caixa:</strong> Segundo o <a href="https://www.sebrae.com.br/sites/PortalSebrae/artigos/controle-seu-fluxo-de-caixa,0e69e4924ef92410VgnVCM1000004c00210aRCRD" target="_blank">Sebrae</a>, 50% das pequenas empresas fecham antes de completar 2 anos devido à falta de controle financeiro. Implementar um fluxo de caixa detalhado é fundamental para sobrevivência.</p>
+      
+      <p><strong>Indicadores Financeiros Essenciais:</strong> O <a href="https://www.bcb.gov.br/estabilidadefinanceira/encontreconteudo" target="_blank">Banco Central</a> destaca a importância de monitorar indicadores como liquidez, endividamento e rentabilidade para avaliar a saúde financeira da empresa.</p>
+      
+      <p><strong>Planejamento Tributário:</strong> Especialistas da <a href="https://www.receita.fazenda.gov.br/pessoajuridica/publico" target="_blank">Receita Federal</a> recomendam a escolha do regime tributário adequado como fator crucial para a economia de até 30% nos impostos.</p>
+      
+      <p><strong>Gestão de Contas a Receber:</strong> Pesquisa da <a href="https://www.febraban.org.br/assuntos/produtos-e-servicos/para-empresas/boletos" target="_blank">Febraban</a> mostra que empresas que adotam processos rigorosos de cobrança reduzem inadimplência em até 45%.</p>
+      
+      <p><strong>Educação Financeira:</strong> O <a href="https://www.gov.br/mds/pt-br/assuntos/noticias/2023/educacao-financeira-pode-ser-aliada-para-superar-dificuldades-economicas" target="_blank">Ministério do Desenvolvimento Social</a> enfatiza que o conhecimento financeiro básico é determinante para o sucesso empresarial.</p>
+      
+      <p><strong>Ferramentas Digitais:</strong> Estudo da <a href="https://www.abracon.org.br/noticia/tecnologia-e-gestao-financeira-uma-parceria-que-da-certo/" target="_blank">Abracon</a> revela que microempresas que utilizam sistemas de gestão financeira aumentam sua lucratividade em média 18% no primeiro ano.</p>
+    </div>
+  </div>
+</article>
+      <article class="article-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR06Mv4bSI67W7n2py7aa7o1oqVxRsEoW3Xrg&usqp=CAU" alt="Segurança da Informação">
+  <div class="article-content">
+    <h3>Segurança da Informação: Proteção Contra Ameaças Digitais no Ambiente Corporativo</h3>
+    <p class="meta">Publicado em 25/10/2023 • 14 min de leitura</p>
+    <p>Conheça as principais estratégias para proteger dados corporativos contra ataques cibernéticos e evitar prejuízos que podem chegar a milhões de reais.</p>
+    <a href="#" class="read-more" onclick="toggleArticle(event, 'article-seguranca')">Ler mais →</a>
+    <div id="article-seguranca" class="expanded-content">
+      <p><strong>Panorama de Ameaças no Brasil:</strong> Segundo o <a href="https://www.cert.br/" target="_blank">CERT.br (Centro de Estudos, Resposta e Tratamento de Incidentes de Segurança)</a>, o Brasil registrou um aumento de 61% em incidentes cibernéticos no primeiro semestre de 2023 comparado ao mesmo período de 2022.</p>
+      
+      <p><strong>Legislação e Conformidade:</strong> A <a href="https://www.gov.br/anpd/pt-br" target="_blank">ANPD</a> alerta que além da LGPD, empresas devem seguir as diretrizes da Estratégia Nacional de Segurança Cibernética para evitar sanções.</p>
+      
+      <p><strong>Ransomware e Prejuízos:</strong> Pesquisa da <a href="https://www.abes.org.br/" target="_blank">ABES (Associação Brasileira das Empresas de Software)</a> indica que ataques de ransomware causaram prejuízos de R$ 40 bilhões às empresas brasileiras em 2022.</p>
+      
+      <p><strong>Boas Práticas de Segurança:</strong> O <a href="https://www.gov.br/gsi/pt-br" target="_blank">GSI (Gabinete de Segurança Institucional)</a> recomenda a implementação de políticas de acesso mínimo, autenticação multifator e backups regulares como medidas essenciais.</p>
+      
+      <p><strong>Conscientização de Usuários:</strong> Estudo do <a href="https://www.serpro.gov.br/" target="_blank">Serpro</a> mostra que 85% dos vazamentos de dados têm como causa principal falha humana, destacando a importância de treinamentos contínuos.</p>
+      
+      <p><strong>Tendências em Cibersegurança:</strong> Especialistas da <a href="https://www.fbb.org.br/" target="_blank">Fundação Banco do Brasil</a> projetam que investimentos em inteligência artificial para detecção de ameaças devem crescer 78% até 2025.</p>
+    </div>
+  </div>
+</article>
+      <article class="article-card">
+  <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Governança de TI">
+  <div class="article-content">
+    <h3>Governança de TI: Alinhando Tecnologia aos Objetivos de Negócio</h3>
+    <p class="meta">Publicado em 28/10/2023 • 11 min de leitura</p>
+    <p>Descubra como implementar frameworks de governança de TI que garantem alinhamento estratégico, entrega de valor e compliance regulatório.</p>
+    <a href="#" class="read-more" onclick="toggleArticle(event, 'article-govti')">Ler mais →</a>
+    <div id="article-govti" class="expanded-content">
+      <p><strong>Importância Estratégica:</strong> Pesquisa do <a href="https://www.bnb.gov.br/" target="_blank">Banco do Nordeste</a> revela que empresas com governança de TI bem estruturada apresentam 32% mais chances de sucesso em projetos digitais.</p>
+      
+      <p><strong>Frameworks Mais Utilizados:</strong> Segundo a <a href="https://www.abnt.org.br/" target="_blank">ABNT (Associação Brasileira de Normas Técnicas)</a>, COBIT, ITIL e ISO/IEC 38500 são os frameworks de governança de TI mais adotados no Brasil.</p>
+      
+      <p><strong>Retorno sobre Investimento:</strong> Estudo do <a href="https://www.ibgc.org.br/" target="_blank">IBGC (Instituto Brasileiro de Governança Corporativa)</a> mostra que cada real investido em governança de TI gera R$ 3,20 em economia por evitar retrabalho e retificações.</p>
+      
+      <p><strong>Governança no Setor Público:</strong> O <a href="https://www.tcu.gov.br/" target="_blank">TCU (Tribunal de Contas da União)</a> estabeleceu diretrizes específicas para governança de TI no setor público através do Acórdão 3.083/2018.</p>
+      
+      <p><strong>Maturidade das Organizações:</strong> Pesquisa da <a href="https://www.brasscom.org.br/" target="_blank">Brasscom</a> indica que apenas 38% das empresas brasileiras possuem modelo de governança de TI considerado maduro ou avançado.</p>
+      
+      <p><strong>Tendências e Futuro:</strong> Especialistas da <a href="https://www5.usp.br/" target="_blank">Universidade de São Paulo (USP)</a> projetam que governança de TI será integrada à governança corporativa em 70% das grandes empresas até 2026.</p>
+    </div>
+  </div>
+</article>
+      <article class="article-card">
+  <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bolsa de Valores">
+  <div class="article-content">
+    <h3>Investindo na Bolsa Brasileira: Guia para Iniciantes no Mercado de Ações</h3>
+    <p class="meta">Publicado em 01/11/2023 • 16 min de leitura</p>
+    <p>Aprenda os conceitos fundamentais para começar a investir na B3, entender análise de empresas e construir uma carteira de investimentos diversificada.</p>
+    <a href="#" class="read-more" onclick="toggleArticle(event, 'article-bolsa')">Ler mais →</a>
+    <div id="article-bolsa" class="expanded-content">
+      <p><strong>Panorama do Mercado Brasileiro:</strong> Dados da <a href="https://www.b3.com.br/" target="_blank">B3 (Brasil Bolsa Balcão)</a> mostram que o número de investidores pessoa física atingiu 5 milhões em 2023, crescimento de 48% em dois anos.</p>
+      
+      <p><strong>Educação Financeira:</strong> A <a href="https://www.cvm.gov.br/" target="_blank">CVM (Comissão de Valores Mobiliários)</a> oferece cursos gratuitos para iniciantes através do Portal do Investidor, com mais de 500 mil participantes em 2023.</p>
+      
+      <p><strong>Desempenho Histórico:</strong> Estudo do <a href="https://www.ibovespa.com.br/" target="_blank">Ibovespa</a> indica que o índice teve retorno médio anual de 13,2% nos últimos 20 anos, considerando dividendos e ajustes inflacionários.</p>
+      
+      <p><strong>Perfil do Investidor Brasileiro:</strong> Pesquisa da <a href="https://www.anbima.com.br/" target="_blank">Anbima (Associação Brasileira das Entidades dos Mercados Financeiro e de Capitais)</a> revela que 62% dos novos investidores têm menos de 35 anos.</p>
+      
+      <p><strong>Fundos de Investimento vs. Ações Diretas:</strong> Dados da <a href="https://www.apebrasil.org.br/" target="_blank">Anbima</a> mostram que fundos de ações captaram R$ 42 bilhões em 2023, enquanto investimentos diretos em ações cresceram 35%.</p>
+      
+      <p><strong>Tendências e Perspectivas:</strong> Analistas do <a href="https://www.bcb.gov.br/" target="_blank">Banco Central</a> projetam que a participação de pequenos investidores no mercado acionário deve dobrar até 2027, impulsionada por plataformas digitais.</p>
+    </div>
+  </div>
+</article>
+      <article class="article-card">
+  <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Caminhão na estrada - logística no Brasil">
+  <div class="article-content">
+    <h3>Desafios Logísticos no Brasil: Estratégias para Superar as Barreiras do Transporte Nacional</h3>
+    <p class="meta">Publicado em 05/11/2023 • 18 min de leitura</p>
+    <p>Entenda os principais obstáculos da cadeia logística brasileira e conheça soluções inovadoras que empresas estão adotando para reduzir custos e melhorar a eficiência.</p>
+    <a href="#" class="read-more" onclick="toggleArticle(event, 'article-logistica')">Ler mais →</a>
+    <div id="article-logistica" class="expanded-content">
+      <p><strong>Infraestrutura Rodoviária:</strong> Segundo a <a href="https://pesquisarodovias.cnt.org.br/" target="_blank">Pesquisa CNT de Rodovias</a>, 57% das rodovias brasileiras apresentam deficiências no estado de conservação, impactando diretamente nos custos operacionais.</p>
+      
+      <p><strong>Custos Logísticos:</strong> Pesquisa da <a href="https://www.ipea.gov.br/portal/index.php?option=com_content&view=article&id=34777" target="_blank">IPEA</a> revela que o Brasil gasta 12% do PIB com logística, contra 8% em países desenvolvidos.</p>
+      
+      <p><strong>Modal Ferroviário:</strong> Dados da <a href="https://www.gov.br/antt/pt-br/assuntos/noticias/antt-divulga-dados-do-setor-ferroviario" target="_blank">ANTT</a> mostram que apenas 15% da carga é transportada por ferrovias, enquanto nos EUA esse índice chega a 40%.</p>
+      
+      <p><strong>Tecnologia e Inovação:</strong> Estudo da <a href="https://www.abti.org.br/" target="_blank">ABTI</a> indica que empresas que investiram em sistemas de gestão logística reduziram custos em até 22%.</p>
+      
+      <p><strong>Entraves Burocráticos:</strong> Relatório do <a href="https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior" target="_blank">Receita Federal</a> aponta que a documentação exigida para transporte interestadual pode levar até 3 dias para ser processada.</p>
+      
+      <p><strong>Soluções Emergentes:</strong> Pesquisa da <a href="https://www.fgv.br/noticias/ultimas-noticias/2021/logistica-brasileira-tem-desafios-e-oportunidades" target="_blank">FGV</a> mostra que centros de distribuição estratégicos e roteirização inteligente estão reduzindo prazos de entrega em até 35%.</p>
+      
+      <p><strong>Perspectivas Futuras:</strong> Especialistas da <a href="https://www.gov.br/infraestrutura/pt-br/assuntos/noticias/2024/ministerio-da-infraestrutura-anuncia-investimentos-em-logistica" target="_blank">Ministério da Infraestrutura</a> projetam investimentos de R$ 100 bilhões em infraestrutura logística até 2030.</p>
+    </div>
+  </div>
+</article>
+      
+ 
+    </div>
+    <!-- Adicione este código no final da seção de Artigos/Notícias, antes do fechamento da seção </section> -->
+<div class="custom-link-container">
+  <a href="https://dashboard-site-psi.vercel.app/" class="custom-link" target="_blank">
+    <span class="link-text">Explore Nossos Dashboards Exclusivos em diversas áreas da administração de empresas</span>
+    <span class="link-icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <path fill="currentColor" d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" />
+      </svg>
+    </span>
+    <span class="link-hover-effect"></span>
+  </a>
+</div>
+
+<style>
+  .custom-link-container {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .custom-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+    transition: all 0.4s ease;
+    z-index: 1;
+  }
+  
+  .custom-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+  }
+  
+  .custom-link:active {
+    transform: translateY(1px);
+  }
+  
+  .link-text {
+    position: relative;
+    z-index: 2;
+    margin-right: 10px;
+  }
+  
+  .link-icon {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .custom-link:hover .link-icon {
+    transform: translateX(3px);
+  }
+  
+  .link-hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  
+  .custom-link:hover .link-hover-effect {
+    opacity: 1;
+  }
+  
+  /* Efeito de onda ao clicar */
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  
+  .custom-link:focus:not(:active)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    animation: ripple 0.6s ease-out;
+    z-index: 0;
+  }
+</style>
+  </section>
+
+  <!-- Seção de Benefícios -->
+  <section class="benefits-section">
+    <h2><i class="fas fa-check-circle"></i> Por que usar o TechSuppliers?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <i class="fas fa-search-dollar"></i>
+        <h3>Compare Fornecedores</h3>
+        <p>Tenha acesso a uma base completa de fornecedores de tecnologia com avaliações reais, prazos de entrega e histórico de desempenho para tomar a melhor decisão de compra.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Segurança nas Transações</h3>
+        <p>Nossa plataforma verifica todos os fornecedores cadastrados e oferece mecanismos de proteção para garantir transações seguras e sem surpresas.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-bolt"></i>
+        <h3>Atualizações em Tempo Real</h3>
+        <p>Receba alertas personalizados sobre novos produtos, promoções relâmpago e oportunidades exclusivas baseadas no seu perfil de compras.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Relatórios e Analytics</h3>
+        <p>Acesse dashboards completos com análises de mercado, tendências de preços e relatórios personalizados para otimizar suas estratégias de compra.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-users"></i>
+        <h3>Rede de Contatos</h3>
+        <p>Conecte-se com outros profissionais do setor, participe de fóruns exclusivos e amplie sua rede de contatos na comunidade TechSuppliers.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-headset"></i>
+        <h3>Suporte Especializado</h3>
+        <p>Nossa equipe de especialistas em TI está disponível para ajudar na escolha dos melhores fornecedores e produtos para suas necessidades específicas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Newsletter -->
+  <section class="newsletter-section">
+    <div class="newsletter-content">
+      <h2><i class="fas fa-envelope"></i> Receba nossas atualizações</h2>
+      <p>Inscreva-se em nossa newsletter para receber as últimas notícias do setor, lançamentos de produtos, ofertas exclusivas e conteúdos especiais sobre tecnologia e gestão de fornecedores.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Seu melhor e-mail" required>
+        <button type="submit" class="btn-newsletter">Assinar</button>
+      </form>
+      <p class="privacy-text">Ao se inscrever, você concorda com nossa <a href="Privacidade.html">Política de Privacidade</a>. Não compartilhamos seus dados com terceiros.</p>
+    </div>
+  </section>
+  
+
+  <button class="back-to-top" title="Voltar ao topo">↑</button>
+
+  <script>
+    // JavaScript para funcionalidades da página
+    document.addEventListener('DOMContentLoaded', function() {
+      // Efeito de hover nos cards de produto
+      const productCards = document.querySelectorAll('.product-card');
+      productCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+        });
+        card.addEventListener('mouseleave', function() {
+          this.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+        });
+      });
+      
+      // Validação do formulário de newsletter
+      const newsletterForm = document.getElementById('newsletterForm');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = this.querySelector('input[type="email"]').value;
+          
+          if (validateEmail(email)) {
+            alert('Obrigado por se inscrever! Você receberá nossas atualizações em breve.');
+            this.reset();
+          } else {
+            alert('Por favor, insira um endereço de e-mail válido.');
+          }
+        });
+      }
+      
+      // Função para validar email
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+      
+      // Botão de voltar ao topo
+      const backToTop = document.querySelector('.back-to-top');
+      
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTop.style.display = 'block';
+        } else {
+          backToTop.style.display = 'none';
+        }
+      });
+      
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      });
+    });
+    
+    // Função para expandir/recolher artigos
+    function toggleArticle(event, articleId) {
+      event.preventDefault();
+      const articleContent = document.getElementById(articleId);
+      
+      if (articleContent.style.display === 'block') {
+        articleContent.style.display = 'none';
+        event.target.textContent = 'Ler mais →';
+      } else {
+        articleContent.style.display = 'block';
+        event.target.textContent = 'Ler menos ↑';
+        // Rolagem suave para o conteúdo expandido
+        articleContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  
+  // script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Encontrar o elemento com a classe site-name
+    const siteNameElement = document.querySelector('.site-name');
+    
+    if (siteNameElement) {
+        // Adicionar ícone antes do texto
+        const originalText = siteNameElement.textContent;
+        siteNameElement.innerHTML = `
+            <span class="site-icon">⚙️</span>
+            <span class="site-text">${originalText}</span>
+        `;
+        
+        // Adicionar classe para animação
+        siteNameElement.classList.add('animated-site-name');
+    }
+});
+
+
+  </script>
+</main>
+</body>
+</html>

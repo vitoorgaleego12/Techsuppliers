@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar de Categorias</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="top-header">
+    <a href="index.html" class="botao-inicio">Início</a>
+    <a href="cadastro.html" class="botao-cadastro">cadastro</a>
+    <a href="login.html" class="botao-login">login</a>
+    <div class="site-name">TechSuppliers</div>
+  </div>
+  <nav class="sidebar" aria-label="Categorias">
+    <h2>Categorias</h2>
+    <ul class="nav-links">
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="computadores-link" aria-expanded="false" aria-controls="computadores-submenu">Computadores e Periféricos</a>
+        <ul class="submenu" id="computadores-submenu" aria-label="Subcategoria Computadores e Periféricos">
+          <li><a href="./Notebooks.html">Notebooks</a></li>
+          <li><a href="./Desktops.html">Desktops</a></li>
+          <li><a href="./Monitores.html">Monitores</a></li>
+          <li><a href="./Teclados mecanicos.html">Teclados mecânicos</a></li>
+          <li><a href="./Teclados ergonomicos.html">Teclados ergonômicos</a></li>
+          <li><a href="./Mouses gamers.html">Mouses gamers</a></li>
+          <li><a href="./Impressoras multifuncionais.html">Impressoras multifuncionais</a></li>
+          <li><a href="./Webcams Full HD.html">Webcams Full HD</a></li>
+          <li><a href="./Scanners.html">Scanners</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="hardware-link" aria-expanded="false" aria-controls="hardware-submenu">Componentes de Hardware</a>
+        <ul class="submenu" id="hardware-submenu" aria-label="Subcategoria Componentes de Hardware">
+          <li><a href="./CPUs (Intel-AMD).html">CPUs (Intel/AMD)</a></li>
+          <li><a href="./GPUs (NVIDIA-AMD).html">GPUs (NVIDIA/AMD)</a></li>
+          <li><a href="./Placas-mãe ATX-Micro ATX.html">Placas-mãe ATX/Micro ATX</a></li>
+          <li><a href="./Memórias RAM DDR4-DDR5.html">Memórias RAM DDR4/DDR5</a></li>
+          <li><a href="./SSD M.2-SATA.html">SSD M.2/SATA</a></li>
+          <li><a href="./HD 2.5-3.5.html">HD 2.5"/3.5"</a></li>
+          <li><a href="./Water Coolers.html">Water Coolers</a></li>
+          <li><a href="./Fontes 80 Plus.html">Fontes 80 Plus</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="acessorios-link" aria-expanded="false" aria-controls="acessorios-submenu">Acessórios</a>
+        <ul class="submenu" id="acessorios-submenu" aria-label="Subcategoria Acessórios">
+          <li><a href="./Headsets com microfone.html">Headsets com microfone</a></li>
+          <li><a href="./Hubs USB-C.html">Hubs USB-C</a></li>
+          <li><a href="./Suportes ergonomicos.html">Suportes ergonômicos</a></li>
+          <li><a href="./Bolsas para notebook.html">Bolsas para notebook</a></li>
+          <li><a href="./Dock stations.html">Dock stations</a></li>
+          <li><a href="./Mouses verticais.html">Mouses verticais</a></li>
+          <li><a href="./Teclados Bluetooth.html">Teclados Bluetooth</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="redes-link" aria-expanded="false" aria-controls="redes-submenu">Redes e Conectividade</a>
+        <ul class="submenu" id="redes-submenu" aria-label="Subcategoria Redes e Conectividade">
+          <li><a href="./Roteadores Wi-Fi 6.html">Roteadores Wi-Fi 6</a></li>
+          <li><a href="./Adaptadores USB Wi-Fi.html">Adaptadores USB Wi-Fi</a></li>
+          <li><a href="./Powerlines.html">Powerlines</a></li>
+          <li><a href="./Switches gerenciáveis.html">Switches gerenciáveis</a></li>
+          <li><a href="./Cabos CAT6.html">Cabos CAT6</a></li>
+          <li><a href="./Antenas Wi-Fi.html">Antenas Wi-Fi</a></li>
+          <li><a href="./Repetidores de sinal.html">Repetidores de sinal</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="armazenamento-link" aria-expanded="false" aria-controls="armazenamento-submenu">Armazenamento</a>
+        <ul class="submenu" id="armazenamento-submenu" aria-label="Subcategoria Armazenamento">
+          <li><a href="./Pendrives 128GB.html">Pendrives 128GB</a></li>
+          <li><a href="./Cartões microSD UHS-I.html">Cartões microSD UHS-I</a></li>
+          <li><a href="./HDs externos de 2TB.html">HDs externos de 2TB</a></li>
+          <li><a href="./SSDs NVMe.html">SSDs NVMe</a></li>
+          <li><a href="./Cases para HD-SSD.html">Cases para HD/SSD</a></li>
+          <li><a href="./Servidores NAS.html">Servidores NAS</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="software-link" aria-expanded="false" aria-controls="software-submenu">Softwares</a>
+        <ul class="submenu" id="software-submenu" aria-label="Subcategoria Softwares">
+          <li><a href="./Windows 10-11.html">Windows 10/11</a></li>
+          <li><a href="./Linux (Ubuntu, Mint).html">Linux (Ubuntu, Mint)</a></li>
+          <li><a href="./Microsoft Office.html">Microsoft Office</a></li>
+          <li><a href="./Adobe Creative Cloud.html">Adobe Creative Cloud</a></li>
+          <li><a href="./Antivírus (Norton, Avast, Kaspersky).html">Antivírus (Norton, Avast, Kaspersky)</a></li>
+          <li><a href="./IDEs (VS Code, IntelliJ, NetBeans).html">IDEs (VS Code, IntelliJ, NetBeans)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="dispositivos-moveis-link" aria-expanded="false" aria-controls="dispositivos-moveis-submenu">Dispositivos Móveis e Wearables</a>
+        <ul class="submenu" id="dispositivos-moveis-submenu" aria-label="Subcategoria Dispositivos Móveis e Wearables">
+          <li><a href="./Smartphones Android-iOS.html">Smartphones Android/iOS</a></li>
+          <li><a href="./Tablets com caneta.html">Tablets com caneta</a></li>
+          <li><a href="./Smartwatches.html">Smartwatches</a></li>
+          <li><a href="./Pulseiras fitness.html">Pulseiras fitness</a></li>
+          <li><a href="./Fones Bluetooth com IA.html">Fones Bluetooth com IA</a></li>
+          <li><a href="./Leitores de eBook (Kindle, Kobo).html">Leitores de eBook (Kindle, Kobo)</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="tecnologia-casa-link" aria-expanded="false" aria-controls="tecnologia-casa-submenu">Tecnologia para Casa</a>
+        <ul class="submenu" id="tecnologia-casa-submenu" aria-label="Subcategoria Tecnologia para Casa">
+          <li><a href="./Smart TVs 4K.html">Smart TVs 4K</a></li>
+          <li><a href="./Assistentes virtuais (Alexa, Google Nest).html">Assistentes virtuais (Alexa, Google Nest)</a></li>
+          <li><a href="./Lâmpadas Wi-Fi RGB.html">Lâmpadas Wi-Fi RGB</a></li>
+          <li><a href="./Interruptores inteligentes.html">Interruptores inteligentes</a></li>
+          <li><a href="./Tomadas Wi-Fi.html">Tomadas Wi-Fi</a></li>
+          <li><a href="./Robôs aspiradores.html">Robôs aspiradores</a></li>
+          <li><a href="./Câmeras IP.html">Câmeras IP</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="games-link" aria-expanded="false" aria-controls="games-submenu">Games</a>
+        <ul class="submenu" id="games-submenu" aria-label="Subcategoria Games">
+          <li><a href="./Consoles (PS5, Xbox Series X, Nintendo Switch).html">Consoles (PS5, Xbox Series X, Nintendo Switch)</a></li>
+          <li><a href="./Controles personalizados.html">Controles personalizados</a></li>
+          <li><a href="./Headsets com som 7.1.html">Headsets com som 7.1</a></li>
+          <li><a href="./Cadeiras gamers.html">Cadeiras gamers</a></li>
+          <li><a href="./Placas de captura.html">Placas de captura</a></li>
+          <li><a href="./Volantes e pedais.html">Volantes e pedais</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="javascript:void(0)" id="educacao-link" aria-expanded="false" aria-controls="educacao-submenu">Educação e Programação</a>
+        <ul class="submenu" id="educacao-submenu" aria-label="Subcategoria Educação e Programação">
+          <li><a href="./Kits Arduino e sensores.html">Kits Arduino e sensores</a></li>
+          <li><a href="./Raspberry Pi.html">Raspberry Pi</a></li>
+          <li><a href="./Robótica com Lego Mindstorms.html">Robótica com Lego Mindstorms</a></li>
+          <li><a href="./Micro-bit.html">Micro:bit</a></li>
+          <li><a href="./Livros técnicos.html">Livros técnicos</a></li>
+          <li><a href="./Cursos de TI online.html">Cursos de TI online</a></li>
+          <li><a href="./Emuladores de laboratório virtual.html">Emuladores de laboratório virtual</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  
+  <main class="content" tabindex="-1">
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Pesquisar produtos..." class="search-bar">
+    </div>
+    
+    <script>
+      const produtos = [
+        {
+          nome: "Adobe Creative Cloud Completo",
+          imagem: " https://wrhs1118.co.uk/wp-content/uploads/sites/4/2022/05/adobe-creative-cloud-express-resources-logo-icon.jpg",
+          descricao: "Pacote completo Adobe Creative Cloud com todos os aplicativos (Photoshop, Illustrator, Premiere Pro, etc.) - Assinatura anual",
+          preco: "2.399,88/ano",
+          fornecedores: [
+            { nome: "Adobe Oficial", link: "https://www.adobe.com/br/creativecloud/plans.html" },
+            { nome: "Amazon", link: "https://www.amazon.com.br/Adobe-Creative-Cloud-1-Year-Subscription/dp/B00QJDY9L4" },
+            { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br/adobe-creative-cloud-todos-aplicativos-assinatura-1-ano/p/155572500/in/adbe/" },
+            { nome: "Americanas", link: "https://www.americanas.com.br/produto/1346920369" },
+            { nome: "Submarino", link: "https://www.submarino.com.br/produto/1346920369" },
+            { nome: "Fast Shop", link: "https://www.fastshop.com.br/web/p/ADOBE-CREATIVE-CLOUD-1-ANO-TODOS-OS-APLICATIVOS/2-200-013-2-200013" },
+            { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/adobe-creative-cloud-todos-aplicativos-assinatura-1-ano/p/155572500" },
+            { nome: "Kabum", link: "https://www.kabum.com.br/produto/102953" },
+            { nome: "Pichau", link: "https://www.pichau.com.br/adobe-creative-cloud-todos-os-aplicativos-assinatura-1-ano" },
+            { nome: "Terabyte", link: "https://www.terabyteshop.com.br/produto/10295" }
+          ]
+        },
+        {
+          nome: "Adobe Photoshop CC",
+          imagem: "https://www.adobe.com/content/dam/shared/images/product-icons/svg/photoshop.svg",
+          descricao: "Adobe Photoshop CC - Assinatura individual mensal para edição de imagens profissionais",
+          preco: "89,90/mês",
+          fornecedores: [
+            { nome: "Adobe Oficial", link: "https://www.adobe.com/br/products/photoshop.html" },
+            { nome: "Amazon", link: "https://www.amazon.com.br/Adobe-Photoshop-CC-1-Month-Subscription/dp/B00QJDYKFQ" },
+            { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br/adobe-photoshop-cc-assinatura-individual-mensal/p/155572600/in/adbe/" },
+            { nome: "Americanas", link: "https://www.americanas.com.br/produto/1346921369" },
+            { nome: "Submarino", link: "https://www.submarino.com.br/produto/1346921369" },
+            { nome: "Fast Shop", link: "https://www.fastshop.com.br/web/p/ADOBE-PHOTOSHOP-CC-ASSINATURA-INDIVIDUAL-MENSAL/2-200-014-2-200014" },
+            { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/adobe-photoshop-cc-assinatura-individual-mensal/p/155572600" },
+            { nome: "Kabum", link: "https://www.kabum.com.br/produto/102954" },
+            { nome: "Pichau", link: "https://www.pichau.com.br/adobe-photoshop-cc-assinatura-individual-mensal" },
+            { nome: "Terabyte", link: "https://www.terabyteshop.com.br/produto/10296" }
+          ]
+        },
+        {
+          nome: "Adobe Illustrator CC",
+          imagem: "https://www.adobe.com/content/dam/shared/images/product-icons/svg/illustrator.svg",
+          descricao: "Adobe Illustrator CC - Assinatura individual mensal para design vetorial",
+          preco: "89,90/mês",
+          fornecedores: [
+            { nome: "Adobe Oficial", link: "https://www.adobe.com/br/products/illustrator.html" },
+            { nome: "Amazon", link: "https://www.amazon.com.br/Adobe-Illustrator-CC-1-Month-Subscription/dp/B00QJDYKFS" },
+            { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br/adobe-illustrator-cc-assinatura-individual-mensal/p/155572700/in/adbe/" },
+            { nome: "Americanas", link: "https://www.americanas.com.br/produto/1346922369" },
+            { nome: "Submarino", link: "https://www.submarino.com.br/produto/1346922369" },
+            { nome: "Fast Shop", link: "https://www.fastshop.com.br/web/p/ADOBE-ILLUSTRATOR-CC-ASSINATURA-INDIVIDUAL-MENSAL/2-200-015-2-200015" },
+            { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/adobe-illustrator-cc-assinatura-individual-mensal/p/155572700" },
+            { nome: "Kabum", link: "https://www.kabum.com.br/produto/102955" },
+            { nome: "Pichau", link: "https://www.pichau.com.br/adobe-illustrator-cc-assinatura-individual-mensal" },
+            { nome: "Terabyte", link: "https://www.terabyteshop.com.br/produto/10297" }
+          ]
+        },
+        {
+          nome: "Adobe Premiere Pro CC",
+          imagem: "https://www.adobe.com/content/dam/shared/images/product-icons/svg/premiere.svg",
+          descricao: "Adobe Premiere Pro CC - Assinatura individual mensal para edição de vídeo profissional",
+          preco: "89,90/mês",
+          fornecedores: [
+            { nome: "Adobe Oficial", link: "https://www.adobe.com/br/products/premiere.html" },
+            { nome: "Amazon", link: "https://www.amazon.com.br/Adobe-Premiere-Pro-CC-1-Month/dp/B00QJDYKFU" },
+            { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br/adobe-premiere-pro-cc-assinatura-individual-mensal/p/155572800/in/adbe/" },
+            { nome: "Americanas", link: "https://www.americanas.com.br/produto/1346923369" },
+            { nome: "Submarino", link: "https://www.submarino.com.br/produto/1346923369" },
+            { nome: "Fast Shop", link: "https://www.fastshop.com.br/web/p/ADOBE-PREMIERE-PRO-CC-ASSINATURA-INDIVIDUAL-MENSAL/2-200-016-2-200016" },
+            { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/adobe-premiere-pro-cc-assinatura-individual-mensal/p/155572800" },
+            { nome: "Kabum", link: "https://www.kabum.com.br/produto/102956" },
+            { nome: "Pichau", link: "https://www.pichau.com.br/adobe-premiere-pro-cc-assinatura-individual-mensal" },
+            { nome: "Terabyte", link: "https://www.terabyteshop.com.br/produto/10298" }
+          ]
+        },
+        {
+          nome: "Adobe After Effects CC",
+          imagem: "https://www.adobe.com/content/dam/shared/images/product-icons/svg/after-effects.svg",
+          descricao: "Adobe After Effects CC - Assinatura individual mensal para efeitos visuais e motion graphics",
+          preco: "89,90/mês",
+          fornecedores: [
+            { nome: "Adobe Oficial", link: "https://www.adobe.com/br/products/aftereffects.html" },
+            { nome: "Amazon", link: "https://www.amazon.com.br/Adobe-After-Effects-CC-1-Month/dp/B00QJDYKFW" },
+            { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br/adobe-after-effects-cc-assinatura-individual-mensal/p/155572900/in/adbe/" },
+            { nome: "Americanas", link: "https://www.americanas.com.br/produto/1346924369" },
+            { nome: "Submarino", link: "https://www.submarino.com.br/produto/1346924369" },
+            { nome: "Fast Shop", link: "https://www.fastshop.com.br/web/p/ADOBE-AFTER-EFFECTS-CC-ASSINATURA-INDIVIDUAL-MENSAL/2-200-017-2-200017" },
+            { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/adobe-after-effects-cc-assinatura-individual-mensal/p/155572900" },
+            { nome: "Kabum", link: "https://www.kabum.com.br/produto/102957" },
+            { nome: "Pichau", link: "https://www.pichau.com.br/adobe-after-effects-cc-assinatura-individual-mensal" },
+            { nome: "Terabyte", link: "https://www.terabyteshop.com.br/produto/10299" }
+          ]
+        },
+        {
+          nome: "Adobe Lightroom CC",
+          imagem: "https://www.adobe.com/content/dam/shared/images/product-icons/svg/lightroom.svg",
+          descricao: "Adobe Lightroom CC - Assinatura individual mensal para edição e organização de fotos",
+          preco: "29,90/mês",
+          fornecedores: [
+            { nome: "Adobe Oficial", link: "https://www.adobe.com/br/products/photoshop-lightroom.html" },
+            { nome: "Amazon", link: "https://www.amazon.com.br/Adobe-Photoshop-Lightroom-CC-1-Month/dp/B00QJDYKFY" },
+            { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br/adobe-lightroom-cc-assinatura-individual-mensal/p/155573000/in/adbe/" },
+            { nome: "Americanas", link: "https://www.americanas.com.br/produto/1346925369" },
+            { nome: "Submarino", link: "https://www.submarino.com.br/produto/1346925369" },
+            { nome: "Fast Shop", link: "https://www.fastshop.com.br/web/p/ADOBE-LIGHTROOM-CC-ASSINATURA-INDIVIDUAL-MENSAL/2-200-018-2-200018" },
+            { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/adobe-lightroom-cc-assinatura-individual-mensal/p/155573000" },
+            { nome: "Kabum", link: "https://www.kabum.com.br/produto/102958" },
+            { nome: "Pichau", link: "https://www.pichau.com.br/adobe-lightroom-cc-assinatura-individual-mensal" },
+            { nome: "Terabyte", link: "https://www.terabyteshop.com.br/produto/10300" }
+          ]
+        },
+        {
+          nome: "Adobe InDesign CC",
+          imagem: "https://www.adobe.com/content/dam/shared/images/product-icons/svg/indesign.svg",
+          descricao: "Adobe InDesign CC - Assinatura individual mensal para design editorial",
+          preco: "89,90/mês",
+          fornecedores: [
+            { nome: "Adobe Oficial", link: "https://www.adobe.com/br/products/indesign.html" },
+            { nome: "Amazon", link: "https://www.amazon.com.br/Adobe-InDesign-CC-1-Month-Subscription/dp/B00QJDYKG2" },
+            { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br/adobe-indesign-cc-assinatura-individual-mensal/p/155573100/in/adbe/" },
+            { nome: "Americanas", link: "https://www.americanas.com.br/produto/1346926369" },
+            { nome: "Submarino", link: "https://www.submarino.com.br/produto/1346926369" },
+            { nome: "Fast Shop", link: "https://www.fastshop.com.br/web/p/ADOBE-INDESIGN-CC-ASSINATURA-INDIVIDUAL-MENSAL/2-200-019-2-200019" },
+            { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/adobe-indesign-cc-assinatura-individual-mensal/p/155573100" },
+            { nome: "Kabum", link: "https://www.kabum.com.br/produto/102959" },
+            { nome: "Pichau", link: "https://www.pichau.com.br/adobe-indesign-cc-assinatura-individual-mensal" },
+            { nome: "Terabyte", link: "https://www.terabyteshop.com.br/produto/10301" }
+          ]
+        },
+        {
+          nome: "Adobe Acrobat Pro DC",
+          imagem: "https://www.adobe.com/content/dam/shared/images/product-icons/svg/acrobat.svg",
+          descricao: "Adobe Acrobat Pro DC - Assinatura individual mensal para criação e edição de PDFs",
+          preco: "59,90/mês",
+          fornecedores: [
+            { nome: "Adobe Oficial", link: "https://www.adobe.com/br/acrobat.html" },
+            { nome: "Amazon", link: "https://www.amazon.com.br/Adobe-Acrobat-Pro-DC-1-Year/dp/B00QJDYKG4" },
+            { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br/adobe-acrobat-pro-dc-assinatura-individual-mensal/p/155573200/in/adbe/" },
+            { nome: "Americanas", link: "https://www.americanas.com.br/produto/1346927369" },
+            { nome: "Submarino", link: "https://www.submarino.com.br/produto/1346927369" },
+            { nome: "Fast Shop", link: "https://www.fastshop.com.br/web/p/ADOBE-ACROBAT-PRO-DC-ASSINATURA-INDIVIDUAL-MENSAL/2-200-020-2-200020" },
+            { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/adobe-acrobat-pro-dc-assinatura-individual-mensal/p/155573200" },
+            { nome: "Kabum", link: "https://www.kabum.com.br/produto/102960" },
+            { nome: "Pichau", link: "https://www.pichau.com.br/adobe-acrobat-pro-dc-assinatura-individual-mensal" },
+            { nome: "Terabyte", link: "https://www.terabyteshop.com.br/produto/10302" }
+          ]
+        },
+        {
+          nome: "Pacote Fotografia (Photoshop + Lightroom)",
+          imagem: "https://logosbr.com.br/wp-content/uploads/2023/02/pacote-adobe-creative-cloud-1111x1000.jpg",
+          descricao: "Pacote Adobe Creative Cloud para Fotografia (Photoshop + Lightroom) - Assinatura mensal",
+          preco: "49,90/mês",
+          fornecedores: [
+            { nome: "Adobe Oficial", link: "https://www.adobe.com/br/creativecloud/photography.html" },
+            { nome: "Amazon", link: "https://www.amazon.com.br/Adobe-Creative-Cloud-Photography-1-Year/dp/B00QJDYKG6" },
+            { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br/adobe-creative-cloud-fotografia-assinatura-mensal/p/155573300/in/adbe/" },
+            { nome: "Americanas", link: "https://www.americanas.com.br/produto/1346928369" },
+            { nome: "Submarino", link: "https://www.submarino.com.br/produto/1346928369" },
+            { nome: "Fast Shop", link: "https://www.fastshop.com.br/web/p/ADOBE-CREATIVE-CLOUD-FOTOGRAFIA-ASSINATURA-MENSAL/2-200-021-2-200021" },
+            { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/adobe-creative-cloud-fotografia-assinatura-mensal/p/155573300" },
+            { nome: "Kabum", link: "https://www.kabum.com.br/produto/102961" },
+            { nome: "Pichau", link: "https://www.pichau.com.br/adobe-creative-cloud-fotografia-assinatura-mensal" },
+            { nome: "Terabyte", link: "https://www.terabyteshop.com.br/produto/10303" }
+          ]
+        },
+        {
+          nome: "Adobe Creative Cloud para Estudantes",
+          imagem: "https://static.wixstatic.com/media/43c63a_0b3f3d1724d845c3bd2507fd0b6bba39~mv2.jpeg/v1/fill/w_568,h_320,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/43c63a_0b3f3d1724d845c3bd2507fd0b6bba39~mv2.jpeg",
+          descricao: "Pacote Adobe Creative Cloud completo com desconto para estudantes - Assinatura anual",
+          preco: "1.199,88/ano",
+          fornecedores: [
+            { nome: "Adobe Oficial", link: "https://www.adobe.com/br/creativecloud/buy/students.html" },
+            { nome: "Amazon", link: "https://www.amazon.com.br/Adobe-Creative-Cloud-Students-Teachers/dp/B00QJDYKG8" },
+            { nome: "Magazine Luiza", link: "https://www.magazineluiza.com.br/adobe-creative-cloud-para-estudantes-assinatura-anual/p/155573400/in/adbe/" },
+            { nome: "Americanas", link: "https://www.americanas.com.br/produto/1346929369" },
+            { nome: "Submarino", link: "https://www.submarino.com.br/produto/1346929369" },
+            { nome: "Fast Shop", link: "https://www.fastshop.com.br/web/p/ADOBE-CREATIVE-CLOUD-PARA-ESTUDANTES-ASSINATURA-ANUAL/2-200-022-2-200022" },
+            { nome: "Casas Bahia", link: "https://www.casasbahia.com.br/adobe-creative-cloud-para-estudantes-assinatura-anual/p/155573400" },
+            { nome: "Kabum", link: "https://www.kabum.com.br/produto/102962" },
+            { nome: "Pichau", link: "https://www.pichau.com.br/adobe-creative-cloud-para-estudantes-assinatura-anual" },
+            { nome: "Terabyte", link: "https://www.terabyteshop.com.br/produto/10304" }
+          ]
+        }
+      ];
+
+      const main = document.querySelector("main");
+      const searchInput = document.getElementById("search-input");
+
+      // Função para renderizar os produtos
+      function renderProducts(productsToRender) {
+        // Limpa o conteúdo atual
+        const existingProducts = document.querySelectorAll('.produto-card');
+        existingProducts.forEach(product => product.remove());
+
+        // Adiciona os produtos filtrados
+        productsToRender.forEach((produto, index) => {
+          const card = document.createElement("div");
+          card.className = "produto-card";
+
+          const fornecedoresHTML = produto.fornecedores.map(f =>
+            `<li><a href="${f.link}" target="_blank">${f.nome}</a></li>`
+          ).join("");
+
+          card.innerHTML = `
+            <div class="img-container">
+              <img src="${produto.imagem}" alt="${produto.nome}" class="produto-img">
+            </div>
+            <div class="produto-detalhes">
+              <h3>${produto.nome}</h3>
+              <p class="descricao">${produto.descricao}</p>
+              <p class="preco">Média de preço: R$ ${produto.preco}</p>
+              <div class="dropdown">
+                <button class="btn-toggle">Fornecedores</button>
+                <ul class="fornecedores-lista hidden">
+                  ${fornecedoresHTML}
+                </ul>
+              </div>
+            </div>
+          `;
+
+          main.appendChild(card);
+        });
+
+        // Reaplica os event listeners para os dropdowns
+        document.querySelectorAll(".dropdown").forEach(drop => {
+          const btn = drop.querySelector(".btn-toggle");
+          const list = drop.querySelector(".fornecedores-lista");
+
+          btn.addEventListener("click", () => {
+            list.classList.toggle("hidden");
+          });
+        });
+      }
+
+      // Renderiza todos os produtos inicialmente
+      renderProducts(produtos);
+
+      // Adiciona o evento de pesquisa
+      searchInput.addEventListener("input", (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const filteredProducts = produtos.filter(produto => 
+          produto.nome.toLowerCase().includes(searchTerm) || 
+          produto.descricao.toLowerCase().includes(searchTerm)
+        );
+        renderProducts(filteredProducts);
+      });
+
+      // Fecha os dropdowns quando clicar fora
+      document.addEventListener("click", function (e) {
+        document.querySelectorAll(".dropdown").forEach(drop => {
+          const list = drop.querySelector(".fornecedores-lista");
+          if (!drop.contains(e.target)) {
+            list.classList.add("hidden");
+          }
+        });
+      });
+    </script>
+  </main>
+</body>
+</html>

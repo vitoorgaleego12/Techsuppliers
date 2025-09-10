@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro de Fornecedor</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1e293b;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #005baa;
+      outline: none;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #1e293b;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #004080;
+    }
+
+    .success-message {
+      margin-top: 30px;
+      background-color: #dff0d8;
+      color: #3c763d;
+      padding: 20px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .erro {
+      border-color: red;
+    }
+
+    .mensagem-erro {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cadastro de Fornecedor</h1>
+  </header>
+
+  <main>
+    <form id="formCadastro" method="POST" action="/cadastrar" novalidate>
+      <label for="nome">Nome do Fornecedor:</label>
+      <input type="text" id="nome" name="nome" required placeholder="Ex: Soluções Ltda" />
+      <div class="mensagem-erro"></div>
+
+      <label for="razao">Razão Social:</label>
+      <input type="text" id="razao" name="razao" required placeholder="Ex: Soluções em Tecnologia LTDA-ME" />
+      <div class="mensagem-erro"></div>
+
+      <label for="cpfcnpj">CPF ou CNPJ:</label>
+      <input type="text" id="cpfcnpj" name="cpfcnpj" required placeholder="Ex: 123.456.789-00 ou 12.345.678/0001-90" />
+      <div class="mensagem-erro"></div>
+
+      <label for="idade">Idade (caso PF):</label>
+      <input type="number" id="idade" name="idade" min="18" max="120" placeholder="Ex: 30" />
+      <div class="mensagem-erro"></div>
+
+      <label for="telefone">Telefone com DDD:</label>
+      <input type="tel" id="telefone" name="telefone" required placeholder="Ex: (11) 91234-5678" />
+      <div class="mensagem-erro"></div>
+
+      <label for="email">E-mail para contato:</label>
+      <input type="email" id="email" name="email" required placeholder="Ex: contato@empresa.com" />
+      <div class="mensagem-erro"></div>
+
+      <label for="endereco">Endereço Completo:</label>
+      <input type="text" id="endereco" name="endereco" required placeholder="Rua Exemplo, 123 - Centro - SP" />
+      <div class="mensagem-erro"></div>
+
+      <label for="site">Site (se tiver):</label>
+      <input type="url" id="site" name="site" placeholder="https://www.empresa.com.br" />
+      <div class="mensagem-erro"></div>
+
+      <label for="servico">Tipo de Serviço ou Produto:</label>
+      <input type="text" id="servico" name="servico" required placeholder="Ex: Venda de equipamentos de informática" />
+      <div class="mensagem-erro"></div>
+
+      <label for="tempo">Tempo de atuação:</label>
+      <input type="text" id="tempo" name="tempo" required placeholder="Ex: 5 anos" />
+      <div class="mensagem-erro"></div>
+
+      <label for="contrato">Disponível para contrato imediato?</label>
+      <select id="contrato" name="contrato" required>
+        <option value="">Selecione</option>
+        <option value="Sim">Sim</option>
+        <option value="Não">Não</option>
+      </select>
+      <div class="mensagem-erro"></div>
+
+      <label for="responsavel">Nome de quem está cadastrando:</label>
+      <input type="text" id="responsavel" name="responsavel" required placeholder="Ex: João Silva" />
+      <div class="mensagem-erro"></div>
+
+      <label for="obs">Observações adicionais:</label>
+      <textarea id="obs" name="obs" rows="4" placeholder="Digite aqui qualquer informação relevante..."></textarea>
+      <div class="mensagem-erro"></div>
+
+      <button type="submit" class="btn">Cadastrar</button>
+    </form>
+
+    <div class="success-message" id="mensagemSucesso"></div>
+
+    <a href="index.html" class="btn" style="margin-top: 20px;">Início</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TechSuppliers - Cadastro de Fornecedores</p>
+  </footer>
+
+  <script>
+    function aplicarMascaraCpfCnpj(valor) {
+      valor = valor.replace(/\D/g, '');
+      if (valor.length <= 11) {
+        return valor.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+      } else {
+        return valor.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
+      }
+    }
+
+    function aplicarMascaraTelefone(valor) {
+      valor = valor.replace(/\D/g, '');
+      return valor.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
+    }
+
+    const cpfcnpjInput = document.getElementById('cpfcnpj');
+    cpfcnpjInput.addEventListener('input', () => {
+      cpfcnpjInput.value = aplicarMascaraCpfCnpj(cpfcnpjInput.value);
+    });
+
+    const telefoneInput = document.getElementById('telefone');
+    telefoneInput.addEventListener('input', () => {
+      telefoneInput.value = aplicarMascaraTelefone(telefoneInput.value);
+    });
+
+    const form = document.getElementById("formCadastro");
+    const mensagem = document.getElementById("mensagemSucesso");
+
+    function limparErros() {
+      const campos = form.querySelectorAll("input, select, textarea");
+      campos.forEach(campo => {
+        campo.classList.remove("erro");
+        const erroMsg = campo.nextElementSibling;
+        if (erroMsg && erroMsg.classList.contains("mensagem-erro")) {
+          erroMsg.style.display = "none";
+        }
+      });
+      mensagem.style.display = "none";
+    }
+
+    function mostrarErro(campo, texto) {
+      campo.classList.add("erro");
+      const erroMsg = campo.nextElementSibling;
+      if (erroMsg && erroMsg.classList.contains("mensagem-erro")) {
+        erroMsg.innerText = texto;
+        erroMsg.style.display = "block";
+      }
+    }
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      limparErros();
+
+      let valido = true;
+
+      form.querySelectorAll("[required]").forEach(campo => {
+        if (!campo.value.trim()) {
+          mostrarErro(campo, "Este campo é obrigatório.");
+          valido = false;
+        } else if (campo.type === "email" && !campo.value.includes("@")) {
+          mostrarErro(campo, "Digite um e-mail válido.");
+          valido = false;
+        } else if (campo.id === "cpfcnpj" && campo.value.length < 14) {
+          mostrarErro(campo, "CPF ou CNPJ inválido.");
+          valido = false;
+        }
+      });
+
+      if (!valido) {
+        mensagem.innerHTML = "⚠️ Corrija os campos destacados.";
+        mensagem.style.display = "block";
+        return;
+      }
+
+      const formData = new FormData(form);
+      fetch("/cadastrar", {
+        method: "POST",
+        body: formData,
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === "ok") {
+          mensagem.innerHTML = "✅ Cadastro realizado com sucesso!";
+          mensagem.style.display = "block";
+          form.reset();
+        } else {
+          mensagem.innerHTML = "❌ Erro: " + data.mensagem;
+          mensagem.style.display = "block";
+        }
+      })
+      .catch(() => {
+        mensagem.innerHTML = "❌ Erro inesperado.";
+        mensagem.style.display = "block";
+      });
+    });
+  </script>
+</body>
+</html>

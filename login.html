@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #1e293b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      padding: 30px;
+      background-color: #243b6b;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .voltar {
+      display: inline-block;
+      margin-bottom: 20px;
+      background-color: #5dade2;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .voltar:hover {
+      background-color: #3498db;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      background-color: #f4faff;
+      color: #000;
+    }
+
+    input:focus {
+      outline: 2px solid #5dade2;
+      background-color: #ffffff;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 12px;
+      background-color: #5dade2;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3498db;
+    }
+
+    .link-cadastro {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .link-cadastro a {
+      color: #5dade2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .link-cadastro a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 480px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      input, button {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="voltar">← Voltar para página inicial</a>
+
+    <h2>Login</h2>
+    <form id="formLogin">
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" required>
+
+      <button type="submit">Entrar</button>
+    </form>
+
+    <div class="link-cadastro">
+      <p>Não tem cadastro? <a href="cliente.html">Clique aqui</a></p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('formLogin');
+    const email = document.getElementById('email');
+    const senha = document.getElementById('senha');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const emailVal = email.value.trim();
+      const senhaVal = senha.value.trim();
+
+      if (emailVal === "admin@gmail.com" && senhaVal === "admin1234") {
+        alert("✅ Login realizado com sucesso!");
+        window.location.href = "index.html";
+      } else {
+        alert("❌ Email ou senha incorretos. Tente novamente.");
+      }
+    });
+  </script>
+</body>
+</html>
