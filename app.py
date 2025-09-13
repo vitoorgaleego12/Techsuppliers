@@ -749,18 +749,3 @@ if __name__ == "__main__":
         port=porta_livre,
         threaded=True
     )
-
-import requests
-import os
-
-produtos = [...]  # array com os links de imagens
-
-os.makedirs("static/images", exist_ok=True)
-
-for i, produto in enumerate(produtos):
-    url = produto["imagem"]
-    r = requests.get(url)
-    nome_arquivo = f"static/images/produto_{i}.jpg"
-    with open(nome_arquivo, "wb") as f:
-        f.write(r.content)
-    produto["imagem"] = nome_arquivo  # atualiza o link para local
