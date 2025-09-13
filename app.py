@@ -748,12 +748,3 @@ def serve_page(filename):
 @app.route('/static/<path:filename>')
 def serve_static(filename):
     return send_from_directory(os.path.join(app.root_path, 'static'), filename)
-
-# exemplo de rota backend (cadastro)
-@app.route("/api/hello")
-def hello():
-    return {"mensagem": "Backend funcionando no Render!"}
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
