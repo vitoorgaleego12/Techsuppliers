@@ -11,6 +11,23 @@ from functools import wraps
 import logging
 
 app = Flask(__name__, static_folder="static")
+
+# rota para páginas HTML
+@app.route("/")
+def index():
+    return send_from_directory(os.path.dirname(__file__), "index.html")
+
+@app.route("/<path:filename>")
+def serve_page(filename):
+    return send_from_directory(os.path.dirname(__file__), filename)
+
+# rota para arquivos estáticos (css, js, imagens)
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory(os.path.join(app.root_path, 'static'), filename)
+    
+
+app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', secrets.token_hex(32))
 
 # Configuração de logging
@@ -37,8 +54,7 @@ def add_security_headers(response):
     response.headers['X-Frame-Options'] = 'DENY'
     response.headers['X-XSS-Protection'] = '1; mode=block'
     response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
-    # CSP atualizada para permitir imagens de qualquer origem HTTPS
-    response.headers['Content-Security-Policy'] = "default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'"
+    response.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'"
     return response
 
 def rate_limit(max_requests=100, window=60):
@@ -137,7 +153,7 @@ def validar_senha(senha):
 # ==============================
 ALLOWED_EXTENSIONS = {'.css', '.js', '.html', '.png', '.jpg', '.jpeg', '.gif', '.ico', '.svg'}
 
-@app.route('/static/<path:filename>')
+@app.route('/<path:filename>')
 def serve_static(filename):
     """Serve arquivos estáticos com validação de segurança"""
     # Prevenção de path traversal
@@ -149,10 +165,10 @@ def serve_static(filename):
     if ext.lower() not in ALLOWED_EXTENSIONS:
         return "Tipo de arquivo não permitido", 403
     
-    file_path = os.path.join(PASTA_PROJETO, 'static', filename)
+    file_path = os.path.join(PASTA_PROJETO, filename)
     
     # Verifica se o arquivo existe e está dentro do diretório permitido
-    if not os.path.exists(file_path) or not file_path.startswith(os.path.join(PASTA_PROJETO, 'static')):
+    if not os.path.exists(file_path) or not file_path.startswith(PASTA_PROJETO):
         return "Arquivo não encontrado", 404
     
     # Define MIME types
@@ -171,7 +187,7 @@ def serve_static(filename):
     mimetype = mime_types.get(ext.lower(), 'text/plain')
     
     # Adiciona headers de cache para arquivos estáticos
-    response = send_from_directory(os.path.join(PASTA_PROJETO, 'static'), filename, mimetype=mimetype)
+    response = send_from_directory(PASTA_PROJETO, filename, mimetype=mimetype)
     response.headers['Cache-Control'] = 'public, max-age=3600'
     return response
 
@@ -289,26 +305,6 @@ def get_db_connection(db_path):
 @app.route("/")
 def index():
     return send_from_directory(PASTA_PROJETO, "index.html")
-
-@app.route("/<path:filename>")
-def serve_page(filename):
-    """Serve páginas HTML com validação de segurança"""
-    # Prevenção de path traversal
-    if '..' in filename or filename.startswith('/'):
-        return "Página não encontrada", 404
-    
-    # Permite apenas arquivos HTML
-    _, ext = os.path.splitext(filename)
-    if ext.lower() != '.html':
-        return "Tipo de arquivo não permitido", 403
-    
-    file_path = os.path.join(PASTA_PROJETO, filename)
-    
-    # Verifica se o arquivo existe e está dentro do diretório permitido
-    if not os.path.exists(file_path) or not file_path.startswith(PASTA_PROJETO):
-        return "Página não encontrada", 404
-    
-    return send_from_directory(PASTA_PROJETO, filename)
 
 @app.route("/fornecedores")
 def pagina_fornecedores():
@@ -552,7 +548,7 @@ def cadastrar_cliente():
         # Hash da senha
         senha_hash = generate_password_hash(senha)
 
-        # Verifica se email ou CPF já existen
+        # Verifica se email ou CPF já existem
         conn = get_db_connection(CAMINHO_BANCO_CLIENTES)
         cursor = conn.cursor()
         cursor.execute("SELECT id FROM clientes WHERE email = ? OR cpf = ?", (email, cpf))
@@ -644,7 +640,7 @@ def debug_tabela_clientes():
         conn = get_db_connection(CAMINHO_BANCO_CLIENTES)
         cursor = conn.cursor()
         
-        # Verifica se la tabela existe
+        # Verifica se a tabela existe
         cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='clientes'")
         tabela_existe = cursor.fetchone()
         
@@ -741,7 +737,6 @@ if __name__ == "__main__":
     print(f"🛡️  Rate limiting ativado")
     print(f"📊 Validações de entrada implementadas")
     print(f"💾 Bancos com constraints de segurança")
-    print(f"🌐 Imagens externas permitidas (HTTPS)")
     print(f"🐛 Endpoints de debug disponíveis:")
     print(f"   - http://localhost:{porta_livre}/debug/tabela_clientes")
     print(f"   - http://localhost:{porta_livre}/debug/recriar_tabela_clientes")
@@ -754,3 +749,4 @@ if __name__ == "__main__":
         port=porta_livre,
         threaded=True
     )
+    
