@@ -3,7 +3,7 @@ import sqlite3
 import re
 import html
 import secrets
-from flask import Flask, request, jsonify, send_from_directory, session, redirect
+from flask import Flask, request, jsonify, send_from_directory, session, redirect, render_template
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 import logging
@@ -15,6 +15,9 @@ app = Flask(__name__, static_folder="static", static_url_path="/static")
 # Configurações para Render
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', secrets.token_hex(32))
 app.config['PREFERRED_URL_SCHEME'] = 'https'  # Forçar HTTPS no Render
+app.config['SESSION_COOKIE_HTTPONLY'] = True
+app.config['SESSION_COOKIE_SECURE'] = True
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 
 # Configuração de logging
 logging.basicConfig(level=logging.INFO)
@@ -158,7 +161,6 @@ def validar_senha(senha):
         return False
     return True
 
-
 def mascarar_cpf(cpf):
     """Mascara CPF para exibição: 123.456.789-00"""
     if not cpf:
@@ -187,6 +189,39 @@ def mascarar_telefone(telefone):
     elif len(telefone_limpo) == 10:
         return f"({telefone_limpo[:2]}) {telefone_limpo[2:6]}-{telefone_limpo[6:]}"
     return telefone
+
+
+# ==============================
+# Funções para ocultar dados sensíveis
+# ==============================
+def mascarar_cpf(cpf):
+    """Oculta CPF completamente"""
+    if not cpf:
+        return "Não informado"
+    return "***.***.***-**"
+
+def mascarar_cnpj(cnpj):
+    """Oculta CNPJ completamente"""
+    if not cnpj:
+        return "Não informado"
+    return "**.***.***/****-**"
+
+def mascarar_telefone(telefone):
+    """Oculta telefone completamente"""
+    if not telefone:
+        return "Não informado"
+    return "(**) ****-****"
+
+def mascarar_email(email):
+    """Oculta parte do email"""
+    if not email or '@' not in email:
+        return "Não informado"
+    partes = email.split('@')
+    if len(partes) == 2:
+        return f"****@{partes[1]}"
+    return "****@email.com"
+    
+
 
 
 # ==============================
@@ -516,15 +551,12 @@ def cadastrar_cliente():
         senha = request.form.get('senha', '')
         confirmar_senha = request.form.get('confirmarSenha', '')
 
-        # Debug: Verificar os valores recebidos
-        logger.info(f"Dados recebidos - nome: {nome}, idade: {idade_str}, email: {email}, telefone: {telefone}, endereco: {endereco}, genero: {genero}, cpf: {cpf}")
-
         # Validações
-        if not all([nome, idade_str, email, telefone, endereco, genero, cpf, senha]):
+        if not all([nome, idade_str, email, telefone, endereco, genero, cpf, senha, confirmar_senha]):
             return jsonify({"status": "erro", "mensagem": "Todos os campos são obrigatórios."}), 400
 
         if senha != confirmar_senha:
-            return jsonify({"status": "erro", "mensagem": "As senha não coincidem."}), 400
+            return jsonify({"status": "erro", "mensagem": "As senhas não coincidem."}), 400
 
         if not validar_senha(senha):
             return jsonify({"status": "erro", "mensagem": "Senha fraca. Use pelo menos 8 caracteres incluindo maiúsculas, minúsculas, números e símbolos."}), 400
@@ -546,7 +578,7 @@ def cadastrar_cliente():
         except ValueError:
             return jsonify({"status": "erro", "mensagem": "Idade deve ser um número válido."}), 400
 
-        # Mapeamento dos valores de gênero para os valores aceitos pelo banco
+        # Mapeamento dos valores de gênero
         genero_map = {
             'masculino': 'M',
             'feminino': 'F',
@@ -565,14 +597,13 @@ def cadastrar_cliente():
         if genero_normalizado is None:
             return jsonify({
                 "status": "erro", 
-                "mensagem": "Gênero inválido. Use: Masculino, Feminino ou Outro.",
-                "genero_recebido": genero
+                "mensagem": "Gênero inválido. Use: Masculino, Feminino ou Outro."
             }), 400
 
         # Hash da senha
         senha_hash = generate_password_hash(senha)
 
-        # Verifica se email ou CPF já existen
+        # Verifica se email ou CPF já existem
         conn = get_db_connection(CAMINHO_BANCO_CLIENTES)
         cursor = conn.cursor()
         cursor.execute("SELECT id FROM clientes WHERE email = ? OR cpf = ?", (email, cpf))
@@ -598,22 +629,25 @@ def cadastrar_cliente():
         session['cliente_email'] = novo_cliente['email']
         session['logged_in'] = True
 
-        logger.info(f"Cliente cadastrado e logado: {nome}, Gênero: {genero_normalizado}")
+        logger.info(f"Cliente cadastrado e logado: {nome}")
         return jsonify({
             "status": "ok", 
             "mensagem": "Cliente cadastrado com sucesso!",
-            "redirect": "/"  # Redireciona para a página inicial
+            "redirect": "/"
         })
 
+    except sqlite3.IntegrityError as e:
+        logger.error(f"Erro de integridade do banco: {e}")
+        return jsonify({"status": "erro", "mensagem": "Email ou CPF já cadastrado."}), 400
     except sqlite3.Error as e:
         logger.error(f"Erro de banco: {e}")
-        return jsonify({"status": "erro", "mensagem": f"Erro interno do banco de dados: {str(e)}"}), 500
+        return jsonify({"status": "erro", "mensagem": "Erro interno do banco de dados."}), 500
     except Exception as e:
         logger.error(f"Erro interno: {e}")
-        return jsonify({"status": "erro", "mensagem": f"Erro interno do servidor: {str(e)}"}), 500
+        return jsonify({"status": "erro", "mensagem": "Erro interno do servidor."}), 500
 
 # ==============================
-# APIs para listar dados (com validação)
+# APIs para listar dados (com validação e mascaramento)
 # ==============================
 @app.route('/fornecedores_json')
 @rate_limit(max_requests=30, window=60)
@@ -625,7 +659,14 @@ def fornecedores_json():
         rows = cursor.fetchall()
         conn.close()
 
-        fornecedores = [dict(row) for row in rows]
+        fornecedores = []
+        for row in rows:
+            fornecedor = dict(row)
+            # Mascara dados sensíveis
+            fornecedor['cpfcnpj'] = mascarar_cpf(fornecedor['cpfcnpj']) if len(fornecedor['cpfcnpj']) == 11 else mascarar_cnpj(fornecedor['cpfcnpj'])
+            fornecedor['telefone'] = mascarar_telefone(fornecedor['telefone'])
+            fornecedores.append(fornecedor)
+            
         return jsonify(fornecedores)
     except Exception as e:
         logger.error(f"Erro ao listar fornecedores: {e}")
@@ -648,7 +689,17 @@ def clientes_json():
         rows = cursor.fetchall()
         conn.close()
 
-        clientes = [dict(row) for row in rows]
+        clientes = []
+        for row in rows:
+            cliente = dict(row)
+            # Mascara dados sensíveis
+            cliente['cpf'] = mascarar_cpf(cliente['cpf'])
+            cliente['telefone'] = mascarar_telefone(cliente['telefone'])
+            # Remove dados sensíveis que não devem ser exibidos
+            if 'senha' in cliente:
+                del cliente['senha']
+            clientes.append(cliente)
+            
         return jsonify(clientes)
     except Exception as e:
         logger.error(f"Erro ao listar clientes: {e}")
@@ -664,7 +715,7 @@ def debug_tabela_clientes():
         conn = get_db_connection(CAMINHO_BANCO_CLIENTES)
         cursor = conn.cursor()
         
-        # Verifica se la tabela existe
+        # Verifica se a tabela existe
         cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='clientes'")
         tabela_existe = cursor.fetchone()
         
@@ -708,29 +759,6 @@ def debug_recriar_tabela():
     else:
         return jsonify({"status": "erro", "mensagem": "Erro ao recriar tabela"}), 500
 
-@app.route('/debug/testar_genero/<genero>')
-def debug_testar_genero(genero):
-    """Testa como o gênero está sendo processado"""
-    genero_map = {
-        'masculino': 'M',
-        'feminino': 'F',
-        'outro': 'O',
-        'm': 'M',
-        'f': 'F',
-        'o': 'O',
-        'M': 'M',
-        'F': 'F',
-        'O': 'O'
-    }
-    
-    genero_normalizado = genero_map.get(genero.lower().strip(), None)
-    
-    return jsonify({
-        "genero_original": genero,
-        "genero_normalizado": genero_normalizado,
-        "valido": genero_normalizado is not None
-    })
-
 # ==============================
 # Health check endpoint
 # ==============================
@@ -763,4 +791,6 @@ if __name__ == "__main__":
         host="0.0.0.0", 
         port=port,
         debug=os.environ.get('DEBUG', 'False').lower() == 'true'
-                )
+    )
+    
+    
