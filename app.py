@@ -168,13 +168,13 @@ def validar_senha(senha):
 def mascarar_cpf(cpf):
     """Oculta CPF completamente"""
     if not cpf:
-        return "Não informado"
+        return ""
     return "***.***.***-**"
 
 def mascarar_cnpj(cnpj):
     """Oculta CNPJ completamente"""
     if not cnpj:
-        return "Não informado"
+        return ""
     return "**.***.***/****-**"
 
 def mascarar_telefone(telefone):
