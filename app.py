@@ -1,34 +1,20 @@
 import os
 import sqlite3
-import socket
 import re
 import html
-import hashlib
 import secrets
-from flask import Flask, request, jsonify, send_from_directory, send_file, session, redirect, url_for
+from flask import Flask, request, jsonify, send_from_directory, session, redirect
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 import logging
+from time import time
+from collections import defaultdict
 
-app = Flask(__name__, static_folder="static")
+app = Flask(__name__, static_folder="static", static_url_path="/static")
 
-# rota para páginas HTML
-@app.route("/")
-def index():
-    return send_from_directory(os.path.dirname(__file__), "index.html")
-
-@app.route("/<path:filename>")
-def serve_page(filename):
-    return send_from_directory(os.path.dirname(__file__), filename)
-
-# rota para arquivos estáticos (css, js, imagens)
-@app.route('/static/<path:filename>')
-def serve_static(filename):
-    return send_from_directory(os.path.join(app.root_path, 'static'), filename)
-    
-
-app = Flask(__name__)
+# Configurações para Render
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', secrets.token_hex(32))
+app.config['PREFERRED_URL_SCHEME'] = 'https'  # Forçar HTTPS no Render
 
 # Configuração de logging
 logging.basicConfig(level=logging.INFO)
@@ -39,9 +25,7 @@ PASTA_PROJETO = os.path.dirname(os.path.abspath(__file__))
 CAMINHO_BANCO_FORNECEDORES = os.path.join(PASTA_PROJETO, "fornecedores.db")
 CAMINHO_BANCO_CLIENTES = os.path.join(PASTA_PROJETO, "clientes.db")
 
-# Rate limiting storage (em produção, use Redis)
-from collections import defaultdict
-from time import time
+# Rate limiting storage
 request_times = defaultdict(list)
 
 # ==============================
@@ -53,16 +37,42 @@ def add_security_headers(response):
     response.headers['X-Content-Type-Options'] = 'nosniff'
     response.headers['X-Frame-Options'] = 'DENY'
     response.headers['X-XSS-Protection'] = '1; mode=block'
-    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
-    response.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'"
+    
+    # No Render, o HTTPS é gerenciado pelo próprio serviço
+    if 'localhost' not in request.host and '127.0.0.1' not in request.host:
+        response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    
+    # CSP mais permissivo para funcionar no Render
+    response.headers['Content-Security-Policy'] = (
+        "default-src 'self'; "
+        "script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; "
+        "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; "
+        "font-src 'self' https://fonts.gstatic.com data:; "
+        "img-src * data: blob:; "
+        "connect-src 'self'; "
+        "frame-ancestors 'none';"
+    )
     return response
+
+@app.before_request
+def enforce_https_in_production():
+    """Força HTTPS em ambiente de produção (Render)"""
+    if 'localhost' not in request.host and '127.0.0.1' not in request.host:
+        if request.headers.get('X-Forwarded-Proto') == 'http':
+            url = request.url.replace('http://', 'https://', 1)
+            return redirect(url, code=301)
 
 def rate_limit(max_requests=100, window=60):
     """Middleware de rate limiting"""
     def decorator(f):
         @wraps(f)
         def decorated_function(*args, **kwargs):
-            ip = request.remote_addr
+            # No Render, usar X-Forwarded-For em vez de remote_addr
+            if 'X-Forwarded-For' in request.headers:
+                ip = request.headers['X-Forwarded-For'].split(',')[0]
+            else:
+                ip = request.remote_addr
+                
             now = time()
             
             # Limpa requisições antigas
@@ -151,11 +161,15 @@ def validar_senha(senha):
 # ==============================
 # Servir arquivos estáticos com validação
 # ==============================
-ALLOWED_EXTENSIONS = {'.css', '.js', '.html', '.png', '.jpg', '.jpeg', '.gif', '.ico', '.svg'}
+ALLOWED_EXTENSIONS = {'.css', '.js', '.html', '.png', '.jpg', '.jpeg', '.gif', '.ico', '.svg', '.txt', '.json'}
+
+@app.route('/')
+def index():
+    return send_from_directory(PASTA_PROJETO, "index.html")
 
 @app.route('/<path:filename>')
-def serve_static(filename):
-    """Serve arquivos estáticos com validação de segurança"""
+def serve_page(filename):
+    """Serve páginas HTML com validação de segurança"""
     # Prevenção de path traversal
     if '..' in filename or filename.startswith('/'):
         return "Arquivo não encontrado", 404
@@ -171,25 +185,7 @@ def serve_static(filename):
     if not os.path.exists(file_path) or not file_path.startswith(PASTA_PROJETO):
         return "Arquivo não encontrado", 404
     
-    # Define MIME types
-    mime_types = {
-        '.css': 'text/css',
-        '.js': 'application/javascript',
-        '.html': 'text/html',
-        '.png': 'image/png',
-        '.jpg': 'image/jpeg',
-        '.jpeg': 'image/jpeg',
-        '.gif': 'image/gif',
-        '.ico': 'image/x-icon',
-        '.svg': 'image/svg+xml'
-    }
-    
-    mimetype = mime_types.get(ext.lower(), 'text/plain')
-    
-    # Adiciona headers de cache para arquivos estáticos
-    response = send_from_directory(PASTA_PROJETO, filename, mimetype=mimetype)
-    response.headers['Cache-Control'] = 'public, max-age=3600'
-    return response
+    return send_from_directory(PASTA_PROJETO, filename)
 
 # ==============================
 # Criação segura dos bancos com prepared statements
@@ -286,6 +282,7 @@ def recriar_tabela_clientes():
         logger.error(f"Erro ao recriar tabela clientes: {e}")
         return False
 
+# Criar bancos ao iniciar
 criar_bancos()
 
 # ==============================
@@ -302,10 +299,6 @@ def get_db_connection(db_path):
 # ==============================
 # Páginas principais
 # ==============================
-@app.route("/")
-def index():
-    return send_from_directory(PASTA_PROJETO, "index.html")
-
 @app.route("/fornecedores")
 def pagina_fornecedores():
     return send_from_directory(PASTA_PROJETO, "cadastro.html")
@@ -548,7 +541,7 @@ def cadastrar_cliente():
         # Hash da senha
         senha_hash = generate_password_hash(senha)
 
-        # Verifica se email ou CPF já existem
+        # Verifica se email ou CPF já existen
         conn = get_db_connection(CAMINHO_BANCO_CLIENTES)
         cursor = conn.cursor()
         cursor.execute("SELECT id FROM clientes WHERE email = ? OR cpf = ?", (email, cpf))
@@ -640,7 +633,7 @@ def debug_tabela_clientes():
         conn = get_db_connection(CAMINHO_BANCO_CLIENTES)
         cursor = conn.cursor()
         
-        # Verifica se a tabela existe
+        # Verifica se la tabela existe
         cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='clientes'")
         tabela_existe = cursor.fetchone()
         
@@ -715,109 +708,8 @@ def health_check():
     return jsonify({"status": "healthy", "timestamp": time()})
 
 # ==============================
-# Inicialização segura do servidor
+# Rotas para servir arquivos estáticos
 # ==============================
-def encontrar_porta_livre(porta_inicial=5000):
-    porta = porta_inicial
-    while porta < 5100:
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-            if s.connect_ex(('localhost', porta)) != 0:
-                return porta
-            porta += 1
-    raise RuntimeError("Nenhuma porta livre encontrada")
-
-# ==============================
-# SOLUÇÃO DEFINITIVA PARA IMAGENS EXTERNAS
-# ==============================
-
-# Substitua a função add_security_headers existente por esta versão
-@app.after_request
-def add_security_headers(response):
-    """Headers de segurança permitindo TODAS as imagens externas"""
-    response.headers['X-Content-Type-Options'] = 'nosniff'
-    response.headers['X-Frame-Options'] = 'DENY'
-    response.headers['X-XSS-Protection'] = '1; mode=block'
-    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
-    
-    # CSP SUPER PERMISSIVO PARA IMAGENS - PERMITE TUDO
-    response.headers['Content-Security-Policy'] = (
-        "default-src 'self'; "
-        "script-src 'self' 'unsafe-inline'; "
-        "style-src 'self' 'unsafe-inline'; "
-        "img-src * data: blob:; "  # ⭐⭐ ISSO PERMITE TODAS AS IMAGENS EXTERNAS ⭐⭐
-        "font-src 'self' data:; "
-        "connect-src 'self'; "
-        "frame-ancestors 'none'; "
-        "form-action 'self'; "
-        "base-uri 'self'; "
-        "object-src 'none'"
-    )
-    return response
-
-# Rota para proxy de imagens - caso precise contornar bloqueios de CORS
-@app.route('/proxy-image/<path:url>')
-def proxy_image(url):
-    """Serve imagens externas através do backend (contorna CORS)"""
-    import requests
-    from io import BytesIO
-    
-    try:
-        # Decodifica a URL
-        from urllib.parse import unquote
-        image_url = unquote(url)
-        
-        # Faz a requisição para a imagem externa
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        }
-        response = requests.get(image_url, headers=headers, timeout=10)
-        response.raise_for_status()
-        
-        # Cria a resposta com a imagem
-        img_data = BytesIO(response.content)
-        return send_file(img_data, mimetype=response.headers.get('content-type', 'image/jpeg'))
-        
-    except Exception as e:
-        logger.error(f"Erro no proxy de imagem: {e}")
-        return jsonify({"status": "erro", "mensagem": "Não foi possível carregar a imagem"}), 500
-
-# Função para substituir URLs de imagem no HTML para usar o proxy
-def substituir_urls_imagens(html_content):
-    """Substitui URLs de imagens externas pelo proxy local"""
-    import re
-    
-    # Padrão para encontrar tags img
-    pattern = r'<img[^>]+src="([^"]+)"[^>]*>'
-    
-    def substituir_url(match):
-        url_original = match.group(1)
-        # Não substitui URLs locais
-        if url_original.startswith(('/static/', '/images/', 'data:')):
-            return match.group(0)
-        
-        # Codifica a URL para usar no proxy
-        from urllib.parse import quote
-        url_codificada = quote(url_original, safe='')
-        return match.group(0).replace(url_original, f'/proxy-image/{url_codificada}')
-    
-    return re.sub(pattern, substituir_url, html_content)
-
-# Middleware para processar HTML e substituir URLs de imagem
-@app.after_request
-def processar_imagens(response):
-    """Processa o HTML para substituir URLs de imagem se necessário"""
-    if response.content_type and 'text/html' in response.content_type:
-        try:
-            response.set_data(substituir_urls_imagens(response.get_data(as_text=True)))
-        except Exception as e:
-            logger.error(f"Erro ao processar imagens: {e}")
-    return response
-
-# ==============================
-# Rotas adicionais para servir arquivos
-# ==============================
-
 @app.route('/images/<path:filename>')
 def serve_images(filename):
     """Serve imagens locais"""
@@ -829,40 +721,15 @@ def serve_assets(filename):
     return send_from_directory(os.path.join(PASTA_PROJETO, 'assets'), filename)
 
 # ==============================
-# Configuração EXTRA para permitir tudo
-# ==============================
-
-# Desativa proteções se necessário (apenas para desenvolvimento)
-@app.after_request
-def disable_protections_if_needed(response):
-    """Desativa algumas proteções para garantir que funcione"""
-    # Remove CSP muito restritivo se ainda existir
-    if 'Content-Security-Policy' in response.headers and 'img-src' in response.headers['Content-Security-Policy']:
-        if 'img-src *' not in response.headers['Content-Security-Policy']:
-            response.headers['Content-Security-Policy'] = response.headers['Content-Security-Policy'].replace(
-                'img-src', 'img-src * data: blob:'
-            )
-    return response
-
-# ==============================
 # INICIALIZAÇÃO DO SERVIDOR
 # ==============================
-
 if __name__ == "__main__":
-    # Configurações de segurança
-    porta_livre = encontrar_porta_livre()
-    
-    print(f"🚀 Servidor TechSuppliers iniciado com MÁXIMA PERMISSÃO para imagens!")
-    print(f"📍 URL: http://localhost:{porta_livre}")
-    print(f"🌐 IMAGENS EXTERNAS HABILITADAS: Amazon, Shopee, Mercado Livre, etc.")
-    print(f"🔄 Proxy de imagens ativo: /proxy-image/")
-    print(f"🔓 CSP configurado para permitir TODAS as imagens")
-    print(f"📦 Servindo imagens locais: /images/")
+    # No Render, a porta é fornecida através da variável de ambiente PORT
+    port = int(os.environ.get("PORT", 5000))
     
     # Configurações de produção
     app.run(
-        debug=True,
         host="0.0.0.0", 
-        port=porta_livre,
-        threaded=True
-    )
+        port=port,
+        debug=os.environ.get('DEBUG', 'False').lower() == 'true'
+                )
