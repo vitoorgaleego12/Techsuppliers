@@ -10,6 +10,34 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 import logging
 
+import os
+from flask import Flask, send_from_directory, render_template_string
+
+app = Flask(__name__, static_folder="static")
+
+# rota para páginas HTML
+@app.route("/")
+def index():
+    return send_from_directory(os.path.dirname(__file__), "index.html")
+
+@app.route("/<path:filename>")
+def serve_page(filename):
+    return send_from_directory(os.path.dirname(__file__), filename)
+
+# rota para arquivos estáticos (css, js, imagens)
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory(os.path.join(app.root_path, 'static'), filename)
+
+# exemplo de rota backend (cadastro)
+@app.route("/api/hello")
+def hello():
+    return {"mensagem": "Backend funcionando no Render!"}
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
 app = Flask(__name__, static_folder="static")
 
 # rota para páginas HTML
