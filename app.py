@@ -25,7 +25,6 @@ def add_csp_headers(response):
     return response
     
 # rota para servir qualquer arquivo estático (html, css, js, imagens)
-@app.route('/<path:path>')
 def static_files(path):
     return send_from_directory('.', path)
 
