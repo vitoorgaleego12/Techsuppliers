@@ -14,14 +14,22 @@ from flask import Flask, send_from_directory
 
 from flask_cors import CORS
 
+# Mantenha apenas uma instância do Flask app
 app = Flask(__name__, static_folder=".", static_url_path="")
-CORS(app)  # habilita carregamento de imagens externas e outros recursos
+CORS(app)  # Habilita CORS para todas as rotas
 
-app = Flask(__name__, static_folder=".", static_url_path="")
-
+# CSP corrigido para permitir imagens externas
 @app.after_request
 def add_csp_headers(response):
-    response.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src * data:"
+    csp_policy = (
+        "default-src 'self'; "
+        "script-src 'self' 'unsafe-inline'; "
+        "style-src 'self' 'unsafe-inline'; "
+        "img-src * data: blob:; "  # Permite imagens de qualquer origem
+        "media-src *; "  # Para vídeos/áudio se necessário
+        "frame-ancestors 'none';"  # Prevenção contra clickjacking
+    )
+    response.headers['Content-Security-Policy'] = csp_policy
     return response
     
 # rota para servir qualquer arquivo estático (html, css, js, imagens)
