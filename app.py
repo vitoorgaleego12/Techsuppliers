@@ -10,24 +10,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 import logging
 
+# Configuração inicial do Flask
 app = Flask(__name__, static_folder="static")
-
-# rota para páginas HTML
-@app.route("/")
-def index():
-    return send_from_directory(os.path.dirname(__file__), "index.html")
-
-@app.route("/<path:filename>")
-def serve_page(filename):
-    return send_from_directory(os.path.dirname(__file__), filename)
-
-# rota para arquivos estáticos (css, js, imagens)
-@app.route('/static/<path:filename>')
-def serve_static(filename):
-    return send_from_directory(os.path.join(app.root_path, 'static'), filename)
-    
-
-app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', secrets.token_hex(32))
 
 # Configuração de logging
@@ -44,6 +28,14 @@ from collections import defaultdict
 from time import time
 request_times = defaultdict(list)
 
+# Verifica e cria pastas necessárias
+pastas_necessarias = ['static/imagens', 'static/produtos', 'static/css', 'static/js']
+for pasta in pastas_necessarias:
+    caminho_pasta = os.path.join(PASTA_PROJETO, pasta)
+    if not os.path.exists(caminho_pasta):
+        os.makedirs(caminho_pasta)
+        logger.info(f"Pasta criada: {caminho_pasta}")
+
 # ==============================
 # Middlewares de segurança
 # ==============================
@@ -54,7 +46,7 @@ def add_security_headers(response):
     response.headers['X-Frame-Options'] = 'DENY'
     response.headers['X-XSS-Protection'] = '1; mode=block'
     response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
-    response.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'"
+    response.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
     return response
 
 def rate_limit(max_requests=100, window=60):
@@ -151,11 +143,11 @@ def validar_senha(senha):
 # ==============================
 # Servir arquivos estáticos com validação
 # ==============================
-ALLOWED_EXTENSIONS = {'.css', '.js', '.html', '.png', '.jpg', '.jpeg', '.gif', '.ico', '.svg'}
+ALLOWED_EXTENSIONS = {'.css', '.js', '.html', '.png', '.jpg', '.jpeg', '.gif', '.ico', '.svg', '.webp', '.bmp', '.tiff'}
 
 @app.route('/<path:filename>')
-def serve_static(filename):
-    """Serve arquivos estáticos com validação de segurança"""
+def serve_page(filename):
+    """Serve páginas HTML com validação de segurança"""
     # Prevenção de path traversal
     if '..' in filename or filename.startswith('/'):
         return "Arquivo não encontrado", 404
@@ -181,7 +173,10 @@ def serve_static(filename):
         '.jpeg': 'image/jpeg',
         '.gif': 'image/gif',
         '.ico': 'image/x-icon',
-        '.svg': 'image/svg+xml'
+        '.svg': 'image/svg+xml',
+        '.webp': 'image/webp',
+        '.bmp': 'image/bmp',
+        '.tiff': 'image/tiff'
     }
     
     mimetype = mime_types.get(ext.lower(), 'text/plain')
@@ -190,6 +185,38 @@ def serve_static(filename):
     response = send_from_directory(PASTA_PROJETO, filename, mimetype=mimetype)
     response.headers['Cache-Control'] = 'public, max-age=3600'
     return response
+
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    """Serve arquivos estáticos da pasta static"""
+    static_folder = os.path.join(app.root_path, 'static')
+    return send_from_directory(static_folder, filename)
+
+@app.route('/produtos/<path:filename>')
+def serve_produto_images(filename):
+    """Serve imagens de produtos com validação de segurança"""
+    # Prevenção de path traversal
+    if '..' in filename or filename.startswith('/'):
+        return "Arquivo não encontrado", 404
+    
+    # Valida extensão do arquivo
+    _, ext = os.path.splitext(filename)
+    if ext.lower() not in {'.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp', '.svg'}:
+        return "Tipo de arquivo não permitido", 403
+    
+    pasta_produtos = os.path.join(PASTA_PROJETO, 'static', 'produtos')
+    file_path = os.path.join(pasta_produtos, filename)
+    
+    # Verifica se o arquivo existe e está dentro do diretório permitido
+    if not os.path.exists(file_path) or not file_path.startswith(pasta_produtos):
+        return "Arquivo não encontrado", 404
+    
+    return send_from_directory(pasta_produtos, filename)
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 
+                             'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 # ==============================
 # Criação segura dos bancos com prepared statements
@@ -548,7 +575,7 @@ def cadastrar_cliente():
         # Hash da senha
         senha_hash = generate_password_hash(senha)
 
-        # Verifica se email ou CPF já existem
+        # Verifica si email ou CPF já existem
         conn = get_db_connection(CAMINHO_BANCO_CLIENTES)
         cursor = conn.cursor()
         cursor.execute("SELECT id FROM clientes WHERE email = ? OR cpf = ?", (email, cpf))
@@ -737,6 +764,7 @@ if __name__ == "__main__":
     print(f"🛡️  Rate limiting ativado")
     print(f"📊 Validações de entrada implementadas")
     print(f"💾 Bancos com constraints de segurança")
+    print(f"📸 Suporte a imagens de produtos ativado")
     print(f"🐛 Endpoints de debug disponíveis:")
     print(f"   - http://localhost:{porta_livre}/debug/tabela_clientes")
     print(f"   - http://localhost:{porta_livre}/debug/recriar_tabela_clientes")
@@ -749,4 +777,3 @@ if __name__ == "__main__":
         port=porta_livre,
         threaded=True
     )
-    
