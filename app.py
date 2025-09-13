@@ -727,26 +727,142 @@ def encontrar_porta_livre(porta_inicial=5000):
             porta += 1
     raise RuntimeError("Nenhuma porta livre encontrada")
 
+# ==============================
+# SOLUÇÃO DEFINITIVA PARA IMAGENS EXTERNAS
+# ==============================
+
+# Substitua a função add_security_headers existente por esta versão
+@app.after_request
+def add_security_headers(response):
+    """Headers de segurança permitindo TODAS as imagens externas"""
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+    response.headers['X-Frame-Options'] = 'DENY'
+    response.headers['X-XSS-Protection'] = '1; mode=block'
+    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    
+    # CSP SUPER PERMISSIVO PARA IMAGENS - PERMITE TUDO
+    response.headers['Content-Security-Policy'] = (
+        "default-src 'self'; "
+        "script-src 'self' 'unsafe-inline'; "
+        "style-src 'self' 'unsafe-inline'; "
+        "img-src * data: blob:; "  # ⭐⭐ ISSO PERMITE TODAS AS IMAGENS EXTERNAS ⭐⭐
+        "font-src 'self' data:; "
+        "connect-src 'self'; "
+        "frame-ancestors 'none'; "
+        "form-action 'self'; "
+        "base-uri 'self'; "
+        "object-src 'none'"
+    )
+    return response
+
+# Rota para proxy de imagens - caso precise contornar bloqueios de CORS
+@app.route('/proxy-image/<path:url>')
+def proxy_image(url):
+    """Serve imagens externas através do backend (contorna CORS)"""
+    import requests
+    from io import BytesIO
+    
+    try:
+        # Decodifica a URL
+        from urllib.parse import unquote
+        image_url = unquote(url)
+        
+        # Faz a requisição para a imagem externa
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+        response = requests.get(image_url, headers=headers, timeout=10)
+        response.raise_for_status()
+        
+        # Cria a resposta com a imagem
+        img_data = BytesIO(response.content)
+        return send_file(img_data, mimetype=response.headers.get('content-type', 'image/jpeg'))
+        
+    except Exception as e:
+        logger.error(f"Erro no proxy de imagem: {e}")
+        return jsonify({"status": "erro", "mensagem": "Não foi possível carregar a imagem"}), 500
+
+# Função para substituir URLs de imagem no HTML para usar o proxy
+def substituir_urls_imagens(html_content):
+    """Substitui URLs de imagens externas pelo proxy local"""
+    import re
+    
+    # Padrão para encontrar tags img
+    pattern = r'<img[^>]+src="([^"]+)"[^>]*>'
+    
+    def substituir_url(match):
+        url_original = match.group(1)
+        # Não substitui URLs locais
+        if url_original.startswith(('/static/', '/images/', 'data:')):
+            return match.group(0)
+        
+        # Codifica a URL para usar no proxy
+        from urllib.parse import quote
+        url_codificada = quote(url_original, safe='')
+        return match.group(0).replace(url_original, f'/proxy-image/{url_codificada}')
+    
+    return re.sub(pattern, substituir_url, html_content)
+
+# Middleware para processar HTML e substituir URLs de imagem
+@app.after_request
+def processar_imagens(response):
+    """Processa o HTML para substituir URLs de imagem se necessário"""
+    if response.content_type and 'text/html' in response.content_type:
+        try:
+            response.set_data(substituir_urls_imagens(response.get_data(as_text=True)))
+        except Exception as e:
+            logger.error(f"Erro ao processar imagens: {e}")
+    return response
+
+# ==============================
+# Rotas adicionais para servir arquivos
+# ==============================
+
+@app.route('/images/<path:filename>')
+def serve_images(filename):
+    """Serve imagens locais"""
+    return send_from_directory(os.path.join(PASTA_PROJETO, 'images'), filename)
+
+@app.route('/assets/<path:filename>')
+def serve_assets(filename):
+    """Serve assets (imagens, ícones, etc)"""
+    return send_from_directory(os.path.join(PASTA_PROJETO, 'assets'), filename)
+
+# ==============================
+# Configuração EXTRA para permitir tudo
+# ==============================
+
+# Desativa proteções se necessário (apenas para desenvolvimento)
+@app.after_request
+def disable_protections_if_needed(response):
+    """Desativa algumas proteções para garantir que funcione"""
+    # Remove CSP muito restritivo se ainda existir
+    if 'Content-Security-Policy' in response.headers and 'img-src' in response.headers['Content-Security-Policy']:
+        if 'img-src *' not in response.headers['Content-Security-Policy']:
+            response.headers['Content-Security-Policy'] = response.headers['Content-Security-Policy'].replace(
+                'img-src', 'img-src * data: blob:'
+            )
+    return response
+
+# ==============================
+# INICIALIZAÇÃO DO SERVIDOR
+# ==============================
+
 if __name__ == "__main__":
     # Configurações de segurança
     porta_livre = encontrar_porta_livre()
     
-    print(f"🚀 Servidor TechSuppliers iniciado com segurança máxima!")
+    print(f"🚀 Servidor TechSuppliers iniciado com MÁXIMA PERMISSÃO para imagens!")
     print(f"📍 URL: http://localhost:{porta_livre}")
-    print(f"🔒 Headers de segurança habilitados")
-    print(f"🛡️  Rate limiting ativado")
-    print(f"📊 Validações de entrada implementadas")
-    print(f"💾 Bancos com constraints de segurança")
-    print(f"🐛 Endpoints de debug disponíveis:")
-    print(f"   - http://localhost:{porta_livre}/debug/tabela_clientes")
-    print(f"   - http://localhost:{porta_livre}/debug/recriar_tabela_clientes")
-    print(f"   - http://localhost:{porta_livre}/debug/testar_genero/masculino")
+    print(f"🌐 IMAGENS EXTERNAS HABILITADAS: Amazon, Shopee, Mercado Livre, etc.")
+    print(f"🔄 Proxy de imagens ativo: /proxy-image/")
+    print(f"🔓 CSP configurado para permitir TODAS as imagens")
+    print(f"📦 Servindo imagens locais: /images/")
     
     # Configurações de produção
     app.run(
-        debug=True,  # Ativa debug para ver erros detalhados
+        debug=True,
         host="0.0.0.0", 
         port=porta_livre,
         threaded=True
     )
-
