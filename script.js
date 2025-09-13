@@ -816,9 +816,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
-// Seleciona todas as imagens de produtos
-document.querySelectorAll('img[data-src]').forEach(img => {
-    const url = img.getAttribute('data-src'); // URL externa
-    img.setAttribute('src', url); // coloca no src para carregar
+document.addEventListener('DOMContentLoaded', function() {
+    // Forçar sidebar iniciar minimizada
+    document.body.classList.add('sidebar-collapsed');
+    
+    // Atualizar o botão de toggle
+    const sidebarToggleBtn = document.getElementById('sidebar-toggle-btn');
+    if (sidebarToggleBtn) {
+        sidebarToggleBtn.innerHTML = '▶';
+    }
+    
+    // Sobrescrever qualquer preferência salva anteriormente
+    localStorage.setItem('sidebarCollapsed', 'true');
+    
+    // Ajustar a posição do botão de toggle
+    function adjustTogglePosition() {
+        const sidebar = document.querySelector('.menu, .sidebar, nav');
+        const toggleBtn = document.getElementById('sidebar-toggle-btn');
+        
+        if (sidebar && toggleBtn) {
+            if (document.body.classList.contains('sidebar-collapsed')) {
+                toggleBtn.style.left = '60px';
+            } else {
+                const sidebarWidth = window.getComputedStyle(sidebar).width;
+                toggleBtn.style.left = parseInt(sidebarWidth) - 10 + 'px';
+            }
+        }
+    }
+    
+    // Chamar a função após um pequeno delay para garantir que o DOM esteja pronto
+    setTimeout(adjustTogglePosition, 100);
+    
+    // Re-ajustar quando a janela for redimensionada
+    window.addEventListener('resize', adjustTogglePosition);
 });
