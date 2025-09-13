@@ -5,15 +5,12 @@ import re
 import html
 import hashlib
 import secrets
-from flask import Flask, request, jsonify, send_from_directory, send_file, session, redirect, url_for, render_template_string
+from flask import Flask, request, jsonify, send_from_directory, send_file, session, redirect, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 import logging
 
-# exemplo de rota backend (cadastro)
-@app.route("/api/hello")
-def hello():
-    return {"mensagem": "Backend funcionando no Render!"}
+app = Flask(__name__, static_folder="static")
 
 # rota para páginas HTML
 @app.route("/")
@@ -752,4 +749,4 @@ if __name__ == "__main__":
         port=porta_livre,
         threaded=True
     )
-
+    
