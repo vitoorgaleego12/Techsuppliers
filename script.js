@@ -850,3 +850,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // Re-ajustar quando a janela for redimensionada
     window.addEventListener('resize', adjustTogglePosition);
 });
+
+
+
+
+function mascararCPF(cpf) {
+    return '***.***.***-**';
+}
+
+function mascararCNPJ(cnpj) {
+    return '**.***.***/****-**';
+}
+
+function mascararTelefone(telefone) {
+    return '(**) ****-****';
+}
+
+function mascararEmail(email) {
+    let partes = email.split('@');
+    if (partes.length === 2) return '****@' + partes[1];
+    return '****@email.com';
+}
+
+// Exemplo ao popular tabela
+for (let fornecedor of fornecedores) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+        <td>${fornecedor.nome}</td>
+        <td>${fornecedor.razao}</td>
+        <td>${mascararCPF(fornecedor.cpfcnpj)}</td>
+        <td>${mascararTelefone(fornecedor.telefone)}</td>
+        <td>${mascararEmail(fornecedor.email)}</td>
+    `;
+    tabela.appendChild(tr);
+}
