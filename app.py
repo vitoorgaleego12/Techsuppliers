@@ -10,6 +10,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 import logging
 
+from flask import Flask, send_from_directory, render_template_string
+
 app = Flask(__name__, static_folder="static")
 
 # rota para páginas HTML
@@ -750,6 +752,3 @@ if __name__ == "__main__":
         threaded=True
     )
     
-from flask import Flask, send_from_directory, render_template_string
-
-app = Flask(__name__, static_folder="static")
