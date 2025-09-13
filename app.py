@@ -161,17 +161,6 @@ def validar_senha(senha):
         return False
     return True
 
-def mascarar_telefone(telefone):
-    """Mascara telefone para exibição: (11) 99999-9999"""
-    if not telefone:
-        return ""
-    telefone_limpo = re.sub(r'[^\d]', '', telefone)
-    if len(telefone_limpo) == 11:
-        return f"({telefone_limpo[:2]}) {telefone_limpo[2:7]}-{telefone_limpo[7:]}"
-    elif len(telefone_limpo) == 10:
-        return f"({telefone_limpo[:2]}) {telefone_limpo[2:6]}-{telefone_limpo[6:]}"
-    return telefone
-
 
 # ==============================
 # Funções para ocultar dados sensíveis
