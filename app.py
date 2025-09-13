@@ -5,12 +5,10 @@ import re
 import html
 import hashlib
 import secrets
-from flask import Flask, request, jsonify, send_from_directory, send_file, session, redirect, url_for
+from flask import Flask, request, jsonify, send_from_directory, send_file, session, redirect, url_for, render_template_string
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 import logging
-
-from flask import Flask, send_from_directory, render_template_string
 
 # exemplo de rota backend (cadastro)
 @app.route("/api/hello")
