@@ -9,32 +9,6 @@ from flask import Flask, request, jsonify, send_from_directory, send_file, sessi
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 import logging
-requests
-import requests
-from flask import Response, request
-
-@app.route("/proxy_image")
-def proxy_image():
-    url = request.args.get("url")
-    if not url:
-        return "URL não informada", 400
-    try:
-        resp = requests.get(url, stream=True)
-        return Response(resp.content, content_type=resp.headers["Content-Type"])
-    except Exception as e:
-        return f"Erro ao carregar imagem: {e}", 500
-from flask import Flask, send_from_directory
-
-app = Flask(__name__, static_folder=".", static_url_path="")
-
-# rota para servir qualquer arquivo estático (html, css, js, imagens)
-@app.route('/<path:path>')
-def static_files(path):
-    return send_from_directory('.', path)
-
-@app.route('/')
-def index():
-    return send_from_directory('.', 'index.html')
 
 app = Flask(__name__, static_folder="static")
 
