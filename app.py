@@ -10,7 +10,19 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 import logging
 requests
+import requests
+from flask import Response, request
 
+@app.route("/proxy_image")
+def proxy_image():
+    url = request.args.get("url")
+    if not url:
+        return "URL não informada", 400
+    try:
+        resp = requests.get(url, stream=True)
+        return Response(resp.content, content_type=resp.headers["Content-Type"])
+    except Exception as e:
+        return f"Erro ao carregar imagem: {e}", 500
 from flask import Flask, send_from_directory
 
 app = Flask(__name__, static_folder=".", static_url_path="")
