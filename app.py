@@ -21,15 +21,8 @@ CORS(app)  # Habilita CORS para todas as rotas
 # CSP corrigido para permitir imagens externas
 @app.after_request
 def add_csp_headers(response):
-    csp_policy = (
-        "default-src 'self'; "
-        "script-src 'self' 'unsafe-inline'; "
-        "style-src 'self' 'unsafe-inline'; "
-        "img-src * data: blob:; "  # Permite imagens de qualquer origem
-        "media-src *; "  # Para vídeos/áudio se necessário
-        "frame-ancestors 'none';"  # Prevenção contra clickjacking
-    )
-    response.headers['Content-Security-Policy'] = csp_policy
+    # Comente temporariamente para teste
+    # response.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src * data:;"
     return response
     
 # rota para servir qualquer arquivo estático (html, css, js, imagens)
