@@ -10,7 +10,24 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 import logging
 
-app = Flask(__name__, static_folder='static')
+app = Flask(__name__, static_folder="static")
+
+# rota para páginas HTML
+@app.route("/")
+def index():
+    return send_from_directory(os.path.dirname(__file__), "index.html")
+
+@app.route("/<path:filename>")
+def serve_page(filename):
+    return send_from_directory(os.path.dirname(__file__), filename)
+
+# rota para arquivos estáticos (css, js, imagens)
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory(os.path.join(app.root_path, 'static'), filename)
+    
+
+app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', secrets.token_hex(32))
 
 # Configuração de logging
@@ -134,7 +151,7 @@ def validar_senha(senha):
 # ==============================
 # Servir arquivos estáticos com validação
 # ==============================
-ALLOWED_EXTENSIONS = {'.css', '.js', '.html', '.png', '.jpg', '.jpeg', '.gif', '.ico', '.svg', '.webp', '.ttf', '.woff', '.woff2'}
+ALLOWED_EXTENSIONS = {'.css', '.js', '.html', '.png', '.jpg', '.jpeg', '.gif', '.ico', '.svg'}
 
 @app.route('/<path:filename>')
 def serve_static(filename):
@@ -164,11 +181,7 @@ def serve_static(filename):
         '.jpeg': 'image/jpeg',
         '.gif': 'image/gif',
         '.ico': 'image/x-icon',
-        '.svg': 'image/svg+xml',
-        '.webp': 'image/webp',
-        '.ttf': 'font/ttf',
-        '.woff': 'font/woff',
-        '.woff2': 'font/woff2'
+        '.svg': 'image/svg+xml'
     }
     
     mimetype = mime_types.get(ext.lower(), 'text/plain')
@@ -177,12 +190,6 @@ def serve_static(filename):
     response = send_from_directory(PASTA_PROJETO, filename, mimetype=mimetype)
     response.headers['Cache-Control'] = 'public, max-age=3600'
     return response
-
-# Servir arquivos da pasta static corretamente
-@app.route('/static/<path:filename>')
-def serve_static_files(filename):
-    """Serve arquivos da pasta static"""
-    return send_from_directory(os.path.join(app.root_path, 'static'), filename)
 
 # ==============================
 # Criação segura dos bancos com prepared statements
@@ -541,7 +548,7 @@ def cadastrar_cliente():
         # Hash da senha
         senha_hash = generate_password_hash(senha)
 
-        # Verifica si email ou CPF já existem
+        # Verifica se email ou CPF já existem
         conn = get_db_connection(CAMINHO_BANCO_CLIENTES)
         cursor = conn.cursor()
         cursor.execute("SELECT id FROM clientes WHERE email = ? OR cpf = ?", (email, cpf))
@@ -708,13 +715,6 @@ def health_check():
     return jsonify({"status": "healthy", "timestamp": time()})
 
 # ==============================
-# API endpoint simples para teste
-# ==============================
-@app.route("/api/hello")
-def hello():
-    return {"mensagem": "Backend funcionando no Render!"}
-
-# ==============================
 # Inicialização segura do servidor
 # ==============================
 def encontrar_porta_livre(porta_inicial=5000):
@@ -748,4 +748,5 @@ if __name__ == "__main__":
         host="0.0.0.0", 
         port=porta_livre,
         threaded=True
-                                          )
+    )
+    
