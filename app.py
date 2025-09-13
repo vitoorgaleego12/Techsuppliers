@@ -17,6 +17,10 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)  # isso libera acesso a recursos externos (imagens, APIs, etc.)
 
+from flask_cors import CORS
+
+app = Flask(__name__, static_folder=".", static_url_path="")
+CORS(app)  # habilita carregamento de imagens externas e outros recursos
 
 app = Flask(__name__, static_folder=".", static_url_path="")
 
@@ -183,19 +187,24 @@ def serve_page(filename):
     
     # Define MIME types
     mime_types = {
-        '.css': 'text/css',
-        '.js': 'application/javascript',
-        '.html': 'text/html',
-        '.png': 'image/png',
-        '.jpg': 'image/jpeg',
-        '.jpeg': 'image/jpeg',
-        '.gif': 'image/gif',
-        '.ico': 'image/x-icon',
-        '.svg': 'image/svg+xml',
-        '.webp': 'image/webp',
-        '.bmp': 'image/bmp',
-        '.tiff': 'image/tiff'
-    }
+    '.css': 'text/css',
+    '.js': 'application/javascript',
+    '.html': 'text/html',
+    '.png': 'image/png',
+    '.jpg': 'image/jpeg',
+    '.jpeg': 'image/jpeg',
+    '.gif': 'image/gif',
+    '.ico': 'image/x-icon',
+    '.svg': 'image/svg+xml',
+    '.webp': 'image/webp',
+    '.bmp': 'image/bmp',
+    '.tiff': 'image/tiff',
+    '.avif': 'image/avif',
+    '.heic': 'image/heic',
+    '.heif': 'image/heif',
+    '.apng': 'image/apng',
+    '.jfif': 'image/jpeg'
+}
     
     mimetype = mime_types.get(ext.lower(), 'text/plain')
     
