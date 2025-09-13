@@ -158,6 +158,37 @@ def validar_senha(senha):
         return False
     return True
 
+
+def mascarar_cpf(cpf):
+    """Mascara CPF para exibição: 123.456.789-00"""
+    if not cpf:
+        return ""
+    cpf_limpo = re.sub(r'[^\d]', '', cpf)
+    if len(cpf_limpo) == 11:
+        return f"{cpf_limpo[:3]}.{cpf_limpo[3:6]}.{cpf_limpo[6:9]}-{cpf_limpo[9:]}"
+    return cpf
+
+def mascarar_cnpj(cnpj):
+    """Mascara CNPJ para exibição: 12.345.678/0001-90"""
+    if not cnpj:
+        return ""
+    cnpj_limpo = re.sub(r'[^\d]', '', cnpj)
+    if len(cnpj_limpo) == 14:
+        return f"{cnpj_limpo[:2]}.{cnpj_limpo[2:5]}.{cnpj_limpo[5:8]}/{cnpj_limpo[8:12]}-{cnpj_limpo[12:]}"
+    return cnpj
+
+def mascarar_telefone(telefone):
+    """Mascara telefone para exibição: (11) 99999-9999"""
+    if not telefone:
+        return ""
+    telefone_limpo = re.sub(r'[^\d]', '', telefone)
+    if len(telefone_limpo) == 11:
+        return f"({telefone_limpo[:2]}) {telefone_limpo[2:7]}-{telefone_limpo[7:]}"
+    elif len(telefone_limpo) == 10:
+        return f"({telefone_limpo[:2]}) {telefone_limpo[2:6]}-{telefone_limpo[6:]}"
+    return telefone
+
+
 # ==============================
 # Servir arquivos estáticos com validação
 # ==============================
