@@ -733,24 +733,6 @@ if __name__ == "__main__":
         threaded=True
     )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import os
-from flask import Flask, send_from_directory, render_template_string
-
 app = Flask(__name__, static_folder="static")
 
 # rota para páginas HTML
