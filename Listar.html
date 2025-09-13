@@ -306,6 +306,71 @@
                 max-width: 100%;
             }
         }
+
+        /* Novos estilos para informações sensíveis */
+        .sensitive-info {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .sensitive-info .hidden-data {
+            filter: blur(5px);
+            transition: var(--transition);
+        }
+        
+        .sensitive-info .visible-data {
+            filter: none;
+        }
+        
+        .sensitive-info::after {
+            content: '\f06e';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+            color: var(--gray);
+            opacity: 0.7;
+        }
+        
+        .sensitive-info.revealed::after {
+            content: '\f070';
+        }
+        
+        .privacy-notice {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .privacy-notice i {
+            color: #ffc107;
+        }
+        
+        .toggle-sensitive {
+            margin-bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--light-gray);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .toggle-sensitive:hover {
+            background-color: #dcdcdc;
+        }
     </style>
 </head>
 <body>
@@ -323,10 +388,20 @@
             </div>
         </div>
         
+        <div class="privacy-notice">
+            <i class="fas fa-shield-alt"></i>
+            <span>Informações sensíveis estão ocultas por padrão para proteger a privacidade.</span>
+        </div>
+        
         <div class="search-box">
             <i class="fas fa-search"></i>
             <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Pesquisar fornecedor...">
         </div>
+        
+        <button class="toggle-sensitive" onclick="toggleAllSensitiveData()">
+            <i class="fas fa-eye"></i>
+            <span>Mostrar todas as informações sensíveis</span>
+        </button>
         
         <div class="card">
             <div class="table-container">
@@ -370,6 +445,8 @@
     </div>
 
     <script>
+        let allDataRevealed = false;
+        
         document.addEventListener('DOMContentLoaded', function() {
             fetch('/fornecedores_json')
                 .then(response => response.json())
@@ -380,17 +457,25 @@
                         const row = document.createElement('tr');
                         
                         // Gerar status aleatório para exemplo
-                        const status = Math.random() > 0 ? 'active' : '';
+                        const status = Math.random() > 0.3 ? 'active' : '';
                         
                         row.innerHTML = `
                             <td>${fornecedor.id || ''}</td>
                             <td>${fornecedor.nome || ''}</td>
                             <td>${fornecedor.razao || ''}</td>
-                            <td>${formatCPFCNPJ(fornecedor.cpfcnpj)}</td>
+                            <td class="sensitive-info" onclick="toggleSensitiveData(this)">
+                                <span class="hidden-data">${formatCPFCNPJ(fornecedor.cpfcnpj)}</span>
+                            </td>
                             <td>${fornecedor.idade || ''}</td>
-                            <td>${formatTelefone(fornecedor.telefone)}</td>
-                            <td>${fornecedor.email || ''}</td>
-                            <td>${fornecedor.endereco || ''}</td>
+                            <td class="sensitive-info" onclick="toggleSensitiveData(this)">
+                                <span class="hidden-data">${formatTelefone(fornecedor.telefone)}</span>
+                            </td>
+                            <td class="sensitive-info" onclick="toggleSensitiveData(this)">
+                                <span class="hidden-data">${fornecedor.email || ''}</span>
+                            </td>
+                            <td class="sensitive-info" onclick="toggleSensitiveData(this)">
+                                <span class="hidden-data">${fornecedor.endereco || ''}</span>
+                            </td>
                             <td>${fornecedor.site ? `<a href="${fornecedor.site}" target="_blank">${fornecedor.site}</a>` : ''}</td>
                             <td>${fornecedor.servico || ''}</td>
                             <td>${fornecedor.tempo || ''}</td>
@@ -465,7 +550,10 @@
                 
                 for (let j = 0; j < td.length; j++) {
                     if (td[j]) {
-                        const txtValue = td[j].textContent || td[j].innerText;
+                        // Para células sensíveis, verificar o texto real, não o texto borrado
+                        const sensitiveSpan = td[j].querySelector('.hidden-data');
+                        const txtValue = sensitiveSpan ? sensitiveSpan.textContent : (td[j].textContent || td[j].innerText);
+                        
                         if (txtValue.toUpperCase().indexOf(filter) > -1) {
                             found = true;
                             break;
@@ -474,6 +562,54 @@
                 }
                 
                 tr[i].style.display = found ? '' : 'none';
+            }
+        }
+        
+        // Função para mostrar/ocultar informações sensíveis individualmente
+        function toggleSensitiveData(element) {
+            const span = element.querySelector('span');
+            if (span.classList.contains('hidden-data')) {
+                span.classList.remove('hidden-data');
+                span.classList.add('visible-data');
+                element.classList.add('revealed');
+            } else {
+                span.classList.remove('visible-data');
+                span.classList.add('hidden-data');
+                element.classList.remove('revealed');
+            }
+        }
+        
+        // Função para mostrar/ocultar todas as informações sensíveis
+        function toggleAllSensitiveData() {
+            const sensitiveElements = document.querySelectorAll('.sensitive-info');
+            const toggleButton = document.querySelector('.toggle-sensitive');
+            const toggleIcon = toggleButton.querySelector('i');
+            const toggleText = toggleButton.querySelector('span');
+            
+            allDataRevealed = !allDataRevealed;
+            
+            sensitiveElements.forEach(element => {
+                const span = element.querySelector('span');
+                if (allDataRevealed) {
+                    span.classList.remove('hidden-data');
+                    span.classList.add('visible-data');
+                    element.classList.add('revealed');
+                } else {
+                    span.classList.remove('visible-data');
+                    span.classList.add('hidden-data');
+                    element.classList.remove('revealed');
+                }
+            });
+            
+            // Atualizar texto e ícone do botão
+            if (allDataRevealed) {
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+                toggleText.textContent = 'Ocultar todas as informações sensíveis';
+            } else {
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+                toggleText.textContent = 'Mostrar todas as informações sensíveis';
             }
         }
     </script>
