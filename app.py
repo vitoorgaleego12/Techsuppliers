@@ -160,6 +160,38 @@ def validar_senha(senha):
     if not re.search(r'[^A-Za-z0-9]', senha):
         return False
     return True
+    
+
+# ==============================
+# Funções para ocultar dados sensíveis
+# ==============================
+def mascarar_cpf(cpf):
+    """Oculta CPF completamente"""
+    if not cpf:
+        return "Não informado"
+    return "***.***.***-**"
+
+def mascarar_cnpj(cnpj):
+    """Oculta CNPJ completamente"""
+    if not cnpj:
+        return "Não informado"
+    return "**.***.***/****-**"
+
+def mascarar_telefone(telefone):
+    """Oculta telefone completamente"""
+    if not telefone:
+        return "Não informado"
+    return "(**) ****-****"
+
+def mascarar_email(email):
+    """Oculta parte do email"""
+    if not email or '@' not in email:
+        return "Não informado"
+    partes = email.split('@')
+    if len(partes) == 2:
+        return f"****@{partes[1]}"
+    return "****@email.com"
+    
 
 
 
