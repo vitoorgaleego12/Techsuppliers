@@ -816,3 +816,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+// Seleciona todas as imagens de produtos
+document.querySelectorAll('img[data-src]').forEach(img => {
+    const url = img.getAttribute('data-src'); // URL externa
+    img.setAttribute('src', url); // coloca no src para carregar
+});
