@@ -9,6 +9,7 @@ from functools import wraps
 import logging
 from time import time
 from collections import defaultdict
+import uuid
 
 app = Flask(__name__, static_folder="static", static_url_path="/static")
 
@@ -18,6 +19,7 @@ app.config['PREFERRED_URL_SCHEME'] = 'https'  # Forçar HTTPS no Render
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 app.config['SESSION_COOKIE_SECURE'] = True
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+app.config['PERMANENT_SESSION_LIFETIME'] = 3600  # 1 hora de sessão
 
 # Configuração de logging
 logging.basicConfig(level=logging.INFO)
@@ -64,6 +66,21 @@ def enforce_https_in_production():
         if request.headers.get('X-Forwarded-Proto') == 'http':
             url = request.url.replace('http://', 'https://', 1)
             return redirect(url, code=301)
+
+@app.before_request
+def verify_csrf_token():
+    """Verifica token CSRF para requisições POST"""
+    if request.method == "POST" and not request.path.startswith('/static'):
+        # Verifica se é uma rota que precisa de CSRF
+        csrf_protected = any(pattern in request.path for pattern in 
+                           ['/cadastrar', '/cadastrar_cliente', '/login_cliente'])
+        
+        if csrf_protected:
+            # Verifica se o token CSRF está presente e é válido
+            csrf_token = request.form.get('csrf_token') or request.headers.get('X-CSRF-Token')
+            if not csrf_token or csrf_token != session.get('csrf_token'):
+                logger.warning(f"Tentativa de acesso sem CSRF token válido: {request.remote_addr}")
+                return jsonify({"status": "erro", "mensagem": "Token de segurança inválido."}), 403
 
 def rate_limit(max_requests=100, window=60):
     """Middleware de rate limiting"""
@@ -160,7 +177,6 @@ def validar_senha(senha):
     if not re.search(r'[^A-Za-z0-9]', senha):
         return False
     return True
-    
 
 # ==============================
 # Funções para ocultar dados sensíveis
@@ -168,20 +184,29 @@ def validar_senha(senha):
 def mascarar_cpf(cpf):
     """Oculta CPF completamente"""
     if not cpf:
-        return ""
-    return "***.***.***-**"
+        return "Não informado"
+    cpf_limpo = re.sub(r'[^\d]', '', cpf)
+    if len(cpf_limpo) == 11:
+        return "***.***.***-**"
+    return "Não informado"
 
 def mascarar_cnpj(cnpj):
     """Oculta CNPJ completamente"""
     if not cnpj:
-        return ""
-    return "**.***.***/****-**"
+        return "Não informado"
+    cnpj_limpo = re.sub(r'[^\d]', '', cnpj)
+    if len(cnpj_limpo) == 14:
+        return "**.***.***/****-**"
+    return "Não informado"
 
 def mascarar_telefone(telefone):
     """Oculta telefone completamente"""
     if not telefone:
         return "Não informado"
-    return "(**) ****-****"
+    telefone_limpo = re.sub(r'[^\d]', '', telefone)
+    if len(telefone_limpo) in [10, 11]:
+        return "(**) ****-****"
+    return "Não informado"
 
 def mascarar_email(email):
     """Oculta parte do email"""
@@ -189,11 +214,44 @@ def mascarar_email(email):
         return "Não informado"
     partes = email.split('@')
     if len(partes) == 2:
-        return f"****@{partes[1]}"
+        nome = partes[0]
+        dominio = partes[1]
+        if len(nome) <= 2:
+            return f"**@{dominio}"
+        else:
+            return f"{nome[0]}{'*'*(len(nome)-2)}{nome[-1]}@{dominio}" if len(nome) > 2 else f"**@{dominio}"
     return "****@email.com"
-    
 
+def mascarar_endereco(endereco):
+    """Oculta parte do endereço"""
+    if not endereco:
+        return "Não informado"
+    partes = endereco.split(',')
+    if len(partes) > 1:
+        # Mantém apenas a cidade/estado, oculta o restante
+        return f"****, {partes[-1].strip()}"
+    return "Endereço oculto"
 
+# ==============================
+# Decorators de autenticação e autorização
+# ==============================
+def login_required(f):
+    """Decorator para exigir login"""
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not session.get('logged_in'):
+            return jsonify({"status": "erro", "mensagem": "Login necessário."}), 401
+        return f(*args, **kwargs)
+    return decorated_function
+
+def admin_required(f):
+    """Decorator para exigir privilégios de administrador"""
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not session.get('logged_in') or not session.get('is_admin', False):
+            return jsonify({"status": "erro", "mensagem": "Acesso não autorizado."}), 403
+        return f(*args, **kwargs)
+    return decorated_function
 
 # ==============================
 # Servir arquivos estáticos com validação
@@ -202,6 +260,8 @@ ALLOWED_EXTENSIONS = {'.css', '.js', '.html', '.png', '.jpg', '.jpeg', '.gif', '
 
 @app.route('/')
 def index():
+    # Gera um novo token CSRF para a sessão
+    session['csrf_token'] = str(uuid.uuid4())
     return send_from_directory(PASTA_PROJETO, "index.html")
 
 @app.route('/<path:filename>')
@@ -222,6 +282,8 @@ def serve_page(filename):
     if not os.path.exists(file_path) or not file_path.startswith(PASTA_PROJETO):
         return "Arquivo não encontrado", 404
     
+    # Gera um novo token CSRF para a sessão em cada página
+    session['csrf_token'] = str(uuid.uuid4())
     return send_from_directory(PASTA_PROJETO, filename)
 
 # ==============================
@@ -255,6 +317,28 @@ def criar_bancos():
                 data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP
             )
         ''')
+        
+        # Tabela de administradores
+        cursor_fornecedores.execute('''
+            CREATE TABLE IF NOT EXISTS administradores (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                usuario TEXT NOT NULL UNIQUE CHECK(length(usuario) <= 50),
+                senha TEXT NOT NULL CHECK(length(senha) <= 255),
+                email TEXT NOT NULL UNIQUE CHECK(length(email) <= 100),
+                data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP
+            )
+        ''')
+        
+        # Verifica se já existe um admin padrão
+        cursor_fornecedores.execute("SELECT COUNT(*) FROM administradores")
+        if cursor_fornecedores.fetchone()[0] == 0:
+            # Cria um admin padrão (em produção, isso deve ser alterado)
+            senha_admin = generate_password_hash("admin123")
+            cursor_fornecedores.execute(
+                "INSERT INTO administradores (usuario, senha, email) VALUES (?, ?, ?)",
+                ("admin", senha_admin, "admin@example.com")
+            )
+        
         conn_fornecedores.commit()
         conn_fornecedores.close()
 
@@ -338,18 +422,24 @@ def get_db_connection(db_path):
 # ==============================
 @app.route("/fornecedores")
 def pagina_fornecedores():
+    session['csrf_token'] = str(uuid.uuid4())
     return send_from_directory(PASTA_PROJETO, "cadastro.html")
 
 @app.route("/clientes")
 def pagina_clientes():
+    session['csrf_token'] = str(uuid.uuid4())
     return send_from_directory(PASTA_PROJETO, "cliente.html")
 
 @app.route("/listar_fornecedores")
+@login_required
 def listar_fornecedores():
+    session['csrf_token'] = str(uuid.uuid4())
     return send_from_directory(PASTA_PROJETO, "Listar.html")
 
 @app.route("/listar_clientes")
+@admin_required
 def listar_clientes():
+    session['csrf_token'] = str(uuid.uuid4())
     return send_from_directory(PASTA_PROJETO, "Listar_clientes.html")
 
 # ==============================
@@ -372,9 +462,12 @@ def login_cliente():
         conn.close()
         
         if not cliente:
+            logger.warning(f"Tentativa de login com email não cadastrado: {email}")
             return jsonify({"status": "erro", "mensagem": "Email ou senha incorretos."}), 401
         
+        # CORREÇÃO: Verifica a senha com check_password_hash
         if not check_password_hash(cliente['senha'], senha):
+            logger.warning(f"Tentativa de login com senha incorreta para: {email}")
             return jsonify({"status": "erro", "mensagem": "Email ou senha incorretos."}), 401
         
         # Cria a sessão do usuário
@@ -382,6 +475,10 @@ def login_cliente():
         session['cliente_nome'] = cliente['nome']
         session['cliente_email'] = cliente['email']
         session['logged_in'] = True
+        session['is_admin'] = False  # Clientes não são administradores
+        
+        # Renova o token CSRF após login
+        session['csrf_token'] = str(uuid.uuid4())
         
         logger.info(f"Cliente logado: {cliente['nome']}")
         return jsonify({
@@ -392,6 +489,51 @@ def login_cliente():
         
     except Exception as e:
         logger.error(f"Erro no login: {e}")
+        return jsonify({"status": "erro", "mensagem": "Erro interno do servidor."}), 500
+
+@app.route('/login_admin', methods=['POST'])
+@rate_limit(max_requests=5, window=60)
+def login_admin():
+    """Login para administradores"""
+    try:
+        usuario = sanitizar_input(request.form.get('usuario', ''))
+        senha = request.form.get('senha', '')
+        
+        if not usuario or not senha:
+            return jsonify({"status": "erro", "mensagem": "Usuário e senha são obrigatórios."}), 400
+        
+        conn = get_db_connection(CAMINHO_BANCO_FORNECEDORES)
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM administradores WHERE usuario = ?", (usuario,))
+        admin = cursor.fetchone()
+        conn.close()
+        
+        if not admin:
+            logger.warning(f"Tentativa de login admin com usuário não cadastrado: {usuario}")
+            return jsonify({"status": "erro", "mensagem": "Usuário ou senha incorretos."}), 401
+        
+        if not check_password_hash(admin['senha'], senha):
+            logger.warning(f"Tentativa de login admin com senha incorreta para: {usuario}")
+            return jsonify({"status": "erro", "mensagem": "Usuário ou senha incorretos."}), 401
+        
+        # Cria a sessão do administrador
+        session['admin_id'] = admin['id']
+        session['admin_usuario'] = admin['usuario']
+        session['logged_in'] = True
+        session['is_admin'] = True
+        
+        # Renova o token CSRF após login
+        session['csrf_token'] = str(uuid.uuid4())
+        
+        logger.info(f"Administrador logado: {admin['usuario']}")
+        return jsonify({
+            "status": "ok", 
+            "mensagem": "Login administrativo realizado com sucesso!",
+            "redirect": "/listar_clientes"
+        })
+        
+    except Exception as e:
+        logger.error(f"Erro no login admin: {e}")
         return jsonify({"status": "erro", "mensagem": "Erro interno do servidor."}), 500
 
 @app.route('/logout')
@@ -407,7 +549,8 @@ def check_session():
         return jsonify({
             "logged_in": True,
             "cliente_nome": session.get('cliente_nome'),
-            "cliente_email": session.get('cliente_email')
+            "cliente_email": session.get('cliente_email'),
+            "is_admin": session.get('is_admin', False)
         })
     return jsonify({"logged_in": False})
 
@@ -416,6 +559,7 @@ def check_session():
 # ==============================
 @app.route("/cadastrar", methods=["POST"])
 @rate_limit(max_requests=10, window=60)
+@login_required
 def cadastrar_fornecedor():
     try:
         # Coleta e sanitiza os dados
@@ -494,7 +638,7 @@ def cadastrar_fornecedor():
         conn.commit()
         conn.close()
 
-        logger.info(f"Fornecedor cadastrado: {dados['nome']}")
+        logger.info(f"Fornecedor cadastrado por {session.get('cliente_nome')}: {dados['nome']}")
         return jsonify({"status": "ok", "mensagem": "Cadastro realizado com sucesso!"})
     
     except sqlite3.Error as e:
@@ -599,6 +743,10 @@ def cadastrar_cliente():
         session['cliente_nome'] = novo_cliente['nome']
         session['cliente_email'] = novo_cliente['email']
         session['logged_in'] = True
+        session['is_admin'] = False
+
+        # Renova o token CSRF após cadastro
+        session['csrf_token'] = str(uuid.uuid4())
 
         logger.info(f"Cliente cadastrado e logado: {nome}")
         return jsonify({
@@ -622,6 +770,7 @@ def cadastrar_cliente():
 # ==============================
 @app.route('/fornecedores_json')
 @rate_limit(max_requests=30, window=60)
+@login_required
 def fornecedores_json():
     try:
         conn = get_db_connection(CAMINHO_BANCO_FORNECEDORES)
@@ -636,6 +785,8 @@ def fornecedores_json():
             # Mascara dados sensíveis
             fornecedor['cpfcnpj'] = mascarar_cpf(fornecedor['cpfcnpj']) if len(fornecedor['cpfcnpj']) == 11 else mascarar_cnpj(fornecedor['cpfcnpj'])
             fornecedor['telefone'] = mascarar_telefone(fornecedor['telefone'])
+            fornecedor['email'] = mascarar_email(fornecedor['email'])
+            fornecedor['endereco'] = mascarar_endereco(fornecedor['endereco'])
             fornecedores.append(fornecedor)
             
         return jsonify(fornecedores)
@@ -645,6 +796,7 @@ def fornecedores_json():
 
 @app.route('/clientes_json')
 @rate_limit(max_requests=30, window=60)
+@admin_required
 def clientes_json():
     try:
         conn = get_db_connection(CAMINHO_BANCO_CLIENTES)
@@ -666,9 +818,8 @@ def clientes_json():
             # Mascara dados sensíveis
             cliente['cpf'] = mascarar_cpf(cliente['cpf'])
             cliente['telefone'] = mascarar_telefone(cliente['telefone'])
-            # Remove dados sensíveis que não devem ser exibidos
-            if 'senha' in cliente:
-                del cliente['senha']
+            cliente['email'] = mascarar_email(cliente['email'])
+            cliente['endereco'] = mascarar_endereco(cliente['endereco'])
             clientes.append(cliente)
             
         return jsonify(clientes)
@@ -751,6 +902,15 @@ def serve_assets(filename):
     return send_from_directory(os.path.join(PASTA_PROJETO, 'assets'), filename)
 
 # ==============================
+# Página de login administrativo
+# ==============================
+@app.route('/admin_login')
+def admin_login_page():
+    """Página de login para administradores"""
+    session['csrf_token'] = str(uuid.uuid4())
+    return send_from_directory(PASTA_PROJETO, "admin_login.html")
+
+# ==============================
 # INICIALIZAÇÃO DO SERVIDOR
 # ==============================
 if __name__ == "__main__":
@@ -763,5 +923,3 @@ if __name__ == "__main__":
         port=port,
         debug=os.environ.get('DEBUG', 'False').lower() == 'true'
     )
-    
-    
